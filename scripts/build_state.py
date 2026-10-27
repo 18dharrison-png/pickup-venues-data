@@ -45,7 +45,11 @@ SPORTS = {
     "ice_hockey", "disc_golf", "padel", "paddle_tennis", "racquetball", "squash",
     "badminton", "netball", "golf", "multi",
 }
-DEFAULT_SPORT = {"track": "running", "fitness_station": "fitness"}
+# Running only counts at a real track (leisure=track). Gym / lifting style
+# sports never put a pin on the map by themselves: players can still host a
+# game for them, but a park with an outdoor gym isn't a "place to play".
+MAP_HIDDEN_SPORTS = {"fitness"}
+RUNNING_TRACK_SPORTS = {"", "running", "athletics", "jogging", "multi"}
 
 PARK_CELL = 0.01      # spatial index cell for parks, in degrees (~1 km)
 MERGE_SNAP = 0.0008   # unnamed courts closer than ~80 m become one venue
@@ -54,16 +58,22 @@ MERGE_SNAP = 0.0008   # unnamed courts closer than ~80 m become one venue
 def sports_of(tags):
     leisure = tags.get("leisure", "")
     raw = tags.get("sport", "")
+    parts = [p.strip().lower().replace(" ", "_") for p in raw.replace(",", ";").split(";")]
+    parts = [p for p in parts if p]
     found = []
-    for part in raw.replace(",", ";").split(";"):
-        key = part.strip().lower().replace(" ", "_")
-        if not key:
+    for part in parts:
+        key = ALIASES.get(part, part)
+        if key not in SPORTS or key in MAP_HIDDEN_SPORTS:
             continue
-        key = ALIASES.get(key, key)
-        if key in SPORTS and key not in found:
+        if key == "running" and leisure != "track":
+            continue  # a "running" tag on a field or park isn't a track
+        if key not in found:
             found.append(key)
-    if not found and leisure in DEFAULT_SPORT:
-        found.append(DEFAULT_SPORT[leisure])
+    # An untagged (or plainly running) track is a running track. Horse and
+    # motor racing tracks are not.
+    if leisure == "track" and "running" not in found:
+        if not parts or all(p in RUNNING_TRACK_SPORTS for p in parts):
+            found.append("running")
     return found
 
 

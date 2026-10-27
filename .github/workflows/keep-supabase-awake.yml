@@ -1,0 +1,34 @@
+name: Keep Supabase awake
+
+# Free Supabase projects pause after about a week with no activity.
+# This asks the database for one row twice a week so that never happens.
+
+on:
+  schedule:
+    - cron: "23 16 * * 1,4"   # Mondays and Thursdays, 16:23 UTC
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Ask Supabase for one game
+        env:
+          SUPABASE_URL: https://tnvhlgcvpfpxrehnhxfl.supabase.co
+          SUPABASE_KEY: ${{ secrets.SUPABASE_PUBLISHABLE_KEY }}
+        run: |
+          if [ -z "$SUPABASE_KEY" ]; then
+            echo "::error::Add the SUPABASE_PUBLISHABLE_KEY secret (Settings > Secrets and variables > Actions)."
+            exit 1
+          fi
+          status=$(curl -s -o response.json -w "%{http_code}" \
+            "$SUPABASE_URL/rest/v1/games?select=id&limit=1" \
+            -H "apikey: $SUPABASE_KEY" \
+            -H "Authorization: Bearer $SUPABASE_KEY")
+          echo "Supabase answered HTTP $status"
+          head -c 300 response.json; echo
+          if [ "$status" != "200" ]; then
+            echo "::error::Supabase did not answer normally (HTTP $status). It may already be paused: open supabase.com and click Restore."
+            exit 1
+          fi

@@ -117,30 +117,72 @@ def ring_centroid(ring):
     return (cx / (6 * area), cy / (6 * area))
 
 
+# Courts here are almost never open to the public, so they are dropped
+# unless the court itself is tagged access=yes/permissive/public.
+RESTRICTED_AMENITY = {
+    "school", "college", "university", "kindergarten", "prison",
+    "place_of_worship",
+}
+RESTRICTED_LEISURE = {"golf_course"}
+CLOSED_ACCESS = {"private", "no", "members", "customers", "permit", "students"}
+OPEN_ACCESS = {"yes", "permissive", "public", "designated"}
+
+
+def access_of(tags):
+    return tags.get("access", "").strip().lower()
+
+
+def is_restricted_area(tags):
+    if tags.get("amenity") in RESTRICTED_AMENITY:
+        return True
+    if tags.get("leisure") in RESTRICTED_LEISURE:
+        return True
+    if "club" in tags and tags.get("leisure") != "park":
+        return True  # country clubs, tennis clubs, etc.
+    return False
+
+
+def polygon(kind, osm_id, tags, rings):
+    xs = [p[0] for r in rings for p in r]
+    ys = [p[1] for r in rings for p in r]
+    biggest = max(rings, key=len)
+    return {
+        "id": f"{kind}/{osm_id}",
+        "name": tags.get("name"),
+        "rings": rings,
+        "bbox": (min(xs), min(ys), max(xs), max(ys)),
+        "centroid": ring_centroid(biggest),
+        "address": address_of(tags),
+    }
+
+
 class Collector:
     def __init__(self):
-        self.parks = []    # dict(id, name, rings, bbox, centroid, address)
-        self.pitches = []  # dict(id, name, lon, lat, sports, surface, lit, address, leisure)
+        self.parks = []       # public parks: courts inside are grouped under them
+        self.restricted = []  # schools, clubs, private parks: courts inside are dropped
+        self.pitches = []     # dict(id, name, lon, lat, sports, surface, lit, address, access)
+        self.dropped_private = 0
 
     def add(self, kind, osm_id, tags, rings=None, point=None):
         leisure = tags.get("leisure")
+        access = access_of(tags)
+        if rings and (is_restricted_area(tags) or (leisure == "park" and access in CLOSED_ACCESS)):
+            self.restricted.append(polygon(kind, osm_id, tags, rings))
+            return
         if leisure == "park":
-            if not rings:
-                return
-            xs = [p[0] for r in rings for p in r]
-            ys = [p[1] for r in rings for p in r]
-            biggest = max(rings, key=len)
-            self.parks.append({
-                "id": f"{kind}/{osm_id}",
-                "name": tags.get("name"),
-                "rings": rings,
-                "bbox": (min(xs), min(ys), max(xs), max(ys)),
-                "centroid": ring_centroid(biggest),
-                "address": address_of(tags),
-            })
+            if rings:
+                self.parks.append(polygon(kind, osm_id, tags, rings))
+            return
+        if leisure not in ("pitch", "sports_centre", "track", "fitness_station"):
             return
         sports = sports_of(tags)
         if not sports:
+            return
+        if access in CLOSED_ACCESS:
+            self.dropped_private += 1
+            return
+        # Indoor gyms (sport=fitness at a sports centre) aren't pickup spots.
+        if leisure == "sports_centre" and set(sports) <= {"fitness"}:
             return
         if point is None:
             point = ring_centroid(max(rings, key=len))
@@ -153,7 +195,7 @@ class Collector:
             "surface": tags.get("surface"),
             "lit": lit_of(tags),
             "address": address_of(tags),
-            "leisure": leisure,
+            "access": access,
         })
 
 
@@ -162,7 +204,7 @@ def read(path):
     fp = osmium.FileProcessor(path).with_locations().with_areas()
     for obj in fp:
         tags = {t.k: t.v for t in obj.tags}
-        if "leisure" not in tags:
+        if "leisure" not in tags and tags.get("amenity") not in RESTRICTED_AMENITY:
             continue
         if isinstance(obj, osmium.osm.Node):
             if obj.location.valid():
@@ -286,19 +328,28 @@ def cluster(points):
     return list(groups.values())
 
 
-def group(col):
+def build_index(polys):
     index = defaultdict(list)
-    for park in col.parks:
-        x0, y0, x1, y1 = park["bbox"]
+    for poly in polys:
+        x0, y0, x1, y1 = poly["bbox"]
         for cx in range(math.floor(x0 / PARK_CELL), math.floor(x1 / PARK_CELL) + 1):
             for cy in range(math.floor(y0 / PARK_CELL), math.floor(y1 / PARK_CELL) + 1):
-                index[(cx, cy)].append(park)
+                index[(cx, cy)].append(poly)
+    return index
+
+
+def group(col):
+    index = build_index(col.parks)
+    restricted_index = build_index(col.restricted)
 
     in_park = defaultdict(list)
     loose_named = []
     unnamed = []
     for p in col.pitches:
         park = park_for(p, index)
+        if park is None and p["access"] not in OPEN_ACCESS and park_for(p, restricted_index):
+            col.dropped_private += 1
+            continue
         if park is not None:
             in_park[park["id"]].append(p)
         elif p["name"]:
@@ -343,7 +394,8 @@ def main():
     with gzip.open(dst, "wt", encoding="utf-8") as f:
         for v in venues:
             f.write(json.dumps(v, ensure_ascii=False, separators=(",", ":")) + "\n")
-    print(f"{src}: {len(col.parks)} parks, {len(col.pitches)} courts/fields -> {len(venues)} venues")
+    print(f"{src}: {len(col.parks)} parks, {len(col.pitches)} courts/fields, "
+          f"{col.dropped_private} private skipped -> {len(venues)} venues")
 
 
 if __name__ == "__main__":

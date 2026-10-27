@@ -18,16 +18,22 @@ jobs:
           SUPABASE_URL: https://tnvhlgcvpfpxrehnhxfl.supabase.co
           SUPABASE_KEY: ${{ secrets.SUPABASE_PUBLISHABLE_KEY }}
         run: |
+          # Tolerate a pasted "NAME=value" line and stray spaces/newlines.
+          SUPABASE_KEY="${SUPABASE_KEY#*=}"
+          SUPABASE_KEY="$(printf '%s' "$SUPABASE_KEY" | tr -d '[:space:]')"
           if [ -z "$SUPABASE_KEY" ]; then
             echo "::error::Add the SUPABASE_PUBLISHABLE_KEY secret (Settings > Secrets and variables > Actions)."
             exit 1
           fi
           status=$(curl -s -o response.json -w "%{http_code}" \
             "$SUPABASE_URL/rest/v1/games?select=id&limit=1" \
-            -H "apikey: $SUPABASE_KEY" \
-            -H "Authorization: Bearer $SUPABASE_KEY")
+            -H "apikey: $SUPABASE_KEY")
           echo "Supabase answered HTTP $status"
           head -c 300 response.json; echo
+          if [ "$status" = "401" ] || [ "$status" = "403" ]; then
+            echo "::error::Supabase rejected the key (HTTP $status). Re-check the SUPABASE_PUBLISHABLE_KEY secret: it should start with sb_publishable_."
+            exit 1
+          fi
           if [ "$status" != "200" ]; then
             echo "::error::Supabase did not answer normally (HTTP $status). It may already be paused: open supabase.com and click Restore."
             exit 1

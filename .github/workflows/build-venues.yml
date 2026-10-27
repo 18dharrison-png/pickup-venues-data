@@ -63,7 +63,9 @@ jobs:
       - name: Keep only parks, courts and fields
         run: |
           osmium tags-filter in.osm.pbf \
-            nwr/leisure=pitch,sports_centre,track,fitness_station,park \
+            nwr/leisure=pitch,sports_centre,track,fitness_station,park,golf_course \
+               nwr/amenity=school,college,university,kindergarten,prison,place_of_worship \
+                  nwr/club \
             -o filtered.osm.pbf
           rm in.osm.pbf
           ls -lh filtered.osm.pbf

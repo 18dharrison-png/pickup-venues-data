@@ -9,9 +9,10 @@ the app already reads plus the new "v" field:
      "school"  on a public high-school campus (OSM school area + NCES grades 9-12)
      "known"   named public rec/sports centre, beach court, or access=yes court
 
-A school's courts are grouped into one venue named after the school, the same
-way a park's courts are grouped under the park, so a campus is one pin rather
-than eight identical "Basketball courts" pins.
+A park is judged as a whole, once, and every court inside it inherits that
+verdict; a school's courts are grouped into one venue named after the school, the
+same way a park's courts are grouped under the park, so a campus is one pin
+rather than eight identical "Basketball courts" pins.
 
 Usage:
   python3 build_public.py filtered.osm.pbf out/california.ndjson.gz \
@@ -79,7 +80,23 @@ def main(argv=None):
     campuses = public_filter.resolve_campuses(school_area_items, schools)
     campuses_by_id = {campus["id"]: campus for campus in campuses}
     school_area_index = public_filter.build_index(school_area_items)
-    park_index = public_filter.build_index(items_of(collector.parks))
+    park_items = items_of(collector.parks)
+
+    # Parks and rec centres are judged as a whole, once, instead of court by
+    # court: public land covering at least half of the area makes every court
+    # inside it public ground. Testing each court against PAD-US on its own lost
+    # real courts, because a park boundary and its PAD-US polygon never line up
+    # exactly — Palms Park lost its basketball court and Sepulveda Basin 28 of
+    # 36 baseball fields that way.
+    public_areas = []
+    for item in park_items:
+        if public_filter.public_coverage(item["geom"], padus) >= public_filter.PARK_COVERAGE:
+            public_areas.append({**item, "verdict": "park"})
+    for item in items_of(collector.centres):
+        if public_filter.is_public_rec_name(item["name"]):
+            public_areas.append({**item, "verdict": "known"})
+    public_area_index = public_filter.build_index(public_areas)
+    park_index = public_filter.build_index(park_items)
 
     # School areas that are NOT proven public (private schools, elementary and
     # middle schools, anything NCES has no 9-12 record for). Courts inside them
@@ -95,6 +112,7 @@ def main(argv=None):
         "campuses_by_id": campuses_by_id,
         "school_areas": school_area_index,
         "osm_parks": park_index,
+        "public_areas": public_area_index,
     }
     before = len(collector.pitches)
     kept, dropped = [], []
@@ -177,10 +195,37 @@ def main(argv=None):
     print(f"{args.source}: {before} courts/fields read -> {len(venues)} venues "
           f"({dict(sorted(by_verdict.items()))}), {len(dropped)} courts dropped")
 
-    baseline = None
+    baseline_venues = build_state.group(build_state.read(args.source)) if args.baseline else []
+    baseline = len(baseline_venues) if args.baseline else None
     if args.baseline:
-        baseline = len(build_state.group(build_state.read(args.source)))
         print(f"  baseline (old rules, same extract): {baseline} venues")
+
+    # The old builder kept every court standing in a park. This one may only lose
+    # courts to rules that are meant to fire (private access, club names, a park
+    # nobody could verify), so a park that comes out smaller is counted and
+    # reported: the CI check fails when more than 2% of kept parks lose courts.
+    old_courts = {venue["id"]: sum(venue["s"].values()) for venue in baseline_venues}
+    park_venues = [venue for venue in venues if venue["v"] == "park"]
+    regressed = []
+    for venue in park_venues:
+        was = old_courts.get(venue["id"])
+        if was is None:
+            continue
+        now = sum(venue["s"].values())
+        if now < was:
+            regressed.append({"id": venue["id"], "name": venue["n"],
+                              "old": was, "new": now, "lost": was - now})
+    regressed.sort(key=lambda item: (-item["lost"], item["id"]))
+    rate = len(regressed) / len(park_venues) if park_venues else 0.0
+    park_courts = {
+        "parks": len(park_venues),
+        "regressed": len(regressed),
+        "rate": round(rate, 4),
+        "examples": regressed[:10],
+    }
+    if park_venues:
+        print(f"  parks: {len(park_venues)}, losing courts vs the old builder: "
+              f"{len(regressed)} ({rate:.2%})")
 
     if args.dropped:
         os.makedirs(os.path.dirname(args.dropped) or ".", exist_ok=True)
@@ -204,6 +249,7 @@ def main(argv=None):
                     for area_id, entry in sorted(unproven.items())
                 ],
                 "padus_polygons": len(padus[1]) if padus else 0,
+                "park_courts": park_courts,
                 "schools_9_12": len(schools),
                 "dropped": len(dropped),
                 "dropped_by_reason": dict(by_reason.most_common()),

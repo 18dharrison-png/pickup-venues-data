@@ -4,7 +4,8 @@
 The filter is only as good as its proof, so this runs in CI right after a build
 and answers the questions that matter in plain language: is this specific court
 gone, is that specific park still there, does this public high school appear,
-does this private school stay out, and are the labelled schools really schools.
+does this private school stay out, are the labelled schools really schools, and
+do the parks still hold the courts the old builder kept.
 
 Usage:
   python3 spot_checks.py --venues out/california.ndjson.gz \
@@ -54,6 +55,17 @@ CASES = {
         {"label": "Fairfax Senior High football/baseball fields are the school",
          "name": "fairfax senior high", "expect": "kept", "v": "school",
          "sports": ["american_football", "baseball"]},
+        # Parks are decided as a whole, so a park keeps every court inside it
+        # even where the court sits a few metres outside the public land. These
+        # were the visible losses when each court was tested on its own.
+        {"label": "Palms Park keeps basketball and baseball",
+         "name": "palms park", "v": "park",
+         "min_counts": {"basketball": 1, "baseball": 1}},
+        {"label": "Sepulveda Basin keeps at least 30 baseball fields",
+         "name": "sepulveda basin", "v": "park",
+         "min_counts": {"baseball": 30}},
+        {"label": "kept parks keep the courts the old builder gave them",
+         "report": "park_courts", "max_rate": 0.02},
     ],
 }
 
@@ -117,19 +129,34 @@ def describe(item, key="n"):
 
 
 def check_named(case, venues):
-    """A venue matched by name must exist with the expected verdict and sports."""
+    """A venue matched by name must exist with the expected verdict and courts.
+
+    `sports` only requires the sport to be listed; `min_counts` requires at
+    least that many courts of it, which is how a park quietly losing most of its
+    fields shows up. Counts are summed over every venue the name matches, since
+    a big recreation area is often several OSM parks.
+    """
     wanted = case["name"].lower()
     found = [v for v in venues if wanted in (v.get("n") or "").lower()]
     if case.get("v"):
         found = [v for v in found if v["v"] == case["v"]]
-    missing = [sport for sport in case.get("sports", [])
-               if not any(sport in v.get("s", {}) for v in found)]
-    ok = bool(found) and not missing
+    counts = {}
+    for venue in found:
+        for sport, count in venue.get("s", {}).items():
+            counts[sport] = counts.get(sport, 0) + count
+    missing = [sport for sport in case.get("sports", []) if sport not in counts]
+    short = [(sport, want, counts.get(sport, 0))
+             for sport, want in (case.get("min_counts") or {}).items()
+             if counts.get(sport, 0) < want]
+    ok = bool(found) and not missing and not short
     detail = describe(found[0]) if found else "no venue with that name"
-    if found and missing:
+    if found:
+        detail += " | " + ", ".join(f"{sport} {count}" for sport, count in sorted(counts.items()))
+    if missing:
         detail += f" | missing sports: {', '.join(missing)}"
-    elif found and case.get("sports"):
-        detail += f" | sports: {', '.join(sorted(found[0]['s']))}"
+    if short:
+        detail += " | short: " + ", ".join(
+            f"{sport} {have} of {want}" for sport, want, have in short)
     return ok, detail
 
 
@@ -172,6 +199,22 @@ def main(argv):
     failures = 0
     print(f"{args.state}: {len(venues)} kept venues, {len(dropped)} dropped courts")
     for case in CASES[args.state]:
+        if "report" in case:
+            block = (report or {}).get(case["report"])
+            if not block:
+                failures += 1
+                print(f"FAIL  {case['label']}: no '{case['report']}' in the build report")
+                continue
+            rate = block.get("rate", 1.0)
+            ok = rate <= case["max_rate"]
+            failures += 0 if ok else 1
+            examples = "; e.g. " + ", ".join(
+                f"{item['name']} {item['new']}/{item['old']}"
+                for item in block.get("examples", [])[:3]) if block.get("examples") else ""
+            print(f"{'PASS' if ok else 'FAIL'}  {case['label']}: "
+                  f"{block.get('regressed', '?')} of {block.get('parks', '?')} parks "
+                  f"({rate:.2%}, limit {case['max_rate']:.0%}) lost courts{examples}")
+            continue
         if "area" in case:
             found = match_area(case, report)
             if found is None:

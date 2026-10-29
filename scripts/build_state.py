@@ -163,11 +163,16 @@ def polygon(kind, osm_id, tags, rings):
         "bbox": (min(xs), min(ys), max(xs), max(ys)),
         "centroid": ring_centroid(biggest),
         "address": address_of(tags),
+        # Kept for the public-only builder, which has to tell a school area from
+        # a club or a golf course. Not written to the published files.
+        "amenity": tags.get("amenity"),
+        "leisure": tags.get("leisure"),
     }
 
 
 class Collector:
-    def __init__(self):
+    def __init__(self, keep_private=False):
+        self.keep_private = keep_private
         self.parks = []       # public parks: courts inside are grouped under them
         self.restricted = []  # schools, clubs, private parks: courts inside are dropped
         self.pitches = []     # dict(id, name, lon, lat, sports, surface, lit, address, access)
@@ -188,7 +193,7 @@ class Collector:
         sports = sports_of(tags)
         if not sports:
             return
-        if access in CLOSED_ACCESS:
+        if access in CLOSED_ACCESS and not self.keep_private:
             self.dropped_private += 1
             return
         # Indoor gyms (sport=fitness at a sports centre) aren't pickup spots.
@@ -206,11 +211,19 @@ class Collector:
             "lit": lit_of(tags),
             "address": address_of(tags),
             "access": access,
+            "leisure": leisure,
         })
 
 
-def read(path):
-    col = Collector()
+def read(path, keep_private=False):
+    """Read the extract into a Collector.
+
+    keep_private=True keeps pitches tagged access=private/no, which the map
+    normally drops. The public-only builder needs them: a public high school's
+    courts are usually tagged private in OSM, and the school area plus the NCES
+    record is what proves they count.
+    """
+    col = Collector(keep_private=keep_private)
     fp = osmium.FileProcessor(path).with_locations().with_areas()
     for obj in fp:
         tags = {t.k: t.v for t in obj.tags}
@@ -348,7 +361,13 @@ def build_index(polys):
     return index
 
 
-def group(col):
+def group(col, keep_restricted=False):
+    """Group pitches into venues.
+
+    keep_restricted=True keeps courts that sit inside a school/club area even
+    when the court is tagged private. The public-only builder decides those
+    cases itself (a public school campus is a legitimate place to play).
+    """
     index = build_index(col.parks)
     restricted_index = build_index(col.restricted)
 
@@ -357,7 +376,8 @@ def group(col):
     unnamed = []
     for p in col.pitches:
         park = park_for(p, index)
-        if park is None and p["access"] not in OPEN_ACCESS and park_for(p, restricted_index):
+        if (not keep_restricted and park is None
+                and p["access"] not in OPEN_ACCESS and park_for(p, restricted_index)):
             col.dropped_private += 1
             continue
         if park is not None:

@@ -9,8 +9,11 @@ depend on it.
 The same PAD-US 4.1 data is served as an ArcGIS FeatureServer layer, and that
 endpoint is reachable and queryable. It returns at most 2000 records per request
 and sets `exceededTransferLimit`, so this script pages with resultOffset plus
-orderByFields=OBJECTID (which the layer advertises), retries transient failures
-with backoff, and pauses between pages to stay inside the service's limits.
+orderByFields=OBJECTID (which the layer advertises), pauses between pages, and
+retries every request — including the very first one — with exponential backoff.
+That last part matters: the service answers 504s and truncated bodies whenever
+several state jobs start together, and to an un-retried request that looks
+exactly like a permanent failure.
 
 Use the *nationwide* layer. A previous endpoint
 (services1.arcgis.com/4usxdjWKL0Lq9x6D, "US_Protected_Areas_Database__PADUS")
@@ -38,6 +41,7 @@ PAD-US is public domain (USGS GAP). Credited in README.md.
 import argparse
 import json
 import os
+import random
 import sys
 import time
 import urllib.error
@@ -51,9 +55,15 @@ SERVICE = (
     "PADUS_Manager_Type/FeatureServer/0/query"
 )
 OUT_FIELDS = "OBJECTID,Unit_Nm,Pub_Access,Own_Type,Des_Tp,GAP_Sts,State_Nm"
-PAGE_SIZE = 2000          # the layer's maxRecordCount
-PAGE_PAUSE = 0.6          # seconds between pages: stay well inside the limit
-ATTEMPTS = 5
+# Half the layer's maxRecordCount: a 2000-record page of California is a 25 MB
+# response, and the service truncates those (IncompleteRead) under load. Smaller
+# pages cost a few more requests and stop losing a whole state to one cut body.
+PAGE_SIZE = 1000
+PAGE_PAUSE = 1.0          # base seconds between pages: stay inside the limits
+PAGE_JITTER = 1.0         # plus up to this much, so parallel jobs drift apart
+# Six attempts with backoff 5+10+20+40+60+60 s: about two minutes of patience
+# before a state gives up, which is what the service's busy spells need.
+ATTEMPTS = 6
 USER_AGENT = "pickup-venues-data/1.0 (+https://github.com/18dharrison-png/pickup)"
 
 # Geofabrik state names -> USPS codes, so the workflow can pass either.
@@ -74,6 +84,32 @@ STATE_CODES = {
 }
 
 
+def get_json(url, attempts=ATTEMPTS):
+    """GET a JSON document, retrying the way page fetches do.
+
+    Every request here must survive a busy service. The PAD-US layer answers
+    504s, throttling and truncated bodies whenever several state jobs start
+    together, and a single un-retried request is a coin flip: that is exactly
+    how a nationwide run lost ten states inside one second each.
+    """
+    last = None
+    for attempt in range(1, attempts + 1):
+        try:
+            request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+            with urllib.request.urlopen(request, timeout=300) as response:
+                payload = json.load(response)
+            if isinstance(payload, dict) and "error" in payload:
+                raise ValueError(f"service error: {payload['error']}")
+            return payload
+        except Exception as error:  # throttle, timeout, torn response, HTML page
+            last = error
+            wait = min(60, 5 * 2 ** (attempt - 1))
+            print(f"  request attempt {attempt}/{attempts} failed ({error}); retrying in {wait}s",
+                  file=sys.stderr)
+            time.sleep(wait)
+    raise SystemExit(f"PAD-US request failed after {attempts} attempts: {last}")
+
+
 def assert_nationwide():
     """The set of states the source actually has, refusing a look-alike layer.
 
@@ -84,10 +120,7 @@ def assert_nationwide():
     """
     params = {"where": "1=1", "outFields": "State_Nm", "returnGeometry": "false",
               "returnDistinctValues": "true", "resultRecordCount": "200", "f": "json"}
-    request = urllib.request.Request(SERVICE + "?" + urllib.parse.urlencode(params),
-                                     headers={"User-Agent": USER_AGENT})
-    with urllib.request.urlopen(request, timeout=120) as response:
-        payload = json.load(response)
+    payload = get_json(SERVICE + "?" + urllib.parse.urlencode(params))
     states = {str((feature.get("attributes") or {}).get("State_Nm") or "").strip()
               for feature in payload.get("features") or []}
     states.discard("")
@@ -131,22 +164,8 @@ def query_url(where, bbox, offset):
 
 
 def fetch_page(url, attempts=ATTEMPTS):
-    last = None
-    for attempt in range(1, attempts + 1):
-        try:
-            request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-            with urllib.request.urlopen(request, timeout=300) as response:
-                payload = json.load(response)
-            if "error" in payload:
-                raise ValueError(f"service error: {payload['error']}")
-            return payload.get("features") or [], bool(payload.get("exceededTransferLimit"))
-        except Exception as error:  # throttle, timeout, torn response, HTML page
-            last = error
-            wait = min(60, 5 * 2 ** (attempt - 1))
-            print(f"  page attempt {attempt}/{attempts} failed ({error}); retrying in {wait}s",
-                  file=sys.stderr)
-            time.sleep(wait)
-    raise SystemExit(f"PAD-US query failed after {attempts} attempts: {last}")
+    payload = get_json(url, attempts=attempts)
+    return payload.get("features") or [], bool(payload.get("exceededTransferLimit"))
 
 
 def fetch(where, bbox, out_path, label):
@@ -175,7 +194,9 @@ def fetch(where, bbox, out_path, label):
         print(f"  {label}: {total} polygons fetched", flush=True)
         if not more and len(features) < PAGE_SIZE:
             break
-        time.sleep(PAGE_PAUSE)
+        # Jittered, not fixed: three state jobs paging in lockstep is what the
+        # service chokes on, and a fixed pause keeps them in lockstep forever.
+        time.sleep(PAGE_PAUSE + random.uniform(0, PAGE_JITTER))
 
     if total == 0:
         # Fail loudly instead of publishing a state with no public land: that

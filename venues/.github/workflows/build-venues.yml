@@ -109,6 +109,13 @@ jobs:
           # earlier `padus-rest-v1` caches came from a California-only endpoint.
           key: padus-nat-v1-${{ matrix.state }}
 
+      - name: Space out the PAD-US requests
+        # Three state jobs start at the same second and the ArcGIS service
+        # throttles that burst (instant 504s killed 50 of 51 states once), so
+        # each job waits a random 0-25 s before it starts paging. The fetcher
+        # also retries every request and jitters its page pause.
+        run: sleep $((RANDOM % 26))
+
       - name: Fetch PAD-US public land
         # Pages the official PAD-US FeatureServer by state, retries with backoff,
         # and resumes from the last page if a run dies. Skips when cached.

@@ -34,8 +34,14 @@ it honestly instead of implying a guarantee:
 | `v` | label in the app | rule |
 |-----|------------------|------|
 | `park` | "Public park" | inside a public-access protected-area polygon from PAD-US, owned or managed by a federal, state, local or regional agency |
-| `school` | "Public high school - check public hours" | inside an OpenStreetMap school area that also contains a public high school point from NCES serving grades 9-12. Private schools are never in the NCES public list, so they cannot qualify |
+| `school` | "Public high school - check public hours" | inside an OpenStreetMap school area that also contains a public high school point from NCES serving grades 9-12, with the point inside *that* polygon (30 m for boundary disagreement) and the two names identifying the same school. Private schools are never in the NCES public list, and a name test stops an Elementary or Middle school from borrowing a neighbour's record |
 | `known` | "Rec center" | a named public recreation or sports centre, a beach volleyball court, or a named court OpenStreetMap itself marks `access=yes`/`public` |
+
+A court inside an OSM school site is decided by the school rule before PAD-US,
+because a public school's fields are public land too: inside a verified campus it
+is `school`; inside any other school site it is dropped, unless an OSM park
+covers it as well, which is a joint-use park. Everything else falls through to
+the PAD-US and `known` rules.
 
 Existing rules still apply on top of this:
 
@@ -68,8 +74,10 @@ eight identical "Basketball courts" pins.
 5. for California, run `scripts/spot_checks.py`, which fails the job if a named
    real-world case changes — the unverified courts near Rancho Park must be gone,
    Reed Park / Penmar / Venice Beach / Pan Pacific must stay, Venice, Palisades
-   Charter, Fairfax and Hamilton high schools must appear as `school`, and Loyola
-   (private) must stay out.
+   Charter, Fairfax and Hamilton high schools must appear as `school`, Loyola and
+   Wildwood (private) and Grand View Boulevard (elementary) must stay out, the
+   Fairfax football/baseball fields must belong to the school venue, and no
+   Elementary or Middle school may be labelled a school.
 
 Locally, with a filtered extract:
 

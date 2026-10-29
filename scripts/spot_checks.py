@@ -4,7 +4,7 @@
 The filter is only as good as its proof, so this runs in CI right after a build
 and answers the questions that matter in plain language: is this specific court
 gone, is that specific park still there, does this public high school appear,
-does this private school stay out.
+does this private school stay out, and are the labelled schools really schools.
 
 Usage:
   python3 spot_checks.py --venues out/california.ndjson.gz \
@@ -45,6 +45,15 @@ CASES = {
         # reports how many courts inside each unproven school area were kept.
         {"label": "Loyola High School (private: must stay out)",
          "area": "loyola high school", "expect": "none"},
+        {"label": "Wildwood School (private, Mar Vista: must stay out)",
+         "area": "wildwood school", "expect": "none"},
+        {"label": "Grand View Boulevard Elementary (must not be a school)",
+         "area": "grand view boulevard", "expect": "none"},
+        # The fields are inside the school site, so they must join the school
+        # venue rather than becoming a separate "park" pin.
+        {"label": "Fairfax Senior High football/baseball fields are the school",
+         "name": "fairfax senior high", "expect": "kept", "v": "school",
+         "sports": ["american_football", "baseball"]},
     ],
 }
 
@@ -107,6 +116,31 @@ def describe(item, key="n"):
     return f"{name} ({item.get('v', 'dropped')}) {item['la']},{item['lo']} {item['id']}"
 
 
+def check_named(case, venues):
+    """A venue matched by name must exist with the expected verdict and sports."""
+    wanted = case["name"].lower()
+    found = [v for v in venues if wanted in (v.get("n") or "").lower()]
+    if case.get("v"):
+        found = [v for v in found if v["v"] == case["v"]]
+    missing = [sport for sport in case.get("sports", [])
+               if not any(sport in v.get("s", {}) for v in found)]
+    ok = bool(found) and not missing
+    detail = describe(found[0]) if found else "no venue with that name"
+    if found and missing:
+        detail += f" | missing sports: {', '.join(missing)}"
+    elif found and case.get("sports"):
+        detail += f" | sports: {', '.join(sorted(found[0]['s']))}"
+    return ok, detail
+
+
+def check_school_names(venues):
+    """No venue labelled a school may be named as an elementary/middle school."""
+    words = ("elementary", "middle", "primary", "grade school")
+    offenders = [v["n"] for v in venues
+                 if v["v"] == "school" and any(word in (v.get("n") or "").lower() for word in words)]
+    return not offenders, offenders
+
+
 def main(argv):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--state", default="california", choices=sorted(CASES))
@@ -136,6 +170,11 @@ def main(argv):
             print(f"{'PASS' if ok else 'FAIL'}  {case['label']}: {area_name} kept "
                   f"{kept_count}, dropped {gone_count}")
             continue
+        if "name" in case:
+            ok, detail = check_named(case, venues)
+            failures += 0 if ok else 1
+            print(f"{'PASS' if ok else 'FAIL'}  {case['label']}: {detail}")
+            continue
         kept, gone = matches(case, venues, dropped)
         if case["expect"] == "kept":
             ok = bool(kept)
@@ -153,10 +192,21 @@ def main(argv):
         failures += 0 if ok else 1
         print(f"{verdict}  {case['label']}: {detail}")
 
+    ok, offenders = check_school_names(venues)
+    failures += 0 if ok else 1
+    if ok:
+        print("PASS  no elementary/middle school is labelled a school")
+    else:
+        print(f"FAIL  {len(offenders)} elementary/middle schools labelled a school, "
+              f"e.g. {', '.join(offenders[:5])}")
+
+    schools = sum(1 for v in venues if v["v"] == "school")
+    print(f"\nschool venues in {args.state}: {schools}")
+
     if failures:
-        print(f"\n{failures} case(s) disagree with the expected result", file=sys.stderr)
+        print(f"{failures} case(s) disagree with the expected result", file=sys.stderr)
         return 1
-    print("\nall cases as expected")
+    print("all cases as expected")
     return 0
 
 

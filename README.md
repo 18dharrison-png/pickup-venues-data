@@ -58,6 +58,13 @@ community services district), or that carries `ownership=municipal`, `county` or
 never qualify: every one of the name, operator, owner and ownership values is
 checked for a club or private operation first.
 
+Operator tags are sparse in OpenStreetMap: of two real city parks measured
+against the nationwide PAD-US layer, Westlake Village Park (34.158, -118.800) has
+no `operator`, `owner` or `ownership` tag on any of its three polygons and 0.000
+PAD-US coverage, so its basketball and baseball courts stay out until OpenStreetMap
+records who runs it. Adding `operator="City of Westlake Village"` is enough to
+flip it, and `scripts/spot_checks.py` has the case both ways.
+
 Existing rules still apply on top of this:
 
 * gym and fitness-station style sports are hidden unless they are at a real
@@ -81,8 +88,11 @@ eight identical "Basketball courts" pins.
 2. download the NCES public school locations (EDGE) and the NCES school
    directory (CCD), join them on `NCESSCH`, and keep schools serving grades 9-12
    (`scripts/prepare_nces.py` validates the file layout and the join rate);
-3. page the PAD-US FeatureServer for the state's public-access polygons
-   (`scripts/fetch_padus.py`, retries with backoff, resumes mid-state, cached);
+3. page the **nationwide** PAD-US FeatureServer for the state's public-access
+   polygons (`scripts/fetch_padus.py`, retries with backoff, resumes mid-state,
+   cached). Do not swap it for the "US_Protected_Areas_Database__PADUS" layer:
+   that one looks the same but holds only California, so every other state
+   fetches nothing and the build dies;
 4. decide each court with `scripts/public_filter.py` and write the venues with
    `scripts/build_public.py`, which also reports counts, every dropped court and
    ten kept/dropped examples;
@@ -91,8 +101,12 @@ eight identical "Basketball courts" pins.
    Reed Park / Penmar / Venice Beach / Pan Pacific must stay, Venice, Palisades
    Charter, Fairfax and Hamilton high schools must appear as `school`, Loyola and
    Wildwood (private) and Grand View Boulevard (elementary) must stay out, the
-   Fairfax football/baseball fields must belong to the school venue, and no
-   Elementary or Middle school may be labelled a school.
+   Fairfax football/baseball fields must belong to the school venue, Palms Park
+   keeps its basketball and baseball, Sepulveda Basin keeps 30+ baseball fields,
+   under 2% of kept parks lose courts against the old builder, at least one park
+   is verified by an agency operator rather than PAD-US, Arroyo Vista Park stays
+   out (a privately owned SAMLARC park), Westlake Village Park stays out while it
+   has no operator tag, and no Elementary or Middle school is labelled a school.
 
 Locally, with a filtered extract:
 
@@ -114,7 +128,8 @@ python scripts/spot_checks.py --venues out/california.ndjson.gz \
   contributors, [ODbL](https://www.openstreetmap.org/copyright).
 * **PAD-US** (Protected Areas Database of the United States), U.S. Geological
   Survey Gap Analysis Project — public-access land boundaries. Public domain.
-  Annual release; accessed through the USGS PAD-US FeatureServer, state by state.
+  Annual release; accessed through the nationwide USGS PAD-US 4.1
+  `PADUS_Manager_Type` FeatureServer, state by state.
 * **NCES EDGE Public School Locations** and the **NCES Common Core of Data
   school directory**, U.S. Department of Education, National Center for Education
   Statistics — which schools are public, and which serve grades 9-12. Public

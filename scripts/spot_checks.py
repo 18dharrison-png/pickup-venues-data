@@ -64,6 +64,32 @@ CASES = {
         {"label": "Sepulveda Basin keeps at least 30 baseball fields",
          "name": "sepulveda basin", "v": "park",
          "min_counts": {"baseball": 30}},
+        # An HOA park must not borrow a city's name. The City of Rancho Santa
+        # Margarita says every park in it is privately owned and maintained by a
+        # homeowners association, and this is the SAMLARC park beside the
+        # SAMLARC pool (access=private, operator=SAMLARC) and Arroyo Vista K-8:
+        # its tennis, baseball and basketball courts are for members, so these
+        # courts must stay out. If a future rule keeps them, this fails.
+        {"label": "Arroyo Vista Park tennis/baseball courts stay out "
+                  "(privately owned SAMLARC park)",
+         "ids": ["way/431493326", "way/431493327", "way/431493328",
+                 "way/133836113", "way/133836123",
+                 "way/432303161", "way/432303162"],
+         "expect": "none"},
+        # A real City of Westlake Village park that no source we have can prove:
+        # all three of its OSM polygons carry only name/leisure/addr:*, and
+        # PAD-US has no unit under them (exact coverage 0.000 against the
+        # nationwide layer). Its basketball and baseball courts stay out until
+        # OSM records who runs it — adding operator="City of Westlake Village"
+        # flips this case, which is the reminder to change it back to "kept".
+        {"label": "Westlake Village Park basketball/baseball courts stay out "
+                  "(no operator tag, 0% PAD-US)",
+         "ids": ["way/634727115", "way/499377977", "way/1307589310"],
+         "expect": "none"},
+        # The operator/owner rule has to fire somewhere in a state this size, or
+        # it is not wired in at all.
+        {"label": "parks are verified by an agency operator, not only by PAD-US",
+         "report_min": "parks_verified_by_agency", "min": 1},
         {"label": "kept parks keep the courts the old builder gave them",
          "report": "park_courts", "max_rate": 0.02},
     ],
@@ -110,6 +136,10 @@ def match_area(case, report):
 
 
 def matches(case, venues, dropped):
+    if "ids" in case:
+        wanted = set(case["ids"])
+        return ([venue for venue in venues if venue["id"] in wanted],
+                [item for item in dropped if item["id"] in wanted])
     if "id" in case:
         kept = [v for v in venues if v["id"] == case["id"]]
         gone = [d for d in dropped if d["id"] == case["id"]]
@@ -199,6 +229,14 @@ def main(argv):
     failures = 0
     print(f"{args.state}: {len(venues)} kept venues, {len(dropped)} dropped courts")
     for case in CASES[args.state]:
+        if "report_min" in case:
+            value = (report or {}).get(case["report_min"])
+            want = case.get("min", 1)
+            ok = isinstance(value, int) and value >= want
+            failures += 0 if ok else 1
+            print(f"{'PASS' if ok else 'FAIL'}  {case['label']}: "
+                  f"{case['report_min']} = {value} (need at least {want})")
+            continue
         if "report" in case:
             block = (report or {}).get(case["report"])
             if not block:

@@ -49,9 +49,14 @@ few metres outside the PAD-US polygon is still kept: Palms Park, whose
 basketball court and baseball field sit on a boundary that never lines up with
 PAD-US, keeps both. Where PAD-US has no polygon for the whole area — Sepulveda
 Basin Recreation Area is only about a third covered by it, split between the
-city's golf and sports units — a park whose own name says it is a public
-recreation area is public ground by name, the same proof a named recreation
-centre gets. Clubs, HOAs and other private names never qualify.
+city's golf and sports units — two further proofs are accepted. A park whose own
+name says it is a public recreation area is public ground by name, the same
+proof a named recreation centre gets; and a park whose `operator` or `owner` tag
+names a public agency (a city, county, park district, recreation department or
+community services district), or that carries `ownership=municipal`, `county` or
+`state`, is public ground by its operator. Clubs, HOAs and other private names
+never qualify: every one of the name, operator, owner and ownership values is
+checked for a club or private operation first.
 
 Existing rules still apply on top of this:
 

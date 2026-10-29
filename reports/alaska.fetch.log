@@ -1,0 +1,123 @@
+  large-geometry quota hit (1/20); waiting 65s
+  AK: 20 polygons fetched
+  AK: 40 polygons fetched
+  AK: 60 polygons fetched
+  AK: 80 polygons fetched
+  AK: 100 polygons fetched
+  AK: 120 polygons fetched
+  AK: 140 polygons fetched
+  AK: 160 polygons fetched
+  large-geometry quota hit (1/20); waiting 65s
+  large-geometry quota hit (2/20); waiting 65s
+  AK: 180 polygons fetched
+  AK: 200 polygons fetched
+  AK: 220 polygons fetched
+  AK: 240 polygons fetched
+  large-geometry quota hit (1/20); waiting 65s
+  AK: 260 polygons fetched
+  AK: 280 polygons fetched
+  AK: 300 polygons fetched
+  AK: 320 polygons fetched
+  AK: 340 polygons fetched
+  large-geometry quota hit (1/20); waiting 65s
+  large-geometry quota hit (2/20); waiting 65s
+  AK: 360 polygons fetched
+  AK: 380 polygons fetched
+  AK: 400 polygons fetched
+  AK: 420 polygons fetched
+  request attempt 1/6 failed (IncompleteRead(75497472 bytes read, 18732460 more expected)); retrying in 5s
+  AK: 440 polygons fetched
+  large-geometry quota hit (1/20); waiting 65s
+  large-geometry quota hit (2/20); waiting 65s
+  AK: 460 polygons fetched
+  AK: 480 polygons fetched
+  AK: 500 polygons fetched
+  AK: 520 polygons fetched
+  AK: 540 polygons fetched
+  AK: 560 polygons fetched
+  AK: 580 polygons fetched
+  AK: 600 polygons fetched
+  AK: 620 polygons fetched
+  large-geometry quota hit (1/20); waiting 65s
+  AK: 640 polygons fetched
+  AK: 660 polygons fetched
+  AK: 680 polygons fetched
+  AK: 700 polygons fetched
+  AK: 720 polygons fetched
+  AK: 740 polygons fetched
+  AK: 760 polygons fetched
+  AK: 780 polygons fetched
+  AK: 800 polygons fetched
+  AK: 820 polygons fetched
+  large-geometry quota hit (1/20); waiting 65s
+  AK: 840 polygons fetched
+  AK: 860 polygons fetched
+  AK: 880 polygons fetched
+  AK: 900 polygons fetched
+  AK: 920 polygons fetched
+  large-geometry quota hit (1/20); waiting 65s
+  AK: 940 polygons fetched
+  AK: 960 polygons fetched
+  AK: 980 polygons fetched
+  AK: 1000 polygons fetched
+  AK: 1020 polygons fetched
+  AK: 1040 polygons fetched
+  AK: 1060 polygons fetched
+  large-geometry quota hit (1/20); waiting 65s
+  large-geometry quota hit (2/20); waiting 65s
+  AK: 1080 polygons fetched
+  AK: 1100 polygons fetched
+  AK: 1120 polygons fetched
+  AK: 1140 polygons fetched
+  AK: 1160 polygons fetched
+  AK: 1180 polygons fetched
+  AK: 1200 polygons fetched
+  AK: 1220 polygons fetched
+  large-geometry quota hit (1/20); waiting 65s
+  AK: 1240 polygons fetched
+  AK: 1260 polygons fetched
+  AK: 1280 polygons fetched
+  AK: 1300 polygons fetched
+  AK: 1320 polygons fetched
+  AK: 1340 polygons fetched
+  AK: 1360 polygons fetched
+  AK: 1380 polygons fetched
+  AK: 1400 polygons fetched
+  AK: 1420 polygons fetched
+  AK: 1440 polygons fetched
+  large-geometry quota hit (1/20); waiting 65s
+  AK: 1460 polygons fetched
+  AK: 1480 polygons fetched
+  AK: 1500 polygons fetched
+  AK: 1520 polygons fetched
+  AK: 1540 polygons fetched
+  AK: 1560 polygons fetched
+  large-geometry quota hit (1/20); waiting 65s
+  AK: 1580 polygons fetched
+  AK: 1600 polygons fetched
+  AK: 1620 polygons fetched
+  AK: 1640 polygons fetched
+  AK: 1660 polygons fetched
+  AK: 1680 polygons fetched
+  AK: 1700 polygons fetched
+  AK: 1720 polygons fetched
+  AK: 1740 polygons fetched
+  AK: 1760 polygons fetched
+  AK: 1780 polygons fetched
+  AK: 1800 polygons fetched
+  AK: 1820 polygons fetched
+  AK: 1840 polygons fetched
+  AK: 1860 polygons fetched
+  AK: 1880 polygons fetched
+  AK: 1900 polygons fetched
+  AK: 1920 polygons fetched
+  AK: 1940 polygons fetched
+  AK: 1960 polygons fetched
+  AK: 1980 polygons fetched
+  AK: 2000 polygons fetched
+  AK: 2020 polygons fetched
+  AK: 2040 polygons fetched
+  large-geometry quota hit (1/20); waiting 65s
+  AK: 2041 polygons fetched
+  AK: 912 of 2041 polygons are public-access public land
+padus/alaska.geojson: 912 public polygons, 302.3 MB

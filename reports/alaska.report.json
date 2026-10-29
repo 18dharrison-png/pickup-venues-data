@@ -1,0 +1,503 @@
+{
+  "baseline_venues": 439,
+  "by_verdict": {
+    "known": 24,
+    "park": 118,
+    "school": 34
+  },
+  "courts_before": 1091,
+  "dropped": 610,
+  "dropped_by_reason": {
+    "inside a school site that is not a verified public high school": 174,
+    "no public source places it in a park, public school or rec centre": 415,
+    "tagged access=customers and not in a public park or school": 7,
+    "tagged access=no and not in a public park or school": 8,
+    "tagged access=private and not in a public park or school": 6
+  },
+  "padus_polygons": 912,
+  "padus_repaired": 222,
+  "padus_unrepaired": 0,
+  "park_courts": {
+    "examples": [],
+    "parks": 118,
+    "rate": 0.0,
+    "regressed": 0
+  },
+  "parks_unmeasured": 0,
+  "parks_verified_by_agency": 45,
+  "public_areas": 365,
+  "school_campuses": 34,
+  "schools_9_12": 28644,
+  "state": "alaska",
+  "unproven_school_areas": [
+    {
+      "dropped": 2,
+      "id": "relation/20352849",
+      "kept": 0,
+      "name": "Talkeetna Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "relation/20382697",
+      "kept": 0,
+      "name": "Rogers Park Elementary"
+    },
+    {
+      "dropped": 1,
+      "id": "relation/20397240",
+      "kept": 0,
+      "name": "Williwaw Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "relation/20421732",
+      "kept": 0,
+      "name": "Taku Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "relation/20445193",
+      "kept": 0,
+      "name": "Nunaka Valley Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "relation/20462174",
+      "kept": 0,
+      "name": "Dr. Etheldra Davis Fairview Elementary"
+    },
+    {
+      "dropped": 3,
+      "id": "way/1017931067",
+      "kept": 0,
+      "name": "Arctic Light Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1017931085",
+      "kept": 0,
+      "name": "Chinook Charter School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1017931186",
+      "kept": 0,
+      "name": "Barnette Magnet School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1017931254",
+      "kept": 0,
+      "name": "Two Rivers K-8"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1018293536",
+      "kept": 0,
+      "name": "Midnight Sun Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/1018293545",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/1058450116",
+      "kept": 0,
+      "name": "Palmer Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/181379143",
+      "kept": 0,
+      "name": "Campbell Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/243208614",
+      "kept": 0,
+      "name": "Alpenglow Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/243208618",
+      "kept": 0,
+      "name": "Gruening Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/243208623",
+      "kept": 0,
+      "name": "Ravenwood Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/29329629",
+      "kept": 0,
+      "name": "Tudor Elementary"
+    },
+    {
+      "dropped": 2,
+      "id": "way/29414517",
+      "kept": 0,
+      "name": "Nothern Lights ABC School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/334502156",
+      "kept": 0,
+      "name": "Russian Jack Elementary School"
+    },
+    {
+      "dropped": 7,
+      "id": "way/336733975",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/336733976",
+      "kept": 0,
+      "name": "S\u00edt\u02bc Eet\u00ed Shaan\u00e1x\u0331 - Glacier Valley School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/344350884",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/384932277",
+      "kept": 0,
+      "name": "Gladys Wood Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/384932278",
+      "kept": 0,
+      "name": "Sand Lake Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/389548587",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 5,
+      "id": "way/389592388",
+      "kept": 0,
+      "name": "Teeland Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/389803977",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 4,
+      "id": "way/390536856",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/390536869",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/390548890",
+      "kept": 0,
+      "name": "Monroe Catholic High School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/391695376",
+      "kept": 0,
+      "name": "University Park Elementary"
+    },
+    {
+      "dropped": 1,
+      "id": "way/391697228",
+      "kept": 0,
+      "name": "Woodriver Elementary"
+    },
+    {
+      "dropped": 2,
+      "id": "way/391846522",
+      "kept": 0,
+      "name": "Baxter Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/391846524",
+      "kept": 0,
+      "name": "Creekside Park Elementary"
+    },
+    {
+      "dropped": 1,
+      "id": "way/391846534",
+      "kept": 0,
+      "name": "Ptarmigan Elementary School"
+    },
+    {
+      "dropped": 7,
+      "id": "way/391846542",
+      "kept": 0,
+      "name": "Begich Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/392036669",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/392039439",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/431485976",
+      "kept": 0,
+      "name": "Wonder Park Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/503448172",
+      "kept": 0,
+      "name": "Tok School"
+    },
+    {
+      "dropped": 6,
+      "id": "way/506305671",
+      "kept": 0,
+      "name": "Clark Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/523794841",
+      "kept": 0,
+      "name": "Ocean View Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/627854918",
+      "kept": 0,
+      "name": "College Gate Elementary"
+    },
+    {
+      "dropped": 1,
+      "id": "way/628725845",
+      "kept": 0,
+      "name": "Cottonwood Creek Action School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/631743765",
+      "kept": 0,
+      "name": "Matanuska-Susitna Borough School District"
+    },
+    {
+      "dropped": 3,
+      "id": "way/636456568",
+      "kept": 0,
+      "name": "Tanaina Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/678511463",
+      "kept": 0,
+      "name": "Chugach Optional Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/678511464",
+      "kept": 0,
+      "name": "Central Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/678511465",
+      "kept": 0,
+      "name": "Denali Montessori Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/759674825",
+      "kept": 0,
+      "name": "Tyson Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/773893612",
+      "kept": 0,
+      "name": "Airport Heights Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/778109863",
+      "kept": 0,
+      "name": "Mountain View Elementary School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/778986181",
+      "kept": 0,
+      "name": "Goldenview Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/778986484",
+      "kept": 0,
+      "name": "Willow Crest Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/786580784",
+      "kept": 0,
+      "name": "Muldoon Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/789683839",
+      "kept": 0,
+      "name": "Government Hill Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/800800615",
+      "kept": 0,
+      "name": "Northwood Elementary"
+    },
+    {
+      "dropped": 3,
+      "id": "way/800800621",
+      "kept": 0,
+      "name": "Lake Hood Elementary"
+    },
+    {
+      "dropped": 1,
+      "id": "way/800800623",
+      "kept": 0,
+      "name": "Turnagain Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/814315521",
+      "kept": 0,
+      "name": "Chugiak Elementary"
+    },
+    {
+      "dropped": 3,
+      "id": "way/818844317",
+      "kept": 0,
+      "name": "Rabbit Creek Elementary"
+    },
+    {
+      "dropped": 2,
+      "id": "way/828560616",
+      "kept": 0,
+      "name": "Kincaid Elementary School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/834284456",
+      "kept": 0,
+      "name": "Wendler Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/834284462",
+      "kept": 0,
+      "name": "Romig Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/834288740",
+      "kept": 0,
+      "name": "Chinook Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/834288741",
+      "kept": 0,
+      "name": "Trailside Elementary School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/843992448",
+      "kept": 0,
+      "name": "Jane Mears Middle School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/850250154",
+      "kept": 0,
+      "name": "Mirror Lake Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/889348382",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 3,
+      "id": "way/902914522",
+      "kept": 0,
+      "name": "Fawn Mountain Elementary"
+    },
+    {
+      "dropped": 2,
+      "id": "way/907872948",
+      "kept": 0,
+      "name": "Weller Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/925739312",
+      "kept": 0,
+      "name": "Nordale Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/925739348",
+      "kept": 0,
+      "name": "Tanana Middle School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/926285418",
+      "kept": 0,
+      "name": "Denali Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/927930746",
+      "kept": 0,
+      "name": "Pearl Creek Elementary"
+    },
+    {
+      "dropped": 1,
+      "id": "way/956998696",
+      "kept": 0,
+      "name": "Iditarod Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/993768756",
+      "kept": 0,
+      "name": ""
+    }
+  ],
+  "venues_after": 176
+}

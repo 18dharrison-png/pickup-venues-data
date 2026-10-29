@@ -1,0 +1,29 @@
+padus: 222 invalid polygons repaired, 0 dropped
+  public areas: 365 (45 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 1091 courts/fields read -> 176 venues ({'known': 24, 'park': 118, 'school': 34}), 610 courts dropped
+  baseline (old rules, same extract): 439 venues
+  parks: 118, losing courts vs the old builder: 0 (0.00%)
+# 10 random KEPT (176 candidates)
+Baseball field	61.592737,-149.501261	park	way/389325995
+Beach Volleyball courts	64.833237,-147.808491	known	way/1458933125
+South Anchorage Sports Park	61.119486,-149.894751	known	way/464855990
+Palmer High School	61.604207,-149.13724	school	way/934888502
+Lathrop High School	64.834213,-147.733936	school	way/1017931174
+St Paul Ballfield-originated in1868	57.121528,-170.278548	known	way/1106475877
+Baseball field	62.967697,-141.896797	park	way/756768533
+Houston High School	61.588425,-149.77168	school	way/1212800369
+Hez Ray Sports Complex	64.828936,-147.752763	park	way/390866525
+Basketball courts	57.799177,-152.380088	park	way/784950651
+
+# 10 random DROPPED (610 candidates)
+(unnamed)	61.209906,-149.856273	basketball	inside a school site that is not a verified public high school
+(unnamed)	61.208586,-149.885586	running	no public source places it in a park, public school or rec centre
+(unnamed)	61.584741,-149.437179	basketball	no public source places it in a park, public school or rec centre
+Cathy Parker Field	71.331924,-156.663139	american_football	no public source places it in a park, public school or rec centre
+City Park	60.77426,-148.687324	basketball	no public source places it in a park, public school or rec centre
+(unnamed)	61.11295,-149.75647	soccer	no public source places it in a park, public school or rec centre
+(unnamed)	64.804356,-147.414671	baseball	inside a school site that is not a verified public high school
+(unnamed)	57.05126,-135.350415	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	61.236893,-149.807804	golf	no public source places it in a park, public school or rec centre
+Chugach State Park Indian Creek	60.98461,-149.498436	baseball	no public source places it in a park, public school or rec centre
+

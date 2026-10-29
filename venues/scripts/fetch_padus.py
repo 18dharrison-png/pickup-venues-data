@@ -100,6 +100,11 @@ def get_json(url, attempts=ATTEMPTS):
                 payload = json.load(response)
             if isinstance(payload, dict) and "error" in payload:
                 raise ValueError(f"service error: {payload['error']}")
+            # A real ArcGIS response always carries a features list. Anything
+            # else — a proxy page, a bare error object, a truncated body that
+            # still parses — must be retried, not read as "this state is empty".
+            if not isinstance(payload, dict) or not isinstance(payload.get("features"), list):
+                raise ValueError(f"unexpected response shape: {str(payload)[:140]}")
             return payload
         except Exception as error:  # throttle, timeout, torn response, HTML page
             last = error
@@ -120,16 +125,27 @@ def assert_nationwide():
     """
     params = {"where": "1=1", "outFields": "State_Nm", "returnGeometry": "false",
               "returnDistinctValues": "true", "resultRecordCount": "200", "f": "json"}
-    payload = get_json(SERVICE + "?" + urllib.parse.urlencode(params))
-    states = {str((feature.get("attributes") or {}).get("State_Nm") or "").strip()
-              for feature in payload.get("features") or []}
-    states.discard("")
-    if len(states) < 10:
-        raise SystemExit(
-            f"PAD-US source is not nationwide: {len(states)} state(s) "
-            f"({sorted(states)[:6]}). Refusing to write empty extracts."
-        )
-    return states
+    url = SERVICE + "?" + urllib.parse.urlencode(params)
+    last = None
+    for attempt in range(1, 4):
+        payload = get_json(url)
+        states = {str((feature.get("attributes") or {}).get("State_Nm") or "").strip()
+                  for feature in payload.get("features") or []}
+        states.discard("")
+        if len(states) >= 10:
+            return states
+        # An empty or attribute-less answer is not proof that the layer lost 50
+        # states: three state jobs hit the service at once and it answers short
+        # or bare under that load. Retry before believing it.
+        last = payload
+        print(f"  source check {attempt}/3 saw {len(states)} state(s) in "
+              f"{len(payload.get('features') or [])} row(s); retrying", file=sys.stderr)
+        time.sleep(5 * attempt)
+    raise SystemExit(
+        f"PAD-US source is not nationwide: {len(states)} state(s) after 3 tries, out of "
+        f"{len(last.get('features') or [])} row(s) ({str(last)[:200]}). "
+        f"Refusing to write empty extracts."
+    )
 
 
 def state_code(value):
@@ -182,6 +198,15 @@ def fetch(where, bbox, out_path, label):
     kept = 0
     while True:
         features, more = fetch_page(query_url(where, bbox, offset))
+        if not features and offset == 0:
+            # A state with no polygons at all would silently drop almost every
+            # venue in it, so an empty first page is retried before believed.
+            for attempt in range(1, 4):
+                print(f"  {label}: empty first page, retry {attempt}/3", file=sys.stderr)
+                time.sleep(5 * attempt)
+                features, more = fetch_page(query_url(where, bbox, offset))
+                if features:
+                    break
         if not features:
             break
         with open(pages_path, "a", encoding="utf-8") as handle:

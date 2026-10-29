@@ -119,10 +119,16 @@ jobs:
       - name: Fetch PAD-US public land
         # Pages the official PAD-US FeatureServer by state, retries with backoff,
         # and resumes from the last page if a run dies. Skips when cached.
-        run: >
-          python scripts/fetch_padus.py
-          --state "${{ matrix.state }}"
-          --out "padus/${{ matrix.state }}.geojson"
+        # tee for the same reason the build does: the Actions log needs a GitHub
+        # sign-in, but out/ is published with the data, so a failure that never
+        # reaches the build step is still readable afterwards.
+        run: |
+          mkdir -p out
+          set +e
+          python scripts/fetch_padus.py \
+            --state "${{ matrix.state }}" \
+            --out "padus/${{ matrix.state }}.geojson" 2>&1 | tee "out/${{ matrix.state }}.fetch.log"
+          exit "${PIPESTATUS[0]}"
 
       - name: Build venues
         run: |
@@ -211,7 +217,7 @@ jobs:
           # without the (sign-in only) Actions log. Copy one pattern at a time:
           # a single unmatched glob aborts the whole cp and publishes nothing.
           mkdir -p store/reports
-          for pattern in report.json dropped.jsonl checks.txt build.log; do
+          for pattern in report.json dropped.jsonl checks.txt build.log fetch.log; do
             cp incoming/*.$pattern store/reports/ 2>/dev/null || true
           done
           ls -lh store/states store/reports

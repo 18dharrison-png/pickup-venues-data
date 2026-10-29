@@ -59,11 +59,25 @@ OUT_FIELDS = "OBJECTID,Unit_Nm,Pub_Access,Own_Type,Des_Tp,GAP_Sts,State_Nm"
 # response, and the service truncates those (IncompleteRead) under load. Smaller
 # pages cost a few more requests and stop losing a whole state to one cut body.
 PAGE_SIZE = 1000
+# Alaska is the one state whose polygons are nothing like the others: its units
+# are whole mountain ranges, refuges and park units, so a page of a thousand is
+# a 346 MB body that never arrived whole. Twenty records keeps a page in the
+# megabytes; the state is 2,041 records, so it costs about a hundred pages.
+PAGE_SIZES = {"AK": 20}
+MIN_PAGE = 5              # a page that still fails is not asked for again smaller
 PAGE_PAUSE = 1.0          # base seconds between pages: stay inside the limits
 PAGE_JITTER = 1.0         # plus up to this much, so parallel jobs drift apart
+# Big-geometry pages are also rationed per minute, so Alaska paces itself further
+# apart instead of spending its allowance in one burst.
+PAUSES = {"AK": 5.0}
 # Six attempts with backoff 5+10+20+40+60+60 s: about two minutes of patience
 # before a state gives up, which is what the service's busy spells need.
 ATTEMPTS = 6
+# The large-geometry quota is a per-minute allowance, not a blip: the service
+# answers it with a 429 and "Retry after 60 sec". Wait the minute it asks for,
+# and do not spend a request's six attempts on the wait.
+QUOTA_WAIT = 65
+QUOTA_RETRIES = 20
 USER_AGENT = "pickup-venues-data/1.0 (+https://github.com/18dharrison-png/pickup)"
 
 # Geofabrik state names -> USPS codes, so the workflow can pass either.
@@ -84,16 +98,33 @@ STATE_CODES = {
 }
 
 
+def is_quota_error(error):
+    """True for the service's large-geometry allowance refusal (HTTP 429).
+
+    PAD-US answers a burst of big-geometry pages with
+    `{'code': 429, 'message': 'Too many large geometry non-cacheable requests.'}`
+    and "Retry after 60 sec". That is a per-minute allowance, not a transient
+    blip: backing off five seconds just spends the attempts on the same refusal,
+    which is exactly how Alaska ran through all six of them.
+    """
+    text = str(error).lower()
+    return "429" in text or "quota exceeded" in text
+
+
 def get_json(url, attempts=ATTEMPTS):
     """GET a JSON document, retrying the way page fetches do.
 
     Every request here must survive a busy service. The PAD-US layer answers
     504s, throttling and truncated bodies whenever several state jobs start
     together, and a single un-retried request is a coin flip: that is exactly
-    how a nationwide run lost ten states inside one second each.
+    how a nationwide run lost ten states inside one second each. The
+    large-geometry quota is waited out separately, on its own budget.
     """
     last = None
-    for attempt in range(1, attempts + 1):
+    attempt = 0
+    quota = 0
+    while attempt < attempts:
+        attempt += 1
         try:
             request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
             with urllib.request.urlopen(request, timeout=300) as response:
@@ -108,6 +139,15 @@ def get_json(url, attempts=ATTEMPTS):
             return payload
         except Exception as error:  # throttle, timeout, torn response, HTML page
             last = error
+            if is_quota_error(error):
+                quota += 1
+                if quota > QUOTA_RETRIES:
+                    break
+                print(f"  large-geometry quota hit ({quota}/{QUOTA_RETRIES}); "
+                      f"waiting {QUOTA_WAIT}s", file=sys.stderr)
+                time.sleep(QUOTA_WAIT)
+                attempt -= 1  # waiting out the allowance is not the request's fault
+                continue
             wait = min(60, 5 * 2 ** (attempt - 1))
             print(f"  request attempt {attempt}/{attempts} failed ({error}); retrying in {wait}s",
                   file=sys.stderr)
@@ -157,14 +197,14 @@ def state_code(value):
     raise SystemExit(f"unknown state '{value}'")
 
 
-def query_url(where, bbox, offset):
+def query_url(where, bbox, offset, page_size=PAGE_SIZE):
     params = {
         "where": where,
         "outFields": OUT_FIELDS,
         "returnGeometry": "true",
         "outSR": "4326",
         "geometryPrecision": "5",
-        "resultRecordCount": str(PAGE_SIZE),
+        "resultRecordCount": str(page_size),
         "resultOffset": str(offset),
         "orderByFields": "OBJECTID",
         "f": "geojson",
@@ -184,7 +224,7 @@ def fetch_page(url, attempts=ATTEMPTS):
     return payload.get("features") or [], bool(payload.get("exceededTransferLimit"))
 
 
-def fetch(where, bbox, out_path, label):
+def fetch(where, bbox, out_path, label, page_size=PAGE_SIZE, pause=PAGE_PAUSE):
     """Page every record matching `where`/`bbox` into a filtered GeoJSON."""
     progress = out_path + ".progress"
     pages_path = out_path + ".pages.jsonl"
@@ -197,14 +237,26 @@ def fetch(where, bbox, out_path, label):
     total = 0
     kept = 0
     while True:
-        features, more = fetch_page(query_url(where, bbox, offset))
+        try:
+            features, more = fetch_page(query_url(where, bbox, offset, page_size))
+        except SystemExit:
+            # A page that will not come back whole — Alaska's refuges are tens of
+            # megabytes of coastline in one record — is asked for in smaller
+            # slices rather than failing the state. Nothing was written for it,
+            # so the same offset is simply requested again.
+            if page_size <= MIN_PAGE:
+                raise
+            page_size = max(MIN_PAGE, page_size // 2)
+            print(f"  {label}: page would not come back whole; shrinking page to "
+                  f"{page_size}", file=sys.stderr)
+            continue
         if not features and offset == 0:
             # A state with no polygons at all would silently drop almost every
             # venue in it, so an empty first page is retried before believed.
             for attempt in range(1, 4):
                 print(f"  {label}: empty first page, retry {attempt}/3", file=sys.stderr)
                 time.sleep(5 * attempt)
-                features, more = fetch_page(query_url(where, bbox, offset))
+                features, more = fetch_page(query_url(where, bbox, offset, page_size))
                 if features:
                     break
         if not features:
@@ -217,11 +269,11 @@ def fetch(where, bbox, out_path, label):
         with open(progress, "w", encoding="utf-8") as handle:
             handle.write(str(offset))
         print(f"  {label}: {total} polygons fetched", flush=True)
-        if not more and len(features) < PAGE_SIZE:
+        if not more and len(features) < page_size:
             break
         # Jittered, not fixed: three state jobs paging in lockstep is what the
         # service chokes on, and a fixed pause keeps them in lockstep forever.
-        time.sleep(PAGE_PAUSE + random.uniform(0, PAGE_JITTER))
+        time.sleep(pause + random.uniform(0, PAGE_JITTER))
 
     if total == 0:
         # Fail loudly instead of publishing a state with no public land: that
@@ -277,7 +329,9 @@ def main(argv):
         raise SystemExit(f"PAD-US has no polygons for {label}: it is missing from the source")
 
     os.makedirs(os.path.dirname(args.out) or ".", exist_ok=True)
-    features = list(fetch(where, bbox, args.out, label))
+    features = list(fetch(where, bbox, args.out, label,
+                          PAGE_SIZES.get(label, PAGE_SIZE),
+                          PAUSES.get(label, PAGE_PAUSE)))
     with open(args.out, "w", encoding="utf-8") as handle:
         json.dump({"type": "FeatureCollection", "features": features}, handle,
                   separators=(",", ":"))

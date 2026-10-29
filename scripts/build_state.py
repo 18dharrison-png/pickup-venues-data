@@ -175,6 +175,7 @@ class Collector:
         self.keep_private = keep_private
         self.parks = []       # public parks: courts inside are grouped under them
         self.restricted = []  # schools, clubs, private parks: courts inside are dropped
+        self.centres = []     # sports centres kept as areas, for the public builder
         self.pitches = []     # dict(id, name, lon, lat, sports, surface, lit, address, access)
         self.dropped_private = 0
 
@@ -188,6 +189,10 @@ class Collector:
             if rings:
                 self.parks.append(polygon(kind, osm_id, tags, rings))
             return
+        if leisure == "sports_centre" and rings:
+            # The centre's own ground, not just its centroid: the public builder
+            # keeps every court standing inside a verified rec centre.
+            self.centres.append(polygon(kind, osm_id, tags, rings))
         if leisure not in ("pitch", "sports_centre", "track", "fitness_station"):
             return
         sports = sports_of(tags)

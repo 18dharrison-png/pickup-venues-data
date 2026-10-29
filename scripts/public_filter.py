@@ -37,6 +37,15 @@ because a public school's fields are public land too and were being labelled
 "park". Inside a verified campus it is "school"; inside any other school site it
 is dropped unless an OSM park covers it, which is a joint-use park.
 
+Parks and rec centres are judged as a whole, once, instead of court by court. A
+park boundary and its PAD-US polygon never line up exactly, so testing each
+court on its own dropped real courts that sat a few metres outside the public
+land while standing inside a public park: Palms Park lost its basketball court
+and Sepulveda Basin 28 of 36 baseball fields that way. A park whose public
+coverage reaches PARK_COVERAGE now keeps every court inside it, and the
+court-by-court PAD-US test is left for loose courts that are inside no park,
+school or rec centre.
+
 PAD-US is public domain (USGS GAP); school places are public domain (NCES).
 Both are credited in README.md.
 """
@@ -47,10 +56,12 @@ import zipfile
 
 try:  # shapely 2.x
     from shapely.geometry import MultiPolygon, Point, Polygon, shape
+    from shapely.ops import unary_union
     from shapely.strtree import STRtree
 except ImportError:  # pragma: no cover - reported by the caller
     Point = Polygon = MultiPolygon = shape = None
     STRtree = None
+    unary_union = None
 
 # PAD-US: public access codes are OA (open) and RA (restricted); XA (closed) and
 # UK (unknown) are not public places. Owner/manager types are prefixed with the
@@ -288,6 +299,42 @@ def inside(index, point):
     return found[0] if found else None
 
 
+# A park is judged as a whole: public land covering at least this share of the
+# area makes every court inside it public ground. Half is deliberately generous
+# to boundary disagreement while still refusing a park that only clips a public
+# parcel at one corner.
+PARK_COVERAGE = 0.5
+
+
+def public_coverage(geom, index):
+    """Share of `geom` (0-1) covered by public land in `index`.
+
+    The intersecting units are unioned before the intersection so overlapping
+    PAD-US designations (fee, easement, proclamation) can't count the same acre
+    twice and push a sliver over the threshold.
+    """
+    if geom is None or index is None or unary_union is None:
+        return 0.0
+    total = geom.area
+    if not total:
+        return 0.0
+    tree, items = index
+    parts = [items[position]["geom"] for position in tree.query(geom)]
+    parts = [part for part in parts if part.intersects(geom)]
+    if not parts:
+        return 0.0
+    covered = geom.intersection(unary_union(parts)).area
+    return min(1.0, covered / total)
+
+
+def is_public_rec_name(name):
+    """A rec centre counts only when its name says it is one, and not a club."""
+    lowered = normalise(name)
+    if not lowered or any(word in lowered for word in PRIVATE_NAME_WORDS):
+        return False
+    return any(word in lowered for word in REC_NAME_WORDS)
+
+
 def resolve_campuses(areas, schools, tolerance_m=CAMPUS_TOLERANCE_M):
     """OSM school areas that provably hold a public 9-12 school.
 
@@ -342,6 +389,11 @@ def classify(point, context):
     otherwise it is dropped — unless it is also inside an OSM park, which is a
     joint-use park. PAD-US is only consulted after that, because a public
     school's fields are usually public land too and were being labelled "park".
+
+    A park or rec centre that was verified as a whole comes next: its courts
+    inherit that verdict, which is why the individual PAD-US test is last. Park
+    boundaries and PAD-US polygons never line up exactly, and testing each court
+    on its own quietly dropped real courts from public parks.
     """
     name = normalise(context.get("name"))
     sports = set(context.get("sports") or ())
@@ -365,6 +417,13 @@ def classify(point, context):
         if inside(context.get("osm_parks"), point) is not None:
             return "park", "inside a park on a school site (joint use)", None
         return None, "inside a school site that is not a verified public high school", None
+
+    # The area has already been judged as a whole, so every court standing on it
+    # is public ground — including the ones a few metres outside the PAD-US
+    # polygon. Only a court tagged closed is still refused.
+    area = inside(context.get("public_areas"), point)
+    if area is not None and access not in CLOSED_ACCESS:
+        return area["verdict"], f"inside {area['name'] or 'a verified public area'}", None
 
     park = inside(context.get("padus"), point)
     if park is not None:

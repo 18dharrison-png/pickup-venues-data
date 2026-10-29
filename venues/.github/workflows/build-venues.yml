@@ -1,0 +1,236 @@
+name: Build venue map
+
+on:
+  workflow_dispatch:
+    inputs:
+      states:
+        description: 'States to build: "california", "all", or a list like "texas, new-york"'
+        required: true
+        default: california
+  schedule:
+    # Monthly refresh of every state (3rd of the month, 09:17 UTC).
+    - cron: "17 9 3 * *"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: build-venues
+  cancel-in-progress: false
+
+env:
+  # NCES, public domain. EDGE carries the coordinates, CCD carries the grade
+  # span (GSLO/GSHI) and open/closed status; the builder joins them on NCESSCH.
+  NCES_EDGE_URL: https://nces.ed.gov/programs/edge/data/EDGE_GEOCODE_PUBLICSCH_2425.zip
+  NCES_CCD_URL: https://nces.ed.gov/ccd/Data/zip/ccd_sch_029_2324_w_1a_073124.zip
+  # Bump when either NCES year changes, so the cache invalidates itself.
+  NCES_CACHE_KEY: nces-edge-2425-ccd-2324-v1
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      states: ${{ steps.pick.outputs.states }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: pick
+        env:
+          REQUESTED: ${{ github.event.inputs.states || 'all' }}
+        run: python3 scripts/pick_states.py "$REQUESTED" >> "$GITHUB_OUTPUT"
+
+  state:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      # Three at a time: each job downloads a state extract and pages PAD-US,
+      # and being gentle on both services matters more than finishing early.
+      max-parallel: 3
+      matrix:
+        state: ${{ fromJson(needs.plan.outputs.states) }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq osmium-tool
+          # shapely only: PAD-US comes from the ArcGIS service as GeoJSON, so no
+          # GDAL/geopandas is needed, which keeps the job fast and free.
+          pip install --quiet "osmium>=4,<5" "shapely>=2,<3"
+
+      - name: Cache NCES school data
+        uses: actions/cache@v4
+        with:
+          path: nces
+          key: ${{ env.NCES_CACHE_KEY }}
+
+      - name: Prepare NCES school data
+        run: |
+          mkdir -p nces
+          if [ ! -s nces/edge_public.csv ] || [ ! -s nces/ccd_sch.zip ]; then
+            curl -fsSL --retry 5 --retry-delay 20 -o nces/edge.zip "$NCES_EDGE_URL"
+            curl -fsSL --retry 5 --retry-delay 20 -o nces/ccd_sch.zip "$NCES_CCD_URL"
+            # Validates the EDGE column layout and the CCD join rate, and fails
+            # loudly if they don't line up.
+            python scripts/prepare_nces.py --edge nces/edge.zip --ccd nces/ccd_sch.zip --out nces
+            rm -f nces/edge.zip
+          fi
+
+      - name: Download ${{ matrix.state }} from Geofabrik
+        run: |
+          curl -fsSL --retry 5 --retry-delay 30 -o in.osm.pbf \
+            "https://download.geofabrik.de/north-america/us/${{ matrix.state }}-latest.osm.pbf"
+          ls -lh in.osm.pbf
+
+      - name: Keep only parks, courts, fields and schools
+        run: |
+          osmium tags-filter in.osm.pbf \
+            nwr/leisure=pitch,sports_centre,track,fitness_station,park,golf_course \
+               nwr/amenity=school,college,university,kindergarten,prison,place_of_worship \
+                  nwr/club \
+            -o filtered.osm.pbf
+          rm in.osm.pbf
+          ls -lh filtered.osm.pbf
+
+      - name: Cache PAD-US public land
+        uses: actions/cache@v4
+        with:
+          path: padus
+          # PAD-US 4.1 is a fixed release, so the extract for a state can be
+          # reused across runs. `padus-nat` marks the nationwide layer: the
+          # earlier `padus-rest-v1` caches came from a California-only endpoint.
+          key: padus-nat-v1-${{ matrix.state }}
+
+      - name: Fetch PAD-US public land
+        # Pages the official PAD-US FeatureServer by state, retries with backoff,
+        # and resumes from the last page if a run dies. Skips when cached.
+        run: >
+          python scripts/fetch_padus.py
+          --state "${{ matrix.state }}"
+          --out "padus/${{ matrix.state }}.geojson"
+
+      - name: Build venues
+        run: |
+          mkdir -p out
+          SAMPLE=""
+          if [ "${{ matrix.state }}" = "california" ]; then
+            SAMPLE="--sample-bbox=-118.65,33.85,-118.15,34.25"
+          fi
+          set +e
+          # tee so a crash is readable later: the Actions log needs a GitHub
+          # sign-in, but out/ is published with the data.
+          python scripts/build_public.py filtered.osm.pbf "out/${{ matrix.state }}.ndjson.gz" \
+            --padus-geojson "padus/${{ matrix.state }}.geojson" \
+            --schools nces/ccd_sch.zip \
+            --school-locations nces/edge_public.csv \
+            --baseline \
+            --report "out/${{ matrix.state }}.report.json" \
+            --dropped "out/${{ matrix.state }}.dropped.jsonl" \
+            --sample "out/${{ matrix.state }}.samples.txt" \
+            $SAMPLE 2>&1 | tee "out/${{ matrix.state }}.build.log"
+          exit "${PIPESTATUS[0]}"
+
+      - name: Check the Los Angeles cases
+        # Named real-world cases: the specific court that must be gone, the parks
+        # that must stay, the four public high schools, and Loyola (private).
+        if: matrix.state == 'california'
+        run: |
+          # tee so the verdicts survive as a file: the job log needs a GitHub
+          # sign-in, but out/ is uploaded as an artifact and the publish job
+          # copies it to the "data" branch, which is readable from anywhere.
+          set +e
+          python scripts/spot_checks.py \
+            --venues "out/california.ndjson.gz" \
+            --dropped "out/california.dropped.jsonl" \
+            --report "out/california.report.json" 2>&1 | tee "out/california.checks.txt"
+          exit "${PIPESTATUS[0]}"
+
+      - name: Build report
+        if: always()
+        run: |
+          {
+            echo "### ${{ matrix.state }}"
+            echo '```json'
+            cat "out/${{ matrix.state }}.report.json" 2>/dev/null || echo "no report"
+            echo '```'
+            cat "out/${{ matrix.state }}.samples.txt" 2>/dev/null || true
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: state-${{ matrix.state }}
+          path: out/
+          if-no-files-found: warn
+          retention-days: 3
+
+  publish:
+    needs: [plan, state]
+    # Publish whatever states succeeded, even if a few failed.
+    if: ${{ always() && needs.plan.result == 'success' }}
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: state-*
+          merge-multiple: true
+          path: incoming/
+
+      - name: Merge with states built in earlier runs
+        run: |
+          mkdir -p store/states
+          if git ls-remote --exit-code --heads origin data >/dev/null; then
+            git fetch --depth 1 origin data
+            git archive FETCH_HEAD states | tar -x -C store
+          fi
+          cp incoming/*.ndjson.gz store/states/ 2>/dev/null || true
+          # The build report, every dropped court, the build log and the
+          # spot-check verdicts travel with the data, so a failure can be read
+          # without the (sign-in only) Actions log. Copy one pattern at a time:
+          # a single unmatched glob aborts the whole cp and publishes nothing.
+          mkdir -p store/reports
+          for pattern in report.json dropped.jsonl checks.txt build.log; do
+            cp incoming/*.$pattern store/reports/ 2>/dev/null || true
+          done
+          ls -lh store/states store/reports
+
+      - name: Save state data to the "data" branch
+        run: |
+          cd store
+          git init -q -b data
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add states reports
+          git commit -q -m "Venue data built $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push -q --force "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" data
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build map files
+        run: python scripts/build_site.py store/states site
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - id: deploy
+        uses: actions/deploy-pages@v4

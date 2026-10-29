@@ -56,6 +56,11 @@ share of a fixed grid of points inside it that fall on public land: one bulk
 tree query plus cheap point-in-polygon tests. A polygon that cannot be repaired
 is dropped and counted in the report instead of crashing the build.
 
+A park that PAD-US does not cover is not lost either: a name that says public
+recreation area, or an operator/owner tag naming a city, county, park district
+or recreation department, is proof enough to judge the park as a whole. Clubs
+and private owners are refused in both cases.
+
 PAD-US is public domain (USGS GAP); school places are public domain (NCES).
 Both are credited in README.md.
 """
@@ -102,6 +107,29 @@ PRIVATE_NAME_WORDS = (
     "residences", "condominium", "hotel", "resort", "hoa", "homeowners",
     "rv park", "mobile home",
 )
+
+# A park whose operator/owner tags name a public agency is public ground even
+# where PAD-US has no polygon for it. These are the words those tags use, and
+# the tokens that mark a private operation instead.
+PUBLIC_OWNERSHIP_VALUES = {"municipal", "county", "state", "public", "government",
+                           "federal", "city", "town", "township", "parish"}
+PUBLIC_AGENCY_PHRASES = (
+    "city of", "city parks", "city park", "parks and recreation",
+    "park and recreation", "parks & recreation", "parks & rec",
+    "recreation and parks", "recreation and park", "recreation department",
+    "parks department", "park district", "recreation district",
+    "community services district", "community service district",
+    "department of parks", "county of", "county parks", "county park",
+    "town of", "village of", "municipality", "state parks",
+    "department of natural resources", "school district",
+)
+# Whole words that name a public agency by themselves: "Los Angeles County".
+# "city" is deliberately not one of them — a bare "city" is also how private
+# developments name themselves ("Sun City"), while a city that runs a park
+# writes "City of ...", which the phrase list above already covers.
+PUBLIC_AGENCY_TOKENS = {"county", "parish", "borough", "township", "municipality"}
+PRIVATE_OWNER_TOKENS = {"private", "club", "hoa", "homeowners", "llc", "inc",
+                        "ltd", "corp", "company"}
 
 HIGH_SCHOOL_GRADES = {"09", "10", "11", "12"}
 
@@ -506,6 +534,43 @@ def is_public_rec_name(name):
     if not lowered or any(word in lowered for word in PRIVATE_NAME_WORDS):
         return False
     return any(word in lowered for word in REC_NAME_WORDS)
+
+
+def is_public_agency_park(item):
+    """An OSM park whose operator/owner tags name a public agency.
+
+    PAD-US never covers all public ground: a city park can sit on land PAD-US
+    files under another owner, or not at all, and then the park-level rule never
+    verifies it and its courts are judged one by one. OSM usually records who
+    runs the place, so an operator or owner such as "City of Westlake Village",
+    "Los Angeles County" or a recreation and park district, or an
+    `ownership=municipal/county/state` tag, is proof that the park is public
+    ground.
+
+    Every one of the name/operator/owner/ownership values is checked for a club
+    or private operation first, and agency words are matched as whole words, so
+    a private park can't borrow a city's name and "Lincoln" is not read as "inc".
+    """
+    values = [normalise(item.get(key)) for key in
+              ("name", "operator", "owner", "ownership")]
+    for value in values:
+        if not value:
+            continue
+        if any(word in value for word in PRIVATE_NAME_WORDS):
+            return False
+        if set(re.split(r"[^a-z0-9]+", value)) & PRIVATE_OWNER_TOKENS:
+            return False
+    if normalise(item.get("ownership")) in PUBLIC_OWNERSHIP_VALUES:
+        return True
+    for key in ("operator", "owner"):
+        value = normalise(item.get(key))
+        if not value:
+            continue
+        if any(phrase in value for phrase in PUBLIC_AGENCY_PHRASES):
+            return True
+        if set(re.split(r"[^a-z0-9]+", value)) & PUBLIC_AGENCY_TOKENS:
+            return True
+    return False
 
 
 def resolve_campuses(areas, schools, tolerance_m=CAMPUS_TOLERANCE_M):

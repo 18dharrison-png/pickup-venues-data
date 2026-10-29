@@ -58,7 +58,10 @@ def items_of(areas):
         geom = public_filter.polygons_of_rings(area["rings"])
         if geom is not None:
             out.append({"id": area["id"], "name": area["name"] or "", "geom": geom,
-                        "centroid": area["centroid"]})
+                        "centroid": area["centroid"],
+                        "operator": area.get("operator") or "",
+                        "owner": area.get("owner") or "",
+                        "ownership": area.get("ownership") or ""})
     return out
 
 
@@ -98,6 +101,7 @@ def main(argv=None):
     # 36 baseball fields that way.
     public_areas = []
     unmeasured_parks = 0
+    agency_parks = 0
     for item in park_items:
         try:
             coverage = public_filter.public_coverage(item["geom"], padus)
@@ -107,6 +111,17 @@ def main(argv=None):
             continue
         if coverage >= public_filter.PARK_COVERAGE:
             public_areas.append({**item, "verdict": "park"})
+        elif public_filter.is_public_agency_park(item):
+            # PAD-US covers under half of plenty of real city parks, so the
+            # coverage test alone leaves their courts to be judged one by one and
+            # drops the ones outside the public parcels. OSM says who runs a park
+            # far more often than PAD-US draws it: an operator or owner of "City
+            # of ...", a park district or a community services district is proof
+            # the park is public ground, and it is then judged as a whole like
+            # any other verified park. Clubs and private owners are refused
+            # inside is_public_agency_park.
+            public_areas.append({**item, "verdict": "park"})
+            agency_parks += 1
         elif public_filter.is_public_rec_name(item["name"]):
             # PAD-US has no polygon for all public ground: Sepulveda Basin's park
             # polygon is only 36% covered by it, split between the city's golf
@@ -122,6 +137,8 @@ def main(argv=None):
             public_areas.append({**item, "verdict": "known"})
     public_area_index = public_filter.build_index(public_areas)
     park_index = public_filter.build_index(park_items)
+    print(f"  public areas: {len(public_areas)} "
+          f"({agency_parks} verified by operator/owner, {unmeasured_parks} unmeasured)")
 
     # School areas that are NOT proven public (private schools, elementary and
     # middle schools, anything NCES has no 9-12 record for). Courts inside them
@@ -277,6 +294,8 @@ def main(argv=None):
                 "padus_repaired": padus_stats.get("repaired", 0),
                 "padus_unrepaired": padus_stats.get("unrepaired", 0),
                 "parks_unmeasured": unmeasured_parks,
+                "parks_verified_by_agency": agency_parks,
+                "public_areas": len(public_areas),
                 "park_courts": park_courts,
                 "schools_9_12": len(schools),
                 "dropped": len(dropped),

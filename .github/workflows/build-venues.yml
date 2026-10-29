@@ -105,16 +105,30 @@ jobs:
         with:
           path: padus
           # PAD-US 4.1 is a fixed release, so the extract for a state can be
-          # reused across runs. Change the version here when PAD-US updates.
-          key: padus-rest-v1-${{ matrix.state }}
+          # reused across runs. `padus-nat` marks the nationwide layer: the
+          # earlier `padus-rest-v1` caches came from a California-only endpoint.
+          key: padus-nat-v1-${{ matrix.state }}
+
+      - name: Space out the PAD-US requests
+        # Three state jobs start at the same second and the ArcGIS service
+        # throttles that burst (instant 504s killed 50 of 51 states once), so
+        # each job waits a random 0-25 s before it starts paging. The fetcher
+        # also retries every request and jitters its page pause.
+        run: sleep $((RANDOM % 26))
 
       - name: Fetch PAD-US public land
         # Pages the official PAD-US FeatureServer by state, retries with backoff,
         # and resumes from the last page if a run dies. Skips when cached.
-        run: >
-          python scripts/fetch_padus.py
-          --state "${{ matrix.state }}"
-          --out "padus/${{ matrix.state }}.geojson"
+        # tee for the same reason the build does: the Actions log needs a GitHub
+        # sign-in, but out/ is published with the data, so a failure that never
+        # reaches the build step is still readable afterwards.
+        run: |
+          mkdir -p out
+          set +e
+          python scripts/fetch_padus.py \
+            --state "${{ matrix.state }}" \
+            --out "padus/${{ matrix.state }}.geojson" 2>&1 | tee "out/${{ matrix.state }}.fetch.log"
+          exit "${PIPESTATUS[0]}"
 
       - name: Build venues
         run: |
@@ -203,7 +217,7 @@ jobs:
           # without the (sign-in only) Actions log. Copy one pattern at a time:
           # a single unmatched glob aborts the whole cp and publishes nothing.
           mkdir -p store/reports
-          for pattern in report.json dropped.jsonl checks.txt build.log; do
+          for pattern in report.json dropped.jsonl checks.txt build.log fetch.log; do
             cp incoming/*.$pattern store/reports/ 2>/dev/null || true
           done
           ls -lh store/states store/reports

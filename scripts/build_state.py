@@ -167,6 +167,11 @@ def polygon(kind, osm_id, tags, rings):
         # a club or a golf course. Not written to the published files.
         "amenity": tags.get("amenity"),
         "leisure": tags.get("leisure"),
+        # Who runs the place, when OSM says. The public builder uses these to
+        # verify a park PAD-US has no polygon for.
+        "operator": tags.get("operator"),
+        "owner": tags.get("owner"),
+        "ownership": tags.get("ownership"),
     }
 
 

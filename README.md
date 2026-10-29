@@ -43,6 +43,16 @@ is `school`; inside any other school site it is dropped, unless an OSM park
 covers it as well, which is a joint-use park. Everything else falls through to
 the PAD-US and `known` rules.
 
+A park is judged as a whole, once. PAD-US public land under at least half of the
+park's ground makes every court inside it public ground, so a court that sits a
+few metres outside the PAD-US polygon is still kept: Palms Park, whose
+basketball court and baseball field sit on a boundary that never lines up with
+PAD-US, keeps both. Where PAD-US has no polygon for the whole area — Sepulveda
+Basin Recreation Area is only about a third covered by it, split between the
+city's golf and sports units — a park whose own name says it is a public
+recreation area is public ground by name, the same proof a named recreation
+centre gets. Clubs, HOAs and other private names never qualify.
+
 Existing rules still apply on top of this:
 
 * gym and fitness-station style sports are hidden unless they are at a real

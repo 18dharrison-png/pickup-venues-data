@@ -107,6 +107,16 @@ def main(argv=None):
             continue
         if coverage >= public_filter.PARK_COVERAGE:
             public_areas.append({**item, "verdict": "park"})
+        elif public_filter.is_public_rec_name(item["name"]):
+            # PAD-US has no polygon for all public ground: Sepulveda Basin's park
+            # polygon is only 36% covered by it, split between the city's golf
+            # and sports units, while every one of its 36 baseball fields is
+            # inside the park and outside those units. A park whose own name
+            # calls it a public recreation area is public ground by name, the
+            # same proof a named recreation centre gets, and is judged as a
+            # whole like any other verified park. A club or other private name
+            # is refused by is_public_rec_name.
+            public_areas.append({**item, "verdict": "park"})
     for item in items_of(collector.centres):
         if public_filter.is_public_rec_name(item["name"]):
             public_areas.append({**item, "verdict": "known"})

@@ -89,13 +89,15 @@ HIGH_SCHOOL_GRADES = {"09", "10", "11", "12"}
 CAMPUS_TOLERANCE_M = 30
 
 # Words that identify a school. Generic ones can't prove two records are the
-# same place ("... High School" and "... Elementary" share only generic words).
+# same place ("... High School" and "... Elementary" share only generic words),
+# and neither can a school *type* — "Thomas Russell Middle School" and "Milpitas
+# Middle College High" share only "middle".
 GENERIC_NAME_WORDS = {
     "school", "schools", "high", "senior", "junior", "charter", "academy",
     "college", "campus", "center", "centre", "public", "prep", "preparatory",
     "international", "magnet", "learning", "education", "educational",
     "community", "technical", "technology", "leadership", "sciences", "arts",
-    "the", "and", "for", "of", "at",
+    "middle", "elementary", "primary", "grades", "the", "and", "for", "of", "at",
 }
 # An OSM school named for a primary school is only believed when the NCES record
 # it matched is itself a secondary school (a "Junior-Senior High" is fine).
@@ -151,10 +153,23 @@ def names_agree(osm_name, nces_name):
 
 
 def is_primary_only(osm_name, nces_name):
-    """An OSM primary/middle school whose NCES match is not a secondary school."""
-    if not any(word in normalise(osm_name) for word in PRIMARY_NAME_WORDS):
+    """An OSM primary/middle school that is not the same school as the NCES record.
+
+    A campus called "... Elementary" or "... Middle School" is not a public high
+    school just because a high school's point falls inside it — Edgewood Middle
+    School contains Edgewood High, and Thomas Russell Middle School contains
+    Milpitas Middle College High. It only counts when the record is the *combined*
+    school, carrying a primary and a secondary word ("Hercules Middle/High"),
+    which is the one case where both names describe the same institution.
+    """
+    osm = normalise(osm_name)
+    if not any(word in osm for word in PRIMARY_NAME_WORDS):
         return False
-    return not any(word in normalise(nces_name) for word in SECONDARY_NAME_WORDS)
+    if any(word in osm for word in SECONDARY_NAME_WORDS):
+        return False  # the name already says secondary or combined
+    nces = normalise(nces_name)
+    return not (any(word in nces for word in PRIMARY_NAME_WORDS)
+                and any(word in nces for word in SECONDARY_NAME_WORDS))
 
 
 def is_public_padus(props):
@@ -304,7 +319,7 @@ def resolve_campuses(areas, schools, tolerance_m=CAMPUS_TOLERANCE_M):
             if not names_agree(area.get("name"), nces_name):
                 continue  # "Wildwood School" vs a high school over the fence
             if is_primary_only(area.get("name"), nces_name):
-                continue  # "... Elementary"/"... Middle" unless the record is secondary
+                continue  # "... Elementary"/"... Middle" unless the record is combined
             proof = schools[position]
             break
         if proof is None:

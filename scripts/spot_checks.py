@@ -133,11 +133,25 @@ def check_named(case, venues):
     return ok, detail
 
 
+PRIMARY_WORDS = ("elementary", "middle", "primary", "grade school")
+SECONDARY_WORDS = ("high", "secondary", "senior", "junior", "7-12", "9-12")
+
+
 def check_school_names(venues):
-    """No venue labelled a school may be named as an elementary/middle school."""
-    words = ("elementary", "middle", "primary", "grade school")
-    offenders = [v["n"] for v in venues
-                 if v["v"] == "school" and any(word in (v.get("n") or "").lower() for word in words)]
+    """No "school" may be named only as an elementary/middle school.
+
+    A combined name is legitimate — Hercules Middle/High, Bellflower Middle &
+    High, Pescadero Middle/High all serve grades 9-12 — so a name is only wrong
+    when it carries a primary word and no secondary one.
+    """
+    offenders = []
+    for venue in venues:
+        if venue["v"] != "school":
+            continue
+        name = (venue.get("n") or "").lower()
+        if (any(word in name for word in PRIMARY_WORDS)
+                and not any(word in name for word in SECONDARY_WORDS)):
+            offenders.append(venue["n"])
     return not offenders, offenders
 
 

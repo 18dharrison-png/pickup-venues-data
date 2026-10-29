@@ -123,6 +123,9 @@ jobs:
           if [ "${{ matrix.state }}" = "california" ]; then
             SAMPLE="--sample-bbox=-118.65,33.85,-118.15,34.25"
           fi
+          set +e
+          # tee so a crash is readable later: the Actions log needs a GitHub
+          # sign-in, but out/ is published with the data.
           python scripts/build_public.py filtered.osm.pbf "out/${{ matrix.state }}.ndjson.gz" \
             --padus-geojson "padus/${{ matrix.state }}.geojson" \
             --schools nces/ccd_sch.zip \
@@ -131,7 +134,8 @@ jobs:
             --report "out/${{ matrix.state }}.report.json" \
             --dropped "out/${{ matrix.state }}.dropped.jsonl" \
             --sample "out/${{ matrix.state }}.samples.txt" \
-            $SAMPLE
+            $SAMPLE 2>&1 | tee "out/${{ matrix.state }}.build.log"
+          exit "${PIPESTATUS[0]}"
 
       - name: Check the Los Angeles cases
         # Named real-world cases: the specific court that must be gone, the parks
@@ -194,12 +198,14 @@ jobs:
             git archive FETCH_HEAD states | tar -x -C store
           fi
           cp incoming/*.ndjson.gz store/states/ 2>/dev/null || true
-          # The build report, every dropped court and the spot-check verdicts
-          # travel with the data, so a failed check can be read without access
-          # to the (sign-in only) Actions log.
+          # The build report, every dropped court, the build log and the
+          # spot-check verdicts travel with the data, so a failure can be read
+          # without the (sign-in only) Actions log. Copy one pattern at a time:
+          # a single unmatched glob aborts the whole cp and publishes nothing.
           mkdir -p store/reports
-          cp incoming/*.report.json incoming/*.dropped.jsonl incoming/*.checks.txt \
-            store/reports/ 2>/dev/null || true
+          for pattern in report.json dropped.jsonl checks.txt build.log; do
+            cp incoming/*.$pattern store/reports/ 2>/dev/null || true
+          done
           ls -lh store/states store/reports
 
       - name: Save state data to the "data" branch

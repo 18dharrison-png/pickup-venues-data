@@ -138,10 +138,15 @@ jobs:
         # that must stay, the four public high schools, and Loyola (private).
         if: matrix.state == 'california'
         run: |
+          # tee so the verdicts survive as a file: the job log needs a GitHub
+          # sign-in, but out/ is uploaded as an artifact and the publish job
+          # copies it to the "data" branch, which is readable from anywhere.
+          set +e
           python scripts/spot_checks.py \
             --venues "out/california.ndjson.gz" \
             --dropped "out/california.dropped.jsonl" \
-            --report "out/california.report.json"
+            --report "out/california.report.json" 2>&1 | tee "out/california.checks.txt"
+          exit "${PIPESTATUS[0]}"
 
       - name: Build report
         if: always()
@@ -189,7 +194,13 @@ jobs:
             git archive FETCH_HEAD states | tar -x -C store
           fi
           cp incoming/*.ndjson.gz store/states/ 2>/dev/null || true
-          ls -lh store/states
+          # The build report, every dropped court and the spot-check verdicts
+          # travel with the data, so a failed check can be read without access
+          # to the (sign-in only) Actions log.
+          mkdir -p store/reports
+          cp incoming/*.report.json incoming/*.dropped.jsonl incoming/*.checks.txt \
+            store/reports/ 2>/dev/null || true
+          ls -lh store/states store/reports
 
       - name: Save state data to the "data" branch
         run: |
@@ -197,7 +208,7 @@ jobs:
           git init -q -b data
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add states
+          git add states reports
           git commit -q -m "Venue data built $(date -u +%Y-%m-%dT%H:%MZ)"
           git push -q --force "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" data
 

@@ -15,7 +15,7 @@ Everything else goes: apartment and hotel courts, HOAs, clubs, private schools,
 unnamed courts nobody has verified. Each venue carries the decision in its "v"
 field so the app can label it.
 
-Getting the school rule right took two fixes, both worth remembering:
+Getting the school rule right took three fixes, all worth remembering:
 
   * the school point and the court are different objects, so the court can be
     200-400 m from the school's single NCES point on a big campus. Matching the
@@ -26,12 +26,23 @@ Getting the school rule right took two fixes, both worth remembering:
     containment test against point geometries silently never matched. Items are
     matched with covers(), which is true for a polygon covering a point and for
     two equal points.
+  * a loose tolerance reaches across a fence. At 165 m, Wildwood School (private,
+    Mar Vista) borrowed a neighbouring high school's NCES record, and Elementary
+    and Middle schools inherited high school records the same way. A campus now
+    needs the NCES point inside *that* polygon (30 m for boundary disagreement,
+    never a neighbouring campus) AND the two names to identify the same school.
+
+A court inside an OSM school site is decided by the school rule before PAD-US,
+because a public school's fields are public land too and were being labelled
+"park". Inside a verified campus it is "school"; inside any other school site it
+is dropped unless an OSM park covers it, which is a joint-use park.
 
 PAD-US is public domain (USGS GAP); school places are public domain (NCES).
 Both are credited in README.md.
 """
 import csv
 import io
+import re
 import zipfile
 
 try:  # shapely 2.x
@@ -72,9 +83,27 @@ PRIVATE_NAME_WORDS = (
 HIGH_SCHOOL_GRADES = {"09", "10", "11", "12"}
 
 # How far a public high school's point may sit outside its OSM campus polygon
-# and still prove the campus is a public school. NCES locates the building,
-# OSM draws the boundary, and they disagree by a few tens of metres.
-CAMPUS_TOLERANCE_M = 165
+# and still prove the campus is a public school. NCES locates the building and
+# OSM draws the boundary, which disagree by a few metres — 165 m was wide enough
+# to reach a *different* school and label a private campus public.
+CAMPUS_TOLERANCE_M = 30
+
+# Words that identify a school. Generic ones can't prove two records are the
+# same place ("... High School" and "... Elementary" share only generic words).
+GENERIC_NAME_WORDS = {
+    "school", "schools", "high", "senior", "junior", "charter", "academy",
+    "college", "campus", "center", "centre", "public", "prep", "preparatory",
+    "international", "magnet", "learning", "education", "educational",
+    "community", "technical", "technology", "leadership", "sciences", "arts",
+    "the", "and", "for", "of", "at",
+}
+# An OSM school named for a primary school is only believed when the NCES record
+# it matched is itself a secondary school (a "Junior-Senior High" is fine).
+PRIMARY_NAME_WORDS = ("elementary", "middle", "primary", "grade school", "k-8", "k8")
+SECONDARY_NAME_WORDS = (
+    "high", "secondary", "senior", "junior-senior", "junior senior",
+    "jr/sr", "jr-sr", "jr sr", "7-12", "9-12",
+)
 
 
 def shape_of(geojson):
@@ -102,6 +131,30 @@ def polygons_of_rings(rings):
 
 def normalise(value):
     return " ".join(str(value or "").strip().lower().split())
+
+
+def name_tokens(value):
+    words = re.split(r"[^a-z0-9]+", normalise(value))
+    return {word for word in words if len(word) >= 4 and word not in GENERIC_NAME_WORDS}
+
+
+def names_agree(osm_name, nces_name):
+    """True when both names carry a word that identifies the same school.
+
+    An OSM area with no name can't be compared, so strict containment decides it.
+    """
+    if not normalise(osm_name):
+        return True
+    osm = name_tokens(osm_name)
+    nces = name_tokens(nces_name)
+    return bool(osm and nces and osm & nces)
+
+
+def is_primary_only(osm_name, nces_name):
+    """An OSM primary/middle school whose NCES match is not a secondary school."""
+    if not any(word in normalise(osm_name) for word in PRIMARY_NAME_WORDS):
+        return False
+    return not any(word in normalise(nces_name) for word in SECONDARY_NAME_WORDS)
 
 
 def is_public_padus(props):
@@ -203,18 +256,21 @@ def build_index(items):
     return (STRtree([item["geom"] for item in items]), items)
 
 
-def inside(index, point):
-    """The first indexed item whose geometry covers this point, or None."""
+def inside_all(index, point):
+    """Every indexed item whose geometry covers this point, in index order."""
     if not index:
-        return None
+        return []
     tree, items = index
     probe = Point(point)
-    for position in tree.query(probe):
-        item = items[position]
-        # covers(), not contains(): a point never contains an equal point.
-        if item["geom"].covers(probe):
-            return item
-    return None
+    return [items[position] for position in tree.query(probe)
+            # covers(), not contains(): a point never contains an equal point.
+            if items[position]["geom"].covers(probe)]
+
+
+def inside(index, point):
+    """The first indexed item whose geometry covers this point, or None."""
+    found = inside_all(index, point)
+    return found[0] if found else None
 
 
 def resolve_campuses(areas, schools, tolerance_m=CAMPUS_TOLERANCE_M):
@@ -224,6 +280,10 @@ def resolve_campuses(areas, schools, tolerance_m=CAMPUS_TOLERANCE_M):
     `schools` are NCES points [(lon, lat, name)]. Only the areas that pass come
     back, so a private school (which NCES does not list at all) can never be
     labelled public.
+
+    The NCES point must be inside *this* polygon (within `tolerance_m`) and the
+    names must agree, so a private campus beside a public high school, and an
+    elementary school beside one, can't borrow the high school's record.
     """
     if not areas or not schools:
         return []
@@ -236,13 +296,17 @@ def resolve_campuses(areas, schools, tolerance_m=CAMPUS_TOLERANCE_M):
         if geom is None:
             continue
         proof = None
-        # A generous envelope keeps the candidate set small but never excludes a
-        # school building just outside a campus edge.
-        for position in tree.query(geom.buffer(tolerance)):
+        for position in tree.query(geom):
             point = points[position]
-            if geom.covers(point) or geom.distance(point) <= tolerance:
-                proof = schools[position]
-                break
+            if not (geom.covers(point) or geom.distance(point) <= tolerance):
+                continue  # a different campus: never match across polygons
+            nces_name = schools[position][2]
+            if not names_agree(area.get("name"), nces_name):
+                continue  # "Wildwood School" vs a high school over the fence
+            if is_primary_only(area.get("name"), nces_name):
+                continue  # "... Elementary"/"... Middle" unless the record is secondary
+            proof = schools[position]
+            break
         if proof is None:
             continue
         campuses.append({**area, "school": proof[2]})
@@ -252,10 +316,17 @@ def resolve_campuses(areas, schools, tolerance_m=CAMPUS_TOLERANCE_M):
 def classify(point, context):
     """Return (verdict, reason, campus) for one court/field location.
 
-    `context` carries the prepared indexes (padus, campuses) plus the OSM facts
-    about the venue itself (name, sports, access, leisure). `campus` is the
-    public high school the court belongs to, so the builder can group a school's
-    courts into one venue named after the school.
+    `context` carries the prepared indexes (padus, school_areas, osm_parks,
+    campuses_by_id) plus the OSM facts about the venue itself (name, sports,
+    access, leisure). `campus` is the public high school the court belongs to, so
+    the builder can group a school's courts into one venue named after the
+    school.
+
+    Order matters. A court inside an OSM school site is decided by the school
+    rule first: on a verified public grades 9-12 campus it is "school",
+    otherwise it is dropped — unless it is also inside an OSM park, which is a
+    joint-use park. PAD-US is only consulted after that, because a public
+    school's fields are usually public land too and were being labelled "park".
     """
     name = normalise(context.get("name"))
     sports = set(context.get("sports") or ())
@@ -265,13 +336,24 @@ def classify(point, context):
     if name and any(word in name for word in PRIVATE_NAME_WORDS):
         return None, "named private or commercial", None
 
+    school_areas = inside_all(context.get("school_areas"), point)
+    if school_areas:
+        campuses = context.get("campuses_by_id") or {}
+        # Overlapping areas are common (a campus inside a district parcel), so a
+        # verified campus anywhere in the stack wins.
+        for area in school_areas:
+            campus = campuses.get(area["id"])
+            if campus is not None:
+                return ("school",
+                        f"inside {campus['name'] or 'a public high school'} (NCES grades 9-12)",
+                        campus)
+        if inside(context.get("osm_parks"), point) is not None:
+            return "park", "inside a park on a school site (joint use)", None
+        return None, "inside a school site that is not a verified public high school", None
+
     park = inside(context.get("padus"), point)
     if park is not None:
         return "park", f"inside PAD-US public land: {park['name'] or 'unnamed unit'}", None
-
-    campus = inside(context.get("campuses"), point)
-    if campus is not None:
-        return "school", f"inside {campus['name'] or 'a public high school'} (NCES grades 9-12)", campus
 
     if access in CLOSED_ACCESS:
         return None, f"tagged access={access} and not in a public park or school", None

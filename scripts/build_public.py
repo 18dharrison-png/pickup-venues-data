@@ -74,22 +74,28 @@ def main(argv=None):
     # OSM, so dropping them at read time made the school rule unreachable.
     collector = build_state.read(args.source, keep_private=True)
 
-    campus_areas = items_of([area for area in collector.restricted
-                             if (area.get("amenity") or "") == "school"])
-    campuses = public_filter.resolve_campuses(campus_areas, schools)
-    campus_index = public_filter.build_index(campuses)
+    school_area_items = items_of([area for area in collector.restricted
+                                  if (area.get("amenity") or "") == "school"])
+    campuses = public_filter.resolve_campuses(school_area_items, schools)
+    campuses_by_id = {campus["id"]: campus for campus in campuses}
+    school_area_index = public_filter.build_index(school_area_items)
     park_index = public_filter.build_index(items_of(collector.parks))
 
-    # School areas that are NOT proven public (private schools, and schools NCES
-    # has no grade span for). Courts inside them must all be dropped, so their
-    # kept/dropped totals are reported: that is what proves a private school
-    # like Loyola High School stays off the map.
+    # School areas that are NOT proven public (private schools, elementary and
+    # middle schools, anything NCES has no 9-12 record for). Courts inside them
+    # must all be dropped, so their kept/dropped totals are reported: that is
+    # what proves a private school like Loyola High School stays off the map.
     unproven_index = public_filter.build_index(
-        [area for area in campus_areas if area["id"] not in {c["id"] for c in campuses}]
+        [area for area in school_area_items if area["id"] not in campuses_by_id]
     )
     unproven = defaultdict(lambda: {"kept": 0, "dropped": 0, "name": ""})
 
-    settled = {"padus": padus, "campuses": campus_index}
+    settled = {
+        "padus": padus,
+        "campuses_by_id": campuses_by_id,
+        "school_areas": school_area_index,
+        "osm_parks": park_index,
+    }
     before = len(collector.pitches)
     kept, dropped = [], []
     school_members = defaultdict(list)
@@ -106,10 +112,11 @@ def main(argv=None):
             "leisure": pitch.get("leisure") or "",
         })
 
-        unproven_area = public_filter.inside(unproven_index, point)
-        if unproven_area is not None:
-            entry = unproven[unproven_area["id"]]
-            entry["name"] = unproven_area["name"]
+        # Count against every unproven school site the court sits in, so a
+        # campus nested inside a district parcel is still reported.
+        for area in public_filter.inside_all(unproven_index, point):
+            entry = unproven[area["id"]]
+            entry["name"] = area["name"]
             entry["kept" if verdict else "dropped"] += 1
 
         if verdict is None:
@@ -138,8 +145,11 @@ def main(argv=None):
     for park in collector.parks:
         if park["id"] in labels:
             continue
+        # A park is judged on its own ground; a school site inside it doesn't
+        # change what the park is.
         verdict, _, _ = public_filter.classify(park["centroid"], {
-            **settled, "name": park["name"], "sports": (), "access": "", "leisure": "park",
+            **settled, "school_areas": None, "name": park["name"], "sports": (),
+            "access": "", "leisure": "park",
         })
         if verdict:
             labels[park["id"]] = verdict

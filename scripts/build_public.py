@@ -67,7 +67,15 @@ def main(argv=None):
     if public_filter.Point is None:
         sys.exit("shapely is required: pip install shapely")
 
-    padus = public_filter.build_index(public_filter.load_padus_geojson(args.padus_geojson))
+    # Geometry is repaired once here, when the extract is loaded, and one STRtree
+    # is built over the result: the park verdicts are cheap point tests from then
+    # on. Anything that cannot be repaired is dropped and counted in the report.
+    padus_stats = {}
+    padus = public_filter.build_index(
+        public_filter.load_padus_geojson(args.padus_geojson, stats=padus_stats))
+    if padus_stats:
+        print(f"padus: {padus_stats.get('repaired', 0)} invalid polygons repaired, "
+              f"{padus_stats.get('unrepaired', 0)} dropped")
     schools = (public_filter.load_schools(args.schools, args.school_locations)
                if args.schools and args.school_locations else [])
 
@@ -89,8 +97,15 @@ def main(argv=None):
     # exactly — Palms Park lost its basketball court and Sepulveda Basin 28 of
     # 36 baseball fields that way.
     public_areas = []
+    unmeasured_parks = 0
     for item in park_items:
-        if public_filter.public_coverage(item["geom"], padus) >= public_filter.PARK_COVERAGE:
+        try:
+            coverage = public_filter.public_coverage(item["geom"], padus)
+        except Exception:
+            # A park GEOS cannot measure is skipped and counted, never fatal.
+            unmeasured_parks += 1
+            continue
+        if coverage >= public_filter.PARK_COVERAGE:
             public_areas.append({**item, "verdict": "park"})
     for item in items_of(collector.centres):
         if public_filter.is_public_rec_name(item["name"]):
@@ -249,6 +264,9 @@ def main(argv=None):
                     for area_id, entry in sorted(unproven.items())
                 ],
                 "padus_polygons": len(padus[1]) if padus else 0,
+                "padus_repaired": padus_stats.get("repaired", 0),
+                "padus_unrepaired": padus_stats.get("unrepaired", 0),
+                "parks_unmeasured": unmeasured_parks,
                 "park_courts": park_courts,
                 "schools_9_12": len(schools),
                 "dropped": len(dropped),

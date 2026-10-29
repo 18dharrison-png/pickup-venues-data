@@ -46,6 +46,16 @@ coverage reaches PARK_COVERAGE now keeps every court inside it, and the
 court-by-court PAD-US test is left for loose courts that are inside no park,
 school or rec centre.
 
+Coverage is *sampled*, not intersected. PAD-US units are huge (a national
+forest is one polygon with thousands of vertices) and thousands of parks query
+the same ones, so repairing each unit per park, unioning the hits and
+intersecting them took a California build from about seven minutes to over
+forty-five. Now every PAD-US polygon is repaired exactly once when it is
+loaded, one STRtree is built over the results, and a park's coverage is the
+share of a fixed grid of points inside it that fall on public land: one bulk
+tree query plus cheap point-in-polygon tests. A polygon that cannot be repaired
+is dropped and counted in the report instead of crashing the build.
+
 PAD-US is public domain (USGS GAP); school places are public domain (NCES).
 Both are credited in README.md.
 """
@@ -58,6 +68,7 @@ try:  # shapely 2.x
     from shapely.geometry import MultiPolygon, Point, Polygon, shape
     from shapely import make_valid
     from shapely.ops import unary_union
+    from shapely.prepared import prep
     from shapely.strtree import STRtree
 except ImportError:  # pragma: no cover - reported by the caller
     Point = Polygon = MultiPolygon = shape = None
@@ -194,11 +205,16 @@ def is_public_padus(props):
     return owner.startswith(PUBLIC_OWNER_PREFIXES)
 
 
-def load_padus_geojson(path):
+def load_padus_geojson(path, stats=None):
     """Read the paged PAD-US extract -> [{"id", "name", "geom"}] of public land.
 
     fetch_padus.py has already dropped non-public units, but this re-checks
     every feature so a change to the fetcher can never quietly widen the rule.
+
+    Every polygon is repaired here, exactly once, so the park lookups never touch
+    GEOS's validity machinery again. `stats`, when given, collects how many
+    polygons needed repairing and how many had to be dropped: a broken ring is
+    skipped and counted in the build report instead of failing the state.
     """
     import json
 
@@ -211,11 +227,21 @@ def load_padus_geojson(path):
             continue
         geom = shape_of(feature.get("geometry"))
         if geom is None:
+            if stats is not None:
+                stats["unrepaired"] = stats.get("unrepaired", 0) + 1
             continue
+        fixed = repaired(geom)
+        if fixed is None:
+            # One bad polygon is dropped and counted: never fatal.
+            if stats is not None:
+                stats["unrepaired"] = stats.get("unrepaired", 0) + 1
+            continue
+        if fixed is not geom and stats is not None:
+            stats["repaired"] = stats.get("repaired", 0) + 1
         items.append({
             "id": f"padus/{props.get('OBJECTID')}",
             "name": str(props.get("Unit_Nm") or ""),
-            "geom": geom,
+            "geom": fixed,
         })
     return items
 
@@ -300,74 +326,178 @@ def inside(index, point):
     return found[0] if found else None
 
 
-# A park is judged as a whole: public land covering at least this share of the
-# area makes every court inside it public ground. Half is deliberately generous
-# to boundary disagreement while still refusing a park that only clips a public
-# parcel at one corner.
+# A park is judged as a whole: public land under at least this share of the
+# park's ground makes every court inside it public ground. Half is deliberately
+# generous to boundary disagreement while still refusing a park that only clips
+# a public parcel at one corner.
 PARK_COVERAGE = 0.5
+
+# Coverage is estimated from a PARK_SAMPLES x PARK_SAMPLES grid across the park's
+# bounding box, keeping the points that fall inside the park. Fixed, so a park's
+# verdict never changes between runs, and cheap enough to run for every park in
+# a state: an exact intersection is what made California take an hour.
+PARK_SAMPLES = 6
+
+
+def polygon_only(geom):
+    """The polygonal part of `geom`, or None.
+
+    make_valid() returns a GeometryCollection for some broken rings (the repaired
+    polygon plus the line where the ring crossed itself), and a line has no area
+    to measure, so only the polygons come back.
+    """
+    if geom is None or geom.is_empty:
+        return None
+    if isinstance(geom, (Polygon, MultiPolygon)):
+        return geom
+    parts = [part for part in getattr(geom, "geoms", ())
+             if isinstance(part, Polygon) and not part.is_empty]
+    if not parts:
+        return None
+    return parts[0] if len(parts) == 1 else MultiPolygon(parts)
 
 
 def repaired(geom):
-    """A valid version of `geom`, or None when it cannot be repaired.
+    """A valid polygonal version of `geom`, or None when it cannot be repaired.
 
-    PAD-US ships self-intersecting rings, and GEOS refuses to intersect them
+    PAD-US ships self-intersecting rings, and GEOS refuses to reason about them
     ("TopologyException: side location conflict at ..."), which took down a
-    whole state build. make_valid fixes what it can; a ring that stays broken is
-    skipped rather than crashing the job.
+    whole state build. make_valid fixes almost all of them, buffer(0) is tried
+    next, and anything still broken comes back as None so the caller can drop it
+    and count it — one bad ring never crashes the build.
+
+    This runs once per polygon when PAD-US is loaded, never per lookup: repairing
+    the same ring again for every park in the state is what made a build take an
+    hour instead of minutes.
     """
     if geom is None:
         return None
-    if geom.is_valid:
+    if geom.is_valid and not geom.is_empty:
         return geom
+    for fix in (make_valid, lambda broken: broken.buffer(0)):
+        try:
+            fixed = polygon_only(fix(geom))
+        except Exception:
+            continue
+        if fixed is not None and fixed.is_valid and not fixed.is_empty:
+            return fixed
+    return None
+
+
+def sample_ground(geom, cells=PARK_SAMPLES):
+    """Fixed grid points spread across `geom`, keeping only the ones inside it.
+
+    Points outside the park are dropped, so the survivors are an even sample of
+    the park's ground even when it is L-shaped or long and thin. A park too thin
+    to catch a grid point returns nothing; the caller falls back to its centre.
+    """
+    minx, miny, maxx, maxy = geom.bounds
+    width, height = maxx - minx, maxy - miny
+    if width <= 0 or height <= 0:
+        return []
+    prepared = prep(geom)
+    points = []
+    for column in range(cells):
+        x = minx + width * (column + 0.5) / cells
+        for row in range(cells):
+            y = miny + height * (row + 0.5) / cells
+            probe = Point(x, y)
+            if prepared.covers(probe):
+                points.append(probe)
+    return points
+
+
+# Which row of a bulk STRtree query holds the tree indices. Shapely releases
+# disagree, so it is measured once with a probe tree (see tree_matches) rather
+# than assumed, because guessing wrong silently reads the wrong geometry.
+_QUERY_ORDER = None
+
+
+def _probe_query_order():
+    """"tree_first" or "input_first": the row order of a bulk STRtree query."""
+    probe = STRtree([Polygon(((0, 0), (0, 1), (1, 1), (1, 0))),
+                     Polygon(((5, 5), (5, 6), (6, 6), (6, 5))),
+                     Polygon(((10, 10), (10, 11), (11, 11), (11, 10)))])
+    hits = probe.query([Point(0.5, 0.5), Point(10.5, 10.5)])
+    first, second = list(hits[0]), list(hits[1])
+    # The two points sit in the first and third geometries, so only the tree row
+    # can contain a 2; the input row holds 0 and 1.
+    if first and max(first) > 1:
+        return "tree_first"
+    if second and max(second) > 1:
+        return "input_first"
+    return "tree_first"
+
+
+def tree_matches(tree, points):
+    """(tree indices, point indices) for every candidate pair, in one query."""
+    global _QUERY_ORDER
+    hits = tree.query(points)
+    rows = (list(hits[0]), list(hits[1]))
+    if _QUERY_ORDER is None:
+        _QUERY_ORDER = _probe_query_order()
+    if _QUERY_ORDER == "tree_first":
+        return rows[0], rows[1]
+    return rows[1], rows[0]
+
+
+def covered_points(tree, items, points):
+    """For each point, whether any indexed geometry covers it.
+
+    One bulk STRtree query answers every point at once, then a point-in-polygon
+    test is run only for the candidate pairs it returns. A geometry that GEOS
+    still chokes on counts as "not covering" instead of failing the build.
+    """
+    covered = [False] * len(points)
     try:
-        fixed = make_valid(geom)
-    except Exception:
-        return None
-    if fixed is None or fixed.is_empty or not fixed.is_valid:
-        return None
-    return fixed
+        tree_ids, point_ids = tree_matches(tree, points)
+    except Exception:  # older shapely: query one point at a time
+        tree_ids, point_ids = [], []
+        for position, probe in enumerate(points):
+            for tree_id in tree.query(probe):
+                tree_ids.append(tree_id)
+                point_ids.append(position)
+    for tree_id, point_id in zip(tree_ids, point_ids):
+        tree_id, point_id = int(tree_id), int(point_id)
+        if not (0 <= tree_id < len(items) and 0 <= point_id < len(points)):
+            continue
+        if covered[point_id]:
+            continue
+        try:
+            if items[tree_id]["geom"].covers(points[point_id]):
+                covered[point_id] = True
+        except Exception:
+            continue
+    return covered
 
 
 def public_coverage(geom, index):
-    """Share of `geom` (0-1) covered by public land in `index`.
+    """Share of `geom` (0-1) sitting on public land in `index`.
 
-    The intersecting units are unioned before the intersection so overlapping
-    PAD-US designations (fee, easement, proclamation) can't count the same acre
-    twice and push a sliver over the threshold. Geometry is repaired first, and
-    if GEOS still refuses the intersection the park's own centre decides: one bad
-    ring must never fail the build or silently shrink a public park.
+    Sampled, not intersected. The old version repaired every candidate PAD-US
+    polygon for every park, unioned the hits and intersected them, so a state
+    with thousands of parks took an hour. Here the polygons were repaired once
+    at load time, one STRtree holds them, and a park's coverage is the share of
+    its sample points that fall inside public land: cheap point-in-polygon tests,
+    no union, no intersection. A park that cannot be repaired or sampled scores
+    0.0 rather than raising.
     """
-    if geom is None or index is None or unary_union is None:
+    if geom is None or index is None:
         return 0.0
     target = repaired(geom)
     if target is None:
         return 0.0
-    total = target.area
-    if not total:
-        return 0.0
-    tree, items = index
-    parts = [repaired(items[position]["geom"]) for position in tree.query(target)]
-    parts = [part for part in parts if part is not None and part.intersects(target)]
-    if not parts:
-        return 0.0
     try:
-        merged = unary_union(parts)
+        points = sample_ground(target)
     except Exception:
-        merged = None
-    if merged is not None:
+        points = []
+    if not points:
         try:
-            return min(1.0, target.intersection(merged).area / total)
+            points = [target.representative_point()]
         except Exception:
-            pass
-    try:
-        centre = target.representative_point()
-        if merged is not None and merged.covers(centre):
-            return 1.0
-        if any(part.covers(centre) for part in parts):
-            return 1.0
-    except Exception:
-        return 0.0
-    return 0.0
+            return 0.0
+    tree, items = index
+    return sum(covered_points(tree, items, points)) / len(points)
 
 
 def is_public_rec_name(name):

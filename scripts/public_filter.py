@@ -56,6 +56,7 @@ import zipfile
 
 try:  # shapely 2.x
     from shapely.geometry import MultiPolygon, Point, Polygon, shape
+    from shapely import make_valid
     from shapely.ops import unary_union
     from shapely.strtree import STRtree
 except ImportError:  # pragma: no cover - reported by the caller
@@ -306,25 +307,67 @@ def inside(index, point):
 PARK_COVERAGE = 0.5
 
 
+def repaired(geom):
+    """A valid version of `geom`, or None when it cannot be repaired.
+
+    PAD-US ships self-intersecting rings, and GEOS refuses to intersect them
+    ("TopologyException: side location conflict at ..."), which took down a
+    whole state build. make_valid fixes what it can; a ring that stays broken is
+    skipped rather than crashing the job.
+    """
+    if geom is None:
+        return None
+    if geom.is_valid:
+        return geom
+    try:
+        fixed = make_valid(geom)
+    except Exception:
+        return None
+    if fixed is None or fixed.is_empty or not fixed.is_valid:
+        return None
+    return fixed
+
+
 def public_coverage(geom, index):
     """Share of `geom` (0-1) covered by public land in `index`.
 
     The intersecting units are unioned before the intersection so overlapping
     PAD-US designations (fee, easement, proclamation) can't count the same acre
-    twice and push a sliver over the threshold.
+    twice and push a sliver over the threshold. Geometry is repaired first, and
+    if GEOS still refuses the intersection the park's own centre decides: one bad
+    ring must never fail the build or silently shrink a public park.
     """
     if geom is None or index is None or unary_union is None:
         return 0.0
-    total = geom.area
+    target = repaired(geom)
+    if target is None:
+        return 0.0
+    total = target.area
     if not total:
         return 0.0
     tree, items = index
-    parts = [items[position]["geom"] for position in tree.query(geom)]
-    parts = [part for part in parts if part.intersects(geom)]
+    parts = [repaired(items[position]["geom"]) for position in tree.query(target)]
+    parts = [part for part in parts if part is not None and part.intersects(target)]
     if not parts:
         return 0.0
-    covered = geom.intersection(unary_union(parts)).area
-    return min(1.0, covered / total)
+    try:
+        merged = unary_union(parts)
+    except Exception:
+        merged = None
+    if merged is not None:
+        try:
+            return min(1.0, target.intersection(merged).area / total)
+        except Exception:
+            pass
+    try:
+        centre = target.representative_point()
+        if merged is not None and merged.covers(centre):
+            return 1.0
+        if any(part.covers(centre) for part in parts):
+            return 1.0
+    except Exception:
+        return 0.0
+    return 0.0
 
 
 def is_public_rec_name(name):

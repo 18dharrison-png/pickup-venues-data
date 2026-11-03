@@ -1,0 +1,29 @@
+padus: 132 invalid polygons repaired, 1 dropped
+  public areas: 1761 (148 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 20511 courts/fields read -> 1883 venues ({'known': 201, 'park': 1419, 'school': 263}), 12378 courts dropped
+  baseline (old rules, same extract): 5816 venues
+  parks: 1419, losing courts vs the old builder: 33 (2.33%)
+# 10 random KEPT (1883 candidates)
+Beach Volleyball courts	33.782156,-84.855553	known	way/1524917904
+Gainesville Skatepark	34.289336,-83.82684	known	way/1113165852
+Veterans Memorial Park	34.074051,-84.311802	park	way/308271993
+Ascot Recreation Park	34.084692,-84.08744	park	way/486671047
+Tennis courts	34.050049,-84.262256	park	way/1015443295
+Volleyball courts	34.20559,-84.035962	park	way/1040973877
+Field 2	32.54323,-83.674086	park	way/784554994
+Dacula Park	33.995554,-83.895207	park	way/34775684
+Baseball field	32.717006,-82.717368	park	way/1058277383
+Rock Creek Park	34.363871,-84.120534	park	way/187995489
+
+# 10 random DROPPED (12378 candidates)
+(unnamed)	34.041588,-84.577046	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	34.303606,-84.233064	tennis	tagged access=private and not in a public park or school
+(unnamed)	32.548437,-83.676829	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	32.601156,-83.600271	american_football	inside a school site that is not a verified public high school
+(unnamed)	34.101878,-84.282065	tennis	inside a school site that is not a verified public high school
+(unnamed)	34.022038,-84.241274	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	34.203415,-84.399191	basketball	no public source places it in a park, public school or rec centre
+(unnamed)	34.004058,-84.425606	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	34.031535,-84.562489	soccer	no public source places it in a park, public school or rec centre
+(unnamed)	32.99859,-83.92306	tennis	no public source places it in a park, public school or rec centre
+

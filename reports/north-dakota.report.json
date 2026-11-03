@@ -1,0 +1,505 @@
+{
+  "baseline_venues": 1220,
+  "by_verdict": {
+    "known": 112,
+    "park": 227,
+    "school": 56
+  },
+  "courts_before": 2725,
+  "dropped": 1695,
+  "dropped_by_reason": {
+    "inside a school site that is not a verified public high school": 193,
+    "no public source places it in a park, public school or rec centre": 1422,
+    "tagged access=customers and not in a public park or school": 8,
+    "tagged access=private and not in a public park or school": 72
+  },
+  "padus_polygons": 738,
+  "padus_repaired": 96,
+  "padus_unrepaired": 0,
+  "park_courts": {
+    "examples": [
+      {
+        "id": "way/507405443",
+        "lost": 2,
+        "name": "Tennis courts",
+        "new": 2,
+        "old": 4
+      },
+      {
+        "id": "way/842488430",
+        "lost": 1,
+        "name": "Tennis courts",
+        "new": 2,
+        "old": 3
+      }
+    ],
+    "parks": 227,
+    "rate": 0.0088,
+    "regressed": 2
+  },
+  "parks_unmeasured": 0,
+  "parks_verified_by_agency": 45,
+  "public_areas": 318,
+  "school_campuses": 56,
+  "schools_9_12": 28644,
+  "state": "north-dakota",
+  "unproven_school_areas": [
+    {
+      "dropped": 1,
+      "id": "way/1149756380",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 5,
+      "id": "way/1149756382",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 6,
+      "id": "way/1192773393",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 3,
+      "id": "way/1192964840",
+      "kept": 0,
+      "name": "Jefferson Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1204871936",
+      "kept": 0,
+      "name": "Trinity Steffes Campus"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1208231577",
+      "kept": 0,
+      "name": "Dickinson Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1208274304",
+      "kept": 0,
+      "name": "Prairie Rose Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1211926397",
+      "kept": 0,
+      "name": "Saint Marys High School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1268433571",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/127679227",
+      "kept": 0,
+      "name": "Ben Franklin Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/127680027",
+      "kept": 0,
+      "name": "Roosevelt Campus"
+    },
+    {
+      "dropped": 3,
+      "id": "way/1330731012",
+      "kept": 0,
+      "name": "John Hoeven Elementary"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1335901602",
+      "kept": 0,
+      "name": "Lincoln Elementary School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/1337766235",
+      "kept": 0,
+      "name": "Killdeer Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1415711031",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/1526177815",
+      "kept": 0,
+      "name": "Elk Ridge Elementary"
+    },
+    {
+      "dropped": 1,
+      "id": "way/163722041",
+      "kept": 0,
+      "name": "Oak Grove Lutheran School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/244463901",
+      "kept": 0,
+      "name": "Discovery Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/244706832",
+      "kept": 0,
+      "name": "L.E. Berger Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/244727079",
+      "kept": 0,
+      "name": "Eastwood Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/244892063",
+      "kept": 0,
+      "name": "Westside Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/244963527",
+      "kept": 0,
+      "name": "Cheney Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/277373891",
+      "kept": 0,
+      "name": "Bennett Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/286102496",
+      "kept": 0,
+      "name": "Horace Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/286659797",
+      "kept": 0,
+      "name": "Harwood Elementary School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/287078389",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/327565938",
+      "kept": 0,
+      "name": "Gussner School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/359834752",
+      "kept": 0,
+      "name": "Rita Murphy Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/440541800",
+      "kept": 0,
+      "name": "Dakota Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/487076275",
+      "kept": 0,
+      "name": "Bottineau Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/507405222",
+      "kept": 0,
+      "name": "Washington Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/507838193",
+      "kept": 0,
+      "name": "Saint Johns Academy"
+    },
+    {
+      "dropped": 1,
+      "id": "way/508254471",
+      "kept": 0,
+      "name": "Louis L'Amour Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/515896288",
+      "kept": 0,
+      "name": "Carl Ben Eielson Middle School"
+    },
+    {
+      "dropped": 6,
+      "id": "way/543617885",
+      "kept": 0,
+      "name": "Century Elementary School Grounds"
+    },
+    {
+      "dropped": 5,
+      "id": "way/548573578",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 6,
+      "id": "way/569789282",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/639542175",
+      "kept": 0,
+      "name": "Lewis & Clark Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/676452289",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/680987767",
+      "kept": 0,
+      "name": "Freedom Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/68102808",
+      "kept": 0,
+      "name": "Roosevelt Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/692799350",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/734653358",
+      "kept": 0,
+      "name": "Longfellow Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/738993126",
+      "kept": 0,
+      "name": "Jefferson Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/738993228",
+      "kept": 0,
+      "name": "Horace Mann Campus"
+    },
+    {
+      "dropped": 1,
+      "id": "way/768890034",
+      "kept": 0,
+      "name": "Holy Spirit Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/798156588",
+      "kept": 0,
+      "name": "Circle of Nations: Wahpeton Indian School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/810831657",
+      "kept": 0,
+      "name": "Dunseith Indian School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/838627568",
+      "kept": 0,
+      "name": "Emerado Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/846492165",
+      "kept": 0,
+      "name": "Saint Mary's Central High School"
+    },
+    {
+      "dropped": 13,
+      "id": "way/846713317",
+      "kept": 0,
+      "name": "Horizon Middle School"
+    },
+    {
+      "dropped": 6,
+      "id": "way/857854661",
+      "kept": 0,
+      "name": "Solheim Elementary"
+    },
+    {
+      "dropped": 3,
+      "id": "way/857873136",
+      "kept": 0,
+      "name": "Wachter Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/857888316",
+      "kept": 0,
+      "name": "Highland Acres Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/857892308",
+      "kept": 0,
+      "name": "Grimsrud Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/857903400",
+      "kept": 0,
+      "name": "Simle Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/857907900",
+      "kept": 0,
+      "name": "Prairie Rose Elementary School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/858187586",
+      "kept": 0,
+      "name": "Robert Place Miller Elementary School"
+    },
+    {
+      "dropped": 6,
+      "id": "way/858194197",
+      "kept": 0,
+      "name": "Centennial Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/865439521",
+      "kept": 0,
+      "name": "Demores Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/879846455",
+      "kept": 0,
+      "name": "Shiloh Christian School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/896760520",
+      "kept": 0,
+      "name": "Hawthorne Campus"
+    },
+    {
+      "dropped": 4,
+      "id": "way/896760521",
+      "kept": 0,
+      "name": "Madison Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/899512442",
+      "kept": 0,
+      "name": "Lewis & Clark Elementary"
+    },
+    {
+      "dropped": 6,
+      "id": "way/901850230",
+      "kept": 0,
+      "name": "Mandan Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/901850927",
+      "kept": 0,
+      "name": "Custer Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/901852406",
+      "kept": 0,
+      "name": "Fort Lincoln Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/912495160",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 3,
+      "id": "way/917607545",
+      "kept": 0,
+      "name": "Deer Creek Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/921342063",
+      "kept": 0,
+      "name": "Valley Junior High School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/925226288",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/926256296",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/942249698",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/962683216",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/976498919",
+      "kept": 0,
+      "name": "Ojibwa Indian School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/976501691",
+      "kept": 0,
+      "name": "Mandaree High School"
+    }
+  ],
+  "venues_after": 395
+}

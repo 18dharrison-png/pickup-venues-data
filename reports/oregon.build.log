@@ -1,0 +1,29 @@
+padus: 428 invalid polygons repaired, 2 dropped
+  public areas: 2086 (195 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 8944 courts/fields read -> 1084 venues ({'known': 110, 'park': 800, 'school': 174}), 5207 courts dropped
+  baseline (old rules, same extract): 2831 venues
+  parks: 800, losing courts vs the old builder: 9 (1.12%)
+# 10 random KEPT (1084 candidates)
+Soccer field	42.302889,-122.844715	park	way/322204324
+Luuwit View Park	45.549952,-122.530337	park	way/142533913
+Skateboard field	44.627033,-121.138171	park	way/438313025
+Brookings Harbor High School	42.057459,-124.281943	school	way/1034023577
+Bloomington Park	45.485344,-122.559538	park	way/117169172
+Durham City Park	45.396843,-122.761689	park	way/129993732
+Knappa High School	46.162056,-123.623187	school	way/369212591
+Wade Creek Park	45.295895,-122.338384	park	way/1089569115
+Beach Volleyball courts	43.344852,-124.32857	known	way/871584637
+McKinney Park	45.526868,-122.995673	park	way/164513236
+
+# 10 random DROPPED (5207 candidates)
+(unnamed)	45.827235,-119.300376	baseball	inside a school site that is not a verified public high school
+(unnamed)	45.5674,-122.849082	basketball	no public source places it in a park, public school or rec centre
+(unnamed)	45.349024,-122.696047	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	45.426865,-122.70636	running	no public source places it in a park, public school or rec centre
+(unnamed)	44.946422,-123.02293	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	44.026461,-116.969209	basketball	inside a school site that is not a verified public high school
+(unnamed)	45.482002,-122.702151	basketball	inside a school site that is not a verified public high school
+(unnamed)	45.375187,-122.644333	basketball	tagged access=private and not in a public park or school
+(unnamed)	45.310909,-122.951241	running	inside a school site that is not a verified public high school
+(unnamed)	44.906965,-123.054804	tennis	no public source places it in a park, public school or rec centre
+

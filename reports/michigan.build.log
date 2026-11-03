@@ -1,0 +1,29 @@
+padus: 228 invalid polygons repaired, 11 dropped
+  public areas: 4867 (1208 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 22527 courts/fields read -> 3121 venues ({'known': 448, 'park': 2177, 'school': 496}), 10451 courts dropped
+  baseline (old rules, same extract): 5565 venues
+  parks: 2177, losing courts vs the old builder: 23 (1.06%)
+# 10 random KEPT (3121 candidates)
+Fastpitch Field	46.498755,-87.668598	park	way/281240789
+Senior Center Park	44.76485,-85.604674	park	way/124424098
+Towsley Dike Park	43.608112,-84.247792	park	way/339254016
+Whitefish Township School	46.610056,-85.040198	school	way/688669708
+City Park	44.190116,-85.212673	park	way/1005904825
+Senior Citizen Park	42.674578,-83.030566	park	way/1072701277
+Magnolia Park	42.562153,-83.060641	park	way/496974365
+Recreation Park	42.23999,-83.62833	park	way/114542727
+Sam A. Palamara Recreation Complex - Memorial Park	42.187931,-83.176755	park	way/320586208
+Alfred Brush Ford Park	42.357479,-82.93927	park	way/562235456
+
+# 10 random DROPPED (10451 candidates)
+(unnamed)	44.887156,-85.27268	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	42.50847,-83.079151	baseball	inside a school site that is not a verified public high school
+(unnamed)	41.890848,-83.784936	baseball	inside a school site that is not a verified public high school
+Roessler Park	41.920678,-83.410651	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	41.905299,-83.571584	baseball	inside a school site that is not a verified public high school
+(unnamed)	42.710416,-84.443902	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	42.911108,-85.878119	tennis	inside a school site that is not a verified public high school
+(unnamed)	42.207699,-84.556611	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	42.29721,-83.768701	soccer	inside a school site that is not a verified public high school
+(unnamed)	42.929956,-83.042843	tennis	no public source places it in a park, public school or rec centre
+

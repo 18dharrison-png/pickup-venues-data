@@ -1,0 +1,426 @@
+{
+  "baseline_venues": 567,
+  "by_verdict": {
+    "known": 20,
+    "park": 153,
+    "school": 35
+  },
+  "courts_before": 2219,
+  "dropped": 1539,
+  "dropped_by_reason": {
+    "inside a school site that is not a verified public high school": 258,
+    "no public source places it in a park, public school or rec centre": 1076,
+    "tagged access=customers and not in a public park or school": 14,
+    "tagged access=private and not in a public park or school": 191
+  },
+  "padus_polygons": 778,
+  "padus_repaired": 28,
+  "padus_unrepaired": 2,
+  "park_courts": {
+    "examples": [
+      {
+        "id": "relation/17760000",
+        "lost": 5,
+        "name": "Baseball field",
+        "new": 6,
+        "old": 11
+      }
+    ],
+    "parks": 153,
+    "rate": 0.0065,
+    "regressed": 1
+  },
+  "parks_unmeasured": 0,
+  "parks_verified_by_agency": 4,
+  "public_areas": 213,
+  "school_campuses": 35,
+  "schools_9_12": 28644,
+  "state": "rhode-island",
+  "unproven_school_areas": [
+    {
+      "dropped": 7,
+      "id": "relation/11688631",
+      "kept": 0,
+      "name": "Rocky Hill School"
+    },
+    {
+      "dropped": 1,
+      "id": "relation/11739005",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 9,
+      "id": "relation/11789795",
+      "kept": 0,
+      "name": "The Prout School"
+    },
+    {
+      "dropped": 17,
+      "id": "relation/12121904",
+      "kept": 0,
+      "name": "Curtis Corner Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "relation/12121906",
+      "kept": 0,
+      "name": "South Road Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/1001302675",
+      "kept": 0,
+      "name": "Oliphant School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1014960009",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 4,
+      "id": "way/1022147277",
+      "kept": 0,
+      "name": "Alan Shawn Feinstein Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1218661772",
+      "kept": 0,
+      "name": "Wakefield Hills Elementary School"
+    },
+    {
+      "dropped": 12,
+      "id": "way/141130855",
+      "kept": 0,
+      "name": "Bishop Hendricken High School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/141875533",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/1490401626",
+      "kept": 0,
+      "name": "Hamilton Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1514063651",
+      "kept": 0,
+      "name": "Suzanne M. Henseler Quidnessett Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1541447967",
+      "kept": 0,
+      "name": "Springbrook Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1546782333",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/1570904854",
+      "kept": 0,
+      "name": "Middlebridge School"
+    },
+    {
+      "dropped": 14,
+      "id": "way/167390891",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 12,
+      "id": "way/231962990",
+      "kept": 0,
+      "name": "St George's School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/257863699",
+      "kept": 0,
+      "name": "Meeting Street Rhode Island Campus"
+    },
+    {
+      "dropped": 2,
+      "id": "way/257865344",
+      "kept": 0,
+      "name": "The Wheeler School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/29837928",
+      "kept": 0,
+      "name": "Dr. Kevin M. Hurley Middle School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/308666851",
+      "kept": 0,
+      "name": "Richmond Elementary School"
+    },
+    {
+      "dropped": 10,
+      "id": "way/308678945",
+      "kept": 0,
+      "name": "Saint Andrew's School Rhode Island"
+    },
+    {
+      "dropped": 10,
+      "id": "way/308771031",
+      "kept": 0,
+      "name": "La Salle Academy"
+    },
+    {
+      "dropped": 1,
+      "id": "way/308798190",
+      "kept": 0,
+      "name": "Lincoln Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/317417475",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/319449676",
+      "kept": 0,
+      "name": "Saylesville Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/345583543",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 3,
+      "id": "way/354950128",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/378842467",
+      "kept": 0,
+      "name": "Sowams Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/380464633",
+      "kept": 0,
+      "name": "Metcalf Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/380464636",
+      "kept": 0,
+      "name": "Mildred E. Lineham School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/42943453",
+      "kept": 0,
+      "name": "Gordon School"
+    },
+    {
+      "dropped": 7,
+      "id": "way/43139084",
+      "kept": 0,
+      "name": "Nathan Bishop Middle School"
+    },
+    {
+      "dropped": 8,
+      "id": "way/43140229",
+      "kept": 0,
+      "name": "Warwick Veterans Memorial Middle School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/43152491",
+      "kept": 0,
+      "name": "Western Hills Middle School"
+    },
+    {
+      "dropped": 8,
+      "id": "way/442656884",
+      "kept": 0,
+      "name": "Mount Saint Charles School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/442774514",
+      "kept": 0,
+      "name": "Birchwood Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/461365961",
+      "kept": 0,
+      "name": "Ponaganset Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/462887086",
+      "kept": 0,
+      "name": "William L Callahan School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/507319431",
+      "kept": 0,
+      "name": "Meadowbrook Farms Elementary School"
+    },
+    {
+      "dropped": 6,
+      "id": "way/507847961",
+      "kept": 0,
+      "name": "Archie R. Cole Middle School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/542986563",
+      "kept": 0,
+      "name": "Frenchtown Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/579925508",
+      "kept": 0,
+      "name": "North Smithfield Elementary School"
+    },
+    {
+      "dropped": 12,
+      "id": "way/582075172",
+      "kept": 0,
+      "name": "Joseph H. Gaudet Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/591857358",
+      "kept": 0,
+      "name": "Woonsocket Middle Schools"
+    },
+    {
+      "dropped": 2,
+      "id": "way/667482098",
+      "kept": 0,
+      "name": "Providence Country Day School"
+    },
+    {
+      "dropped": 17,
+      "id": "way/798216934",
+      "kept": 0,
+      "name": "Portsmouth Abbey School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/827619021",
+      "kept": 0,
+      "name": "Westerly Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/863342568",
+      "kept": 0,
+      "name": "Monsignor Matthew F. Clarke Catholic Regional School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/892870683",
+      "kept": 0,
+      "name": "Doctor M H Sullivan School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/896273833",
+      "kept": 0,
+      "name": "Saint Michael's Country Day School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/900507015",
+      "kept": 0,
+      "name": "Aquidneck School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/911205390",
+      "kept": 0,
+      "name": "Kickemuit Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/911619291",
+      "kept": 0,
+      "name": "Hugh Cole Elementary School"
+    },
+    {
+      "dropped": 10,
+      "id": "way/975091546",
+      "kept": 0,
+      "name": "Moses Brown School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/979563772",
+      "kept": 0,
+      "name": "Charlestown Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/979570441",
+      "kept": 0,
+      "name": "Harmony Hill School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/979573283",
+      "kept": 0,
+      "name": "West Glocester Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/979664266",
+      "kept": 0,
+      "name": "Western Coventry Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/979712722",
+      "kept": 0,
+      "name": "Washington Oak Elementary School"
+    },
+    {
+      "dropped": 8,
+      "id": "way/979899465",
+      "kept": 0,
+      "name": "Burrillville Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/979902767",
+      "kept": 0,
+      "name": "Little Compton School Department"
+    },
+    {
+      "dropped": 2,
+      "id": "way/980730871",
+      "kept": 0,
+      "name": "Tiverton Middle School"
+    }
+  ],
+  "venues_after": 208
+}

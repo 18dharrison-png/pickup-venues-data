@@ -1,0 +1,29 @@
+padus: 28 invalid polygons repaired, 2 dropped
+  public areas: 213 (4 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 2219 courts/fields read -> 208 venues ({'known': 20, 'park': 153, 'school': 35}), 1539 courts dropped
+  baseline (old rules, same extract): 567 venues
+  parks: 153, losing courts vs the old builder: 1 (0.65%)
+# 10 random KEPT (208 candidates)
+Captain Stephen Olney Memorial Park	41.855016,-71.454687	park	way/164025203
+Baseball field	41.787221,-71.452426	park	way/141088633
+Amos Earley Park	41.793081,-71.416659	park	way/295574202
+Peace Dale Village Green	41.450069,-71.494601	park	way/528785481
+Beach Volleyball courts	41.679546,-71.672316	known	way/1013611719
+Multi courts	41.555067,-71.253787	park	way/1234966990
+Tennis courts	41.72751,-71.496759	park	way/428606783
+Baseball field	41.452348,-71.483381	park	way/1306912348
+Cabral Park	41.819717,-71.392274	park	way/293250429
+Providence Career and Technical Academy	41.815754,-71.422707	school	way/442864536
+
+# 10 random DROPPED (1539 candidates)
+(unnamed)	41.658425,-71.422985	tennis	inside a school site that is not a verified public high school
+(unnamed)	41.518685,-71.77775	basketball	no public source places it in a park, public school or rec centre
+(unnamed)	41.984716,-71.409368	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	41.619282,-71.462307	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	41.842006,-71.391849	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	41.91668,-71.420751	basketball	no public source places it in a park, public school or rec centre
+(unnamed)	41.469186,-71.187487	tennis	tagged access=customers and not in a public park or school
+(unnamed)	41.851097,-71.464503	basketball	no public source places it in a park, public school or rec centre
+Braga Park	41.494597,-71.296941	basketball	no public source places it in a park, public school or rec centre
+(unnamed)	41.746958,-71.465935	basketball	no public source places it in a park, public school or rec centre
+

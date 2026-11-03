@@ -1,0 +1,29 @@
+padus: 126 invalid polygons repaired, 0 dropped
+  public areas: 1499 (70 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 17376 courts/fields read -> 1561 venues ({'known': 308, 'park': 1022, 'school': 231}), 11040 courts dropped
+  baseline (old rules, same extract): 5172 venues
+  parks: 1022, losing courts vs the old builder: 8 (0.78%)
+# 10 random KEPT (1561 candidates)
+Rock Point Boarding School	36.716246,-109.619894	school	way/186574579
+Basketball courts	32.622848,-109.945718	park	way/1300380234
+Baseball field	33.429327,-112.389828	park	way/265698332
+Beach Volleyball courts	33.412835,-111.903995	known	way/672435840
+Perry High School	33.260409,-111.748915	school	way/1083541631
+Navarrete Park	33.316143,-111.847235	park	way/1124832364
+Mariposa Park	33.548584,-112.127806	park	way/450281328
+Tahoe Park	32.248257,-110.941987	park	way/117684030
+Jacobs Park	32.268504,-110.988741	park	way/229563312
+Beach Volleyball courts	33.359856,-111.810739	known	way/493141107
+
+# 10 random DROPPED (11040 candidates)
+(unnamed)	33.529837,-112.162931	soccer	inside a school site that is not a verified public high school
+(unnamed)	33.546712,-111.938459	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	33.298531,-111.820843	baseball	inside a school site that is not a verified public high school
+(unnamed)	33.471262,-112.196946	basketball	inside a school site that is not a verified public high school
+(unnamed)	32.153534,-111.027005	basketball	inside a school site that is not a verified public high school
+(unnamed)	34.547076,-112.243581	basketball	no public source places it in a park, public school or rec centre
+(unnamed)	32.889055,-111.753692	running	inside a school site that is not a verified public high school
+(unnamed)	32.281217,-110.929172	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	33.317177,-111.69999	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	33.586031,-111.937751	baseball	inside a school site that is not a verified public high school
+

@@ -1,0 +1,29 @@
+padus: 72 invalid polygons repaired, 0 dropped
+  public areas: 447 (13 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 2286 courts/fields read -> 348 venues ({'known': 17, 'park': 296, 'school': 35}), 1146 courts dropped
+  baseline (old rules, same extract): 729 venues
+  parks: 296, losing courts vs the old builder: 3 (1.01%)
+# 10 random KEPT (348 candidates)
+Hawaii School for the Deaf and the Blind	21.272954,-157.815	school	way/342275867
+Baseball field	19.726984,-155.044608	park	way/149230206
+Gilbert Carvalho Park	19.717855,-155.103549	park	way/461621415
+Baseball field	19.591659,-155.060444	park	way/894375598
+Baseball field	21.606699,-157.908853	park	way/1007486390
+Baseball field	21.283713,-157.825406	park	way/1113105966
+Tennis courts	21.263335,-157.81846	park	way/56630154
+Basketball courts	19.549398,-155.302058	park	way/1246749715
+Kamāmalu Playground	21.312667,-157.854705	park	way/441864509
+Tennis courts	19.635782,-155.989879	park	way/687973868
+
+# 10 random DROPPED (1146 candidates)
+(unnamed)	19.630908,-155.989135	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	21.87439,-159.44931	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	21.402586,-157.751363	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	22.221255,-159.483423	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	21.489397,-158.062846	multi	no public source places it in a park, public school or rec centre
+(unnamed)	21.879526,-159.456718	basketball	no public source places it in a park, public school or rec centre
+(unnamed)	21.297934,-157.795898	basketball	inside a school site that is not a verified public high school
+(unnamed)	20.007588,-155.825624	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	20.023844,-155.672588	skateboard	no public source places it in a park, public school or rec centre
+(unnamed)	19.556286,-155.963579	tennis	no public source places it in a park, public school or rec centre
+

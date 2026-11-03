@@ -1,0 +1,29 @@
+padus: 417 invalid polygons repaired, 1 dropped
+  public areas: 2247 (398 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 18187 courts/fields read -> 1922 venues ({'known': 262, 'park': 1385, 'school': 275}), 11001 courts dropped
+  baseline (old rules, same extract): 5270 venues
+  parks: 1385, losing courts vs the old builder: 11 (0.79%)
+# 10 random KEPT (1922 candidates)
+Elm Street Park	35.601273,-77.358101	park	way/321760058
+Charles E. Poteet Memorial Park	35.375098,-83.224664	park	way/1305772306
+Gaylord Perry Park	35.856356,-77.069158	park	way/33081817
+Beach Volleyball courts	35.978276,-78.490046	known	way/521614016
+Softball field	34.328632,-78.686533	park	way/1011944270
+Jay M. Robinson High School	35.361516,-80.661742	school	way/1079342982
+Beach Volleyball courts	35.094161,-80.720891	known	way/700594461
+Beach Volleyball courts	36.069589,-79.814228	known	way/408780579
+Cedar Fork District Park	35.824198,-78.820156	park	way/113759557
+Crest Street Park	36.012604,-78.937832	park	way/33050932
+
+# 10 random DROPPED (11001 candidates)
+(unnamed)	35.942877,-78.599377	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	35.906912,-79.081777	basketball	no public source places it in a park, public school or rec centre
+(unnamed)	35.244657,-81.66788	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	35.175965,-80.831976	golf	no public source places it in a park, public school or rec centre
+(unnamed)	35.788734,-78.858658	tennis	tagged access=private and not in a public park or school
+(unnamed)	35.483547,-82.318174	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	35.985746,-78.995994	tennis	no public source places it in a park, public school or rec centre
+Trindale Elementary track	35.903122,-79.963775	running	no public source places it in a park, public school or rec centre
+(unnamed)	36.053217,-78.931235	baseball,multi,soccer	inside a school site that is not a verified public high school
+(unnamed)	35.255434,-79.379779	golf	no public source places it in a park, public school or rec centre
+

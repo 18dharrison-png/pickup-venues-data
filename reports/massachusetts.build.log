@@ -1,0 +1,29 @@
+padus: 568 invalid polygons repaired, 2 dropped
+  public areas: 2921 (365 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 14557 courts/fields read -> 2043 venues ({'known': 94, 'park': 1704, 'school': 245}), 7503 courts dropped
+  baseline (old rules, same extract): 4000 venues
+  parks: 1704, losing courts vs the old builder: 19 (1.12%)
+# 10 random KEPT (2043 candidates)
+Gowdy Memorial Park	42.507887,-70.982652	park	way/29689233
+Baseball field	42.120352,-71.124755	park	way/818274659
+Tennis courts	42.053366,-71.9166	park	way/1317882242
+Orne Playground	42.508065,-70.863068	park	way/29697506
+West Side Field	42.451706,-71.160481	park	way/29860962
+Running field	42.07633,-70.986599	park	relation/5297627
+Baseball field	41.750394,-70.60499	park	way/1064206695
+Dr. Nina Scarito Park	42.714392,-71.15407	park	way/482885977
+Mary C. Lane Playground	42.258796,-71.067798	park	way/29830088
+Basketball courts	42.198738,-71.847292	park	way/1098798896
+
+# 10 random DROPPED (7503 candidates)
+(unnamed)	42.419838,-71.297614	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	42.184245,-71.130263	ice_hockey	inside a school site that is not a verified public high school
+(unnamed)	41.929533,-70.053682	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	41.759007,-71.172333	pickleball	no public source places it in a park, public school or rec centre
+(unnamed)	42.707254,-71.084304	tennis	inside a school site that is not a verified public high school
+Sawmill Field	42.246508,-71.574045	soccer	no public source places it in a park, public school or rec centre
+Hart Field	42.474393,-71.434997	baseball	inside a school site that is not a verified public high school
+McCurdy Track	42.365321,-71.128637	running	no public source places it in a park, public school or rec centre
+(unnamed)	42.33262,-71.146632	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	42.426407,-71.27221	tennis	tagged access=private and not in a public park or school
+

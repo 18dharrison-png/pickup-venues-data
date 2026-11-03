@@ -1,0 +1,29 @@
+padus: 150 invalid polygons repaired, 1 dropped
+  public areas: 1129 (119 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 9409 courts/fields read -> 1043 venues ({'known': 142, 'park': 726, 'school': 175}), 5543 courts dropped
+  baseline (old rules, same extract): 2966 venues
+  parks: 726, losing courts vs the old builder: 6 (0.83%)
+# 10 random KEPT (1043 candidates)
+Tennis courts	36.264786,-86.648772	park	way/53624853
+Baseball field	36.423288,-82.483527	park	way/1430559990
+Cane Ridge Park	35.990916,-86.619329	park	way/682465825
+Morris Park	35.145637,-90.036011	park	way/104182825
+Beach Volleyball courts	36.636384,-87.433906	known	way/1106423024
+Baseball field	35.936673,-84.556954	known	way/1228890318
+Peay Park	36.320984,-86.717425	park	way/619218783
+Beach Volleyball courts	36.140029,-86.799897	known	way/1070398072
+South Fulton Middle / High School	36.495074,-88.900464	school	way/985801906
+Merrol Hyde Magnet School	36.322992,-86.623184	school	way/256624889
+
+# 10 random DROPPED (5543 candidates)
+Warner Park	35.040323,-85.283744	baseball	no public source places it in a park, public school or rec centre
+Cheryl Holt Field	36.537395,-87.354761	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	36.249451,-86.69673	baseball	inside a school site that is not a verified public high school
+(unnamed)	36.077029,-86.660901	soccer	no public source places it in a park, public school or rec centre
+Fesmire Softball Field	35.673474,-88.859538	softball	no public source places it in a park, public school or rec centre
+(unnamed)	35.245836,-85.837467	table_tennis	no public source places it in a park, public school or rec centre
+(unnamed)	36.187993,-86.90227	running	tagged access=no and not in a public park or school
+(unnamed)	35.714252,-88.840781	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	35.943788,-85.466878	baseball	inside a school site that is not a verified public high school
+(unnamed)	35.154912,-85.220841	baseball	no public source places it in a park, public school or rec centre
+

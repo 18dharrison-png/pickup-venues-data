@@ -1,0 +1,29 @@
+padus: 339 invalid polygons repaired, 2 dropped
+  public areas: 2429 (87 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 12260 courts/fields read -> 1832 venues ({'known': 224, 'park': 1352, 'school': 256}), 6483 courts dropped
+  baseline (old rules, same extract): 3994 venues
+  parks: 1352, losing courts vs the old builder: 12 (0.89%)
+# 10 random KEPT (1832 candidates)
+Ford Park	39.640309,-106.365092	park	way/224523193
+KIPP Denver Collegiate High School	39.709177,-105.012022	school	way/1307086826
+Danahy Park	39.890514,-105.00098	park	way/272205905
+Amherst Park	39.93392,-105.008108	park	way/48242045
+Pirates Park	39.98316,-105.13399	park	way/105077838
+Basketball courts	39.590222,-104.954168	park	way/1111626048
+City Park	40.516219,-107.542013	park	way/757231687
+Weld Central Senior High School	40.069812,-104.510638	school	way/418488189
+Harmony Park	39.656537,-105.028765	park	way/1173206566
+Cornerstone Park	39.622174,-105.003485	park	way/239957072
+
+# 10 random DROPPED (6483 candidates)
+(unnamed)	39.605254,-104.879935	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	38.860755,-104.780003	american_football	inside a school site that is not a verified public high school
+(unnamed)	39.25889,-104.893558	volleyball	no public source places it in a park, public school or rec centre
+(unnamed)	39.730096,-105.013963	basketball	no public source places it in a park, public school or rec centre
+(unnamed)	39.676911,-105.152739	basketball	inside a school site that is not a verified public high school
+(unnamed)	38.889124,-104.741962	basketball	inside a school site that is not a verified public high school
+(unnamed)	39.012243,-104.887668	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	39.538501,-104.879288	basketball	inside a school site that is not a verified public high school
+(unnamed)	38.836872,-104.750708	baseball	inside a school site that is not a verified public high school
+(unnamed)	39.8774,-105.114354	baseball	inside a school site that is not a verified public high school
+

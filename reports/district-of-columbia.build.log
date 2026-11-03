@@ -1,0 +1,29 @@
+padus: 12 invalid polygons repaired, 0 dropped
+  public areas: 453 (1 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 913 courts/fields read -> 159 venues ({'known': 15, 'park': 125, 'school': 19}), 361 courts dropped
+  baseline (old rules, same extract): 217 venues
+  parks: 125, losing courts vs the old builder: 1 (0.80%)
+# 10 random KEPT (159 candidates)
+Hardy Park	38.909472,-77.084471	park	way/48207280
+Bard HS Early College DC (Bard DC)	38.844494,-76.986259	school	way/1527648399
+Shaw Recreation Center	38.911603,-77.026394	park	way/48207355
+Ballou STAY	38.838924,-77.001541	school	way/1021773475
+KIPP DC PCS - Legacy College Preparatory PCS	38.832662,-76.996458	school	way/1138162738
+Deanwood	38.907986,-76.932711	park	way/48207627
+Basketball courts	38.898234,-76.99334	park	way/1319021279
+Walter Pierce Park	38.924077,-77.046063	known	way/48207314
+Arboretum Recreation Center	38.91401,-76.971209	park	way/73783412
+Brightwood Recreation Center	38.955353,-77.03758	park	way/1028703076
+
+# 10 random DROPPED (361 candidates)
+(unnamed)	38.923577,-77.038418	basketball	inside a school site that is not a verified public high school
+(unnamed)	38.962063,-77.053683	soccer	inside a school site that is not a verified public high school
+(unnamed)	38.873032,-77.007397	baseball	tagged access=private and not in a public park or school
+(unnamed)	38.902758,-76.969907	basketball	no public source places it in a park, public school or rec centre
+(unnamed)	38.877964,-76.990415	basketball	no public source places it in a park, public school or rec centre
+(unnamed)	38.90831,-76.988745	basketball	no public source places it in a park, public school or rec centre
+(unnamed)	38.941845,-77.000079	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	38.883117,-76.955906	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	38.916955,-77.089466	softball	tagged access=customers and not in a public park or school
+(unnamed)	38.97971,-77.062683	basketball	no public source places it in a park, public school or rec centre
+

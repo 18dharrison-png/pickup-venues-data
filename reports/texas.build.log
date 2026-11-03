@@ -1,0 +1,29 @@
+padus: 966 invalid polygons repaired, 0 dropped
+  public areas: 6895 (178 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 45170 courts/fields read -> 5557 venues ({'known': 948, 'park': 3554, 'school': 1055}), 23519 courts dropped
+  baseline (old rules, same extract): 11606 venues
+  parks: 3554, losing courts vs the old builder: 20 (0.56%)
+# 10 random KEPT (5557 candidates)
+Clarence T. Shelton Sports Complex	29.562534,-98.259724	known	way/366460070
+Youth Center Park	33.15358,-96.817381	park	way/135799365
+Basketball courts	32.790124,-96.741126	park	way/464946666
+C. E. King High School	29.877589,-95.200237	school	way/864747176
+Bells High School	33.632355,-96.403856	school	way/1084972806
+Nixon High School	27.525429,-99.475719	school	way/1174921210
+Basketball courts	29.676623,-95.097594	park	way/618991200
+Tennis courts	32.921185,-97.160528	park	way/1239422203
+Samuell Grand Park	32.796319,-96.740346	park	way/449158581
+Golf field	32.975462,-96.624401	park	way/689163533
+
+# 10 random DROPPED (23519 candidates)
+(unnamed)	32.841472,-96.801828	golf	no public source places it in a park, public school or rec centre
+(unnamed)	28.330894,-98.122964	tennis	inside a school site that is not a verified public high school
+(unnamed)	29.608092,-98.567613	american_football	inside a school site that is not a verified public high school
+(unnamed)	29.813828,-95.504378	multi	no public source places it in a park, public school or rec centre
+(unnamed)	30.590594,-96.318055	tennis	inside a school site that is not a verified public high school
+(unnamed)	33.135139,-96.767064	tennis	inside a school site that is not a verified public high school
+(unnamed)	32.466555,-100.403011	tennis	inside a school site that is not a verified public high school
+Sports Court	33.163041,-97.850732	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	31.697579,-98.123773	american_football	no public source places it in a park, public school or rec centre
+(unnamed)	30.623664,-96.354177	basketball	no public source places it in a park, public school or rec centre
+

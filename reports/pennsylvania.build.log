@@ -1,0 +1,29 @@
+padus: 651 invalid polygons repaired, 2 dropped
+  public areas: 4761 (191 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 27607 courts/fields read -> 4488 venues ({'known': 271, 'park': 3872, 'school': 345}), 13102 courts dropped
+  baseline (old rules, same extract): 8729 venues
+  parks: 3872, losing courts vs the old builder: 31 (0.80%)
+# 10 random KEPT (4488 candidates)
+Wilkes-Barre Girls Softball League	41.239204,-75.921466	park	way/488790999
+Swisshelm Park	40.421054,-79.901872	park	way/1551168500
+Sun Village Park	39.858304,-75.348633	park	way/597939197
+Baseball field	41.629027,-79.690835	park	way/1086494433
+Sycamore Park	40.1919,-76.191423	park	way/1201831281
+Soccer field	40.084415,-75.183928	park	way/966774409
+Old Homestead Park	40.233875,-76.084014	park	way/1300077317
+Sleighton Park	39.924041,-75.464914	park	way/554369363
+Basketball courts	40.275273,-76.875325	park	way/1131180575
+Wrecktangle	40.900749,-77.363653	park	way/842749812
+
+# 10 random DROPPED (13102 candidates)
+(unnamed)	40.165585,-75.001445	basketball	no public source places it in a park, public school or rec centre
+(unnamed)	41.282652,-80.482686	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	39.953371,-75.700869	golf	no public source places it in a park, public school or rec centre
+(unnamed)	42.101923,-80.054733	soccer	no public source places it in a park, public school or rec centre
+(unnamed)	41.059169,-79.897079	running	no public source places it in a park, public school or rec centre
+(unnamed)	39.844838,-79.892033	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	40.418703,-76.297568	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	39.934912,-75.551436	soccer	no public source places it in a park, public school or rec centre
+(unnamed)	41.142644,-77.460826	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	40.148863,-75.202072	basketball	inside a school site that is not a verified public high school
+

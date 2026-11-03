@@ -1,0 +1,29 @@
+padus: 120 invalid polygons repaired, 25 dropped
+  public areas: 1776 (128 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 10739 courts/fields read -> 1443 venues ({'known': 258, 'park': 918, 'school': 267}), 5571 courts dropped
+  baseline (old rules, same extract): 3080 venues
+  parks: 918, losing courts vs the old builder: 6 (0.65%)
+# 10 random KEPT (1443 candidates)
+Belton High School	38.812727,-94.55378	school	way/376158822
+Tennis courts	36.514064,-91.537047	park	way/1472817853
+Maple Park	39.111239,-94.55941	park	way/467088557
+Beach Volleyball courts	38.982609,-94.375268	known	way/743410240
+Pickleball courts	36.896969,-89.5701	park	way/1144255702
+Nodaway-Holt MS/HS	40.19887,-95.041445	school	way/1297893067
+South Oak Park	38.975776,-94.58731	park	way/555809425
+Wentzville Rec Center	38.823662,-90.872546	known	way/1354471197
+Mack Porter Park	39.387679,-94.364021	park	way/407385690
+Beach Volleyball courts	39.774207,-94.812343	known	way/613493113
+
+# 10 random DROPPED (5571 candidates)
+(unnamed)	37.162049,-93.394858	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	38.833188,-90.481764	pickleball	no public source places it in a park, public school or rec centre
+(unnamed)	37.960045,-91.770896	volleyball	no public source places it in a park, public school or rec centre
+C-3	38.971416,-92.362387	soccer	no public source places it in a park, public school or rec centre
+(unnamed)	36.901172,-93.570376	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	38.948365,-94.554465	pickleball	no public source places it in a park, public school or rec centre
+(unnamed)	39.051176,-94.464547	running	inside a school site that is not a verified public high school
+(unnamed)	37.923855,-90.514738	basketball	no public source places it in a park, public school or rec centre
+(unnamed)	37.937099,-90.737678	running	no public source places it in a park, public school or rec centre
+(unnamed)	38.46382,-91.811193	baseball	no public source places it in a park, public school or rec centre
+

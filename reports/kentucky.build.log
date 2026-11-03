@@ -1,0 +1,29 @@
+padus: 102 invalid polygons repaired, 3 dropped
+  public areas: 821 (69 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 6711 courts/fields read -> 866 venues ({'known': 62, 'park': 687, 'school': 117}), 3241 courts dropped
+  baseline (old rules, same extract): 2041 venues
+  parks: 687, losing courts vs the old builder: 17 (2.47%)
+# 10 random KEPT (866 candidates)
+Fordsville North Park	37.639295,-86.756991	park	way/1538993977
+Henderson City Sports Complex	37.808171,-87.546209	park	way/1220588281
+Boone County Pee Wee Football	38.997248,-84.665175	park	way/256389314
+Thelma Stovall Park	37.26851,-85.886799	park	way/583391594
+Baseball field	36.681429,-85.695061	park	way/1014586937
+Baseball field	37.999534,-84.492515	park	way/1024100090
+Basketball courts	36.979812,-86.434262	park	way/893325139
+Riverside Park	37.161381,-87.699648	park	way/461367695
+Soccer field	38.225851,-85.220727	park	way/1084045179
+Baseball field	37.746328,-85.975297	park	way/235097548
+
+# 10 random DROPPED (3241 candidates)
+(unnamed)	38.066714,-84.718841	soccer	no public source places it in a park, public school or rec centre
+(unnamed)	38.949837,-84.654411	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	38.083498,-84.439182	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	37.965173,-84.488191	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	38.217926,-85.72371	baseball	inside a school site that is not a verified public high school
+(unnamed)	38.619577,-83.776639	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	38.028731,-84.498384	running	no public source places it in a park, public school or rec centre
+(unnamed)	38.193072,-84.269513	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	39.017459,-84.485499	soccer	no public source places it in a park, public school or rec centre
+Pikeville Mini-Park	37.48666,-82.544351	baseball	no public source places it in a park, public school or rec centre
+

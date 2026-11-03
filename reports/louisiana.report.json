@@ -1,0 +1,791 @@
+{
+  "baseline_venues": 1444,
+  "by_verdict": {
+    "known": 95,
+    "park": 470,
+    "school": 156
+  },
+  "courts_before": 5410,
+  "dropped": 2782,
+  "dropped_by_reason": {
+    "inside a school site that is not a verified public high school": 290,
+    "named private or commercial": 5,
+    "no public source places it in a park, public school or rec centre": 2450,
+    "tagged access=customers and not in a public park or school": 5,
+    "tagged access=no and not in a public park or school": 2,
+    "tagged access=private and not in a public park or school": 30
+  },
+  "padus_polygons": 1274,
+  "padus_repaired": 83,
+  "padus_unrepaired": 0,
+  "park_courts": {
+    "examples": [
+      {
+        "id": "way/477992332",
+        "lost": 8,
+        "name": "Moore Park",
+        "new": 12,
+        "old": 20
+      },
+      {
+        "id": "way/1472883798",
+        "lost": 2,
+        "name": "Tennis courts",
+        "new": 7,
+        "old": 9
+      },
+      {
+        "id": "way/134703831",
+        "lost": 1,
+        "name": "Baseball field",
+        "new": 1,
+        "old": 2
+      },
+      {
+        "id": "way/136526692",
+        "lost": 1,
+        "name": "Tennis courts",
+        "new": 10,
+        "old": 11
+      }
+    ],
+    "parks": 470,
+    "rate": 0.0085,
+    "regressed": 4
+  },
+  "parks_unmeasured": 0,
+  "parks_verified_by_agency": 27,
+  "public_areas": 650,
+  "school_campuses": 156,
+  "schools_9_12": 28644,
+  "state": "louisiana",
+  "unproven_school_areas": [
+    {
+      "dropped": 1,
+      "id": "relation/7298117",
+      "kept": 0,
+      "name": "Saint Luke's Episcopal Day School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/1041140346",
+      "kept": 0,
+      "name": "Vandebilt Catholic High School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/1072463951",
+      "kept": 0,
+      "name": "Dularge Middle School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/1074197349",
+      "kept": 0,
+      "name": "Hanson Memorial High School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1078051649",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/1079313502",
+      "kept": 0,
+      "name": "Jesus the Good Shepherd School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/1118455548",
+      "kept": 0,
+      "name": "Pope John Paul II Catholic High School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/1146171567",
+      "kept": 0,
+      "name": "Parkview Baptist School"
+    },
+    {
+      "dropped": 7,
+      "id": "way/1181068409",
+      "kept": 0,
+      "name": "Ouachita Christian School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1186222491",
+      "kept": 0,
+      "name": "Mamou Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/1210339368",
+      "kept": 0,
+      "name": "Cedar Creek School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/1221919310",
+      "kept": 0,
+      "name": "Ruston Junior High School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1223040806",
+      "kept": 0,
+      "name": "Bethune/Oak Park Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1224671372",
+      "kept": 0,
+      "name": "Cherokee Park Elementary School"
+    },
+    {
+      "dropped": 0,
+      "id": "way/1226368448",
+      "kept": 3,
+      "name": "Midway Professional Development Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1226412496",
+      "kept": 0,
+      "name": "North Highlands Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1226617195",
+      "kept": 0,
+      "name": "Sunset Acres Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1226643041",
+      "kept": 0,
+      "name": "Caddo Middle Magnet School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/1226643046",
+      "kept": 0,
+      "name": "Youree Drive Middle Advanced Placement Magnet School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1226883358",
+      "kept": 0,
+      "name": "Turner Elementary/Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1227025141",
+      "kept": 0,
+      "name": "Magnolia School of Excellence 6-12"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1227029363",
+      "kept": 0,
+      "name": "Glen View Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1231453213",
+      "kept": 0,
+      "name": "Benton Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1271362945",
+      "kept": 0,
+      "name": "Archbishop Shaw High School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/1302099763",
+      "kept": 0,
+      "name": "Benton Middle School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/1302099767",
+      "kept": 0,
+      "name": "Elm Grove Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1302881992",
+      "kept": 0,
+      "name": "Pelican All Saints High School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/1315286375",
+      "kept": 0,
+      "name": "Green T Lindon Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1328612834",
+      "kept": 0,
+      "name": "Central Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/1329742519",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 3,
+      "id": "way/1332682323",
+      "kept": 0,
+      "name": "Jonesboro-Hodge Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/1346053292",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/1355439281",
+      "kept": 0,
+      "name": "Lewis Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1355439282",
+      "kept": 0,
+      "name": "Sulphur High School 9th Grade Campus"
+    },
+    {
+      "dropped": 3,
+      "id": "way/1355832651",
+      "kept": 0,
+      "name": "Lake Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/1356060932",
+      "kept": 0,
+      "name": "LeBlanc Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1362475005",
+      "kept": 0,
+      "name": "Lafayette Renaissance Charter High"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1364174757",
+      "kept": 0,
+      "name": "Calhoun Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1364402307",
+      "kept": 0,
+      "name": "Riser Elementary/Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1364402313",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/1376608896",
+      "kept": 0,
+      "name": "Goldonna Elementary/Junior High School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1377031338",
+      "kept": 0,
+      "name": "Winnfield Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1377031366",
+      "kept": 0,
+      "name": "Pollock Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1385667424",
+      "kept": 0,
+      "name": "Linwood Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1388300847",
+      "kept": 0,
+      "name": "Riverside Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1408461894",
+      "kept": 0,
+      "name": "Maplewood Elementary/Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1414186563",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/1414760017",
+      "kept": 0,
+      "name": "J. I. Watson Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/141557786",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/1419905210",
+      "kept": 0,
+      "name": "Griffin-Southside Lower & Upper Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1419907859",
+      "kept": 0,
+      "name": "Jonesville Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1434157437",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 8,
+      "id": "way/1436482448",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 6,
+      "id": "way/1442850361",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 3,
+      "id": "way/1443790634",
+      "kept": 0,
+      "name": "Academy of our Lady School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/1465236148",
+      "kept": 0,
+      "name": "Saint Frederick High School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1535590877",
+      "kept": 0,
+      "name": "Central High School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1551554378",
+      "kept": 0,
+      "name": "W W Stewart Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/190518976",
+      "kept": 0,
+      "name": "Saint Mary's School"
+    },
+    {
+      "dropped": 9,
+      "id": "way/190806590",
+      "kept": 0,
+      "name": "Holy Savior Menard Central High School"
+    },
+    {
+      "dropped": 6,
+      "id": "way/215048682",
+      "kept": 0,
+      "name": "Andrew Jackson Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/216602136",
+      "kept": 0,
+      "name": "Alice Harte Elementary Charter School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/216602191",
+      "kept": 0,
+      "name": "Saint Andrew the Apostle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/216602205",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/216617852",
+      "kept": 0,
+      "name": "Ella C. Pittman Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/216617901",
+      "kept": 0,
+      "name": "Terrytown Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/216620096",
+      "kept": 0,
+      "name": "Woodland West Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/216633987",
+      "kept": 0,
+      "name": "Stella Worley Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/238373851",
+      "kept": 0,
+      "name": "Ponchatoula Junior High School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/238524513",
+      "kept": 0,
+      "name": "East Saint John Preparatory Academy"
+    },
+    {
+      "dropped": 2,
+      "id": "way/284311316",
+      "kept": 0,
+      "name": "W O Hall Elementary Magnet School"
+    },
+    {
+      "dropped": 7,
+      "id": "way/291431134",
+      "kept": 0,
+      "name": "Fair Park Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/293482132",
+      "kept": 0,
+      "name": "Apollo Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/318780458",
+      "kept": 0,
+      "name": "Einstein Charter School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/339830664",
+      "kept": 0,
+      "name": "Edgar Martin Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/364051002",
+      "kept": 0,
+      "name": "Saint Louis Catholic High School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/38501877",
+      "kept": 0,
+      "name": "Louisiana School for the Deaf"
+    },
+    {
+      "dropped": 1,
+      "id": "way/402067935",
+      "kept": 0,
+      "name": "Gonzales Primary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/402080864",
+      "kept": 0,
+      "name": "Catholic High School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/437307304",
+      "kept": 0,
+      "name": "Kehoe France Northshore School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/463511049",
+      "kept": 0,
+      "name": "Oak Forest Academy"
+    },
+    {
+      "dropped": 4,
+      "id": "way/464516135",
+      "kept": 0,
+      "name": "East Feliciana Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/464516147",
+      "kept": 0,
+      "name": "Silliman Institute"
+    },
+    {
+      "dropped": 4,
+      "id": "way/464552652",
+      "kept": 0,
+      "name": "Saint Thomas Aquinas Regional Catholic High School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/468478242",
+      "kept": 0,
+      "name": "Highland Baptist Christian School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/476052600",
+      "kept": 0,
+      "name": "Notre Dame High School"
+    },
+    {
+      "dropped": 8,
+      "id": "way/488870041",
+      "kept": 0,
+      "name": "Calvary Baptist Academy"
+    },
+    {
+      "dropped": 1,
+      "id": "way/496551881",
+      "kept": 0,
+      "name": "Southeast Middle Magnet School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/497449680",
+      "kept": 0,
+      "name": "Polk Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/499176996",
+      "kept": 0,
+      "name": "Woodlawn Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/499177857",
+      "kept": 0,
+      "name": "Woodlawn Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/500164308",
+      "kept": 0,
+      "name": "Jefferson Terrace Academy"
+    },
+    {
+      "dropped": 3,
+      "id": "way/502487402",
+      "kept": 0,
+      "name": "The Dunham School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/504096510",
+      "kept": 0,
+      "name": "Baton Rouge Ochsner Discovery Health Sciences Academy"
+    },
+    {
+      "dropped": 3,
+      "id": "way/504096519",
+      "kept": 0,
+      "name": "Saint Michael the Archangel High School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/504100025",
+      "kept": 0,
+      "name": "Kenilworth Middle School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/511614494",
+      "kept": 0,
+      "name": "Paul J. Solis Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/535940068",
+      "kept": 0,
+      "name": "Atonement Lutheran School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/536524431",
+      "kept": 0,
+      "name": "Bissonet Plaza Elementary School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/537023517",
+      "kept": 0,
+      "name": "Saint Philip Neri School"
+    },
+    {
+      "dropped": 8,
+      "id": "way/565104015",
+      "kept": 0,
+      "name": "Catholic High, New Iberia"
+    },
+    {
+      "dropped": 5,
+      "id": "way/603158226",
+      "kept": 0,
+      "name": "Broadmoor STEM Academy School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/645132445",
+      "kept": 0,
+      "name": "J.F. Gauthier Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/722404986",
+      "kept": 0,
+      "name": "J S Slocum Learning Center School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/735305980",
+      "kept": 0,
+      "name": "River Oaks School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/74002332",
+      "kept": 0,
+      "name": "Morgan City Junior High School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/75848717",
+      "kept": 0,
+      "name": "Oaklawn Junior High School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/75919260",
+      "kept": 0,
+      "name": "Southdown Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/77566334",
+      "kept": 0,
+      "name": "Progress Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/817776777",
+      "kept": 0,
+      "name": "Linear/Northside Middle School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/826307572",
+      "kept": 0,
+      "name": "Saint Martin's Episcopal School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/828078750",
+      "kept": 0,
+      "name": "Meraux Elementary"
+    },
+    {
+      "dropped": 2,
+      "id": "way/835130628",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/852162558",
+      "kept": 0,
+      "name": "L P Monteleone Junior High School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/899069180",
+      "kept": 0,
+      "name": "John James Audubon Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/901294447",
+      "kept": 0,
+      "name": "Tioga Junior High School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/933438203",
+      "kept": 0,
+      "name": "Archbishop Rummel High School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/977672585",
+      "kept": 0,
+      "name": "Rusheon Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/980984238",
+      "kept": 0,
+      "name": "Good Hope Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/985532946",
+      "kept": 0,
+      "name": "Oak Terrace J B Harville Alternative School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/991705082",
+      "kept": 0,
+      "name": "Tallulah Elementary School"
+    }
+  ],
+  "venues_after": 721
+}

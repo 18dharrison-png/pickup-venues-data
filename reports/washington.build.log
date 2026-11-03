@@ -1,0 +1,29 @@
+padus: 481 invalid polygons repaired, 1 dropped
+  public areas: 3700 (224 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 15099 courts/fields read -> 1761 venues ({'known': 181, 'park': 1289, 'school': 291}), 8680 courts dropped
+  baseline (old rules, same extract): 4944 venues
+  parks: 1289, losing courts vs the old builder: 19 (1.47%)
+# 10 random KEPT (1761 candidates)
+Thornbury Park	46.998712,-122.800388	park	way/225290761
+Tennis courts	47.760531,-122.189671	park	way/1320484756
+Ballard Park	47.275376,-122.207451	park	way/25720484
+Orting Lions Recreation Park	47.076371,-122.185859	park	way/484669409
+Sands Avenue Ballfield	47.64142,-122.543869	park	relation/5383355
+Bickleton School	45.999569,-120.292245	school	way/1002396400
+Cashmere High School	47.513554,-120.479222	school	way/778605995
+Basketball courts	47.86238,-119.119668	park	way/369781770
+Pickleball courts	47.723848,-122.349608	park	way/1080168676
+Vassault Park	47.280866,-122.51938	park	way/24583977
+
+# 10 random DROPPED (8680 candidates)
+Cascara Gardens	47.689327,-122.038035	basketball	no public source places it in a park, public school or rec centre
+(unnamed)	48.460924,-122.931228	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	46.270712,-119.27685	basketball	inside a school site that is not a verified public high school
+(unnamed)	47.327957,-122.276782	baseball	inside a school site that is not a verified public high school
+(unnamed)	48.858281,-122.490726	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	47.883018,-120.158764	pickleball	no public source places it in a park, public school or rec centre
+(unnamed)	47.782328,-117.114097	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	48.179343,-117.05689	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	47.571799,-122.316518	basketball	no public source places it in a park, public school or rec centre
+Vern Kindsfather Field	45.635566,-122.65928	baseball	no public source places it in a park, public school or rec centre
+

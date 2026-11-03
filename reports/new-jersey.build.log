@@ -1,0 +1,29 @@
+padus: 758 invalid polygons repaired, 0 dropped
+  public areas: 2210 (10 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 17626 courts/fields read -> 3165 venues ({'known': 141, 'park': 2856, 'school': 168}), 7990 courts dropped
+  baseline (old rules, same extract): 5688 venues
+  parks: 2856, losing courts vs the old builder: 61 (2.14%)
+# 10 random KEPT (3165 candidates)
+Haddon Township High School	39.904887,-75.057877	school	way/30159300
+Soccer field	40.135622,-74.642291	park	way/1339325969
+Parsippany Hills High School	40.862651,-74.457544	school	way/39648185
+Baseball field	40.793616,-74.455093	park	way/686968085
+Pupek Road Basketball Court	40.488192,-74.288366	park	way/1023092356
+Jakes Branch County Park	39.926601,-74.21592	park	way/1096104802
+Three Acre Park	40.177089,-74.027482	park	way/480110230
+American Football field	39.745942,-75.212556	park	way/1137103405
+Baseball field	40.0006,-75.025241	park	way/34861350
+Bel Air Park	40.566839,-74.58492	park	way/571464786
+
+# 10 random DROPPED (7990 candidates)
+(unnamed)	40.534952,-74.845306	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	40.755283,-74.263247	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	40.437392,-74.243653	basketball	no public source places it in a park, public school or rec centre
+(unnamed)	40.523303,-74.494334	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	40.987904,-73.98348	basketball	no public source places it in a park, public school or rec centre
+Farm Field	40.992547,-74.3048	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	40.426406,-74.672678	tennis	inside a school site that is not a verified public high school
+(unnamed)	40.926634,-74.374566	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	40.677951,-74.427246	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	40.980628,-74.23548	tennis	no public source places it in a park, public school or rec centre
+

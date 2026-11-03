@@ -1,0 +1,29 @@
+padus: 168 invalid polygons repaired, 0 dropped
+  public areas: 1396 (39 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 7994 courts/fields read -> 1050 venues ({'known': 184, 'park': 698, 'school': 168}), 4467 courts dropped
+  baseline (old rules, same extract): 2930 venues
+  parks: 698, losing courts vs the old builder: 8 (1.15%)
+# 10 random KEPT (1050 candidates)
+Uptown Park	41.709363,-111.816129	park	way/454043167
+Baseball field	40.24667,-111.641355	park	way/216264960
+Centerfield City Park	39.125231,-111.815751	park	way/518040987
+Beach Volleyball courts	38.1604,-111.331854	park	way/1098456683
+Beach Volleyball courts	40.259153,-111.657626	known	way/1277780678
+Beach Volleyball courts	38.158647,-109.763965	park	way/1417058444
+Vineyard Grove Park	40.30282,-111.751798	known	way/474430052
+South Sevier High School	38.631275,-112.131142	school	way/116869240
+US Synthetic Volleyball Court	40.271957,-111.734361	known	way/996228235
+Mary E. Christensen Park	41.516666,-111.997728	park	way/345054769
+
+# 10 random DROPPED (4467 candidates)
+(unnamed)	40.696652,-111.547642	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	40.668327,-111.966937	soccer	inside a school site that is not a verified public high school
+(unnamed)	40.279209,-111.699945	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	40.651621,-111.862613	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	41.290475,-111.948023	tennis	tagged access=private and not in a public park or school
+(unnamed)	40.706446,-112.091001	basketball	no public source places it in a park, public school or rec centre
+(unnamed)	40.514287,-111.908106	basketball	no public source places it in a park, public school or rec centre
+(unnamed)	40.971925,-111.879575	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	38.687169,-112.147609	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	41.058747,-111.972249	baseball	inside a school site that is not a verified public high school
+

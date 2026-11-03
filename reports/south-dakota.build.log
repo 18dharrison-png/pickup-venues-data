@@ -1,0 +1,29 @@
+padus: 95 invalid polygons repaired, 0 dropped
+  public areas: 390 (19 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 2492 courts/fields read -> 378 venues ({'known': 54, 'park': 255, 'school': 69}), 1235 courts dropped
+  baseline (old rules, same extract): 927 venues
+  parks: 255, losing courts vs the old builder: 3 (1.18%)
+# 10 random KEPT (378 candidates)
+Ronnie Theisz Field	44.499051,-103.877395	known	way/156245983
+Augusta Park	42.904935,-97.401382	park	way/1178477851
+Monroe Park (Northside Park)	43.720192,-98.031866	park	way/246083063
+DC Field	44.760163,-96.676299	known	way/566453501
+Viborg-Hurley School	43.169227,-97.083972	school	relation/18585488
+Sisseton Middle School/Sisseton High School	45.662937,-97.067798	school	relation/19259963
+Menlo Park	43.534432,-96.739415	park	way/468647694
+Doland High School - 01	44.897596,-98.102654	school	relation/20660615
+Bob Shelden Field	44.297998,-96.786708	park	way/242896908
+Baseball field	44.905654,-97.144851	park	way/481115463
+
+# 10 random DROPPED (1235 candidates)
+(unnamed)	44.920074,-97.11045	basketball	no public source places it in a park, public school or rec centre
+(unnamed)	44.051179,-103.26436	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	45.785487,-97.749911	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	44.053872,-103.219192	tennis	inside a school site that is not a verified public high school
+(unnamed)	45.661541,-97.054759	basketball	no public source places it in a park, public school or rec centre
+(unnamed)	44.157205,-103.07692	basketball	no public source places it in a park, public school or rec centre
+(unnamed)	44.100279,-103.208203	basketball	no public source places it in a park, public school or rec centre
+(unnamed)	45.460628,-98.504109	running	inside a school site that is not a verified public high school
+(unnamed)	43.346604,-96.889735	running	no public source places it in a park, public school or rec centre
+Football/Athletic Field	43.828876,-99.32267	american_football	inside a school site that is not a verified public high school
+

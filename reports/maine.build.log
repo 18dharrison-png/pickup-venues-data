@@ -1,0 +1,29 @@
+padus: 87 invalid polygons repaired, 0 dropped
+  public areas: 449 (58 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 3760 courts/fields read -> 360 venues ({'known': 103, 'park': 164, 'school': 93}), 2514 courts dropped
+  baseline (old rules, same extract): 1121 venues
+  parks: 164, losing courts vs the old builder: 2 (1.22%)
+# 10 random KEPT (360 candidates)
+Camden Hills Regional High School	44.188816,-69.100873	school	way/1356022277
+William Murray-Rowe Park	43.139635,-70.821944	park	way/1211303874
+Witham Park	44.837666,-69.27012	known	way/1376000242
+York High School	43.155694,-70.629431	school	way/749835319
+Pemaquid Beach Park	43.871811,-69.518931	park	relation/20454249
+Pickleball courts	43.723566,-70.423568	park	way/1082496614
+Kennedy Park	43.665033,-70.256408	park	way/455443248
+Running field	44.555875,-70.549066	known	way/1136579868
+Southern Aroostook Community School	46.086022,-68.186993	school	way/1372714531
+McGuire Field	44.300721,-69.754479	known	way/547180846
+
+# 10 random DROPPED (2514 candidates)
+George Stevens Academy Athletic Fields	44.430132,-68.561044	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	45.184564,-69.245628	tennis	inside a school site that is not a verified public high school
+(unnamed)	44.795119,-69.892706	baseball	inside a school site that is not a verified public high school
+(unnamed)	44.325931,-69.865074	baseball	inside a school site that is not a verified public high school
+Youth Memorial Park	44.312491,-69.797959	tennis	no public source places it in a park, public school or rec centre
+Oceanside Middle School Baseball Field	44.081518,-69.184862	baseball	inside a school site that is not a verified public high school
+Mike Backus Memorial Baseball Field	44.618084,-70.195877	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	44.549779,-68.42993	baseball	inside a school site that is not a verified public high school
+(unnamed)	44.44625,-70.010529	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	43.635064,-70.224218	tennis	tagged access=private and not in a public park or school
+

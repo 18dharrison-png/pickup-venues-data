@@ -1,0 +1,361 @@
+{"id":"node/4936042288","name":"Squash on Fire","lat":38.90558,"lon":-77.049758,"sports":["squash"],"access":"","leisure":"sports_centre","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"node/9196372665","name":"Washington DC Table Tennis","lat":38.967447,"lon":-77.011682,"sports":["table_tennis"],"access":"","leisure":"sports_centre","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"node/11221520741","name":"CitySwing","lat":38.902109,"lon":-77.024806,"sports":["golf"],"access":"","leisure":"sports_centre","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"node/12386647972","name":null,"lat":38.925231,"lon":-76.977655,"sports":["basketball"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"node/13900152458","name":null,"lat":38.976365,"lon":-77.027461,"sports":["table_tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/28317460","name":null,"lat":38.91023,"lon":-77.066428,"sports":["basketball"],"access":"yes","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/33899314","name":"Bender Arena","lat":38.937712,"lon":-77.089838,"sports":["multi"],"access":"","leisure":"sports_centre","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/48110244","name":null,"lat":38.955096,"lon":-77.084038,"sports":["basketball","volleyball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/48111167","name":null,"lat":38.879834,"lon":-77.023637,"sports":["basketball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/48826980","name":"Cooper Field","lat":38.908049,"lon":-77.0753,"sports":["american_football","lacrosse"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/48826982","name":"Kehoe Field","lat":38.909261,"lon":-77.076857,"sports":["field_hockey","multi"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/48826983","name":null,"lat":38.910678,"lon":-77.072656,"sports":["lacrosse"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/55328009","name":null,"lat":38.93486,"lon":-77.041022,"sports":["soccer"],"access":"private","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/59246412","name":null,"lat":38.918459,"lon":-77.032879,"sports":["basketball"],"access":"unknown","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/62208223","name":"Hotchkiss Field","lat":38.906843,"lon":-76.991721,"sports":["american_football","soccer"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/62208225","name":"Softball Complex","lat":38.906853,"lon":-76.990705,"sports":["baseball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/62208226","name":"Hoy Field","lat":38.907933,"lon":-76.990501,"sports":["baseball","soccer"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/63058382","name":null,"lat":38.898515,"lon":-76.997947,"sports":["baseball"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/66409288","name":"Charles E. Smith Center","lat":38.897805,"lon":-77.049294,"sports":["basketball","volleyball"],"access":"","leisure":"sports_centre","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/67260403","name":null,"lat":38.873032,"lon":-77.007397,"sports":["baseball"],"access":"private","leisure":"pitch","reason":"tagged access=private and not in a public park or school"}
+{"id":"way/67341058","name":null,"lat":38.827785,"lon":-77.021502,"sports":["basketball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/67341059","name":null,"lat":38.827615,"lon":-77.021003,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/67521441","name":null,"lat":38.91104,"lon":-77.069764,"sports":["baseball"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/71282841","name":null,"lat":38.955184,"lon":-77.084654,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/72299586","name":null,"lat":38.898246,"lon":-76.997292,"sports":["basketball"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/73989211","name":"Rivergate City Park","lat":38.813185,"lon":-77.037772,"sports":["volleyball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/86977085","name":null,"lat":38.847469,"lon":-77.019142,"sports":["baseball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/86977088","name":null,"lat":38.848098,"lon":-77.016854,"sports":["baseball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/86977089","name":null,"lat":38.848565,"lon":-77.017659,"sports":["baseball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/86977092","name":null,"lat":38.846798,"lon":-77.016256,"sports":["baseball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/86977093","name":null,"lat":38.847042,"lon":-77.017446,"sports":["baseball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/86977096","name":null,"lat":38.831,"lon":-77.019826,"sports":["basketball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/95616836","name":null,"lat":38.879862,"lon":-76.992285,"sports":["baseball"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/95752321","name":"Robert J. Talbot Baseball Field","lat":38.945126,"lon":-77.001193,"sports":["baseball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/95752322","name":null,"lat":38.944731,"lon":-77.002341,"sports":["softball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/95752323","name":null,"lat":38.941845,"lon":-77.000079,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/97121376","name":null,"lat":38.843669,"lon":-77.019732,"sports":["basketball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/97167265","name":null,"lat":38.845971,"lon":-77.017596,"sports":["basketball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/97167267","name":null,"lat":38.844713,"lon":-77.017682,"sports":["basketball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/97167292","name":null,"lat":38.842192,"lon":-77.021825,"sports":["basketball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"relation/1402613","name":null,"lat":38.842676,"lon":-77.01559,"sports":["running"],"access":"","leisure":"track","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/117519354","name":null,"lat":38.92892,"lon":-77.03537,"sports":["basketball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"relation/14154266","name":null,"lat":38.901046,"lon":-76.969435,"sports":["running"],"access":"","leisure":"track","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/124129564","name":null,"lat":38.89973,"lon":-76.973276,"sports":["basketball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/134180147","name":null,"lat":38.902758,"lon":-76.969907,"sports":["basketball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/134180149","name":null,"lat":38.901032,"lon":-76.969411,"sports":["american_football"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/134183707","name":null,"lat":38.916955,"lon":-77.089466,"sports":["softball"],"access":"customers","leisure":"pitch","reason":"tagged access=customers and not in a public park or school"}
+{"id":"way/134183708","name":null,"lat":38.9181,"lon":-77.091245,"sports":["lacrosse","soccer"],"access":"customers","leisure":"pitch","reason":"tagged access=customers and not in a public park or school"}
+{"id":"way/134183710","name":null,"lat":38.917207,"lon":-77.091041,"sports":["tennis"],"access":"","leisure":"sports_centre","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/135175367","name":null,"lat":38.881085,"lon":-76.938176,"sports":["basketball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/135360867","name":null,"lat":38.843277,"lon":-76.986139,"sports":["basketball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/135574735","name":null,"lat":38.913038,"lon":-77.072174,"sports":["soccer"],"access":"private","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/142637842","name":null,"lat":38.853534,"lon":-76.986355,"sports":["basketball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/147223139","name":null,"lat":38.925602,"lon":-77.020785,"sports":["american_football"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/151105223","name":null,"lat":38.928735,"lon":-77.090886,"sports":["tennis"],"access":"private","leisure":"pitch","reason":"tagged access=private and not in a public park or school"}
+{"id":"way/153667534","name":null,"lat":38.863431,"lon":-77.005287,"sports":["baseball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/153667547","name":null,"lat":38.86133,"lon":-77.007791,"sports":["volleyball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/153667551","name":null,"lat":38.863018,"lon":-77.004409,"sports":["basketball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/153667556","name":null,"lat":38.862744,"lon":-77.003644,"sports":["baseball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/153667567","name":null,"lat":38.863672,"lon":-77.003987,"sports":["soccer"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/153670787","name":null,"lat":38.862298,"lon":-77.004102,"sports":["volleyball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/153670788","name":null,"lat":38.863505,"lon":-77.003464,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/154256244","name":null,"lat":38.925464,"lon":-77.031765,"sports":["basketball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/154256245","name":null,"lat":38.929847,"lon":-77.034302,"sports":["soccer"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/169741134","name":null,"lat":38.931047,"lon":-77.067684,"sports":["field_hockey"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/169741136","name":null,"lat":38.930956,"lon":-77.06693,"sports":["field_hockey","soccer","softball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/183795328","name":null,"lat":38.904323,"lon":-77.013306,"sports":["basketball"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"relation/2449058","name":null,"lat":38.94128,"lon":-77.007547,"sports":["running"],"access":"","leisure":"track","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/183924449","name":null,"lat":38.941314,"lon":-77.007536,"sports":["american_football","soccer"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/191382540","name":null,"lat":38.920642,"lon":-77.068947,"sports":["basketball"],"access":"private","leisure":"pitch","reason":"tagged access=private and not in a public park or school"}
+{"id":"way/191382541","name":null,"lat":38.920841,"lon":-77.069042,"sports":["tennis"],"access":"private","leisure":"pitch","reason":"tagged access=private and not in a public park or school"}
+{"id":"way/197082986","name":"Buchanan Field","lat":38.900998,"lon":-77.010131,"sports":["american_football"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/197099578","name":null,"lat":38.936595,"lon":-77.025909,"sports":["tennis"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/197099579","name":null,"lat":38.936691,"lon":-77.026311,"sports":["basketball"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/219704599","name":null,"lat":38.903177,"lon":-76.997395,"sports":["basketball"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/219704602","name":null,"lat":38.90308,"lon":-76.997882,"sports":["soccer"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/230590036","name":null,"lat":38.884445,"lon":-76.984164,"sports":["baseball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/230590037","name":null,"lat":38.884796,"lon":-76.983953,"sports":["basketball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/230590038","name":null,"lat":38.885052,"lon":-76.983857,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"relation/3146238","name":null,"lat":38.9433,"lon":-77.000789,"sports":["running"],"access":"","leisure":"track","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/233737623","name":null,"lat":38.964665,"lon":-77.0553,"sports":["multi"],"access":"private","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"relation/3147068","name":null,"lat":38.939632,"lon":-77.073006,"sports":["running"],"access":"","leisure":"track","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/233738055","name":"Sidwell Friends Lower Turf","lat":38.939616,"lon":-77.073002,"sports":["american_football","soccer"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/242848623","name":null,"lat":38.879755,"lon":-77.019153,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/246238827","name":null,"lat":38.925424,"lon":-76.99197,"sports":["basketball"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/253124261","name":null,"lat":38.947912,"lon":-77.01912,"sports":["basketball"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/260833578","name":"Gravelly Point Park","lat":38.866297,"lon":-77.038892,"sports":["american_football"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/267914466","name":null,"lat":38.986442,"lon":-77.037511,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/274895429","name":null,"lat":38.94615,"lon":-77.065633,"sports":["tennis"],"access":"private","leisure":"pitch","reason":"tagged access=private and not in a public park or school"}
+{"id":"way/274895430","name":null,"lat":38.945901,"lon":-77.065564,"sports":["tennis"],"access":"private","leisure":"pitch","reason":"tagged access=private and not in a public park or school"}
+{"id":"way/274895431","name":null,"lat":38.946151,"lon":-77.065924,"sports":["tennis"],"access":"private","leisure":"pitch","reason":"tagged access=private and not in a public park or school"}
+{"id":"way/274895432","name":null,"lat":38.945806,"lon":-77.065665,"sports":["tennis"],"access":"private","leisure":"pitch","reason":"tagged access=private and not in a public park or school"}
+{"id":"way/274895433","name":null,"lat":38.945618,"lon":-77.06551,"sports":["tennis"],"access":"private","leisure":"pitch","reason":"tagged access=private and not in a public park or school"}
+{"id":"way/277831037","name":"John Burr Gymnasium","lat":38.92642,"lon":-77.022154,"sports":["basketball","volleyball"],"access":"","leisure":"sports_centre","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/288574052","name":"John R. Thompson Jr. High School","lat":38.907419,"lon":-77.085445,"sports":["soccer"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/292256624","name":null,"lat":38.931385,"lon":-77.020587,"sports":["basketball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/295118428","name":null,"lat":38.940339,"lon":-77.057345,"sports":["tennis"],"access":"private","leisure":"pitch","reason":"tagged access=private and not in a public park or school"}
+{"id":"way/295647902","name":null,"lat":38.941661,"lon":-77.082363,"sports":["american_football"],"access":"private","leisure":"pitch","reason":"tagged access=private and not in a public park or school"}
+{"id":"way/295652131","name":null,"lat":38.93174,"lon":-77.061593,"sports":["soccer"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/296933619","name":null,"lat":38.943688,"lon":-76.993708,"sports":["multi"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/296933620","name":null,"lat":38.943886,"lon":-76.9938,"sports":["multi"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/296941570","name":null,"lat":38.937363,"lon":-76.983942,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/297527610","name":"Raymond A. DuFour Center","lat":38.942531,"lon":-76.99935,"sports":["basketball"],"access":"","leisure":"sports_centre","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/299650478","name":null,"lat":38.938787,"lon":-77.073533,"sports":["baseball"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/299650479","name":"Sidwell Friends Upper Turf","lat":38.940225,"lon":-77.074812,"sports":["field_hockey","soccer"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/306712735","name":"Shaw Field","lat":38.910291,"lon":-77.076711,"sports":["soccer"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/309453111","name":null,"lat":38.921135,"lon":-77.087631,"sports":["basketball"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/313026102","name":null,"lat":38.98537,"lon":-77.039749,"sports":["basketball"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/333729599","name":null,"lat":38.963773,"lon":-77.054103,"sports":["american_football"],"access":"private","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/333731627","name":null,"lat":38.962063,"lon":-77.053683,"sports":["soccer"],"access":"private","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/333731636","name":null,"lat":38.963909,"lon":-77.055776,"sports":["tennis"],"access":"","leisure":"sports_centre","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/334366446","name":null,"lat":38.842679,"lon":-77.015595,"sports":["soccer"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/334428854","name":"Alice Deal Middle School Athletic Field","lat":38.954019,"lon":-77.075354,"sports":["baseball","soccer"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/334430862","name":"Alice Deal Middle School Basketball Court","lat":38.953362,"lon":-77.075613,"sports":["basketball"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/360192965","name":null,"lat":38.943276,"lon":-77.000762,"sports":["american_football","field_hockey","soccer"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/360908357","name":null,"lat":38.944945,"lon":-77.067285,"sports":["soccer"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/370599289","name":null,"lat":38.917014,"lon":-77.044799,"sports":["soccer"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/372322820","name":null,"lat":38.93702,"lon":-77.026559,"sports":["soccer"],"access":"yes","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/375977966","name":null,"lat":38.947339,"lon":-77.061932,"sports":["tennis"],"access":"private","leisure":"pitch","reason":"tagged access=private and not in a public park or school"}
+{"id":"way/430597945","name":"Kenilworth Park & Aquatic Gardens","lat":38.907731,"lon":-76.955608,"sports":["soccer"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/430597946","name":"Kenilworth Park & Aquatic Gardens","lat":38.906507,"lon":-76.956202,"sports":["soccer"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/436083991","name":null,"lat":38.867583,"lon":-76.949169,"sports":["basketball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/436083992","name":null,"lat":38.869604,"lon":-76.948262,"sports":["basketball"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/438807588","name":null,"lat":38.883117,"lon":-76.955906,"sports":["baseball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/438807589","name":null,"lat":38.882436,"lon":-76.956705,"sports":["baseball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/438819442","name":null,"lat":38.89753,"lon":-76.944126,"sports":["american_football"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/447801797","name":null,"lat":38.924872,"lon":-77.074942,"sports":["basketball"],"access":"private","leisure":"pitch","reason":"tagged access=private and not in a public park or school"}
+{"id":"way/501034375","name":null,"lat":38.939171,"lon":-77.04506,"sports":["tennis"],"access":"private","leisure":"pitch","reason":"tagged access=private and not in a public park or school"}
+{"id":"way/501034376","name":null,"lat":38.941384,"lon":-77.055535,"sports":["tennis"],"access":"private","leisure":"pitch","reason":"tagged access=private and not in a public park or school"}
+{"id":"way/501034378","name":null,"lat":38.942758,"lon":-77.060667,"sports":["tennis"],"access":"private","leisure":"pitch","reason":"tagged access=private and not in a public park or school"}
+{"id":"way/503287186","name":null,"lat":38.87791,"lon":-76.998401,"sports":["basketball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/518429350","name":null,"lat":38.903586,"lon":-76.98742,"sports":["basketball"],"access":"permissive","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/530929936","name":null,"lat":38.928148,"lon":-77.067914,"sports":["baseball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/544675549","name":null,"lat":38.936846,"lon":-76.998523,"sports":["basketball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/549230496","name":null,"lat":38.95189,"lon":-77.083874,"sports":["multi"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/550988209","name":null,"lat":38.934136,"lon":-77.086997,"sports":["running"],"access":"","leisure":"track","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/551356041","name":null,"lat":38.934142,"lon":-77.087003,"sports":["soccer"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/571325463","name":null,"lat":38.927048,"lon":-76.975757,"sports":["skateboard"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/574956043","name":null,"lat":38.868206,"lon":-77.017004,"sports":["soccer"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/581419033","name":null,"lat":38.909989,"lon":-77.025596,"sports":["soccer"],"access":"private","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"relation/8631158","name":null,"lat":38.90101,"lon":-77.010142,"sports":["running"],"access":"","leisure":"track","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/661083069","name":null,"lat":38.910222,"lon":-77.025267,"sports":["basketball"],"access":"private","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/691287195","name":null,"lat":38.93803,"lon":-76.998121,"sports":["basketball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/692122437","name":null,"lat":38.837381,"lon":-77.016338,"sports":["basketball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/729684451","name":null,"lat":38.942341,"lon":-77.057624,"sports":["soccer"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/739619566","name":null,"lat":38.931657,"lon":-77.061229,"sports":["basketball"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/740088573","name":null,"lat":38.936396,"lon":-77.052684,"sports":["tennis"],"access":"private","leisure":"pitch","reason":"tagged access=private and not in a public park or school"}
+{"id":"way/783218636","name":null,"lat":38.935957,"lon":-77.068753,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/788677714","name":null,"lat":38.914946,"lon":-77.086181,"sports":["soccer"],"access":"private","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/915595171","name":null,"lat":38.963491,"lon":-77.053334,"sports":["running"],"access":"","leisure":"track","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/930392441","name":null,"lat":38.915774,"lon":-77.068612,"sports":["running"],"access":"","leisure":"track","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/930392442","name":null,"lat":38.915712,"lon":-77.068896,"sports":["running"],"access":"","leisure":"track","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/930392443","name":null,"lat":38.916372,"lon":-77.068637,"sports":["running"],"access":"","leisure":"track","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/849613872","name":null,"lat":38.914563,"lon":-77.050886,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/884531324","name":"White House Basketball Court","lat":38.896536,"lon":-77.038476,"sports":["basketball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/903762902","name":null,"lat":38.944382,"lon":-77.05484,"sports":["tennis"],"access":"private","leisure":"pitch","reason":"tagged access=private and not in a public park or school"}
+{"id":"way/907065590","name":null,"lat":38.881003,"lon":-76.938516,"sports":["basketball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/915595170","name":null,"lat":38.963098,"lon":-77.053889,"sports":["baseball"],"access":"private","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/926330147","name":null,"lat":38.934866,"lon":-77.050825,"sports":["tennis"],"access":"private","leisure":"pitch","reason":"tagged access=private and not in a public park or school"}
+{"id":"way/930392438","name":null,"lat":38.915888,"lon":-77.069079,"sports":["tennis"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/930392439","name":null,"lat":38.916131,"lon":-77.068861,"sports":["running"],"access":"","leisure":"track","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/931968635","name":null,"lat":38.9338,"lon":-77.087153,"sports":["basketball"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/942925709","name":null,"lat":38.879804,"lon":-77.023659,"sports":["basketball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/965393641","name":null,"lat":38.87623,"lon":-77.012765,"sports":["basketball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/965393643","name":null,"lat":38.875662,"lon":-77.012998,"sports":["pickleball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/965393644","name":null,"lat":38.87566,"lon":-77.012907,"sports":["pickleball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/965393645","name":null,"lat":38.875316,"lon":-77.011869,"sports":["pickleball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/965393646","name":null,"lat":38.876006,"lon":-77.013323,"sports":["pickleball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/965396077","name":null,"lat":38.917,"lon":-77.090535,"sports":["tennis"],"access":"customers","leisure":"pitch","reason":"tagged access=customers and not in a public park or school"}
+{"id":"way/965396078","name":null,"lat":38.917051,"lon":-77.090807,"sports":["tennis"],"access":"customers","leisure":"pitch","reason":"tagged access=customers and not in a public park or school"}
+{"id":"way/965396079","name":null,"lat":38.916973,"lon":-77.090819,"sports":["tennis"],"access":"customers","leisure":"pitch","reason":"tagged access=customers and not in a public park or school"}
+{"id":"way/965396080","name":null,"lat":38.917014,"lon":-77.091066,"sports":["tennis"],"access":"customers","leisure":"pitch","reason":"tagged access=customers and not in a public park or school"}
+{"id":"way/965396081","name":null,"lat":38.917014,"lon":-77.091242,"sports":["tennis"],"access":"customers","leisure":"pitch","reason":"tagged access=customers and not in a public park or school"}
+{"id":"way/965396082","name":null,"lat":38.917189,"lon":-77.091762,"sports":["tennis"],"access":"customers","leisure":"pitch","reason":"tagged access=customers and not in a public park or school"}
+{"id":"way/965396083","name":null,"lat":38.917393,"lon":-77.090715,"sports":["tennis"],"access":"customers","leisure":"pitch","reason":"tagged access=customers and not in a public park or school"}
+{"id":"way/965396084","name":null,"lat":38.917304,"lon":-77.090719,"sports":["tennis"],"access":"customers","leisure":"pitch","reason":"tagged access=customers and not in a public park or school"}
+{"id":"way/965396085","name":null,"lat":38.917334,"lon":-77.090959,"sports":["tennis"],"access":"customers","leisure":"pitch","reason":"tagged access=customers and not in a public park or school"}
+{"id":"way/965396086","name":null,"lat":38.917316,"lon":-77.091166,"sports":["tennis"],"access":"customers","leisure":"pitch","reason":"tagged access=customers and not in a public park or school"}
+{"id":"way/965396087","name":null,"lat":38.917336,"lon":-77.091373,"sports":["tennis"],"access":"customers","leisure":"pitch","reason":"tagged access=customers and not in a public park or school"}
+{"id":"way/966314089","name":null,"lat":38.946912,"lon":-76.984151,"sports":["basketball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/966314095","name":null,"lat":38.948101,"lon":-76.986072,"sports":["basketball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/966314096","name":null,"lat":38.947652,"lon":-76.985877,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/966314097","name":null,"lat":38.94767,"lon":-76.985702,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/966314098","name":null,"lat":38.947297,"lon":-76.985658,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/966314099","name":null,"lat":38.947063,"lon":-76.985764,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/966314100","name":null,"lat":38.947026,"lon":-76.986586,"sports":["baseball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/978274685","name":"Cardinal Stadium","lat":38.94333,"lon":-77.000821,"sports":["american_football","field_hockey","soccer"],"access":"","leisure":"sports_centre","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/978274688","name":"Marty and Jone Dowd Family Tennis Courts","lat":38.941708,"lon":-76.999725,"sports":["tennis"],"access":"","leisure":"sports_centre","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/978274689","name":null,"lat":38.941777,"lon":-76.999785,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/978274690","name":null,"lat":38.941567,"lon":-76.999641,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/978274691","name":null,"lat":38.941466,"lon":-76.999717,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/978274692","name":null,"lat":38.941975,"lon":-76.999785,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/978274693","name":null,"lat":38.941836,"lon":-76.999786,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/978274701","name":"Carlini Field","lat":38.946236,"lon":-77.001659,"sports":["lacrosse","soccer"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/978280752","name":null,"lat":38.941235,"lon":-77.081964,"sports":["basketball"],"access":"private","leisure":"pitch","reason":"tagged access=private and not in a public park or school"}
+{"id":"way/978280754","name":null,"lat":38.942314,"lon":-77.084981,"sports":["tennis"],"access":"private","leisure":"pitch","reason":"tagged access=private and not in a public park or school"}
+{"id":"way/978280755","name":null,"lat":38.942327,"lon":-77.085773,"sports":["tennis"],"access":"private","leisure":"pitch","reason":"tagged access=private and not in a public park or school"}
+{"id":"way/978575934","name":null,"lat":38.927802,"lon":-77.060524,"sports":["soccer"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/982098872","name":null,"lat":38.938628,"lon":-76.991312,"sports":["pickleball"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/993333073","name":null,"lat":38.975465,"lon":-77.021916,"sports":["baseball"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/993333095","name":null,"lat":38.975051,"lon":-77.021901,"sports":["basketball"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1000398222","name":null,"lat":38.946955,"lon":-77.081158,"sports":["soccer"],"access":"private","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1005059426","name":null,"lat":38.963653,"lon":-77.080308,"sports":["basketball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"relation/12577609","name":null,"lat":38.9161,"lon":-77.068815,"sports":["running"],"access":"","leisure":"track","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1020301830","name":null,"lat":38.928829,"lon":-76.966348,"sports":["basketball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1029495355","name":null,"lat":38.872128,"lon":-76.974427,"sports":["soccer"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1029495356","name":null,"lat":38.872151,"lon":-76.974074,"sports":["basketball"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1033960055","name":null,"lat":38.96417,"lon":-77.056083,"sports":["tennis"],"access":"private","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1033960056","name":null,"lat":38.96417,"lon":-77.055914,"sports":["tennis"],"access":"private","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1033960057","name":null,"lat":38.963874,"lon":-77.056083,"sports":["tennis"],"access":"private","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1033960058","name":null,"lat":38.963874,"lon":-77.055914,"sports":["tennis"],"access":"private","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1038903389","name":null,"lat":38.909102,"lon":-76.994714,"sports":["american_football","soccer"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1038903391","name":null,"lat":38.906103,"lon":-76.991522,"sports":["running"],"access":"","leisure":"track","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"relation/13909547","name":null,"lat":38.906865,"lon":-76.991748,"sports":["running"],"access":"","leisure":"track","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1038904736","name":null,"lat":38.90831,"lon":-76.988745,"sports":["basketball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1038905721","name":null,"lat":38.920744,"lon":-77.026954,"sports":["running"],"access":"","leisure":"track","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1038907424","name":null,"lat":38.925396,"lon":-77.021346,"sports":["running"],"access":"","leisure":"track","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"relation/3146160","name":null,"lat":38.925595,"lon":-77.020794,"sports":["running"],"access":"","leisure":"track","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1051929631","name":null,"lat":38.908145,"lon":-77.065071,"sports":["soccer"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1052377888","name":null,"lat":38.952482,"lon":-77.083233,"sports":["lacrosse","soccer"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1058337344","name":null,"lat":38.842292,"lon":-76.997762,"sports":["basketball"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1058337345","name":null,"lat":38.842533,"lon":-76.997937,"sports":["basketball"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1064127763","name":null,"lat":38.877964,"lon":-76.990415,"sports":["basketball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"relation/14241389","name":null,"lat":38.903107,"lon":-76.997742,"sports":["running"],"access":"","leisure":"track","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1095762600","name":null,"lat":38.913008,"lon":-77.004894,"sports":["running"],"access":"","leisure":"track","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1100718810","name":null,"lat":38.909034,"lon":-77.01733,"sports":["running"],"access":"","leisure":"track","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1109092822","name":null,"lat":38.928527,"lon":-77.002806,"sports":["multi","soccer"],"access":"private","leisure":"pitch","reason":"tagged access=private and not in a public park or school"}
+{"id":"way/1109098658","name":null,"lat":38.926912,"lon":-77.002451,"sports":["tennis"],"access":"private","leisure":"pitch","reason":"tagged access=private and not in a public park or school"}
+{"id":"way/1109098659","name":null,"lat":38.926532,"lon":-77.002449,"sports":["tennis"],"access":"private","leisure":"pitch","reason":"tagged access=private and not in a public park or school"}
+{"id":"way/1109098660","name":null,"lat":38.926226,"lon":-77.002599,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1131808251","name":null,"lat":38.848704,"lon":-76.980865,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1131808252","name":null,"lat":38.848504,"lon":-76.98018,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1131808253","name":null,"lat":38.847791,"lon":-76.979509,"sports":["basketball"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1131995462","name":null,"lat":38.855594,"lon":-76.982711,"sports":["basketball"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1134026767","name":null,"lat":38.875828,"lon":-76.996028,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1134277419","name":null,"lat":38.875817,"lon":-76.992802,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1134277420","name":null,"lat":38.875838,"lon":-76.99301,"sports":["basketball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1143765363","name":null,"lat":38.867681,"lon":-77.016531,"sports":["baseball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1143765366","name":null,"lat":38.869741,"lon":-77.016684,"sports":["baseball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1148970816","name":null,"lat":38.881417,"lon":-76.93735,"sports":["american_football"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1149416125","name":null,"lat":38.926535,"lon":-77.100852,"sports":["soccer"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1149457604","name":null,"lat":38.89273,"lon":-76.988115,"sports":["basketball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1149492297","name":null,"lat":38.897091,"lon":-77.000044,"sports":["multi"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1176304423","name":null,"lat":38.930905,"lon":-77.068671,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1176304426","name":null,"lat":38.930301,"lon":-77.066617,"sports":["basketball"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1176304427","name":null,"lat":38.929051,"lon":-77.067563,"sports":["american_football","soccer"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1176304428","name":null,"lat":38.929411,"lon":-77.068997,"sports":["running"],"access":"","leisure":"track","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1176304429","name":"","lat":38.929506,"lon":-77.069272,"sports":["running"],"access":"","leisure":"track","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1176304433","name":null,"lat":38.928367,"lon":-77.067461,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1176304434","name":null,"lat":38.928341,"lon":-77.067248,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1176304435","name":null,"lat":38.92826,"lon":-77.066912,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1176304436","name":null,"lat":38.928185,"lon":-77.066598,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1176304437","name":null,"lat":38.927986,"lon":-77.06735,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1176304438","name":null,"lat":38.927833,"lon":-77.066878,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1176304439","name":null,"lat":38.927982,"lon":-77.067007,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"relation/15906939","name":null,"lat":38.92905,"lon":-77.067547,"sports":["running"],"access":"","leisure":"track","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1183455345","name":null,"lat":38.877756,"lon":-76.989043,"sports":["skateboard"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1196917795","name":null,"lat":38.868394,"lon":-77.012846,"sports":["soccer"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1203803750","name":null,"lat":38.859975,"lon":-76.995773,"sports":["basketball"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1208659224","name":null,"lat":38.923577,"lon":-77.038418,"sports":["basketball"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1214338587","name":null,"lat":38.920546,"lon":-77.087271,"sports":["lacrosse","soccer"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1214944982","name":null,"lat":38.950043,"lon":-77.065992,"sports":["basketball"],"access":"yes","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1268540707","name":null,"lat":38.952981,"lon":-77.071251,"sports":["soccer"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1268540708","name":null,"lat":38.952862,"lon":-77.070796,"sports":["basketball"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1275454012","name":null,"lat":38.906126,"lon":-77.059786,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1279662452","name":"Garfield Park","lat":38.88114,"lon":-77.005016,"sports":["pickleball"],"access":"no","leisure":"pitch","reason":"tagged access=no and not in a public park or school"}
+{"id":"way/1319280241","name":null,"lat":38.94675,"lon":-77.070894,"sports":["basketball"],"access":"private","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1321663502","name":null,"lat":38.946716,"lon":-77.059786,"sports":["tennis"],"access":"private","leisure":"pitch","reason":"tagged access=private and not in a public park or school"}
+{"id":"way/1321668191","name":null,"lat":38.905197,"lon":-76.931199,"sports":["soccer"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1321668194","name":null,"lat":38.905269,"lon":-76.930834,"sports":["basketball"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1323292661","name":null,"lat":38.951075,"lon":-77.062692,"sports":["tennis"],"access":"private","leisure":"pitch","reason":"tagged access=private and not in a public park or school"}
+{"id":"way/1326299426","name":null,"lat":38.880087,"lon":-76.99193,"sports":["basketball"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1328223482","name":null,"lat":38.933072,"lon":-77.066066,"sports":["basketball"],"access":"private","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1328223484","name":null,"lat":38.93327,"lon":-77.065589,"sports":["soccer"],"access":"private","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1333850315","name":null,"lat":38.933746,"lon":-77.08366,"sports":["tennis"],"access":"private","leisure":"pitch","reason":"tagged access=private and not in a public park or school"}
+{"id":"way/1334548173","name":null,"lat":38.95963,"lon":-77.056845,"sports":["tennis"],"access":"private","leisure":"pitch","reason":"tagged access=private and not in a public park or school"}
+{"id":"way/1337212320","name":null,"lat":38.940498,"lon":-77.03599,"sports":["basketball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1339080843","name":null,"lat":38.925184,"lon":-76.97729,"sports":["basketball"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1342286780","name":null,"lat":38.926704,"lon":-77.063499,"sports":["tennis"],"access":"private","leisure":"pitch","reason":"tagged access=private and not in a public park or school"}
+{"id":"way/1342976986","name":null,"lat":38.966921,"lon":-77.068128,"sports":["basketball"],"access":"private","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1360938875","name":null,"lat":38.927801,"lon":-77.06058,"sports":["multi"],"access":"","leisure":"sports_centre","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1367336494","name":null,"lat":38.939957,"lon":-77.069252,"sports":["tennis"],"access":"private","leisure":"pitch","reason":"tagged access=private and not in a public park or school"}
+{"id":"way/1378975900","name":null,"lat":38.97971,"lon":-77.062683,"sports":["basketball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1379282112","name":null,"lat":38.923325,"lon":-77.060707,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1388569288","name":null,"lat":38.910787,"lon":-77.071824,"sports":["tennis"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1388569289","name":null,"lat":38.910897,"lon":-77.071868,"sports":["tennis"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1388569290","name":null,"lat":38.910909,"lon":-77.071717,"sports":["tennis"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1388569291","name":null,"lat":38.910831,"lon":-77.071389,"sports":["tennis"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1409155298","name":null,"lat":38.919492,"lon":-77.063556,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1412640813","name":null,"lat":38.834574,"lon":-77.018825,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1420062050","name":null,"lat":38.911174,"lon":-77.061134,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1425671326","name":null,"lat":38.933339,"lon":-77.102464,"sports":["tennis"],"access":"private","leisure":"pitch","reason":"tagged access=private and not in a public park or school"}
+{"id":"way/1433671285","name":null,"lat":38.939228,"lon":-77.012029,"sports":["baseball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1435299777","name":null,"lat":38.933525,"lon":-77.083054,"sports":["tennis"],"access":"private","leisure":"pitch","reason":"tagged access=private and not in a public park or school"}
+{"id":"way/1435299778","name":null,"lat":38.933636,"lon":-77.083104,"sports":["tennis"],"access":"private","leisure":"pitch","reason":"tagged access=private and not in a public park or school"}
+{"id":"way/1441717021","name":null,"lat":38.927751,"lon":-77.090593,"sports":["tennis"],"access":"private","leisure":"pitch","reason":"tagged access=private and not in a public park or school"}
+{"id":"way/1441756712","name":null,"lat":38.924328,"lon":-77.091608,"sports":["tennis"],"access":"private","leisure":"pitch","reason":"tagged access=private and not in a public park or school"}
+{"id":"way/1443273665","name":null,"lat":38.911706,"lon":-77.064845,"sports":["tennis"],"access":"private","leisure":"pitch","reason":"tagged access=private and not in a public park or school"}
+{"id":"way/1444047542","name":null,"lat":38.892698,"lon":-76.978519,"sports":["basketball"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1444047543","name":null,"lat":38.89308,"lon":-76.978424,"sports":["basketball"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1444047544","name":null,"lat":38.892586,"lon":-76.977886,"sports":["baseball"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1444047545","name":null,"lat":38.892595,"lon":-76.97777,"sports":["soccer"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1445287978","name":null,"lat":38.894805,"lon":-76.986884,"sports":["baseball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1446650375","name":null,"lat":38.897913,"lon":-76.974735,"sports":["soccer"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1447509839","name":null,"lat":38.920317,"lon":-77.068639,"sports":["running"],"access":"","leisure":"track","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1457373922","name":null,"lat":38.927383,"lon":-76.994655,"sports":["basketball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1463184039","name":null,"lat":38.953069,"lon":-77.083245,"sports":["basketball"],"access":"private","leisure":"pitch","reason":"tagged access=private and not in a public park or school"}
+{"id":"way/1467149088","name":null,"lat":38.950269,"lon":-77.059982,"sports":["tennis"],"access":"private","leisure":"pitch","reason":"tagged access=private and not in a public park or school"}
+{"id":"way/1469646992","name":null,"lat":38.823156,"lon":-77.003284,"sports":["basketball"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1480444220","name":null,"lat":38.951644,"lon":-77.034083,"sports":["soccer"],"access":"private","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1484405830","name":null,"lat":38.951584,"lon":-77.031403,"sports":["soccer"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1484405832","name":null,"lat":38.95105,"lon":-77.031214,"sports":["basketball"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1491838029","name":null,"lat":38.929162,"lon":-77.02802,"sports":["soccer"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1492284880","name":null,"lat":38.841073,"lon":-77.009806,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1492284881","name":null,"lat":38.84105,"lon":-77.009659,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1492285039","name":null,"lat":38.8643,"lon":-77.003794,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1492285040","name":null,"lat":38.864267,"lon":-77.003356,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1492285127","name":null,"lat":38.866533,"lon":-77.017778,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1492285128","name":null,"lat":38.866473,"lon":-77.017483,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1492285129","name":null,"lat":38.866478,"lon":-77.017142,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1492285130","name":null,"lat":38.866486,"lon":-77.017334,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1495774295","name":null,"lat":38.953027,"lon":-77.067381,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1495774296","name":null,"lat":38.952918,"lon":-77.067334,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1498093700","name":null,"lat":38.937008,"lon":-77.026082,"sports":["soccer"],"access":"yes","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"relation/20428772","name":null,"lat":38.936986,"lon":-77.026385,"sports":["running"],"access":"","leisure":"track","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1507377424","name":null,"lat":38.913776,"lon":-76.985849,"sports":["basketball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1507377425","name":null,"lat":38.913655,"lon":-76.985941,"sports":["basketball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1509250748","name":null,"lat":38.915814,"lon":-77.077106,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1509250749","name":null,"lat":38.915739,"lon":-77.077131,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1509517680","name":null,"lat":38.876098,"lon":-76.992816,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1509517681","name":null,"lat":38.876182,"lon":-76.992813,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1509521461","name":null,"lat":38.902964,"lon":-76.969679,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1509521462","name":null,"lat":38.903183,"lon":-76.970285,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1509521463","name":null,"lat":38.903013,"lon":-76.969607,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1509521464","name":null,"lat":38.902622,"lon":-76.969819,"sports":["basketball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1509521465","name":null,"lat":38.902552,"lon":-76.969327,"sports":["basketball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1512783531","name":null,"lat":38.964112,"lon":-77.080123,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1513111531","name":null,"lat":38.935,"lon":-77.084358,"sports":["tennis"],"access":"private","leisure":"pitch","reason":"tagged access=private and not in a public park or school"}
+{"id":"way/1513111532","name":null,"lat":38.93444,"lon":-77.083925,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1513111533","name":null,"lat":38.934339,"lon":-77.08357,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1516742943","name":null,"lat":38.990049,"lon":-77.040782,"sports":["tennis"],"access":"private","leisure":"pitch","reason":"tagged access=private and not in a public park or school"}
+{"id":"way/1527838121","name":null,"lat":38.862096,"lon":-76.994199,"sports":["basketball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1528319333","name":null,"lat":38.884127,"lon":-76.925409,"sports":["soccer"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1529518277","name":null,"lat":38.89749,"lon":-76.932904,"sports":["basketball"],"access":"private","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1529747692","name":null,"lat":38.933784,"lon":-77.094061,"sports":["tennis"],"access":"private","leisure":"pitch","reason":"tagged access=private and not in a public park or school"}
+{"id":"way/1529750023","name":null,"lat":38.940986,"lon":-77.074615,"sports":["tennis"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1529750024","name":null,"lat":38.940966,"lon":-77.074412,"sports":["tennis"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1529750025","name":null,"lat":38.938859,"lon":-77.074414,"sports":["tennis"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1529750026","name":null,"lat":38.938993,"lon":-77.074419,"sports":["tennis"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1529750027","name":null,"lat":38.938513,"lon":-77.073943,"sports":["tennis"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1529750028","name":null,"lat":38.938465,"lon":-77.074085,"sports":["tennis"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1529750029","name":null,"lat":38.938616,"lon":-77.073206,"sports":["soccer"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1529750637","name":null,"lat":38.93412,"lon":-77.075506,"sports":["pickleball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1529754900","name":null,"lat":38.841781,"lon":-77.021257,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1529754901","name":null,"lat":38.841754,"lon":-77.021101,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1529754902","name":null,"lat":38.841841,"lon":-77.021174,"sports":["tennis"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1539013889","name":"Kenilworth Park & Aquatic Gardens","lat":38.909086,"lon":-76.953645,"sports":["soccer"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1547365567","name":null,"lat":38.922609,"lon":-77.025812,"sports":["soccer"],"access":"private","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}
+{"id":"way/1553655446","name":null,"lat":38.910289,"lon":-77.066355,"sports":["basketball"],"access":"yes","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1558906998","name":null,"lat":38.91957,"lon":-77.059079,"sports":["basketball"],"access":"","leisure":"pitch","reason":"no public source places it in a park, public school or rec centre"}
+{"id":"way/1563345978","name":null,"lat":38.951636,"lon":-77.034478,"sports":["basketball"],"access":"","leisure":"pitch","reason":"inside a school site that is not a verified public high school"}

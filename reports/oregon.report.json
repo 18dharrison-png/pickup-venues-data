@@ -1,0 +1,3431 @@
+{
+  "baseline_venues": 2831,
+  "by_verdict": {
+    "known": 110,
+    "park": 800,
+    "school": 174
+  },
+  "courts_before": 8944,
+  "dropped": 5207,
+  "dropped_by_reason": {
+    "inside a school site that is not a verified public high school": 1789,
+    "named private or commercial": 9,
+    "no public source places it in a park, public school or rec centre": 2950,
+    "tagged access=customers and not in a public park or school": 19,
+    "tagged access=no and not in a public park or school": 3,
+    "tagged access=permit and not in a public park or school": 6,
+    "tagged access=private and not in a public park or school": 431
+  },
+  "padus_polygons": 4496,
+  "padus_repaired": 428,
+  "padus_unrepaired": 2,
+  "park_courts": {
+    "examples": [
+      {
+        "id": "way/1467925910",
+        "lost": 3,
+        "name": "Tennis courts",
+        "new": 2,
+        "old": 5
+      },
+      {
+        "id": "way/181526575",
+        "lost": 3,
+        "name": "West Salem High School Park",
+        "new": 3,
+        "old": 6
+      },
+      {
+        "id": "node/4986083673",
+        "lost": 2,
+        "name": "Skateboard field",
+        "new": 1,
+        "old": 3
+      },
+      {
+        "id": "way/1184372362",
+        "lost": 2,
+        "name": "Tennis courts",
+        "new": 2,
+        "old": 4
+      },
+      {
+        "id": "way/1468137384",
+        "lost": 2,
+        "name": "Pickleball courts",
+        "new": 1,
+        "old": 3
+      },
+      {
+        "id": "way/35345082",
+        "lost": 2,
+        "name": "Tennis courts",
+        "new": 7,
+        "old": 9
+      },
+      {
+        "id": "way/1058036465",
+        "lost": 1,
+        "name": "Pickleball courts",
+        "new": 1,
+        "old": 2
+      },
+      {
+        "id": "way/1454298059",
+        "lost": 1,
+        "name": "Tennis courts",
+        "new": 3,
+        "old": 4
+      },
+      {
+        "id": "way/1454581988",
+        "lost": 1,
+        "name": "Tennis courts",
+        "new": 4,
+        "old": 5
+      }
+    ],
+    "parks": 800,
+    "rate": 0.0112,
+    "regressed": 9
+  },
+  "parks_unmeasured": 0,
+  "parks_verified_by_agency": 195,
+  "public_areas": 2086,
+  "school_campuses": 174,
+  "schools_9_12": 28644,
+  "state": "oregon",
+  "unproven_school_areas": [
+    {
+      "dropped": 4,
+      "id": "relation/11745459",
+      "kept": 0,
+      "name": "Wilbur Rowe Middle School"
+    },
+    {
+      "dropped": 6,
+      "id": "relation/13109062",
+      "kept": 0,
+      "name": "Eugene Arts & Technology Academy"
+    },
+    {
+      "dropped": 5,
+      "id": "relation/15446801",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "relation/17601858",
+      "kept": 0,
+      "name": "Columbia Christian Schools"
+    },
+    {
+      "dropped": 4,
+      "id": "relation/20071752",
+      "kept": 0,
+      "name": "Gardiner Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "relation/21119079",
+      "kept": 0,
+      "name": "Mulino Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "relation/5716845",
+      "kept": 0,
+      "name": "Candalaria Elementary School"
+    },
+    {
+      "dropped": 5,
+      "id": "relation/7475626",
+      "kept": 0,
+      "name": "Leslie Middle School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/1001470290",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 3,
+      "id": "way/1010791047",
+      "kept": 0,
+      "name": "Saint Helens Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/101298784",
+      "kept": 0,
+      "name": "Tualatin Valley Junior Academy"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1015955062",
+      "kept": 0,
+      "name": "Yujin Gakuen Japanese Immersion Elementary School"
+    },
+    {
+      "dropped": 8,
+      "id": "way/102904374",
+      "kept": 0,
+      "name": "Linus Pauling Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1029958779",
+      "kept": 0,
+      "name": "Hillside Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1034023578",
+      "kept": 0,
+      "name": "Azalea Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1034023579",
+      "kept": 0,
+      "name": "Kalmiopsis Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/103474515",
+      "kept": 0,
+      "name": "Cheldelin Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1042369855",
+      "kept": 0,
+      "name": "Vern Patrick Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1050445471",
+      "kept": 0,
+      "name": "Siuslaw Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1050445473",
+      "kept": 0,
+      "name": "Siuslaw Middle School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/1052928739",
+      "kept": 0,
+      "name": "Mohawk Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1055548143",
+      "kept": 0,
+      "name": "Westside Village Magnet School at Kingston Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1058346713",
+      "kept": 0,
+      "name": "Obsidian Middle School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/1070843382",
+      "kept": 0,
+      "name": "Molalla River Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1070843383",
+      "kept": 0,
+      "name": "Molalla Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/107484253",
+      "kept": 0,
+      "name": "Buckman Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1087791797",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/1089336898",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/1092840174",
+      "kept": 0,
+      "name": "Dorena School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/1095754227",
+      "kept": 0,
+      "name": "Bohemia Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1105700200",
+      "kept": 0,
+      "name": "Guy Lee Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/1108427766",
+      "kept": 0,
+      "name": "Harrison Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/111041578",
+      "kept": 0,
+      "name": "Bolton Primary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1111215751",
+      "kept": 0,
+      "name": "Riverview School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/111544174",
+      "kept": 0,
+      "name": "Hallinan Elementary School"
+    },
+    {
+      "dropped": 8,
+      "id": "way/111761871",
+      "kept": 0,
+      "name": "Molalla High Athletic Fields"
+    },
+    {
+      "dropped": 3,
+      "id": "way/1131087222",
+      "kept": 0,
+      "name": "Ruch Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1131997112",
+      "kept": 0,
+      "name": "Dundee Elementary School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/1136012140",
+      "kept": 0,
+      "name": "Abraham Lincoln Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1147446436",
+      "kept": 0,
+      "name": "Philomath Middle School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/1153896579",
+      "kept": 0,
+      "name": "Ch\u00e1vez Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/115709903",
+      "kept": 0,
+      "name": "Lane Middle School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/115711237",
+      "kept": 0,
+      "name": "Whitman Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1158936759",
+      "kept": 0,
+      "name": "Roosevelt Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/117316813",
+      "kept": 0,
+      "name": "Trinity Lutheran Christian School"
+    },
+    {
+      "dropped": 0,
+      "id": "way/1184133598",
+      "kept": 2,
+      "name": "Agnes Stewart Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1184133599",
+      "kept": 0,
+      "name": "Maple Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1186149865",
+      "kept": 0,
+      "name": "Cairo Elementary School"
+    },
+    {
+      "dropped": 6,
+      "id": "way/1193797456",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/1196616906",
+      "kept": 0,
+      "name": "Forest Hills Lutheran School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1214425002",
+      "kept": 0,
+      "name": "Gresham-Barlow School District - Damascus Campus"
+    },
+    {
+      "dropped": 9,
+      "id": "way/1214425003",
+      "kept": 0,
+      "name": "Deep Creek-Damascus School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1217536670",
+      "kept": 0,
+      "name": "Battle Creek Elementary School"
+    },
+    {
+      "dropped": 8,
+      "id": "way/122282765",
+      "kept": 0,
+      "name": "Armand Larive Middle School"
+    },
+    {
+      "dropped": 6,
+      "id": "way/1250221914",
+      "kept": 0,
+      "name": "Walker Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/1250221954",
+      "kept": 0,
+      "name": "Ashland Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1284154354",
+      "kept": 0,
+      "name": "South Baker Intermediate School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/130705375",
+      "kept": 0,
+      "name": "Robert Gray Middle School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/130779184",
+      "kept": 0,
+      "name": "Skyline School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/130798426",
+      "kept": 0,
+      "name": "Gaffney Lane Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/130805819",
+      "kept": 0,
+      "name": "King Campus"
+    },
+    {
+      "dropped": 1,
+      "id": "way/130807703",
+      "kept": 0,
+      "name": "Saint John the Apostle Catholic School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/130807812",
+      "kept": 0,
+      "name": "Jackson Campus"
+    },
+    {
+      "dropped": 13,
+      "id": "way/130920946",
+      "kept": 0,
+      "name": "La Salle High School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/130920947",
+      "kept": 0,
+      "name": "Lot Whitcomb Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/130921133",
+      "kept": 0,
+      "name": "Linwood Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/130921304",
+      "kept": 0,
+      "name": "Sabin/Schellenberg Professional Technical Center South Campus"
+    },
+    {
+      "dropped": 2,
+      "id": "way/131079290",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/131098363",
+      "kept": 0,
+      "name": "Sunnyside Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/131117935",
+      "kept": 0,
+      "name": "Mount Scott Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/131496113",
+      "kept": 0,
+      "name": "Riddle Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/131503721",
+      "kept": 0,
+      "name": "Ardenwald Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/131504811",
+      "kept": 0,
+      "name": "Portland Waldorf School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/131510602",
+      "kept": 0,
+      "name": "Milwaukie El Puente Elementary School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/131513678",
+      "kept": 0,
+      "name": "Oak Grove Elementary School"
+    },
+    {
+      "dropped": 9,
+      "id": "way/131528290",
+      "kept": 0,
+      "name": "Seth Lewelling Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/131555750",
+      "kept": 0,
+      "name": "Kraxberger Middle School"
+    },
+    {
+      "dropped": 6,
+      "id": "way/131556031",
+      "kept": 0,
+      "name": "Bilquist Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/131635677",
+      "kept": 0,
+      "name": "Whetten Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/131822569",
+      "kept": 0,
+      "name": "Holcomb Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1337296462",
+      "kept": 0,
+      "name": "Angell Job Corps Civilian Conservation Center"
+    },
+    {
+      "dropped": 1,
+      "id": "way/133792501",
+      "kept": 0,
+      "name": "Llewellyn Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1338265014",
+      "kept": 0,
+      "name": "Westridge Early Learning Center"
+    },
+    {
+      "dropped": 2,
+      "id": "way/134152018",
+      "kept": 0,
+      "name": "Abernethy Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/134572652",
+      "kept": 0,
+      "name": "Kellogg Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/134577795",
+      "kept": 0,
+      "name": "Harrison Park School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/134577796",
+      "kept": 0,
+      "name": "Bridger Creative Science School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/134577797",
+      "kept": 0,
+      "name": "Creston School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/134579412",
+      "kept": 0,
+      "name": "Marysville School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/134587165",
+      "kept": 0,
+      "name": "Alice Ott Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/134849602",
+      "kept": 0,
+      "name": "Sunset Primary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/135595595",
+      "kept": 0,
+      "name": "Roseway Heights Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/135603910",
+      "kept": 0,
+      "name": "Rose City Park Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/1367177207",
+      "kept": 0,
+      "name": "Hoover Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1370423513",
+      "kept": 0,
+      "name": "Madrone Trail Public Charter School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1384113682",
+      "kept": 0,
+      "name": "Lorna Byrne Middle School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/1421261917",
+      "kept": 0,
+      "name": "Cedar Ridge Middle School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/142296442",
+      "kept": 0,
+      "name": "Powell Valley Elementary School"
+    },
+    {
+      "dropped": 10,
+      "id": "way/142296802",
+      "kept": 0,
+      "name": "Gordon Russell Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/142300760",
+      "kept": 0,
+      "name": "East Orient Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/142304523",
+      "kept": 0,
+      "name": "Walt Morey Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/142306288",
+      "kept": 0,
+      "name": "Highland Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/142411980",
+      "kept": 0,
+      "name": "Dexter McCarty Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/142413790",
+      "kept": 0,
+      "name": "West Gresham Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/142421941",
+      "kept": 0,
+      "name": "Butler Creek Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/142433170",
+      "kept": 0,
+      "name": "Centennial Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1424902865",
+      "kept": 0,
+      "name": "Open Door Christian Academy"
+    },
+    {
+      "dropped": 4,
+      "id": "way/142518295",
+      "kept": 0,
+      "name": "Clear Creek Middle School"
+    },
+    {
+      "dropped": 9,
+      "id": "way/142518318",
+      "kept": 0,
+      "name": "Reynolds Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/142519213",
+      "kept": 0,
+      "name": "Hartley Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/142519215",
+      "kept": 0,
+      "name": "H.B. Lee Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/142519973",
+      "kept": 0,
+      "name": "Harmony Montessori School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/142519975",
+      "kept": 0,
+      "name": "Patrick Lynch Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/142519979",
+      "kept": 0,
+      "name": "Wilkes Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/142520565",
+      "kept": 0,
+      "name": "Oliver Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/142520948",
+      "kept": 0,
+      "name": "Alder Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/142520949",
+      "kept": 0,
+      "name": "Glenfair Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/142530917",
+      "kept": 0,
+      "name": "Prescott Elementary School"
+    },
+    {
+      "dropped": 8,
+      "id": "way/142533924",
+      "kept": 0,
+      "name": "Portland Christian Junior and Senior High School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/142533926",
+      "kept": 0,
+      "name": "Russell Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/142533927",
+      "kept": 0,
+      "name": "Shaver Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/142534690",
+      "kept": 0,
+      "name": "Sacramento Elementary School"
+    },
+    {
+      "dropped": 7,
+      "id": "way/142539355",
+      "kept": 0,
+      "name": "Menlo Park Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/142539361",
+      "kept": 0,
+      "name": "Ventura Park Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/142540174",
+      "kept": 0,
+      "name": "Floyd Light Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/142741810",
+      "kept": 0,
+      "name": "Portland Christian Elementary And Preschool"
+    },
+    {
+      "dropped": 6,
+      "id": "way/142741986",
+      "kept": 0,
+      "name": "Cherry Park Elementary School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/142741990",
+      "kept": 0,
+      "name": "Mill Park Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/142742170",
+      "kept": 0,
+      "name": "Portland Adventist Academy"
+    },
+    {
+      "dropped": 2,
+      "id": "way/142968300",
+      "kept": 0,
+      "name": "Arleta School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/142981975",
+      "kept": 0,
+      "name": "Laurelhurst School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/142986871",
+      "kept": 0,
+      "name": "da Vinci Arts Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/143080996",
+      "kept": 0,
+      "name": "Sacajawea Head Start"
+    },
+    {
+      "dropped": 2,
+      "id": "way/143081003",
+      "kept": 0,
+      "name": "Scott Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/143130935",
+      "kept": 0,
+      "name": "Sabin Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/143133762",
+      "kept": 0,
+      "name": "Beaumont Middle School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/143136910",
+      "kept": 0,
+      "name": "Rigler Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/143156475",
+      "kept": 0,
+      "name": "Faubion Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/143475345",
+      "kept": 0,
+      "name": "Sauvie Island Elementary School"
+    },
+    {
+      "dropped": 13,
+      "id": "way/144033742",
+      "kept": 0,
+      "name": "Ridges Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/144147950",
+      "kept": 0,
+      "name": "ACCESS Academy"
+    },
+    {
+      "dropped": 2,
+      "id": "way/144149570",
+      "kept": 0,
+      "name": "West Hills Christian School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/144158097",
+      "kept": 0,
+      "name": "Riverdale Grade School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/144158476",
+      "kept": 0,
+      "name": "Forest Hills Elementary School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/144463103",
+      "kept": 0,
+      "name": "Rosemont Ridge Middle School"
+    },
+    {
+      "dropped": 8,
+      "id": "way/144914386",
+      "kept": 0,
+      "name": "Athey Creek Middle School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/1449267939",
+      "kept": 0,
+      "name": "Sunset Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/144949630",
+      "kept": 0,
+      "name": "Boring Middle School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/144949632",
+      "kept": 0,
+      "name": "Naas Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/1449915788",
+      "kept": 0,
+      "name": "Sandstone Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/146044859",
+      "kept": 0,
+      "name": "Knight Elementary School"
+    },
+    {
+      "dropped": 10,
+      "id": "way/149195727",
+      "kept": 0,
+      "name": "Fowler Middle School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/149206490",
+      "kept": 0,
+      "name": "Mary Woodward Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1517245176",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/1519366602",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/1528866218",
+      "kept": 0,
+      "name": "Weston Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/15594247",
+      "kept": 0,
+      "name": "Chapman Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1560146084",
+      "kept": 0,
+      "name": "Haines Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/157028280",
+      "kept": 0,
+      "name": "Saint Pius X Catholic School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/158936277",
+      "kept": 0,
+      "name": "Ainsworth Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/159103421",
+      "kept": 0,
+      "name": "North Albany Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/159411139",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/160662293",
+      "kept": 0,
+      "name": "Liberty Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/164527989",
+      "kept": 0,
+      "name": "Lincoln Street Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/166157491",
+      "kept": 0,
+      "name": "Monmouth Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/166996588",
+      "kept": 0,
+      "name": "Forest Ridge Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/167015461",
+      "kept": 0,
+      "name": "Houck Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/167015462",
+      "kept": 0,
+      "name": "Miller Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/171308400",
+      "kept": 0,
+      "name": "Nellie Muir Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/171308430",
+      "kept": 0,
+      "name": "Washington Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/174008646",
+      "kept": 0,
+      "name": "Sue Buel Elementary School"
+    },
+    {
+      "dropped": 8,
+      "id": "way/181505723",
+      "kept": 0,
+      "name": "Judson Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/181514015",
+      "kept": 0,
+      "name": "McKinley Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/181643174",
+      "kept": 0,
+      "name": "Wright Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/181652257",
+      "kept": 0,
+      "name": "Salem Heights School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/182104382",
+      "kept": 0,
+      "name": "Waldo Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/182104384",
+      "kept": 0,
+      "name": "Washington Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/182104387",
+      "kept": 0,
+      "name": "Whiteaker Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/192994112",
+      "kept": 4,
+      "name": "Conger School Park"
+    },
+    {
+      "dropped": 4,
+      "id": "way/198722344",
+      "kept": 0,
+      "name": "Chiloquin Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/201857263",
+      "kept": 0,
+      "name": "Roosevelt Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/201858198",
+      "kept": 0,
+      "name": "Fullerton IV Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/202052332",
+      "kept": 0,
+      "name": "Creswell Middle School"
+    },
+    {
+      "dropped": 7,
+      "id": "way/202074971",
+      "kept": 0,
+      "name": "Lincoln Middle School"
+    },
+    {
+      "dropped": 10,
+      "id": "way/202169049",
+      "kept": 0,
+      "name": "Thurston Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/202177710",
+      "kept": 0,
+      "name": "Two Rivers - Dos Rios Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/202181857",
+      "kept": 0,
+      "name": "Douglas Gardens Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/202500888",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 3,
+      "id": "way/202503043",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/202516298",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/202623288",
+      "kept": 0,
+      "name": "Cecil Sly Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/202761676",
+      "kept": 0,
+      "name": "Paulina Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/202762569",
+      "kept": 0,
+      "name": "Slater Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/225876274",
+      "kept": 0,
+      "name": "Jefferson Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/225880014",
+      "kept": 0,
+      "name": "McCornack Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/235716785",
+      "kept": 0,
+      "name": "Calapooia Middle School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/24000162",
+      "kept": 0,
+      "name": "Beaver Acres Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/24000346",
+      "kept": 0,
+      "name": "Hiteon Elementary School"
+    },
+    {
+      "dropped": 10,
+      "id": "way/24008400",
+      "kept": 0,
+      "name": "Fir Grove Elementary School"
+    },
+    {
+      "dropped": 9,
+      "id": "way/24008419",
+      "kept": 0,
+      "name": "Highland Park Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/24157758",
+      "kept": 0,
+      "name": "Vose Elementary School"
+    },
+    {
+      "dropped": 7,
+      "id": "way/24222065",
+      "kept": 0,
+      "name": "Errol Hassell Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/24373954",
+      "kept": 0,
+      "name": "Cedar Mill Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/24400189",
+      "kept": 0,
+      "name": "Barnes Elementary School"
+    },
+    {
+      "dropped": 9,
+      "id": "way/24412422",
+      "kept": 0,
+      "name": "Conestoga Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/24412424",
+      "kept": 0,
+      "name": "Greenway Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/24446713",
+      "kept": 0,
+      "name": "Rock Creek Elementary School"
+    },
+    {
+      "dropped": 11,
+      "id": "way/24450457",
+      "kept": 0,
+      "name": "Bethany Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/244902564",
+      "kept": 0,
+      "name": "Coburg Community Charter School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/24527873",
+      "kept": 0,
+      "name": "Brookwood Elementary School"
+    },
+    {
+      "dropped": 6,
+      "id": "way/24529769",
+      "kept": 0,
+      "name": "Nancy Ryles Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/24529944",
+      "kept": 0,
+      "name": "Hazeldale Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/24529976",
+      "kept": 0,
+      "name": "Life Christian School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/24530186",
+      "kept": 0,
+      "name": "Kinnaman Elementary School"
+    },
+    {
+      "dropped": 9,
+      "id": "way/24783377",
+      "kept": 0,
+      "name": "Whitford Middle School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/26149736",
+      "kept": 0,
+      "name": "Sexton Mountain Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/26174515",
+      "kept": 0,
+      "name": "Lenox Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/274842459",
+      "kept": 0,
+      "name": "The Dalles Middle School"
+    },
+    {
+      "dropped": 10,
+      "id": "way/27592110",
+      "kept": 0,
+      "name": "Five Oaks Middle School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/279491134",
+      "kept": 0,
+      "name": "McGovern Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/284930040",
+      "kept": 0,
+      "name": "Ch\u00e1vez Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/287301875",
+      "kept": 0,
+      "name": "Nyssa Elementary School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/287301881",
+      "kept": 0,
+      "name": "Nyssa Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/28756961",
+      "kept": 0,
+      "name": "Scott Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/293598565",
+      "kept": 0,
+      "name": "Stayton Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/29463347",
+      "kept": 0,
+      "name": "Hayesville Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/29463524",
+      "kept": 0,
+      "name": "Adam Stephens Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/29463577",
+      "kept": 0,
+      "name": "Yoshikai Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/30124525",
+      "kept": 0,
+      "name": "Blanchet Catholic School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/306587154",
+      "kept": 0,
+      "name": "Baker Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/307674070",
+      "kept": 0,
+      "name": "Philomath Elementary School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/311031509",
+      "kept": 0,
+      "name": "Spring Creek Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/311040520",
+      "kept": 0,
+      "name": "Awbrey Park Elementary School"
+    },
+    {
+      "dropped": 8,
+      "id": "way/311041196",
+      "kept": 0,
+      "name": "Madison Middle School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/311049153",
+      "kept": 0,
+      "name": "Kelly Middle School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/311050284",
+      "kept": 0,
+      "name": "Danebo Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/313763461",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/313763462",
+      "kept": 0,
+      "name": "Hedrick Middle School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/314210157",
+      "kept": 0,
+      "name": "Baker Prairie Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/315549779",
+      "kept": 0,
+      "name": "Sams Valley Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/31587819",
+      "kept": 0,
+      "name": "Aloha-Huber Park School"
+    },
+    {
+      "dropped": 7,
+      "id": "way/31654346",
+      "kept": 0,
+      "name": "L. C. Tobias Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/317920328",
+      "kept": 0,
+      "name": "Evergreen Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/31950424",
+      "kept": 0,
+      "name": "Salem Academy Christian Schools"
+    },
+    {
+      "dropped": 3,
+      "id": "way/32000272",
+      "kept": 0,
+      "name": "Imlay Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/32000409",
+      "kept": 0,
+      "name": "Orenco Elementary School"
+    },
+    {
+      "dropped": 10,
+      "id": "way/32000804",
+      "kept": 0,
+      "name": "Meadow Park Middle School"
+    },
+    {
+      "dropped": 6,
+      "id": "way/32000831",
+      "kept": 0,
+      "name": "Findley Elementary School"
+    },
+    {
+      "dropped": 6,
+      "id": "way/32000987",
+      "kept": 0,
+      "name": "Terra Linda Elementary School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/32000988",
+      "kept": 0,
+      "name": "Stoller Middle School"
+    },
+    {
+      "dropped": 8,
+      "id": "way/32001015",
+      "kept": 0,
+      "name": "Oak Hills Elementary School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/320191416",
+      "kept": 0,
+      "name": "Driftwood School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/320292818",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 3,
+      "id": "way/32053151",
+      "kept": 0,
+      "name": "Mooberry Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/32053152",
+      "kept": 0,
+      "name": "Sellwood Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/32053154",
+      "kept": 0,
+      "name": "Jackson Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/32053259",
+      "kept": 0,
+      "name": "Hazelbrook Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/32053260",
+      "kept": 0,
+      "name": "Eastwood Elementary School"
+    },
+    {
+      "dropped": 7,
+      "id": "way/32053462",
+      "kept": 0,
+      "name": "West Union Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/320858532",
+      "kept": 0,
+      "name": "Saint Mary's School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/321227776",
+      "kept": 0,
+      "name": "Jefferson County Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/32122983",
+      "kept": 0,
+      "name": "Elmonica Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/321231234",
+      "kept": 0,
+      "name": "Westside Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/32206643",
+      "kept": 0,
+      "name": "Cascade Heights Public Charter School"
+    },
+    {
+      "dropped": 7,
+      "id": "way/32212858",
+      "kept": 0,
+      "name": "Raleigh Park Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/322204328",
+      "kept": 0,
+      "name": "Phoenix Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/322204330",
+      "kept": 0,
+      "name": "Talent Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/322204331",
+      "kept": 0,
+      "name": "Talent Middle School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/32223426",
+      "kept": 0,
+      "name": "Rieke Elementary School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/323189989",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 4,
+      "id": "way/32353156",
+      "kept": 0,
+      "name": "James John Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/32353161",
+      "kept": 0,
+      "name": "Markham Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/32354135",
+      "kept": 0,
+      "name": "Forest Park Elementary School"
+    },
+    {
+      "dropped": 12,
+      "id": "way/32354431",
+      "kept": 0,
+      "name": "Cedar Park Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/32404265",
+      "kept": 0,
+      "name": "French American International School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/32404266",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/32404267",
+      "kept": 0,
+      "name": "Free Orchards Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/32404665",
+      "kept": 0,
+      "name": "W. Verne McKinney Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/32405745",
+      "kept": 0,
+      "name": "Boeckman Creek Primary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/32405746",
+      "kept": 0,
+      "name": "Farmington View Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/32423944",
+      "kept": 0,
+      "name": "Edwards Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/32423996",
+      "kept": 0,
+      "name": "J.W. Poynter Middle School"
+    },
+    {
+      "dropped": 9,
+      "id": "way/32424091",
+      "kept": 0,
+      "name": "Jackson Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/32424094",
+      "kept": 0,
+      "name": "Eccles Elementary School"
+    },
+    {
+      "dropped": 6,
+      "id": "way/32424134",
+      "kept": 0,
+      "name": "Oregon Episcopal Schools"
+    },
+    {
+      "dropped": 5,
+      "id": "way/32424212",
+      "kept": 0,
+      "name": "Butternut Creek Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/32424308",
+      "kept": 0,
+      "name": "Ridgewood Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/32424309",
+      "kept": 0,
+      "name": "Minter Bridge Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/32442456",
+      "kept": 0,
+      "name": "Peter Boscow Center"
+    },
+    {
+      "dropped": 3,
+      "id": "way/32443481",
+      "kept": 0,
+      "name": "Cooper Mountain Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/32444654",
+      "kept": 0,
+      "name": "Mabel Rush Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/32445820",
+      "kept": 0,
+      "name": "W.L. Henry Elementary School"
+    },
+    {
+      "dropped": 6,
+      "id": "way/32445822",
+      "kept": 0,
+      "name": "R.A. Brown Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/32446622",
+      "kept": 0,
+      "name": "Paul L. Patterson Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/32446623",
+      "kept": 0,
+      "name": "Bridlemile Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/32452542",
+      "kept": 0,
+      "name": "Wascher Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/32453973",
+      "kept": 0,
+      "name": "Mountain View Middle School"
+    },
+    {
+      "dropped": 6,
+      "id": "way/32453975",
+      "kept": 0,
+      "name": "George Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/32454212",
+      "kept": 0,
+      "name": "Astor School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/32454213",
+      "kept": 0,
+      "name": "Stafford Primary School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/32454344",
+      "kept": 0,
+      "name": "Ladd Acres Elementary School"
+    },
+    {
+      "dropped": 7,
+      "id": "way/32454454",
+      "kept": 0,
+      "name": "Hayhurst School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/32454455",
+      "kept": 0,
+      "name": "Twality Middle School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/32455839",
+      "kept": 0,
+      "name": "Peninsula Elementary School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/32455865",
+      "kept": 0,
+      "name": "Edward Byrom Elementary School"
+    },
+    {
+      "dropped": 14,
+      "id": "way/32455866",
+      "kept": 0,
+      "name": "Riverside High School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/32455868",
+      "kept": 0,
+      "name": "Yamhill Carlton Elementary School"
+    },
+    {
+      "dropped": 8,
+      "id": "way/32455881",
+      "kept": 0,
+      "name": "Sitton Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/32455947",
+      "kept": 0,
+      "name": "Raleigh Hills Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/32455948",
+      "kept": 0,
+      "name": "Visitation Catholic School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/32455950",
+      "kept": 0,
+      "name": "Odyssey Program at East Sylvan"
+    },
+    {
+      "dropped": 1,
+      "id": "way/32456598",
+      "kept": 0,
+      "name": "Yamhill Intermediate School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/32456599",
+      "kept": 0,
+      "name": "Oak Creek Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/32456720",
+      "kept": 0,
+      "name": "Joseph Gale Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/32456721",
+      "kept": 0,
+      "name": "Reedville Elementary School"
+    },
+    {
+      "dropped": 6,
+      "id": "way/32456798",
+      "kept": 0,
+      "name": "Evergreen Middle School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/32456929",
+      "kept": 0,
+      "name": "Scholls Heights Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/32456930",
+      "kept": 0,
+      "name": "Durham Elementary School"
+    },
+    {
+      "dropped": 10,
+      "id": "way/32456933",
+      "kept": 0,
+      "name": "Tom McCall Upper Elementary"
+    },
+    {
+      "dropped": 1,
+      "id": "way/32476001",
+      "kept": 0,
+      "name": "Echo Shaw Elementary School"
+    },
+    {
+      "dropped": 10,
+      "id": "way/32476307",
+      "kept": 0,
+      "name": "Neil Armstrong Middle School"
+    },
+    {
+      "dropped": 20,
+      "id": "way/32476740",
+      "kept": 0,
+      "name": "Jesuit High School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/32476741",
+      "kept": 0,
+      "name": "Archer Glen Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/32476742",
+      "kept": 0,
+      "name": "Harvey Clark Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/32476870",
+      "kept": 0,
+      "name": "James Templeton Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/32476871",
+      "kept": 0,
+      "name": "Stephenson Elementary School"
+    },
+    {
+      "dropped": 9,
+      "id": "way/32476873",
+      "kept": 0,
+      "name": "Sherwood Middle School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/32477106",
+      "kept": 0,
+      "name": "Wood Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/32477351",
+      "kept": 0,
+      "name": "Indian Hills Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/32477611",
+      "kept": 0,
+      "name": "Maplewood Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/32477789",
+      "kept": 0,
+      "name": "Dundee Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/32478524",
+      "kept": 0,
+      "name": "West Sylvan Middle School"
+    },
+    {
+      "dropped": 9,
+      "id": "way/32478527",
+      "kept": 0,
+      "name": "Catlin Gabel School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/32478530",
+      "kept": 0,
+      "name": "Jacob Wismer Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/32483217",
+      "kept": 0,
+      "name": "Charles F. Tigard Elementary School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/32483326",
+      "kept": 0,
+      "name": "Montclair Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/32483327",
+      "kept": 0,
+      "name": "C\u00e9sar Ch\u00e1vez School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/32483436",
+      "kept": 0,
+      "name": "Groner K-8 School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/32483437",
+      "kept": 0,
+      "name": "Westridge Elementary School"
+    },
+    {
+      "dropped": 8,
+      "id": "way/32490511",
+      "kept": 0,
+      "name": "Patton Middle School"
+    },
+    {
+      "dropped": 6,
+      "id": "way/32490513",
+      "kept": 0,
+      "name": "Boones Ferry Primary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/32490955",
+      "kept": 0,
+      "name": "Gaston Elementary School"
+    },
+    {
+      "dropped": 10,
+      "id": "way/32490956",
+      "kept": 0,
+      "name": "Hawks View Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/32490957",
+      "kept": 0,
+      "name": "Bridgeport Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/32497086",
+      "kept": 0,
+      "name": "West Tualatin View Elementary School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/329139112",
+      "kept": 0,
+      "name": "Irving Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/33007625",
+      "kept": 0,
+      "name": "Chief Joseph Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/33011106",
+      "kept": 0,
+      "name": "Beach Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/33011108",
+      "kept": 0,
+      "name": "Holy Redeemer Catholic School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/33011109",
+      "kept": 0,
+      "name": "Ockley Green Middle School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/33068749",
+      "kept": 0,
+      "name": "Cleveland High School at Marshall Campus"
+    },
+    {
+      "dropped": 1,
+      "id": "way/33069704",
+      "kept": 0,
+      "name": "Palisades World Language School"
+    },
+    {
+      "dropped": 7,
+      "id": "way/33069707",
+      "kept": 0,
+      "name": "Parkrose Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/33069854",
+      "kept": 0,
+      "name": "Woodstock Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/33084035",
+      "kept": 0,
+      "name": "Vernon School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/331488827",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/33294911",
+      "kept": 0,
+      "name": "Hosford Middle School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/33299179",
+      "kept": 0,
+      "name": "Lewis Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/33299189",
+      "kept": 0,
+      "name": "Duniway Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/33299196",
+      "kept": 0,
+      "name": "Grout Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/33401296",
+      "kept": 0,
+      "name": "Middleton Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/349910580",
+      "kept": 0,
+      "name": "Oaklea Middle School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/360077197",
+      "kept": 0,
+      "name": "North Plains Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/361048719",
+      "kept": 0,
+      "name": "Oceanlake Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/362351437",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/362609004",
+      "kept": 0,
+      "name": "McNary Heights Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/363826417",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 4,
+      "id": "way/366053421",
+      "kept": 0,
+      "name": "Quatama Elementary School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/367020346",
+      "kept": 0,
+      "name": "Kelso Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/369025932",
+      "kept": 0,
+      "name": "Clackamas River Elementary School"
+    },
+    {
+      "dropped": 6,
+      "id": "way/369025934",
+      "kept": 0,
+      "name": "Estacada Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/369212587",
+      "kept": 0,
+      "name": "Hilda Lahti Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/372432540",
+      "kept": 0,
+      "name": "Westside Christian High School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/375033320",
+      "kept": 0,
+      "name": "Tualatin Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/376015804",
+      "kept": 0,
+      "name": "River Road Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/378750187",
+      "kept": 0,
+      "name": "Chehalem Elementary School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/379032805",
+      "kept": 0,
+      "name": "Scappoose Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/382987623",
+      "kept": 0,
+      "name": "McBride Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/389268877",
+      "kept": 0,
+      "name": "East Elementary School"
+    },
+    {
+      "dropped": 7,
+      "id": "way/389268878",
+      "kept": 0,
+      "name": "Tillamook Junior High School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/39380288",
+      "kept": 0,
+      "name": "Beverly Cleary School - Fernwood Campus"
+    },
+    {
+      "dropped": 1,
+      "id": "way/39415140",
+      "kept": 0,
+      "name": "Central Catholic High School"
+    },
+    {
+      "dropped": 7,
+      "id": "way/394781216",
+      "kept": 0,
+      "name": "Meadow View School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/39659720",
+      "kept": 0,
+      "name": "Fir Grove Primary School"
+    },
+    {
+      "dropped": 8,
+      "id": "way/396945686",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 3,
+      "id": "way/398641512",
+      "kept": 0,
+      "name": "Regis High School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/398849014",
+      "kept": 0,
+      "name": "Prairie Mountain School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/400658062",
+      "kept": 0,
+      "name": "Hines Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/402608092",
+      "kept": 0,
+      "name": "Lincoln Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/404159037",
+      "kept": 0,
+      "name": "Clatskanie Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/404669317",
+      "kept": 0,
+      "name": "Wy'East Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/40783926",
+      "kept": 1,
+      "name": "Irvington Elementary School"
+    },
+    {
+      "dropped": 0,
+      "id": "way/410378378",
+      "kept": 3,
+      "name": "Dr. Martin Luther King Jr. Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/412616612",
+      "kept": 0,
+      "name": "Whitaker School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/414277574",
+      "kept": 0,
+      "name": "Fleming Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/414277582",
+      "kept": 0,
+      "name": "Manzanita Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/414892498",
+      "kept": 0,
+      "name": "Astoria Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/415878988",
+      "kept": 0,
+      "name": "Parkside Elementary"
+    },
+    {
+      "dropped": 1,
+      "id": "way/419795731",
+      "kept": 0,
+      "name": "North Middle School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/420196267",
+      "kept": 0,
+      "name": "Butte Creek Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/422470568",
+      "kept": 0,
+      "name": "Triad School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/422890189",
+      "kept": 0,
+      "name": "Pacific Ridge Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/422917841",
+      "kept": 0,
+      "name": "Gearhart Grade School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/423730894",
+      "kept": 0,
+      "name": "Nehalem Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/424228545",
+      "kept": 0,
+      "name": "Warrenton Grade School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/424333169",
+      "kept": 0,
+      "name": "Lewis and Clark Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/425616158",
+      "kept": 0,
+      "name": "Rosedale Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/432301080",
+      "kept": 0,
+      "name": "French Prairie Middle School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/432301081",
+      "kept": 0,
+      "name": "Lincoln Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/434843569",
+      "kept": 0,
+      "name": "Bear Creek Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/43547157",
+      "kept": 0,
+      "name": "Woodland Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/437105132",
+      "kept": 0,
+      "name": "Banks Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/438488302",
+      "kept": 0,
+      "name": "Hugh Hartman Elementary"
+    },
+    {
+      "dropped": 1,
+      "id": "way/440664987",
+      "kept": 0,
+      "name": "Sam Boardman Elementary School"
+    },
+    {
+      "dropped": 9,
+      "id": "way/440829452",
+      "kept": 0,
+      "name": "High Desert Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/447640915",
+      "kept": 0,
+      "name": "Lundy Elementary School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/447900965",
+      "kept": 0,
+      "name": "O Hara Catholic School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/450184856",
+      "kept": 0,
+      "name": "Charlemagne French Immersion Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/455332589",
+      "kept": 0,
+      "name": "Griffin Creek Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/455556635",
+      "kept": 0,
+      "name": "Roosevelt Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/456146569",
+      "kept": 0,
+      "name": "White Mountain Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/457223556",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/457223560",
+      "kept": 0,
+      "name": "Fremont Elementary School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/458644365",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/463350757",
+      "kept": 0,
+      "name": "Sam Case Elementary School"
+    },
+    {
+      "dropped": 7,
+      "id": "way/464022560",
+      "kept": 0,
+      "name": "Highland Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/465056794",
+      "kept": 0,
+      "name": "Oakridge Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/465056795",
+      "kept": 0,
+      "name": "Oakridge Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/469008280",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/469008282",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 6,
+      "id": "way/469254908",
+      "kept": 0,
+      "name": "Lee Elementary School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/472387117",
+      "kept": 0,
+      "name": "Lowrie Primary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/474254742",
+      "kept": 0,
+      "name": "Toledo Elementary School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/478528281",
+      "kept": 0,
+      "name": "Santiam Elementary School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/480927460",
+      "kept": 0,
+      "name": "Straub Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/480931745",
+      "kept": 0,
+      "name": "Kalapuya Elementary"
+    },
+    {
+      "dropped": 3,
+      "id": "way/49243665",
+      "kept": 0,
+      "name": "Woodlawn Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/49554120",
+      "kept": 0,
+      "name": "Metzger Elementary School"
+    },
+    {
+      "dropped": 10,
+      "id": "way/499419185",
+      "kept": 0,
+      "name": "Alder Creek Middle School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/502925790",
+      "kept": 0,
+      "name": "Hamlin Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/503006286",
+      "kept": 0,
+      "name": "Marshall High School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/503122502",
+      "kept": 0,
+      "name": "Cascades Academy of Central Oregon"
+    },
+    {
+      "dropped": 3,
+      "id": "way/508292827",
+      "kept": 0,
+      "name": "Highland Magnet School at Kenwood"
+    },
+    {
+      "dropped": 1,
+      "id": "way/512374067",
+      "kept": 0,
+      "name": "Island City Elementary School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/522639958",
+      "kept": 0,
+      "name": "Adams Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/531168077",
+      "kept": 0,
+      "name": "Sacred Heart Catholic School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/532459477",
+      "kept": 0,
+      "name": "Oakdale Middle School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/534389546",
+      "kept": 0,
+      "name": "Central Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/538829090",
+      "kept": 0,
+      "name": "Laurelwood Adventist Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/543158625",
+      "kept": 0,
+      "name": "Pioneer School"
+    },
+    {
+      "dropped": 14,
+      "id": "way/549937411",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/551185263",
+      "kept": 0,
+      "name": "Newby Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/551195636",
+      "kept": 0,
+      "name": "Hucrest Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/551195638",
+      "kept": 0,
+      "name": "Joseph Lane Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/551195640",
+      "kept": 0,
+      "name": "Melrose Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/551555688",
+      "kept": 0,
+      "name": "Myrtle Creek Elementary and Coffenberry Middle School Grounds"
+    },
+    {
+      "dropped": 1,
+      "id": "way/551555691",
+      "kept": 0,
+      "name": "Winston Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/551772287",
+      "kept": 0,
+      "name": "Canyonville Bible Academy"
+    },
+    {
+      "dropped": 4,
+      "id": "way/551772290",
+      "kept": 0,
+      "name": "North Douglas Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/551781305",
+      "kept": 0,
+      "name": "Roseburg Christian Academy"
+    },
+    {
+      "dropped": 5,
+      "id": "way/551783313",
+      "kept": 0,
+      "name": "Tri City Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/553097567",
+      "kept": 0,
+      "name": "Horizon Christian High School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/560545018",
+      "kept": 0,
+      "name": "Westside Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/56149996",
+      "kept": 0,
+      "name": "Lake Oswego Middle School"
+    },
+    {
+      "dropped": 7,
+      "id": "way/585206025",
+      "kept": 0,
+      "name": "Ridgeview Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/58724885",
+      "kept": 0,
+      "name": "Harrit Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/58725424",
+      "kept": 0,
+      "name": "Chapman Hill Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/58725884",
+      "kept": 0,
+      "name": "Brush College Elementary"
+    },
+    {
+      "dropped": 6,
+      "id": "way/59195123",
+      "kept": 0,
+      "name": "Walker Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/59244260",
+      "kept": 0,
+      "name": "Hoover Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/59403699",
+      "kept": 0,
+      "name": "Crossler Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/60209522",
+      "kept": 0,
+      "name": "Park Academy"
+    },
+    {
+      "dropped": 1,
+      "id": "way/615644742",
+      "kept": 0,
+      "name": "East Linn Christian Academy"
+    },
+    {
+      "dropped": 9,
+      "id": "way/618054798",
+      "kept": 0,
+      "name": "Marist High School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/618071451",
+      "kept": 0,
+      "name": "Centennial Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/618071452",
+      "kept": 0,
+      "name": "Buena Vista Spanish Immersion Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/618071459",
+      "kept": 0,
+      "name": "Holt Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/618082832",
+      "kept": 0,
+      "name": "Briggs Middle School"
+    },
+    {
+      "dropped": 9,
+      "id": "way/619895104",
+      "kept": 0,
+      "name": "Lakeridge Middle School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/624797328",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/635847633",
+      "kept": 0,
+      "name": "Seven Oak Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/649775510",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/650301995",
+      "kept": 0,
+      "name": "La Grande Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/65563842",
+      "kept": 0,
+      "name": "Alberta Rider Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/666952966",
+      "kept": 0,
+      "name": "Millicoma Intermediate School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/667383933",
+      "kept": 0,
+      "name": "Fern Ridge Middle School"
+    },
+    {
+      "dropped": 6,
+      "id": "way/674908243",
+      "kept": 0,
+      "name": "Tumwater Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/675069240",
+      "kept": 0,
+      "name": "Bonny Slope Elementary School"
+    },
+    {
+      "dropped": 7,
+      "id": "way/678519249",
+      "kept": 0,
+      "name": "Delphian School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/685100418",
+      "kept": 0,
+      "name": "Horizon Christian School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/685100424",
+      "kept": 0,
+      "name": "Hood River Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/68566339",
+      "kept": 0,
+      "name": "John C Fremont Middle School"
+    },
+    {
+      "dropped": 12,
+      "id": "way/691543303",
+      "kept": 0,
+      "name": "Valley Catholic School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/693376510",
+      "kept": 0,
+      "name": "Bellview Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/697266749",
+      "kept": 0,
+      "name": "Willagillespie Elementary School"
+    },
+    {
+      "dropped": 6,
+      "id": "way/70192077",
+      "kept": 0,
+      "name": "Oliver P. Lent Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/741344288",
+      "kept": 0,
+      "name": "Isaac Newton Magnet School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/743539883",
+      "kept": 0,
+      "name": "Tamarack Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/745003492",
+      "kept": 0,
+      "name": "Central Linn Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/753596502",
+      "kept": 0,
+      "name": "Community Transitional School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/755364408",
+      "kept": 0,
+      "name": "Fairfield Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/757994375",
+      "kept": 0,
+      "name": "Eagle Rock Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/761545832",
+      "kept": 0,
+      "name": "Clarkes Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/781414649",
+      "kept": 0,
+      "name": "Oak Hill School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/781586655",
+      "kept": 0,
+      "name": "North Star Elementary"
+    },
+    {
+      "dropped": 2,
+      "id": "way/781589802",
+      "kept": 0,
+      "name": "Trinity Lutheran School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/781592618",
+      "kept": 0,
+      "name": "Ponderosa Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/791181977",
+      "kept": 0,
+      "name": "All Saints Catholic School"
+    },
+    {
+      "dropped": 0,
+      "id": "way/791187379",
+      "kept": 2,
+      "name": "Queen of Peace Catholic School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/793901050",
+      "kept": 0,
+      "name": "Pilot Butte Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/798613444",
+      "kept": 0,
+      "name": "Saint Paul Parish School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/801047131",
+      "kept": 0,
+      "name": "Jacksonville Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/827743393",
+      "kept": 0,
+      "name": "Malabon Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/827973552",
+      "kept": 0,
+      "name": "Clear Lake Elementary School"
+    },
+    {
+      "dropped": 7,
+      "id": "way/857927058",
+      "kept": 0,
+      "name": "West Orient Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/858020882",
+      "kept": 0,
+      "name": "Scouters Mountain Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/858020883",
+      "kept": 0,
+      "name": "Beatrice Morrow Cannady Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/859167459",
+      "kept": 0,
+      "name": "Lake Grove Elementary School"
+    },
+    {
+      "dropped": 6,
+      "id": "way/859486491",
+      "kept": 0,
+      "name": "Meridian Creek Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/867491250",
+      "kept": 0,
+      "name": "Zion Lutheran School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/867495874",
+      "kept": 0,
+      "name": "Franklin School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/867582222",
+      "kept": 0,
+      "name": "Adams Elementary School"
+    },
+    {
+      "dropped": 6,
+      "id": "way/867583740",
+      "kept": 0,
+      "name": "Ashbrook Independent School"
+    },
+    {
+      "dropped": 6,
+      "id": "way/871748699",
+      "kept": 0,
+      "name": "Cal Young Middle School"
+    },
+    {
+      "dropped": 7,
+      "id": "way/871763125",
+      "kept": 0,
+      "name": "Gilham Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/875923697",
+      "kept": 0,
+      "name": "Warm Springs K-8 Academy"
+    },
+    {
+      "dropped": 1,
+      "id": "way/885324084",
+      "kept": 0,
+      "name": "Lincoln School Condominiums"
+    },
+    {
+      "dropped": 1,
+      "id": "way/901052366",
+      "kept": 0,
+      "name": "Bailey Hill Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/907818417",
+      "kept": 0,
+      "name": "German International School of Portland"
+    },
+    {
+      "dropped": 3,
+      "id": "way/910037042",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 5,
+      "id": "way/911054958",
+      "kept": 0,
+      "name": "Spencer Butte Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/916117952",
+      "kept": 0,
+      "name": "Eugene Waldorf School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/916118074",
+      "kept": 0,
+      "name": "Family School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/921074174",
+      "kept": 0,
+      "name": "Charlemagne at Fox Hollow Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/921620026",
+      "kept": 0,
+      "name": "Atfalati Ridge Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/921895747",
+      "kept": 0,
+      "name": "Art Rutkin Elementary School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/933162737",
+      "kept": 0,
+      "name": "High Lakes Elementary School"
+    },
+    {
+      "dropped": 7,
+      "id": "way/934887552",
+      "kept": 0,
+      "name": "Cascade Middle School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/936256930",
+      "kept": 0,
+      "name": "Silver Rail Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/93664729",
+      "kept": 0,
+      "name": "Ron Russell Middle School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/937467678",
+      "kept": 0,
+      "name": "William E. Miller Elementary School"
+    },
+    {
+      "dropped": 8,
+      "id": "way/937467680",
+      "kept": 0,
+      "name": "Pacific Crest Middle School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/93796814",
+      "kept": 0,
+      "name": "Clinton Kelly Elementary School"
+    },
+    {
+      "dropped": 6,
+      "id": "way/939143756",
+      "kept": 0,
+      "name": "Elk Meadow Elementary School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/941070423",
+      "kept": 0,
+      "name": "Pine Ridge Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/953914126",
+      "kept": 0,
+      "name": "Wilson Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/954463676",
+      "kept": 0,
+      "name": "Jackson Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/954465393",
+      "kept": 0,
+      "name": "McLoughlin Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/954469192",
+      "kept": 0,
+      "name": "Oak Grove Elementary School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/959987704",
+      "kept": 0,
+      "name": "Washington Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/962696502",
+      "kept": 0,
+      "name": "Mae Richardson Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/976556182",
+      "kept": 0,
+      "name": "Howard Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/976557671",
+      "kept": 0,
+      "name": "Central Point Elementary School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/97796374",
+      "kept": 0,
+      "name": "McKinley Elementary School"
+    },
+    {
+      "dropped": 8,
+      "id": "way/99447821",
+      "kept": 0,
+      "name": "Cedaroak Park Primary School"
+    }
+  ],
+  "venues_after": 1084
+}

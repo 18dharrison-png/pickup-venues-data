@@ -1,0 +1,636 @@
+{
+  "baseline_venues": 1483,
+  "by_verdict": {
+    "known": 46,
+    "park": 433,
+    "school": 71
+  },
+  "courts_before": 4950,
+  "dropped": 2792,
+  "dropped_by_reason": {
+    "inside a school site that is not a verified public high school": 212,
+    "named private or commercial": 1,
+    "no public source places it in a park, public school or rec centre": 2500,
+    "tagged access=customers and not in a public park or school": 4,
+    "tagged access=private and not in a public park or school": 75
+  },
+  "padus_polygons": 627,
+  "padus_repaired": 81,
+  "padus_unrepaired": 1,
+  "park_courts": {
+    "examples": [
+      {
+        "id": "node/13174572217",
+        "lost": 1,
+        "name": "Baseball field",
+        "new": 3,
+        "old": 4
+      },
+      {
+        "id": "way/134152289",
+        "lost": 1,
+        "name": "Baseball field",
+        "new": 2,
+        "old": 3
+      },
+      {
+        "id": "way/1462245326",
+        "lost": 1,
+        "name": "Tennis courts",
+        "new": 1,
+        "old": 2
+      },
+      {
+        "id": "way/1472898327",
+        "lost": 1,
+        "name": "Tennis courts",
+        "new": 5,
+        "old": 6
+      },
+      {
+        "id": "way/1530381669",
+        "lost": 1,
+        "name": "Tennis courts",
+        "new": 1,
+        "old": 2
+      },
+      {
+        "id": "way/889882802",
+        "lost": 1,
+        "name": "Softball field",
+        "new": 3,
+        "old": 4
+      }
+    ],
+    "parks": 433,
+    "rate": 0.0139,
+    "regressed": 6
+  },
+  "parks_unmeasured": 0,
+  "parks_verified_by_agency": 31,
+  "public_areas": 346,
+  "school_campuses": 71,
+  "schools_9_12": 28644,
+  "state": "mississippi",
+  "unproven_school_areas": [
+    {
+      "dropped": 1,
+      "id": "relation/12683607",
+      "kept": 0,
+      "name": "Vancleave High School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1012229007",
+      "kept": 0,
+      "name": "Dixie Attendance Center"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1051947415",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/1053086686",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 3,
+      "id": "way/1056285177",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/1064236824",
+      "kept": 0,
+      "name": "Magnolia Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1064645950",
+      "kept": 0,
+      "name": "Harris High School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1064649167",
+      "kept": 0,
+      "name": "Carver Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1064930204",
+      "kept": 0,
+      "name": "Crestwood Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1064956150",
+      "kept": 0,
+      "name": "Middleton School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1072866693",
+      "kept": 0,
+      "name": "Church Street Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/1076582426",
+      "kept": 0,
+      "name": "Lizana Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1078230987",
+      "kept": 0,
+      "name": "Benndale Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1078232473",
+      "kept": 0,
+      "name": "Petal-Harvey School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1078938339",
+      "kept": 0,
+      "name": "Leake Academy"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1079141934",
+      "kept": 0,
+      "name": "Southeast Lauderdale Middle School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/1080060594",
+      "kept": 0,
+      "name": "Wayne Academy"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1080065722",
+      "kept": 0,
+      "name": "Waynesboro Junior High School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1080783011",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/1081873233",
+      "kept": 0,
+      "name": "Topeka Tilton Attendance Center"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1085403112",
+      "kept": 0,
+      "name": "Sylva-Bay Academy"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1085446699",
+      "kept": 0,
+      "name": "Corinth Middle School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/1093985045",
+      "kept": 0,
+      "name": "Calhoun Academy"
+    },
+    {
+      "dropped": 3,
+      "id": "way/1109178580",
+      "kept": 0,
+      "name": "Indianola Academy"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1157598469",
+      "kept": 0,
+      "name": "Sandersville Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1157930584",
+      "kept": 0,
+      "name": "South Delta Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1163017109",
+      "kept": 0,
+      "name": "West Harrison Middle School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/1167517220",
+      "kept": 0,
+      "name": "South Natchez High School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1186106463",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/1187717440",
+      "kept": 0,
+      "name": "Nichols Middle School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/1278845815",
+      "kept": 0,
+      "name": "Hebron School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1302874967",
+      "kept": 0,
+      "name": "Iuka High School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/1306159373",
+      "kept": 0,
+      "name": "Saint Stanislaus College"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1311392117",
+      "kept": 0,
+      "name": "Saint Rose de Lima School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1313347530",
+      "kept": 0,
+      "name": "Jackson Academy"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1341417266",
+      "kept": 0,
+      "name": "Richland Upper Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1342542502",
+      "kept": 0,
+      "name": "Port Gibson Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1422515965",
+      "kept": 0,
+      "name": "Presbyterian Christian Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1427118177",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/1443133301",
+      "kept": 0,
+      "name": "Beechwood Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1443987281",
+      "kept": 0,
+      "name": "Cathedral High School"
+    },
+    {
+      "dropped": 8,
+      "id": "way/1446579676",
+      "kept": 0,
+      "name": "Saint Andrew's Episcopal School - North Campus"
+    },
+    {
+      "dropped": 3,
+      "id": "way/1452088213",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 3,
+      "id": "way/1452440919",
+      "kept": 0,
+      "name": "Hartfield Academy"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1457627603",
+      "kept": 0,
+      "name": "Petal Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1459431182",
+      "kept": 0,
+      "name": "East Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/1461314193",
+      "kept": 0,
+      "name": "Saint Joseph Catholic School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/1465360317",
+      "kept": 0,
+      "name": "Northwest Rankin Middle School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/1469227868",
+      "kept": 0,
+      "name": "Puckett Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1469229832",
+      "kept": 0,
+      "name": "Brandon Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1469233222",
+      "kept": 0,
+      "name": "Pelahatchie Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1531276756",
+      "kept": 0,
+      "name": "Soso Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1549985472",
+      "kept": 0,
+      "name": "Bowmar Avenue Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1564129658",
+      "kept": 0,
+      "name": "Finch-Henry Jobs Corps Center"
+    },
+    {
+      "dropped": 5,
+      "id": "way/188823662",
+      "kept": 0,
+      "name": "St. Patrick Catholic High School"
+    },
+    {
+      "dropped": 8,
+      "id": "way/190639387",
+      "kept": 0,
+      "name": "Oxford Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/24522592",
+      "kept": 0,
+      "name": "Ocean Springs Upper Elementary"
+    },
+    {
+      "dropped": 3,
+      "id": "way/261097114",
+      "kept": 0,
+      "name": "Cleveland Central Middle School"
+    },
+    {
+      "dropped": 9,
+      "id": "way/304724631",
+      "kept": 0,
+      "name": "Pillow Academy"
+    },
+    {
+      "dropped": 3,
+      "id": "way/305902305",
+      "kept": 0,
+      "name": "Thames Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/309461184",
+      "kept": 0,
+      "name": "Presbyterian Christian High School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/31574393",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/317555742",
+      "kept": 0,
+      "name": "D'Iberville Middle School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/32060569",
+      "kept": 0,
+      "name": "Blair High School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/322804958",
+      "kept": 0,
+      "name": "Lamar School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/383634119",
+      "kept": 0,
+      "name": "Russell Christian Academy"
+    },
+    {
+      "dropped": 1,
+      "id": "way/468028990",
+      "kept": 0,
+      "name": "Moselle Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/468605156",
+      "kept": 0,
+      "name": "Ellisville State School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/471317465",
+      "kept": 0,
+      "name": "Gulledge High School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/483211768",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/485709292",
+      "kept": 0,
+      "name": "Warren Central Junior High School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/485709294",
+      "kept": 0,
+      "name": "Vicksburg Junior High School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/501299587",
+      "kept": 0,
+      "name": "Popp's Ferry Elementary School"
+    },
+    {
+      "dropped": 9,
+      "id": "way/502948170",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/599106116",
+      "kept": 0,
+      "name": "Oxford University School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/600433147",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/617656436",
+      "kept": 0,
+      "name": "Runnelstown Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/651631430",
+      "kept": 0,
+      "name": "Blackburn Middle School"
+    },
+    {
+      "dropped": 15,
+      "id": "way/653343904",
+      "kept": 0,
+      "name": "Jackson Prep School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/653482828",
+      "kept": 0,
+      "name": "Purvis Lower Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/690076080",
+      "kept": 0,
+      "name": "Oak Grove Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/793281288",
+      "kept": 0,
+      "name": "Burnsville Attendance Center"
+    },
+    {
+      "dropped": 2,
+      "id": "way/892451006",
+      "kept": 0,
+      "name": "Rod Paige Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/952497040",
+      "kept": 0,
+      "name": "Clarkdale High School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/968662289",
+      "kept": 0,
+      "name": "North Sunflower Academy"
+    },
+    {
+      "dropped": 1,
+      "id": "way/975808841",
+      "kept": 0,
+      "name": "Red Water Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/975829782",
+      "kept": 0,
+      "name": "Conehatta Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/975832081",
+      "kept": 0,
+      "name": "Standing Pine Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/975834268",
+      "kept": 0,
+      "name": "Tucker Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/975835537",
+      "kept": 0,
+      "name": "Bogue Chitto Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/975837739",
+      "kept": 0,
+      "name": "Pearl River Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/983532534",
+      "kept": 0,
+      "name": "Sandy Gavin School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/983809532",
+      "kept": 0,
+      "name": "Oak Park Elementary School"
+    }
+  ],
+  "venues_after": 550
+}

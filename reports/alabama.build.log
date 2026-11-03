@@ -1,0 +1,29 @@
+padus: 62 invalid polygons repaired, 0 dropped
+  public areas: 824 (52 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 8778 courts/fields read -> 1026 venues ({'known': 135, 'park': 674, 'school': 217}), 4797 courts dropped
+  baseline (old rules, same extract): 2542 venues
+  parks: 674, losing courts vs the old builder: 8 (1.19%)
+# 10 random KEPT (1026 candidates)
+Beach Volleyball courts	34.758316,-86.738088	known	way/483566114
+Running field	31.88269,-87.73706	park	way/1467901634
+Sports Complex	33.921688,-85.633457	park	way/606807938
+Deshler High School	34.739457,-87.701063	school	relation/21074360
+Lincoln-Bridgeforth Park	34.798546,-86.982298	park	way/109574641
+Dillard Park	33.684011,-86.470376	park	way/1257543982
+Guthrie Smith Park	33.716007,-87.811414	park	way/518906470
+Excel High School	31.432912,-87.341985	school	way/1032056601
+Field 5	30.318708,-87.69726	park	way/305086987
+Johnson Abernathy Graetz High School	32.343158,-86.262926	school	relation/20461471
+
+# 10 random DROPPED (4797 candidates)
+(unnamed)	34.731163,-87.650332	golf	no public source places it in a park, public school or rec centre
+(unnamed)	31.801764,-85.954292	running	no public source places it in a park, public school or rec centre
+(unnamed)	33.459046,-86.791636	running	no public source places it in a park, public school or rec centre
+(unnamed)	31.886973,-85.169309	tennis	no public source places it in a park, public school or rec centre
+Roy Coffee Community Park	34.666817,-87.294919	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	33.618045,-85.990124	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	33.756388,-85.812883	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	33.533311,-86.771011	running	inside a school site that is not a verified public high school
+(unnamed)	31.292221,-85.123899	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	31.564098,-85.238367	basketball	no public source places it in a park, public school or rec centre
+

@@ -1,0 +1,711 @@
+{
+  "baseline_venues": 729,
+  "by_verdict": {
+    "known": 17,
+    "park": 296,
+    "school": 35
+  },
+  "courts_before": 2286,
+  "dropped": 1146,
+  "dropped_by_reason": {
+    "inside a school site that is not a verified public high school": 291,
+    "named private or commercial": 3,
+    "no public source places it in a park, public school or rec centre": 756,
+    "tagged access=customers and not in a public park or school": 15,
+    "tagged access=private and not in a public park or school": 81
+  },
+  "padus_polygons": 855,
+  "padus_repaired": 72,
+  "padus_unrepaired": 0,
+  "park_courts": {
+    "examples": [
+      {
+        "id": "way/1196991922",
+        "lost": 3,
+        "name": "Tennis courts",
+        "new": 7,
+        "old": 10
+      },
+      {
+        "id": "way/1073274409",
+        "lost": 2,
+        "name": "Basketball courts",
+        "new": 1,
+        "old": 3
+      },
+      {
+        "id": "way/1212158269",
+        "lost": 2,
+        "name": "Tennis courts",
+        "new": 1,
+        "old": 3
+      }
+    ],
+    "parks": 296,
+    "rate": 0.0101,
+    "regressed": 3
+  },
+  "parks_unmeasured": 0,
+  "parks_verified_by_agency": 13,
+  "public_areas": 447,
+  "school_campuses": 35,
+  "schools_9_12": 28644,
+  "state": "hawaii",
+  "unproven_school_areas": [
+    {
+      "dropped": 1,
+      "id": "relation/18223117",
+      "kept": 0,
+      "name": "Waipahu Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "relation/6578676",
+      "kept": 0,
+      "name": "Princess Ruth Ke\u2019elik\u014dlani Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1044332268",
+      "kept": 0,
+      "name": "Ali'iolani Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1086799407",
+      "kept": 0,
+      "name": "Momilani Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1086868215",
+      "kept": 0,
+      "name": "Our Savior Lutheran School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1087389831",
+      "kept": 0,
+      "name": "Aiea Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1099495487",
+      "kept": 0,
+      "name": "Ha\u02bbaheo Elementary School"
+    },
+    {
+      "dropped": 6,
+      "id": "way/1189798975",
+      "kept": 0,
+      "name": "Hilo Intermediate School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1202880714",
+      "kept": 0,
+      "name": "Honouliuli Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1218051631",
+      "kept": 0,
+      "name": "Nu\u02bbuanu Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1322798939",
+      "kept": 0,
+      "name": "Waianae Intermediate School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/1322798941",
+      "kept": 0,
+      "name": "Waianae Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1322802457",
+      "kept": 0,
+      "name": "Nanakuli Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1322802842",
+      "kept": 0,
+      "name": "Ka Waihona o Ka Na'auao Public Charter School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1323009268",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/1323029431",
+      "kept": 0,
+      "name": "Kalanianaole Elementary and Intermediate School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1323295581",
+      "kept": 0,
+      "name": "Maunaloa Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1323295582",
+      "kept": 0,
+      "name": "Kualapu\u2019u School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1323295583",
+      "kept": 0,
+      "name": "Kaunakakai Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1323296063",
+      "kept": 0,
+      "name": "Maui Waena Intermediate School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/1323746520",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/1327652951",
+      "kept": 0,
+      "name": "Hawaii Baptist Academy Middle School - Dan Kong Campus"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1328070888",
+      "kept": 0,
+      "name": "Ma'ema'e Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1351702933",
+      "kept": 0,
+      "name": "Sacred Hearts Academy"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1351758785",
+      "kept": 0,
+      "name": "St Patrick's School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/1408489643",
+      "kept": 0,
+      "name": "Makalapa Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1411363715",
+      "kept": 0,
+      "name": "Ilima Intermediate School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1416399476",
+      "kept": 0,
+      "name": "Leih\u014dk\u016b Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1461910880",
+      "kept": 0,
+      "name": "Maryknoll High School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1461971125",
+      "kept": 0,
+      "name": "\u02bb\u0100ina Haina Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/146660109",
+      "kept": 0,
+      "name": "Keaukaha Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1481272237",
+      "kept": 0,
+      "name": "Pearl Ridge Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1531001156",
+      "kept": 0,
+      "name": "Ke Kula Kaiapuni \u02bbO \u0100nuenue"
+    },
+    {
+      "dropped": 16,
+      "id": "way/1531108691",
+      "kept": 0,
+      "name": "Punahou School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1531532408",
+      "kept": 0,
+      "name": "Palolo Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1559798599",
+      "kept": 0,
+      "name": "Salt Lake Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/162157133",
+      "kept": 0,
+      "name": "Kapolei Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/170841032",
+      "kept": 0,
+      "name": "William P. Jarrett Middle School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/178740220",
+      "kept": 0,
+      "name": "Waipahu Intermediate School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/178753198",
+      "kept": 0,
+      "name": "August-Ahrens Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/193678090",
+      "kept": 0,
+      "name": "Kamali'i Elementary School"
+    },
+    {
+      "dropped": 6,
+      "id": "way/194149557",
+      "kept": 0,
+      "name": "Kamehameha Schools Hawaii Campus"
+    },
+    {
+      "dropped": 1,
+      "id": "way/197318274",
+      "kept": 0,
+      "name": "Kailua Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/197343335",
+      "kept": 0,
+      "name": "Maunawili Elementary"
+    },
+    {
+      "dropped": 5,
+      "id": "way/199226100",
+      "kept": 0,
+      "name": "Hawaii Preparatory Academy"
+    },
+    {
+      "dropped": 11,
+      "id": "way/203539517",
+      "kept": 0,
+      "name": "\u02bbIolani School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/209503964",
+      "kept": 0,
+      "name": "Laie Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/215707691",
+      "kept": 0,
+      "name": "Na'alehu Elementary"
+    },
+    {
+      "dropped": 18,
+      "id": "way/217610377",
+      "kept": 0,
+      "name": "Wai\u0101kea High School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/217667247",
+      "kept": 0,
+      "name": "Keaau Middle School"
+    },
+    {
+      "dropped": 0,
+      "id": "way/217723106",
+      "kept": 1,
+      "name": "Wai\u0101keawaena Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/217725273",
+      "kept": 0,
+      "name": "Chiefess Kapiolani Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/218402939",
+      "kept": 0,
+      "name": "Ka'\u016b High & P\u0101hala Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/238007821",
+      "kept": 0,
+      "name": "Helemano Elementary School"
+    },
+    {
+      "dropped": 24,
+      "id": "way/239144289",
+      "kept": 0,
+      "name": "Kamehameha Schools"
+    },
+    {
+      "dropped": 1,
+      "id": "way/239951594",
+      "kept": 0,
+      "name": "Kaohao School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/240734858",
+      "kept": 0,
+      "name": "Kaimuki Middle School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/244983968",
+      "kept": 0,
+      "name": "Wai\u0101kea Intermediate School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/290275690",
+      "kept": 0,
+      "name": "Pomaika'i Elementary School"
+    },
+    {
+      "dropped": 10,
+      "id": "way/293658148",
+      "kept": 0,
+      "name": "Mid-Pacific Institute"
+    },
+    {
+      "dropped": 11,
+      "id": "way/294470865",
+      "kept": 0,
+      "name": "Kamehameha Schools Maui Campus"
+    },
+    {
+      "dropped": 1,
+      "id": "way/302851710",
+      "kept": 0,
+      "name": "King William Lunalilo Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/303716361",
+      "kept": 0,
+      "name": "Waikiki Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/306318285",
+      "kept": 0,
+      "name": "Aliamanu Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/342273623",
+      "kept": 0,
+      "name": "President Thomas Jefferson Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/345407988",
+      "kept": 0,
+      "name": "Noelani School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/360437807",
+      "kept": 0,
+      "name": "Kapalama Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/386736497",
+      "kept": 0,
+      "name": "Eleele Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/440291999",
+      "kept": 0,
+      "name": "Lincoln Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/461670025",
+      "kept": 0,
+      "name": "Moanalua Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/464663984",
+      "kept": 0,
+      "name": "Hanalei School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/467652930",
+      "kept": 0,
+      "name": "Kaala Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/473521942",
+      "kept": 0,
+      "name": "He'eia Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/479829222",
+      "kept": 0,
+      "name": "Pearl City Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/487538022",
+      "kept": 0,
+      "name": "Queen Ka'ahumanu Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/503083180",
+      "kept": 0,
+      "name": "Kula Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/503102964",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/508793211",
+      "kept": 0,
+      "name": "Waialua Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/508897977",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/512881655",
+      "kept": 0,
+      "name": "Maui Preparatory Academy"
+    },
+    {
+      "dropped": 2,
+      "id": "way/541606833",
+      "kept": 0,
+      "name": "Le Jardin Academy"
+    },
+    {
+      "dropped": 4,
+      "id": "way/583466852",
+      "kept": 0,
+      "name": "Niu Valley Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/589759123",
+      "kept": 0,
+      "name": "Ewa Makai Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/619389734",
+      "kept": 0,
+      "name": "Blanche Pope Elementary School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/62758914",
+      "kept": 0,
+      "name": "Kailua Intermediate School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/62938463",
+      "kept": 0,
+      "name": "Kaneohe Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/643955876",
+      "kept": 0,
+      "name": "Hau'ula Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/649098163",
+      "kept": 0,
+      "name": "Gustav H. Webling Elementary School"
+    },
+    {
+      "dropped": 6,
+      "id": "way/66967650",
+      "kept": 0,
+      "name": "Washington Middle School"
+    },
+    {
+      "dropped": 8,
+      "id": "way/689218008",
+      "kept": 0,
+      "name": "Lana'i High and Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/726948523",
+      "kept": 0,
+      "name": "Puohala Elementary School and Playground"
+    },
+    {
+      "dropped": 1,
+      "id": "way/726951348",
+      "kept": 0,
+      "name": "Ahuimanu Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/732894828",
+      "kept": 0,
+      "name": "King Liholiho Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/779507928",
+      "kept": 0,
+      "name": "Puuhale Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/820529826",
+      "kept": 0,
+      "name": "Prince David Kawananakoa Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/827528658",
+      "kept": 0,
+      "name": "Pearl Highlands Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/831441501",
+      "kept": 0,
+      "name": "Kalihi Kai Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/841572301",
+      "kept": 0,
+      "name": "Kainalu Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/863413739",
+      "kept": 0,
+      "name": "Pauoa Elementary School"
+    },
+    {
+      "dropped": 11,
+      "id": "way/881577106",
+      "kept": 0,
+      "name": "R. L. Stevenson Middle School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/902232356",
+      "kept": 0,
+      "name": "Aiea Intermediate School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/903730271",
+      "kept": 0,
+      "name": "Alvah A. Scott Elementary School"
+    },
+    {
+      "dropped": 12,
+      "id": "way/905859369",
+      "kept": 0,
+      "name": "King David Kalakaua Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/910092460",
+      "kept": 0,
+      "name": "Waikele Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/926254640",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/931229234",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 0,
+      "id": "way/954588152",
+      "kept": 1,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/957011363",
+      "kept": 0,
+      "name": "Ka\u02bba\u02bbawa Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/977097019",
+      "kept": 0,
+      "name": "Wilcox Elementary School"
+    }
+  ],
+  "venues_after": 348
+}

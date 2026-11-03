@@ -1,0 +1,29 @@
+padus: 107 invalid polygons repaired, 1 dropped
+  public areas: 1438 (329 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 13085 courts/fields read -> 1109 venues ({'known': 160, 'park': 770, 'school': 179}), 8508 courts dropped
+  baseline (old rules, same extract): 3185 venues
+  parks: 770, losing courts vs the old builder: 10 (1.30%)
+# 10 random KEPT (1109 candidates)
+Concord Local Park	38.980997,-77.151133	park	way/374791261
+Basketball courts	39.452889,-77.452427	park	way/1425470984
+Brunswick High	39.316172,-77.607202	school	way/489407605
+Calvert High School	38.554605,-76.583915	school	relation/18749062
+Georgian Forest Local Park	39.07389,-77.058485	park	relation/9351378
+Beach Volleyball courts	39.408031,-76.591627	known	way/970974227
+North Fairmont Heights Park	38.904354,-76.916524	park	way/107268703
+Baker Park	39.41794,-77.422387	known	way/435662343
+Brookmont Neighborhood Park	38.943915,-77.120035	park	relation/5575322
+Baseball field	39.090894,-76.769499	park	way/86073992
+
+# 10 random DROPPED (8508 candidates)
+(unnamed)	39.535361,-76.113084	baseball	no public source places it in a park, public school or rec centre
+Patterson Park	39.290137,-76.578414	basketball	no public source places it in a park, public school or rec centre
+(unnamed)	39.679416,-77.755478	soccer	no public source places it in a park, public school or rec centre
+(unnamed)	39.578206,-77.761591	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	38.317116,-75.222469	tennis	inside a school site that is not a verified public high school
+Gene Lowe Park	38.537195,-75.722613	basketball	no public source places it in a park, public school or rec centre
+(unnamed)	39.26611,-76.480641	volleyball	no public source places it in a park, public school or rec centre
+Mount Rainier Neighborhood Park	38.948487,-76.965371	american_football	no public source places it in a park, public school or rec centre
+Hallowing Point District Park	38.512566,-76.629288	pickleball	no public source places it in a park, public school or rec centre
+(unnamed)	39.440119,-76.61153	baseball	inside a school site that is not a verified public high school
+

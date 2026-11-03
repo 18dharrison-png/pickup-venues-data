@@ -1,0 +1,625 @@
+{
+  "baseline_venues": 852,
+  "by_verdict": {
+    "known": 41,
+    "park": 240,
+    "school": 79
+  },
+  "courts_before": 2288,
+  "dropped": 1236,
+  "dropped_by_reason": {
+    "inside a school site that is not a verified public high school": 208,
+    "no public source places it in a park, public school or rec centre": 1021,
+    "tagged access=permit and not in a public park or school": 1,
+    "tagged access=private and not in a public park or school": 6
+  },
+  "padus_polygons": 789,
+  "padus_repaired": 94,
+  "padus_unrepaired": 0,
+  "park_courts": {
+    "examples": [
+      {
+        "id": "way/112642999",
+        "lost": 11,
+        "name": "Spartan Park",
+        "new": 22,
+        "old": 33
+      },
+      {
+        "id": "way/1528327331",
+        "lost": 1,
+        "name": "Tennis courts",
+        "new": 1,
+        "old": 2
+      }
+    ],
+    "parks": 240,
+    "rate": 0.0083,
+    "regressed": 2
+  },
+  "parks_unmeasured": 0,
+  "parks_verified_by_agency": 22,
+  "public_areas": 527,
+  "school_campuses": 79,
+  "schools_9_12": 28644,
+  "state": "montana",
+  "unproven_school_areas": [
+    {
+      "dropped": 3,
+      "id": "relation/17841787",
+      "kept": 0,
+      "name": "Bonner School District #14"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1003733736",
+      "kept": 0,
+      "name": "Story Creek Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1003742638",
+      "kept": 0,
+      "name": "Anderson School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1083621785",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/1124324630",
+      "kept": 0,
+      "name": "Graff Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1124513390",
+      "kept": 0,
+      "name": "West Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1126392602",
+      "kept": 0,
+      "name": "South Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1200745542",
+      "kept": 0,
+      "name": "Lolo School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/129531565",
+      "kept": 0,
+      "name": "Clinton Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1297732114",
+      "kept": 0,
+      "name": "Lolo Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1315242392",
+      "kept": 0,
+      "name": "Hamilton Christian Academy"
+    },
+    {
+      "dropped": 2,
+      "id": "way/140438985",
+      "kept": 0,
+      "name": "Helena Middle School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/1415496373",
+      "kept": 0,
+      "name": "Seeley Lake Public Schools"
+    },
+    {
+      "dropped": 3,
+      "id": "way/1420022120",
+      "kept": 0,
+      "name": "Deer Lodge Public Schools"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1456601116",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 0,
+      "id": "way/1456602214",
+      "kept": 1,
+      "name": "Laurel Intermediate School"
+    },
+    {
+      "dropped": 0,
+      "id": "way/1456620218",
+      "kept": 1,
+      "name": "Laurel Intermiddent School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1475368141",
+      "kept": 0,
+      "name": "Ekalaka Public Schools"
+    },
+    {
+      "dropped": 0,
+      "id": "way/1504221947",
+      "kept": 1,
+      "name": "Laurel Intermediate School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1507640536",
+      "kept": 0,
+      "name": "Elysian School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1513126189",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/153074031",
+      "kept": 0,
+      "name": "Chief Joseph Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1568332102",
+      "kept": 0,
+      "name": "Valley Christian School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/199132157",
+      "kept": 0,
+      "name": "Columbia Falls Junior High School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/244301530",
+      "kept": 0,
+      "name": "West School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/244301533",
+      "kept": 0,
+      "name": "North Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/270776858",
+      "kept": 0,
+      "name": "Monarch School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/299685308",
+      "kept": 0,
+      "name": "Newman Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/318321235",
+      "kept": 0,
+      "name": "Franklin Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/322759258",
+      "kept": 0,
+      "name": "Boulder Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/322759290",
+      "kept": 0,
+      "name": "Rose Park Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/322759300",
+      "kept": 0,
+      "name": "Washington Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/322759302",
+      "kept": 0,
+      "name": "Will James Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/334026379",
+      "kept": 0,
+      "name": "Forsyth Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/334354726",
+      "kept": 0,
+      "name": "Lincoln Elementary School Grounds"
+    },
+    {
+      "dropped": 10,
+      "id": "way/335480837",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/336101038",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/340683206",
+      "kept": 0,
+      "name": "Malta Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/345398763",
+      "kept": 0,
+      "name": "Brady Public Schools"
+    },
+    {
+      "dropped": 3,
+      "id": "way/364547682",
+      "kept": 0,
+      "name": "Browning Middle School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/381260407",
+      "kept": 0,
+      "name": "West Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/405584023",
+      "kept": 0,
+      "name": "East Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/405585415",
+      "kept": 0,
+      "name": "Sunnyside School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/405781017",
+      "kept": 0,
+      "name": "Morningside School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/405791642",
+      "kept": 0,
+      "name": "Paris Gibson Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/405891944",
+      "kept": 0,
+      "name": "Meadowlark School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/405904670",
+      "kept": 0,
+      "name": "Sacajawea School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/438014537",
+      "kept": 0,
+      "name": "Orchard School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/438014587",
+      "kept": 0,
+      "name": "Riverside Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/468481528",
+      "kept": 0,
+      "name": "Alkali Creek Elementary"
+    },
+    {
+      "dropped": 15,
+      "id": "way/499513569",
+      "kept": 0,
+      "name": "Big Sky High School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/546972441",
+      "kept": 0,
+      "name": "Smith Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/548442575",
+      "kept": 0,
+      "name": "Meadowlark Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/548469760",
+      "kept": 0,
+      "name": "Central Heights Elementary"
+    },
+    {
+      "dropped": 5,
+      "id": "way/549593307",
+      "kept": 0,
+      "name": "Arrowhead School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/552242326",
+      "kept": 0,
+      "name": "Belgrade Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/598207092",
+      "kept": 0,
+      "name": "Kalispell Middle School"
+    },
+    {
+      "dropped": 7,
+      "id": "way/643882716",
+      "kept": 0,
+      "name": "Medicine Crow Middle School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/646981574",
+      "kept": 0,
+      "name": "Castle Rock Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/653330146",
+      "kept": 0,
+      "name": "St. Joseph Elementary & Grade School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/686452510",
+      "kept": 0,
+      "name": "Bryant Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/721215760",
+      "kept": 0,
+      "name": "Sacajawea Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/751442643",
+      "kept": 0,
+      "name": "Radley Elementary School"
+    },
+    {
+      "dropped": 6,
+      "id": "way/751442647",
+      "kept": 0,
+      "name": "Prickly Pear Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/751442649",
+      "kept": 0,
+      "name": "East Valley Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/760092875",
+      "kept": 0,
+      "name": "Chief Charlo Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/778162166",
+      "kept": 0,
+      "name": "Bozeman Summit School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/815959824",
+      "kept": 0,
+      "name": "Linderman School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/816353976",
+      "kept": 0,
+      "name": "C.S. Porter Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/818614509",
+      "kept": 0,
+      "name": "Lewis & Clark Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/833697437",
+      "kept": 0,
+      "name": "Rattlesnake Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/837446174",
+      "kept": 0,
+      "name": "Longfellow Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/839167392",
+      "kept": 0,
+      "name": "Target Range School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/842505952",
+      "kept": 0,
+      "name": "Lewis & Clark Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/844080462",
+      "kept": 0,
+      "name": "Saint Francis Catholic School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/849404182",
+      "kept": 0,
+      "name": "Petra Academy"
+    },
+    {
+      "dropped": 2,
+      "id": "way/860287420",
+      "kept": 0,
+      "name": "Linderman Education Center"
+    },
+    {
+      "dropped": 7,
+      "id": "way/869968045",
+      "kept": 0,
+      "name": "Ben Steele Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/874957018",
+      "kept": 0,
+      "name": "Rankin Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/874987820",
+      "kept": 0,
+      "name": "Heritage Christian School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/877710145",
+      "kept": 0,
+      "name": "North Star Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/879131458",
+      "kept": 0,
+      "name": "Stillwater Christian School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/880003133",
+      "kept": 0,
+      "name": "Evergreen Junior High School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/881796975",
+      "kept": 0,
+      "name": "Holy Spirit Catholic School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/908622501",
+      "kept": 0,
+      "name": "Chief Joseph Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/914528226",
+      "kept": 0,
+      "name": "Morning Star School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/914532446",
+      "kept": 0,
+      "name": "Hyalite Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/924627935",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/935287718",
+      "kept": 0,
+      "name": "Elder Grove School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/961392941",
+      "kept": 0,
+      "name": "Libby Middle School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/962780583",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/965718669",
+      "kept": 0,
+      "name": "Polson Middle School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/976492920",
+      "kept": 0,
+      "name": "Crow Agency Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/976495585",
+      "kept": 0,
+      "name": "Hardin Intermediate School"
+    },
+    {
+      "dropped": 7,
+      "id": "way/983422507",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/988940881",
+      "kept": 0,
+      "name": "Lakeside Elementary School"
+    }
+  ],
+  "venues_after": 360
+}

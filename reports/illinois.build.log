@@ -1,0 +1,29 @@
+padus: 296 invalid polygons repaired, 0 dropped
+  public areas: 6098 (422 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 24642 courts/fields read -> 3930 venues ({'known': 389, 'park': 3138, 'school': 403}), 9251 courts dropped
+  baseline (old rules, same extract): 6559 venues
+  parks: 3138, losing courts vs the old builder: 16 (0.51%)
+# 10 random KEPT (3930 candidates)
+Northeast Park	42.022839,-87.824617	park	way/194737722
+Baseball field	41.35419,-89.168285	park	way/973102681
+Baseball field	40.022885,-90.428108	park	way/1300296581
+Garden Hills Park	40.137871,-88.27373	park	way/236128055
+Cahokia Park	38.55684,-90.174396	park	way/508541430
+Beach Volleyball courts	40.532854,-88.960601	known	way/1047318237
+Nelson Park	42.257771,-89.090673	park	way/111878403
+Main Park	41.494808,-87.85974	park	way/666351096
+Kiwanis Park	39.762922,-89.622406	park	way/402187954
+Baseball field	42.271203,-89.176275	park	way/1156997006
+
+# 10 random DROPPED (9251 candidates)
+(unnamed)	42.129511,-89.26901	tennis	no public source places it in a park, public school or rec centre
+Brigham Field	41.93394,-88.777809	american_football	no public source places it in a park, public school or rec centre
+(unnamed)	42.118589,-87.935068	tennis	tagged access=private and not in a public park or school
+(unnamed)	41.800098,-88.454969	soccer	no public source places it in a park, public school or rec centre
+(unnamed)	39.464615,-88.362427	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	40.598665,-89.464667	tennis	tagged access=no and not in a public park or school
+(unnamed)	41.931172,-88.309338	basketball	no public source places it in a park, public school or rec centre
+(unnamed)	41.54329,-88.579177	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	41.837098,-87.62587	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	41.316882,-90.491891	tennis	no public source places it in a park, public school or rec centre
+

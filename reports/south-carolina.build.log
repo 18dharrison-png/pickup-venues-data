@@ -1,0 +1,29 @@
+padus: 173 invalid polygons repaired, 0 dropped
+  public areas: 965 (55 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 9810 courts/fields read -> 1118 venues ({'known': 116, 'park': 852, 'school': 150}), 5730 courts dropped
+  baseline (old rules, same extract): 2763 venues
+  parks: 852, losing courts vs the old builder: 13 (1.53%)
+# 10 random KEPT (1118 candidates)
+Anderson Sports & Entertainment Complex	34.539435,-82.682293	park	way/461624892
+Pickleball courts	32.725114,-80.084217	park	way/140469047
+Lookout Park	35.038664,-81.010081	park	way/550037002
+Smith Hazel Park	33.565219,-81.710055	park	way/1080854905
+Basketball courts	33.504563,-79.344042	park	way/1130747089
+Baseball field	32.881927,-79.784267	park	way/918300235
+Basketball courts	32.747415,-81.237499	park	way/1194246949
+New Centre Park	35.102309,-81.217319	park	way/511860387
+Baseball field	33.31767,-79.303019	park	way/1103009442
+Bray Park	33.916388,-81.06497	park	way/779442142
+
+# 10 random DROPPED (5730 candidates)
+(unnamed)	34.074158,-81.207993	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	34.18549,-79.652646	softball	no public source places it in a park, public school or rec centre
+(unnamed)	34.802476,-82.229292	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	32.430813,-80.582312	pickleball	no public source places it in a park, public school or rec centre
+(unnamed)	34.622946,-82.620108	tennis	no public source places it in a park, public school or rec centre
+Huntington Park	33.718826,-78.908287	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	33.99317,-80.939011	running	no public source places it in a park, public school or rec centre
+(unnamed)	33.947967,-81.016089	baseball	inside a school site that is not a verified public high school
+(unnamed)	33.869464,-78.617085	basketball	no public source places it in a park, public school or rec centre
+(unnamed)	32.836246,-79.829921	tennis	no public source places it in a park, public school or rec centre
+

@@ -1,0 +1,29 @@
+padus: 560 invalid polygons repaired, 5 dropped
+  public areas: 4577 (475 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 35060 courts/fields read -> 3574 venues ({'known': 242, 'park': 2843, 'school': 489}), 20390 courts dropped
+  baseline (old rules, same extract): 10850 venues
+  parks: 2843, losing courts vs the old builder: 40 (1.41%)
+# 10 random KEPT (3574 candidates)
+Tennis courts	42.097814,-78.740739	park	way/1504270761
+Table Tennis courts	40.578157,-73.819527	park	way/1227926172
+Jacob K. Javits Playground	40.858976,-73.934884	park	way/226010200
+Balsam Park H-1	40.785885,-73.510917	park	way/555325388
+River Road Park	42.802437,-73.864255	park	relation/7393826
+One Hundred Percent Playground	40.646445,-73.899127	park	way/1064451701
+North Shore High School	40.83876,-73.62989	school	way/88444218
+Mullen Park	42.870742,-78.829588	park	way/446580383
+Tennis courts	40.79695,-73.97758	park	way/1098170197
+Paul Luther Park	42.891874,-73.687575	park	way/179384876
+
+# 10 random DROPPED (20390 candidates)
+(unnamed)	40.942338,-73.695747	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	42.267974,-74.92128	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	40.987509,-72.608908	pickleball	no public source places it in a park, public school or rec centre
+(unnamed)	40.860861,-72.50019	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	42.673357,-74.483055	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	41.721639,-73.963819	basketball	no public source places it in a park, public school or rec centre
+(unnamed)	40.819421,-73.737551	tennis	no public source places it in a park, public school or rec centre
+Sherburne Road Park	43.125705,-77.283656	baseball	no public source places it in a park, public school or rec centre
+Clinton Soccer Field	41.393875,-73.953643	soccer	no public source places it in a park, public school or rec centre
+(unnamed)	42.632609,-77.060576	golf	no public source places it in a park, public school or rec centre
+

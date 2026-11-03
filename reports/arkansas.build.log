@@ -1,0 +1,29 @@
+padus: 56 invalid polygons repaired, 0 dropped
+  public areas: 589 (68 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 5536 courts/fields read -> 613 venues ({'known': 93, 'park': 427, 'school': 93}), 3223 courts dropped
+  baseline (old rules, same extract): 1620 venues
+  parks: 427, losing courts vs the old builder: 4 (0.94%)
+# 10 random KEPT (613 candidates)
+Interstate Park	34.711328,-92.283099	park	way/487092280
+Tennis courts	33.608436,-91.214246	known	way/1524720656
+Baseball field	35.803906,-91.609018	known	way/583544269
+Booneville High School	35.14648,-93.911101	school	way/1212848772
+Baseball field	36.042035,-94.134744	park	way/133645699
+Marion Sports Complex	35.184596,-90.19073	park	way/670510107
+HEBER SPRINGS HIGH SCHOOL	35.4973,-92.038693	school	way/1349810605
+City of Colleges Park	35.096846,-92.415996	park	way/532659099
+Chartwell's Women's Sports Complex	35.299789,-93.138771	known	way/786317660
+Baseball field	36.248815,-90.946934	park	way/1292758797
+
+# 10 random DROPPED (3223 candidates)
+(unnamed)	34.148516,-93.095201	golf	no public source places it in a park, public school or rec centre
+Grey Rock Community Park	35.340805,-93.738117	basketball	no public source places it in a park, public school or rec centre
+(unnamed)	36.004576,-94.012987	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	34.756747,-92.342246	running	inside a school site that is not a verified public high school
+(unnamed)	36.059644,-94.18197	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	36.282559,-94.185102	basketball	no public source places it in a park, public school or rec centre
+(unnamed)	35.88404,-90.639542	tennis	no public source places it in a park, public school or rec centre
+Cain Park	34.496915,-91.542598	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	35.071273,-92.45558	soccer	no public source places it in a park, public school or rec centre
+(unnamed)	35.101773,-92.43928	tennis	no public source places it in a park, public school or rec centre
+

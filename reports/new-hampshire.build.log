@@ -1,0 +1,29 @@
+padus: 28 invalid polygons repaired, 4 dropped
+  public areas: 493 (255 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 3813 courts/fields read -> 347 venues ({'known': 58, 'park': 235, 'school': 54}), 2591 courts dropped
+  baseline (old rules, same extract): 1195 venues
+  parks: 235, losing courts vs the old builder: 0 (0.00%)
+# 10 random KEPT (347 candidates)
+Nashua High School North	42.752766,-71.512574	school	way/185919262
+Keyes Memorial Park	42.837355,-71.657852	park	way/136634089
+Wasserman Park	42.821502,-71.530847	park	way/337244100
+Kraine Meadow Park	43.721921,-71.428022	known	way/884498663
+Baseball field	43.126706,-71.007327	park	way/1159079628
+Dover High School	43.177243,-70.887999	school	way/1215087859
+Memorial Field	43.130433,-71.461036	park	way/614587315
+White Mountains Regional High School	44.418354,-71.602252	school	way/1216586202
+Bremner Field	43.139234,-70.94118	park	way/27931496
+Franklin High School	43.440351,-71.653016	school	way/759703205
+
+# 10 random DROPPED (2591 candidates)
+Ronald L. Jackson Field	42.758132,-71.502188	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	43.347051,-71.261487	soccer	inside a school site that is not a verified public high school
+Jamie Welch Memorial Field	43.316216,-71.617338	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	42.797054,-71.478657	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	42.726333,-71.383082	tennis	no public source places it in a park, public school or rec centre
+Prescott Park	43.665429,-71.500821	skateboard	no public source places it in a park, public school or rec centre
+(unnamed)	43.694845,-71.401963	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	42.959987,-71.253269	baseball	inside a school site that is not a verified public high school
+(unnamed)	42.843331,-71.112712	american_football	no public source places it in a park, public school or rec centre
+(unnamed)	43.010755,-71.1627	softball	no public source places it in a park, public school or rec centre
+

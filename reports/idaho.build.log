@@ -1,0 +1,29 @@
+padus: 190 invalid polygons repaired, 3 dropped
+  public areas: 593 (30 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 3794 courts/fields read -> 452 venues ({'known': 53, 'park': 305, 'school': 94}), 2212 courts dropped
+  baseline (old rules, same extract): 1332 venues
+  parks: 305, losing courts vs the old builder: 3 (0.98%)
+# 10 random KEPT (452 candidates)
+Weiser High School	44.262524,-116.978912	school	way/247663662
+Keefer Park	43.504079,-114.285228	park	way/1303579885
+Storey Park	43.602876,-116.388734	park	way/34658951
+Bicentennial Park	42.937995,-112.471025	park	way/577305435
+Ed Payne Park	43.71248,-116.635129	park	way/1025410373
+Soda Springs High School	42.662402,-111.591891	school	way/1083039835
+Cassia Park	43.596219,-116.239093	park	way/886319017
+Champion Park	43.635905,-116.362802	park	way/470453924
+Hagerman High School	42.817492,-114.899623	school	way/1144916016
+Esquire Acres Park	43.502694,-112.080301	park	way/32115538
+
+# 10 random DROPPED (2212 candidates)
+Church Field	46.379617,-116.962686	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	43.705452,-116.625778	tennis	inside a school site that is not a verified public high school
+(unnamed)	43.575093,-116.61584	tennis	inside a school site that is not a verified public high school
+(unnamed)	42.804639,-112.837308	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	42.916635,-112.417272	baseball	inside a school site that is not a verified public high school
+(unnamed)	48.318893,-116.533049	soccer	no public source places it in a park, public school or rec centre
+(unnamed)	43.907517,-113.609412	american_football	no public source places it in a park, public school or rec centre
+(unnamed)	42.559096,-113.75303	skateboard	no public source places it in a park, public school or rec centre
+(unnamed)	43.646462,-116.695109	basketball	inside a school site that is not a verified public high school
+(unnamed)	42.947808,-112.472555	running	inside a school site that is not a verified public high school
+

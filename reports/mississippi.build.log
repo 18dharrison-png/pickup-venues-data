@@ -1,0 +1,29 @@
+padus: 81 invalid polygons repaired, 1 dropped
+  public areas: 346 (31 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 4950 courts/fields read -> 550 venues ({'known': 46, 'park': 433, 'school': 71}), 2792 courts dropped
+  baseline (old rules, same extract): 1483 venues
+  parks: 433, losing courts vs the old builder: 6 (1.39%)
+# 10 random KEPT (550 candidates)
+Anderson Park	34.196767,-90.590334	park	way/468617795
+KHS Baseball Field	33.069125,-89.577481	park	way/134904940
+Baseball field	33.734466,-90.541416	park	way/487273855
+Southeast Lauderdale High School	32.325646,-88.570233	school	way/1078941754
+Baseball field	34.359435,-88.691467	park	way/1122287414
+Pearl Junior High Practice Field	32.279811,-90.106061	park	way/969302470
+Baseball field	30.429413,-89.125679	park	way/118728791
+Baseball field	33.615889,-88.653239	park	way/486483614
+KOSCIUSKO SENIOR HIGH SCHOOL	33.052039,-89.571038	school	way/1085855376
+Willie May Latham-Taylor Recreation Park	31.871577,-91.132687	park	way/818160929
+
+# 10 random DROPPED (2792 candidates)
+(unnamed)	30.408723,-88.90621	tennis	no public source places it in a park, public school or rec centre
+Commagere Park	30.310256,-89.340312	baseball	no public source places it in a park, public school or rec centre
+Football Practice Fields	31.331263,-89.331287	american_football	no public source places it in a park, public school or rec centre
+(unnamed)	32.445113,-89.111613	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	30.317044,-89.379064	soccer	no public source places it in a park, public school or rec centre
+(unnamed)	34.369592,-89.504274	baseball	inside a school site that is not a verified public high school
+(unnamed)	32.319003,-89.023137	baseball	no public source places it in a park, public school or rec centre
+Blackburn-McMurray Intramural Fields and Disc Golf Course	34.358436,-89.558934	soccer	no public source places it in a park, public school or rec centre
+(unnamed)	34.873031,-89.871255	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	30.412606,-89.036662	tennis	no public source places it in a park, public school or rec centre
+

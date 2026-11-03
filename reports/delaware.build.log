@@ -1,0 +1,29 @@
+padus: 62 invalid polygons repaired, 1 dropped
+  public areas: 186 (43 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 2208 courts/fields read -> 155 venues ({'known': 30, 'park': 92, 'school': 33}), 1541 courts dropped
+  baseline (old rules, same extract): 625 venues
+  parks: 92, losing courts vs the old builder: 0 (0.00%)
+# 10 random KEPT (155 candidates)
+Soccer field	38.99808,-75.451574	known	way/606803703
+Newark High School	39.679951,-75.739014	school	way/364181516
+Helen Chambers Park	39.745028,-75.556759	park	way/689329640
+Delcastle Recreation Park	39.744376,-75.657789	park	relation/8052710
+Felton Little League	39.009915,-75.569758	park	way/1328638724
+Kingswood Community Center	39.746204,-75.526903	park	way/899641130
+Beach Volleyball courts	39.114203,-75.618677	known	way/1512152972
+John Dickinson High School	39.728029,-75.673704	school	way/674779742
+George Wilson Center	39.689311,-75.761464	park	way/99876560
+Evans Park	38.544492,-75.112443	park	way/1051476825
+
+# 10 random DROPPED (1541 candidates)
+(unnamed)	38.538885,-75.070554	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	38.775837,-75.231633	multi	no public source places it in a park, public school or rec centre
+Delmar Park	38.462143,-75.565221	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	38.80754,-75.2821	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	39.467319,-75.710749	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	39.693763,-75.575582	baseball	no public source places it in a park, public school or rec centre
+Lewes Little League Fields	38.777787,-75.142155	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	38.643872,-75.183882	golf	no public source places it in a park, public school or rec centre
+(unnamed)	39.109919,-75.559758	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	38.556811,-75.082459	tennis	no public source places it in a park, public school or rec centre
+

@@ -1,0 +1,29 @@
+padus: 82 invalid polygons repaired, 0 dropped
+  public areas: 950 (107 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 5167 courts/fields read -> 797 venues ({'known': 124, 'park': 529, 'school': 144}), 2650 courts dropped
+  baseline (old rules, same extract): 1752 venues
+  parks: 529, losing courts vs the old builder: 0 (0.00%)
+# 10 random KEPT (797 candidates)
+Towl Park	41.235902,-96.059221	park	way/183932485
+Streeter Park	40.874694,-98.001213	park	way/1313029623
+Bob Campos Soccer Park	41.206571,-95.96149	park	way/189471793
+Prairie Ridge Park	40.624353,-98.377937	park	way/554992543
+Woods Park	40.810328,-96.675068	park	relation/14562306
+Belmont Community Center	40.845355,-96.704115	park	relation/17718211
+Elks City Park	40.202315,-100.632302	park	way/445374515
+Giltner Public Schools	40.771805,-98.150901	school	way/1000632387
+Russ Thompson Park	41.130786,-95.894444	park	way/188690267
+Oregon Trail Park	41.816447,-103.663422	park	way/469362783
+
+# 10 random DROPPED (2650 candidates)
+(unnamed)	41.217142,-96.182081	baseball	no public source places it in a park, public school or rec centre
+Pawnee City School Fitness Center	40.110487,-96.157894	american_football	no public source places it in a park, public school or rec centre
+(unnamed)	40.763501,-96.647978	basketball	inside a school site that is not a verified public high school
+(unnamed)	41.749066,-97.771312	american_football	no public source places it in a park, public school or rec centre
+(unnamed)	41.286939,-96.128981	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	41.114872,-97.997166	pickleball	no public source places it in a park, public school or rec centre
+(unnamed)	41.155877,-96.200687	soccer	inside a school site that is not a verified public high school
+(unnamed)	41.25503,-96.128144	soccer	no public source places it in a park, public school or rec centre
+(unnamed)	40.77742,-97.819603	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	41.195353,-96.135752	soccer	inside a school site that is not a verified public high school
+

@@ -1,0 +1,1932 @@
+{
+  "baseline_venues": 1658,
+  "by_verdict": {
+    "known": 103,
+    "park": 452,
+    "school": 114
+  },
+  "courts_before": 4588,
+  "dropped": 2583,
+  "dropped_by_reason": {
+    "inside a school site that is not a verified public high school": 656,
+    "named private or commercial": 2,
+    "no public source places it in a park, public school or rec centre": 1895,
+    "tagged access=customers and not in a public park or school": 2,
+    "tagged access=private and not in a public park or school": 28
+  },
+  "padus_polygons": 1591,
+  "padus_repaired": 196,
+  "padus_unrepaired": 5,
+  "park_courts": {
+    "examples": [
+      {
+        "id": "way/1434395288",
+        "lost": 11,
+        "name": "Tennis courts",
+        "new": 13,
+        "old": 24
+      },
+      {
+        "id": "way/1059809052",
+        "lost": 2,
+        "name": "Pickleball courts",
+        "new": 4,
+        "old": 6
+      },
+      {
+        "id": "relation/15480022",
+        "lost": 1,
+        "name": "Tennis courts",
+        "new": 2,
+        "old": 3
+      },
+      {
+        "id": "way/369945812",
+        "lost": 1,
+        "name": "Noon Optimist Park",
+        "new": 3,
+        "old": 4
+      },
+      {
+        "id": "way/760073361",
+        "lost": 1,
+        "name": "Basketball courts",
+        "new": 1,
+        "old": 2
+      },
+      {
+        "id": "way/790977749",
+        "lost": 1,
+        "name": "Tennis courts",
+        "new": 5,
+        "old": 6
+      }
+    ],
+    "parks": 452,
+    "rate": 0.0133,
+    "regressed": 6
+  },
+  "parks_unmeasured": 0,
+  "parks_verified_by_agency": 23,
+  "public_areas": 839,
+  "school_campuses": 114,
+  "schools_9_12": 28644,
+  "state": "new-mexico",
+  "unproven_school_areas": [
+    {
+      "dropped": 1,
+      "id": "relation/11171858",
+      "kept": 0,
+      "name": "Edward E. Torres Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "relation/12025000",
+      "kept": 0,
+      "name": "Apache Elementary School"
+    },
+    {
+      "dropped": 6,
+      "id": "relation/15466062",
+      "kept": 0,
+      "name": "Los Alamos Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "relation/15466234",
+      "kept": 0,
+      "name": "Barranca Mesa Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "relation/15467971",
+      "kept": 0,
+      "name": "Aspen School"
+    },
+    {
+      "dropped": 1,
+      "id": "relation/16386610",
+      "kept": 0,
+      "name": "Pi\u00f1on Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "relation/17644581",
+      "kept": 0,
+      "name": "Prince of Peace Lutheran School"
+    },
+    {
+      "dropped": 7,
+      "id": "relation/9926147",
+      "kept": 0,
+      "name": "Washington Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1022644729",
+      "kept": 0,
+      "name": "Tohaali Community School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/106595787",
+      "kept": 0,
+      "name": "White Sands Missile Range Public School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/107137158",
+      "kept": 0,
+      "name": "Pueblo Pintado Community School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1096226262",
+      "kept": 0,
+      "name": "DZ School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1096249667",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/1097408588",
+      "kept": 0,
+      "name": "Thoreau Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/1116730757",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/1117169219",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/1117961298",
+      "kept": 0,
+      "name": "Thoreau Mid School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1122198928",
+      "kept": 0,
+      "name": "Cochiti Elementary/Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1122815629",
+      "kept": 0,
+      "name": "Enchanted Hills Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1123753063",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/1124765264",
+      "kept": 0,
+      "name": "Carroll"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1140600234",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/1146417216",
+      "kept": 0,
+      "name": "Moriarty Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1148663304",
+      "kept": 0,
+      "name": "Moriarty Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1148743861",
+      "kept": 0,
+      "name": "Ramah Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1148743903",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 3,
+      "id": "way/1148777932",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 3,
+      "id": "way/1148777953",
+      "kept": 0,
+      "name": "Navajo Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1148816883",
+      "kept": 0,
+      "name": "Lybrook School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/1148931309",
+      "kept": 0,
+      "name": "Zuni Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1149366711",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/1149366720",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/1149389131",
+      "kept": 0,
+      "name": "Lincoln School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1172328808",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/1172328810",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 4,
+      "id": "way/120024569",
+      "kept": 0,
+      "name": "Madison Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/120031728",
+      "kept": 0,
+      "name": "Van Buren Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1250723424",
+      "kept": 0,
+      "name": "Sweeney Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1257561026",
+      "kept": 0,
+      "name": "Generations Academy"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1262821789",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/1267460555",
+      "kept": 0,
+      "name": "Kha\u2019p\u2019o Community School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/127587366",
+      "kept": 0,
+      "name": "Ruidoso Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1279920728",
+      "kept": 0,
+      "name": "Ojo Amarillo Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/128574831",
+      "kept": 0,
+      "name": "Truman Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1292574380",
+      "kept": 0,
+      "name": "JHR"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1296254649",
+      "kept": 0,
+      "name": "The ASK Academy"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1315228042",
+      "kept": 0,
+      "name": "Union Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1327927408",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/133127952",
+      "kept": 0,
+      "name": "Katherine Gallegos Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1333306519",
+      "kept": 0,
+      "name": "Seboyeta Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1344902703",
+      "kept": 0,
+      "name": "Maxwell Public Schools"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1350533673",
+      "kept": 0,
+      "name": "Sombrillo Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1353613445",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/1354912706",
+      "kept": 0,
+      "name": "South Mountain Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/1363555431",
+      "kept": 0,
+      "name": "Santa Teresa Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/136404353",
+      "kept": 0,
+      "name": "Seven Bar Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1376013490",
+      "kept": 0,
+      "name": "MacArthur Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1378955918",
+      "kept": 0,
+      "name": "Holy Cross"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1393659395",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/1420229971",
+      "kept": 0,
+      "name": "RV Traylor Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1420727158",
+      "kept": 0,
+      "name": "Na' Neelzhiin Ji Olta'"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1426337355",
+      "kept": 0,
+      "name": "Chama Elementery School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1459799289",
+      "kept": 0,
+      "name": "Central Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1461471083",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/1461512404",
+      "kept": 0,
+      "name": "Pojoaque Valley Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1475145429",
+      "kept": 0,
+      "name": "Wherry Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1487032248",
+      "kept": 0,
+      "name": "Ojo Encino Day School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1495373075",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/1510479935",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 3,
+      "id": "way/1512526733",
+      "kept": 0,
+      "name": "Taos Day School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1513204304",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/1528681904",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 4,
+      "id": "way/1549576196",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/165561471",
+      "kept": 0,
+      "name": "Montezuma Elementary School"
+    },
+    {
+      "dropped": 0,
+      "id": "way/165882118",
+      "kept": 3,
+      "name": "Desert Ridge Middle School"
+    },
+    {
+      "dropped": 26,
+      "id": "way/165886220",
+      "kept": 0,
+      "name": "Albuquerque Academy"
+    },
+    {
+      "dropped": 2,
+      "id": "way/167052688",
+      "kept": 0,
+      "name": "Alamosa Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/168059114",
+      "kept": 0,
+      "name": "Hoover Middle School and John Baker Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/168078188",
+      "kept": 0,
+      "name": "S Y Jackson Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/168078189",
+      "kept": 0,
+      "name": "Georgia O'Keeffe Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/168078192",
+      "kept": 0,
+      "name": "Eisenhower Middle School"
+    },
+    {
+      "dropped": 8,
+      "id": "way/168226883",
+      "kept": 0,
+      "name": "Tony Hillerman Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/168983268",
+      "kept": 0,
+      "name": "Cleveland Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/169399263",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/169399264",
+      "kept": 0,
+      "name": "Lyndon B. Johnson Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/170048444",
+      "kept": 0,
+      "name": "Anaya Rudolfo Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/170811154",
+      "kept": 0,
+      "name": "Edward Gonzales Elementary School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/170947052",
+      "kept": 0,
+      "name": "Vista Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/170947055",
+      "kept": 0,
+      "name": "Columbia Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/171157679",
+      "kept": 0,
+      "name": "Mitchell Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/171171169",
+      "kept": 0,
+      "name": "Picacho Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/171172907",
+      "kept": 0,
+      "name": "Matheson Park Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/171172908",
+      "kept": 0,
+      "name": "McCollum Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/171172909",
+      "kept": 0,
+      "name": "Kennedy Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/171172911",
+      "kept": 0,
+      "name": "Tomasita Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/171172912",
+      "kept": 0,
+      "name": "Jackson Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/171172915",
+      "kept": 0,
+      "name": "O\u00f1ate Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/171172917",
+      "kept": 0,
+      "name": "Grant Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/171174664",
+      "kept": 0,
+      "name": "Manzano Mesa Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/171299469",
+      "kept": 0,
+      "name": "Petroglyph Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/171461833",
+      "kept": 0,
+      "name": "Painted Sky Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/171586681",
+      "kept": 0,
+      "name": "Tombaugh Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/171977366",
+      "kept": 0,
+      "name": "James Monroe Middle School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/171977372",
+      "kept": 0,
+      "name": "Sunset View Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/171978285",
+      "kept": 0,
+      "name": "Chamiza Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/172336485",
+      "kept": 0,
+      "name": "John Adams Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/172336492",
+      "kept": 0,
+      "name": "Lavaland Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/172969407",
+      "kept": 0,
+      "name": "Osuna Elementary School"
+    },
+    {
+      "dropped": 8,
+      "id": "way/173093581",
+      "kept": 0,
+      "name": "Bosque School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/173095711",
+      "kept": 0,
+      "name": "Chaparral Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/173095726",
+      "kept": 0,
+      "name": "School on Wheels"
+    },
+    {
+      "dropped": 1,
+      "id": "way/173197526",
+      "kept": 0,
+      "name": "Chelwood Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/173545590",
+      "kept": 0,
+      "name": "Mission Avenue Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/173545594",
+      "kept": 0,
+      "name": "Sandia Preparatory School"
+    },
+    {
+      "dropped": 0,
+      "id": "way/174246375",
+      "kept": 1,
+      "name": "Dennis Chavez Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/174392753",
+      "kept": 0,
+      "name": "Comanche Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/174979287",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 3,
+      "id": "way/174985212",
+      "kept": 0,
+      "name": "Monte Vista Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/176068057",
+      "kept": 0,
+      "name": "Harrison Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/178231046",
+      "kept": 0,
+      "name": "Zuni Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/180147653",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 5,
+      "id": "way/180728947",
+      "kept": 0,
+      "name": "Taylor Middle School"
+    },
+    {
+      "dropped": 7,
+      "id": "way/182545693",
+      "kept": 0,
+      "name": "Menaul School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/184064956",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/188703067",
+      "kept": 0,
+      "name": "Alameda Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/188768024",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/188768026",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 4,
+      "id": "way/192561367",
+      "kept": 0,
+      "name": "Carlsbad Intermediate School P.R. Leyva"
+    },
+    {
+      "dropped": 3,
+      "id": "way/192581876",
+      "kept": 0,
+      "name": "Alta Vista Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/193418427",
+      "kept": 0,
+      "name": "Dolores Gonzales Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/194146988",
+      "kept": 0,
+      "name": "Dexter Junior High School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/197594432",
+      "kept": 0,
+      "name": "San Felipe de Neri Catholic School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/197978968",
+      "kept": 0,
+      "name": "Saint Charles Borromeo Catholic School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/200858170",
+      "kept": 0,
+      "name": "Taft Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/208613320",
+      "kept": 0,
+      "name": "Chee Dodge Elementary"
+    },
+    {
+      "dropped": 2,
+      "id": "way/227847573",
+      "kept": 0,
+      "name": "Amy Biehl Community School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/250752598",
+      "kept": 0,
+      "name": "Crestview Christian Academy"
+    },
+    {
+      "dropped": 1,
+      "id": "way/256260268",
+      "kept": 0,
+      "name": "Adobe Acres Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/256260270",
+      "kept": 0,
+      "name": "Armijo Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/293374750",
+      "kept": 0,
+      "name": "Hillcrest Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/298980926",
+      "kept": 0,
+      "name": "Kearny Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/307789156",
+      "kept": 0,
+      "name": "Lake Valley Boarding School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/317846269",
+      "kept": 0,
+      "name": "Houston Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/317846302",
+      "kept": 0,
+      "name": "Stone Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/318796587",
+      "kept": 0,
+      "name": "Harrison H. Schmitt Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/318796588",
+      "kept": 0,
+      "name": "Aldo Leopold Charter School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/318796589",
+      "kept": 0,
+      "name": "La Plata Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/318796591",
+      "kept": 0,
+      "name": "Sixth Street Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/318810730",
+      "kept": 0,
+      "name": "Tularosa Schools"
+    },
+    {
+      "dropped": 2,
+      "id": "way/323274220",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/324120146",
+      "kept": 0,
+      "name": "Acequia Madre Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/346547410",
+      "kept": 0,
+      "name": "Columbus Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/346547436",
+      "kept": 0,
+      "name": "Red Mountain Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/348165856",
+      "kept": 0,
+      "name": "Colinas del Norte Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/348166212",
+      "kept": 0,
+      "name": "Cielo Azul Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/361182371",
+      "kept": 0,
+      "name": "Pate Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/361184820",
+      "kept": 0,
+      "name": "Joe Stanley Smith Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/361193236",
+      "kept": 0,
+      "name": "Monterrey Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/361196152",
+      "kept": 0,
+      "name": "Sunset Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/361992654",
+      "kept": 0,
+      "name": "Central Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/363667955",
+      "kept": 0,
+      "name": "Doctor Emitt M Smith Preschool"
+    },
+    {
+      "dropped": 7,
+      "id": "way/363693122",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 3,
+      "id": "way/364726586",
+      "kept": 1,
+      "name": "San Jon Public Schools"
+    },
+    {
+      "dropped": 2,
+      "id": "way/365355300",
+      "kept": 0,
+      "name": "Roy Public School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/366615727",
+      "kept": 0,
+      "name": "Berrendo Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/367729374",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/368383248",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/369024229",
+      "kept": 0,
+      "name": "Nancy Lopez Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/369442676",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/369625440",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 4,
+      "id": "way/369945796",
+      "kept": 0,
+      "name": "Military Heights Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/379030668",
+      "kept": 0,
+      "name": "Sandia Base Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/396748111",
+      "kept": 0,
+      "name": "Manzano Day School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/435663933",
+      "kept": 0,
+      "name": "Mesa Middle School"
+    },
+    {
+      "dropped": 0,
+      "id": "way/445127128",
+      "kept": 9,
+      "name": "Saint Michael's High School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/445832239",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/458179483",
+      "kept": 0,
+      "name": "Marshall Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/458179488",
+      "kept": 0,
+      "name": "Yucca Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/458179492",
+      "kept": 0,
+      "name": "Barry Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/458179495",
+      "kept": 0,
+      "name": "Arts Academy at Bella Vista"
+    },
+    {
+      "dropped": 1,
+      "id": "way/471986953",
+      "kept": 0,
+      "name": "Santa Fe Preparatory School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/474072496",
+      "kept": 0,
+      "name": "Gonzales School;Gonzales Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/474087919",
+      "kept": 0,
+      "name": "Carlos Gilbert Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/474208559",
+      "kept": 0,
+      "name": "The Rio Grande School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/474258829",
+      "kept": 0,
+      "name": "Francis X. Nava Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/474265089",
+      "kept": 0,
+      "name": "Agua Fria Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/474923811",
+      "kept": 0,
+      "name": "Pi\u00f1on Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/476173759",
+      "kept": 0,
+      "name": "Ortiz Middle School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/477380495",
+      "kept": 0,
+      "name": "Desert Sage Academy"
+    },
+    {
+      "dropped": 2,
+      "id": "way/48343847",
+      "kept": 0,
+      "name": "Governor Bent Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/48343848",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/48343864",
+      "kept": 0,
+      "name": "Arroyo del Oso Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/48343876",
+      "kept": 0,
+      "name": "Hubert H. Humphrey Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/48345207",
+      "kept": 0,
+      "name": "Wilson Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/48345208",
+      "kept": 0,
+      "name": "Whittier Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/48360482",
+      "kept": 0,
+      "name": "Lew Wallace Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/48362178",
+      "kept": 0,
+      "name": "Jefferson Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/48365346",
+      "kept": 0,
+      "name": "Double Eagle Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/48385721",
+      "kept": 0,
+      "name": "Navajo Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/48385723",
+      "kept": 0,
+      "name": "Barcelona Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/48385752",
+      "kept": 0,
+      "name": "Reginald Chavez Elementary"
+    },
+    {
+      "dropped": 2,
+      "id": "way/48387650",
+      "kept": 0,
+      "name": "Mountain View Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/48390185",
+      "kept": 0,
+      "name": "Los Lunas Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/48390350",
+      "kept": 0,
+      "name": "Sierra Vista Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/48390352",
+      "kept": 0,
+      "name": "Ventana Ranch Elementary"
+    },
+    {
+      "dropped": 2,
+      "id": "way/48466803",
+      "kept": 0,
+      "name": "Mark Twain Elementary School"
+    },
+    {
+      "dropped": 6,
+      "id": "way/48472036",
+      "kept": 0,
+      "name": "Saint Pius X High School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/48474987",
+      "kept": 0,
+      "name": "Hawthorne Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/48475250",
+      "kept": 0,
+      "name": "Inez Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/48476294",
+      "kept": 0,
+      "name": "Emerson Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/48514196",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/513513082",
+      "kept": 0,
+      "name": "Sandia Vista Elementary"
+    },
+    {
+      "dropped": 7,
+      "id": "way/513531068",
+      "kept": 0,
+      "name": "Mountain View Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/513538996",
+      "kept": 0,
+      "name": "Vista Grande Elementary School"
+    },
+    {
+      "dropped": 6,
+      "id": "way/513584120",
+      "kept": 0,
+      "name": "Rio Rancho Middle School"
+    },
+    {
+      "dropped": 9,
+      "id": "way/513590812",
+      "kept": 0,
+      "name": "Eagle Ridge Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/51464366",
+      "kept": 0,
+      "name": "Conlee Elementary School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/51476255",
+      "kept": 0,
+      "name": "Highland Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/547752002",
+      "kept": 0,
+      "name": "Saint Mary Catholic School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/550312805",
+      "kept": 0,
+      "name": "Ann Parish Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/553211098",
+      "kept": 0,
+      "name": "Zimmerly Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/553211099",
+      "kept": 0,
+      "name": "Parkview Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/553343134",
+      "kept": 0,
+      "name": "Raymond S. Sarracino Middle School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/556606060",
+      "kept": 0,
+      "name": "Raymond Gabaldon Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/556914241",
+      "kept": 0,
+      "name": "Los Lunas Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/557205702",
+      "kept": 0,
+      "name": "Sundance Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/557663326",
+      "kept": 0,
+      "name": "Desert View Elementary"
+    },
+    {
+      "dropped": 6,
+      "id": "way/557663328",
+      "kept": 0,
+      "name": "Valencia Middle School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/558418781",
+      "kept": 0,
+      "name": "Peralta Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/558437396",
+      "kept": 0,
+      "name": "Tome Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/558618551",
+      "kept": 0,
+      "name": "Dennis Chavez Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/559950059",
+      "kept": 0,
+      "name": "La Merced Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/559962769",
+      "kept": 0,
+      "name": "Mary Ann Binford Elementary"
+    },
+    {
+      "dropped": 2,
+      "id": "way/564827459",
+      "kept": 0,
+      "name": "Loma Linda Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/571481181",
+      "kept": 0,
+      "name": "Martin School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/594828603",
+      "kept": 0,
+      "name": "Dugan-Tarango Middle School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/598655157",
+      "kept": 0,
+      "name": "Riverside Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/598655158",
+      "kept": 0,
+      "name": "Mesquite Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/605950721",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/611263470",
+      "kept": 0,
+      "name": "Lincoln Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/622174089",
+      "kept": 0,
+      "name": "Turquoise Trail Charter Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/624128465",
+      "kept": 0,
+      "name": "Mountainair Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/627913756",
+      "kept": 0,
+      "name": "Cielo Azul Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/647874541",
+      "kept": 0,
+      "name": "Northeast Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/652588913",
+      "kept": 0,
+      "name": "Salazar Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/653458505",
+      "kept": 0,
+      "name": "Esperanza Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/653678664",
+      "kept": 0,
+      "name": "Pablo Roybal Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/678717417",
+      "kept": 0,
+      "name": "Koogler Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/682180544",
+      "kept": 0,
+      "name": "El Dorado Community School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/697043174",
+      "kept": 0,
+      "name": "United World College Montezuma;Armand Hammer World College of the American West"
+    },
+    {
+      "dropped": 3,
+      "id": "way/704426422",
+      "kept": 0,
+      "name": "Ramirez Thomas Elementary School"
+    },
+    {
+      "dropped": 7,
+      "id": "way/704426441",
+      "kept": 0,
+      "name": "El Camino Real Academy"
+    },
+    {
+      "dropped": 2,
+      "id": "way/705324634",
+      "kept": 0,
+      "name": "Milagro Middle School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/705578840",
+      "kept": 0,
+      "name": "Alta Vista Elementary and Intermediate Schools"
+    },
+    {
+      "dropped": 1,
+      "id": "way/705582807",
+      "kept": 0,
+      "name": "Eagle Nest Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/706107920",
+      "kept": 0,
+      "name": "Alcalde Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/706109282",
+      "kept": 0,
+      "name": "Carlos F Vigil Middle School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/706234116",
+      "kept": 0,
+      "name": "Edgewood Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/707536633",
+      "kept": 0,
+      "name": "El Rito Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/709823304",
+      "kept": 0,
+      "name": "Memorial Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/716978522",
+      "kept": 0,
+      "name": "Mountain View Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/719043454",
+      "kept": 0,
+      "name": "Atalaya Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/720396213",
+      "kept": 0,
+      "name": "Chaparral Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/723007874",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/726134697",
+      "kept": 0,
+      "name": "Sun Mountain Community School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/726579335",
+      "kept": 0,
+      "name": "Santa Fe School for the Arts and Sciences"
+    },
+    {
+      "dropped": 1,
+      "id": "way/729415491",
+      "kept": 0,
+      "name": "Information Technology, Human Resources, and"
+    },
+    {
+      "dropped": 1,
+      "id": "way/733709776",
+      "kept": 0,
+      "name": "Arroyos Del Norte Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/759087812",
+      "kept": 0,
+      "name": "Saint Mary Catholic School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/759210364",
+      "kept": 0,
+      "name": "Saint Thomas Aquinas Catholic School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/759653296",
+      "kept": 0,
+      "name": "Gil Sanchez Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/760683774",
+      "kept": 0,
+      "name": "Central Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/760683784",
+      "kept": 0,
+      "name": "Belen Middle School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/760807645",
+      "kept": 0,
+      "name": "Isleta Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/763249407",
+      "kept": 0,
+      "name": "Rio Grande Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/777689152",
+      "kept": 0,
+      "name": "Algodones Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/779499585",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/779657484",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 4,
+      "id": "way/780731558",
+      "kept": 0,
+      "name": "Springer Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/782257849",
+      "kept": 0,
+      "name": "Tres Volcanes Community Collaborative School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/783819365",
+      "kept": 0,
+      "name": "Pajarito"
+    },
+    {
+      "dropped": 4,
+      "id": "way/788678790",
+      "kept": 0,
+      "name": "Martin Luther King Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/790513942",
+      "kept": 0,
+      "name": "Jimmy Carter Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/802328717",
+      "kept": 0,
+      "name": "Stagecoach Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/803535369",
+      "kept": 0,
+      "name": "Mesa Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/806402997",
+      "kept": 0,
+      "name": "Santo Domingo School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/807904751",
+      "kept": 0,
+      "name": "Taos Middle School"
+    },
+    {
+      "dropped": 0,
+      "id": "way/807912325",
+      "kept": 1,
+      "name": "Ranchos Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/813798700",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 5,
+      "id": "way/829962579",
+      "kept": 0,
+      "name": "Nina Otero Community School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/833020830",
+      "kept": 0,
+      "name": "Chi Chil Tah Community School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/840016754",
+      "kept": 0,
+      "name": "San Antonio Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/871068771",
+      "kept": 0,
+      "name": "Crystal Boarding School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/895349729",
+      "kept": 0,
+      "name": "Los Ranchos Elementary"
+    },
+    {
+      "dropped": 1,
+      "id": "way/901813667",
+      "kept": 0,
+      "name": "Old Laguna-Acoma High School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/902832075",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/902951987",
+      "kept": 0,
+      "name": "Del Norte Elementary School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/903199143",
+      "kept": 0,
+      "name": "George I. Sanchez Collaborative Community School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/905559655",
+      "kept": 0,
+      "name": "Valley Elementary & Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/909971197",
+      "kept": 0,
+      "name": "Hernandez Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/914908237",
+      "kept": 0,
+      "name": "Wingate Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/914948327",
+      "kept": 0,
+      "name": "Tse Yi' Gai High School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/915010002",
+      "kept": 0,
+      "name": "Dulce Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/972698735",
+      "kept": 0,
+      "name": "Crownpoint Community School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/977669045",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/977744258",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/985400517",
+      "kept": 0,
+      "name": "San Felipe School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/991003063",
+      "kept": 0,
+      "name": "Desert Star Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/997284858",
+      "kept": 0,
+      "name": "Oregon Elementary School"
+    }
+  ],
+  "venues_after": 669
+}

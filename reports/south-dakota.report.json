@@ -1,0 +1,555 @@
+{
+  "baseline_venues": 927,
+  "by_verdict": {
+    "known": 54,
+    "park": 255,
+    "school": 69
+  },
+  "courts_before": 2492,
+  "dropped": 1235,
+  "dropped_by_reason": {
+    "inside a school site that is not a verified public high school": 198,
+    "named private or commercial": 1,
+    "no public source places it in a park, public school or rec centre": 1010,
+    "tagged access=no and not in a public park or school": 1,
+    "tagged access=private and not in a public park or school": 25
+  },
+  "padus_polygons": 1307,
+  "padus_repaired": 95,
+  "padus_unrepaired": 0,
+  "park_courts": {
+    "examples": [
+      {
+        "id": "way/1221613526",
+        "lost": 2,
+        "name": "Pickleball courts",
+        "new": 6,
+        "old": 8
+      },
+      {
+        "id": "way/133623998",
+        "lost": 2,
+        "name": "Baseball field",
+        "new": 2,
+        "old": 4
+      },
+      {
+        "id": "way/1328457296",
+        "lost": 1,
+        "name": "Tennis courts",
+        "new": 2,
+        "old": 3
+      }
+    ],
+    "parks": 255,
+    "rate": 0.0118,
+    "regressed": 3
+  },
+  "parks_unmeasured": 0,
+  "parks_verified_by_agency": 19,
+  "public_areas": 390,
+  "school_campuses": 69,
+  "schools_9_12": 28644,
+  "state": "south-dakota",
+  "unproven_school_areas": [
+    {
+      "dropped": 10,
+      "id": "relation/14692842",
+      "kept": 0,
+      "name": "Brandon Valley Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "relation/16131160",
+      "kept": 0,
+      "name": "McCrossan Boys Ranch"
+    },
+    {
+      "dropped": 3,
+      "id": "relation/16911567",
+      "kept": 0,
+      "name": "Jefferson Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "relation/17959864",
+      "kept": 0,
+      "name": "Saint Joseph's Indian School"
+    },
+    {
+      "dropped": 1,
+      "id": "relation/18152648",
+      "kept": 0,
+      "name": "George McGovern Middle School"
+    },
+    {
+      "dropped": 3,
+      "id": "relation/18484587",
+      "kept": 0,
+      "name": "Stagebarn Middle School"
+    },
+    {
+      "dropped": 3,
+      "id": "relation/18586126",
+      "kept": 0,
+      "name": "Viborg-Hurley Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "relation/18701680",
+      "kept": 0,
+      "name": "Lawrence Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "relation/18723028",
+      "kept": 0,
+      "name": "St. Mary Catholic Schools"
+    },
+    {
+      "dropped": 2,
+      "id": "relation/18732836",
+      "kept": 0,
+      "name": "Southwest Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "relation/18732837",
+      "kept": 0,
+      "name": "Corral Drive Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "relation/18735345",
+      "kept": 0,
+      "name": "South Park Elementary"
+    },
+    {
+      "dropped": 3,
+      "id": "relation/18737277",
+      "kept": 0,
+      "name": "Pinedale Elementary"
+    },
+    {
+      "dropped": 8,
+      "id": "relation/18737278",
+      "kept": 0,
+      "name": "East Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "relation/18737279",
+      "kept": 0,
+      "name": "Valley View Elementary"
+    },
+    {
+      "dropped": 1,
+      "id": "relation/18750046",
+      "kept": 0,
+      "name": "Hawthorne Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "relation/18780831",
+      "kept": 0,
+      "name": "John Harris Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "relation/18780900",
+      "kept": 0,
+      "name": "Tea Area Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "relation/18780901",
+      "kept": 0,
+      "name": "Legacy Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "relation/18782664",
+      "kept": 0,
+      "name": "Susan B. Anthony Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "relation/18782726",
+      "kept": 0,
+      "name": "Harrisburg South Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "relation/18782727",
+      "kept": 0,
+      "name": "Worthing Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "relation/4023504",
+      "kept": 0,
+      "name": "West Elementary"
+    },
+    {
+      "dropped": 1,
+      "id": "relation/6606032",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/1015753536",
+      "kept": 0,
+      "name": "Hillcrest Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1018617480",
+      "kept": 0,
+      "name": "Ben Reifel Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1027417381",
+      "kept": 0,
+      "name": "Brandon Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/1042737947",
+      "kept": 0,
+      "name": "Bishop O'Gorman Catholic Schools"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1047018817",
+      "kept": 0,
+      "name": "Knollwood Heights Elementary"
+    },
+    {
+      "dropped": 2,
+      "id": "way/123274871",
+      "kept": 0,
+      "name": "Harvey Dunn Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/1288479340",
+      "kept": 0,
+      "name": "Rapid Valley Elementary"
+    },
+    {
+      "dropped": 4,
+      "id": "way/1293676908",
+      "kept": 0,
+      "name": "Saint Thomas More Middle/High School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/1294770822",
+      "kept": 0,
+      "name": "Horace Mann Elementary"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1305083183",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/1317620389",
+      "kept": 0,
+      "name": "Loneman School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1322429863",
+      "kept": 0,
+      "name": "Batesland Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1328451759",
+      "kept": 0,
+      "name": "Sonia Sotomayor Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1328457391",
+      "kept": 0,
+      "name": "Patrick Henry Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1333317258",
+      "kept": 0,
+      "name": "Edison Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1337083623",
+      "kept": 0,
+      "name": "Todd County Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1355281949",
+      "kept": 0,
+      "name": "Andes Central Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1363131097",
+      "kept": 0,
+      "name": "Rapid City Christian School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1442938202",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/1518776425",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/159236019",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/196764123",
+      "kept": 0,
+      "name": "West Central Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/236181446",
+      "kept": 0,
+      "name": "Memorial Middle School"
+    },
+    {
+      "dropped": 0,
+      "id": "way/242896123",
+      "kept": 4,
+      "name": ""
+    },
+    {
+      "dropped": 0,
+      "id": "way/242897399",
+      "kept": 6,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/246254544",
+      "kept": 0,
+      "name": "Mitchell Christian School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/246966704",
+      "kept": 0,
+      "name": "Longfellow Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/247951200",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/248414789",
+      "kept": 0,
+      "name": "May Overby Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/248784908",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/249314028",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/249314031",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 5,
+      "id": "way/250089170",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 16,
+      "id": "way/250094524",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/251707738",
+      "kept": 0,
+      "name": "Groton Area Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/255484300",
+      "kept": 0,
+      "name": "South Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/255490780",
+      "kept": 0,
+      "name": "Robbinsdale Elementary"
+    },
+    {
+      "dropped": 3,
+      "id": "way/256125893",
+      "kept": 0,
+      "name": "Meadowbrook Elementary"
+    },
+    {
+      "dropped": 9,
+      "id": "way/286187022",
+      "kept": 0,
+      "name": "North Middle School"
+    },
+    {
+      "dropped": 7,
+      "id": "way/305617573",
+      "kept": 0,
+      "name": "South Canyon Elementary"
+    },
+    {
+      "dropped": 4,
+      "id": "way/444069935",
+      "kept": 0,
+      "name": "Douglas Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/471510518",
+      "kept": 0,
+      "name": "John F. Kennedy Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/583277949",
+      "kept": 0,
+      "name": "Watertown Christian School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/585470682",
+      "kept": 0,
+      "name": "Grandview Elementary"
+    },
+    {
+      "dropped": 2,
+      "id": "way/585520070",
+      "kept": 0,
+      "name": "West Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/60297030",
+      "kept": 0,
+      "name": "Washington School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/787837556",
+      "kept": 0,
+      "name": "Great Plains Lutheran High School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/833910358",
+      "kept": 0,
+      "name": "Harrisburg Middle School North"
+    },
+    {
+      "dropped": 2,
+      "id": "way/837883731",
+      "kept": 0,
+      "name": "Harrisburg Explorer Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/863034982",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/874897068",
+      "kept": 0,
+      "name": "Central School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/883139685",
+      "kept": 0,
+      "name": "Todd County Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/943941675",
+      "kept": 0,
+      "name": "Enemy Swim Day School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/977526696",
+      "kept": 0,
+      "name": "Pierre Indian Learning Center"
+    },
+    {
+      "dropped": 2,
+      "id": "way/977530327",
+      "kept": 0,
+      "name": "Pahin Sinte Owayawa"
+    },
+    {
+      "dropped": 2,
+      "id": "way/977622607",
+      "kept": 0,
+      "name": "Rock Creek Grant School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/977664639",
+      "kept": 0,
+      "name": "Lower Brule Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/977668513",
+      "kept": 0,
+      "name": "Lower Brule High School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/977705236",
+      "kept": 0,
+      "name": "Wolf Creek School"
+    }
+  ],
+  "venues_after": 378
+}

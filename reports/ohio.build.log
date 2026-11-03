@@ -1,0 +1,29 @@
+padus: 279 invalid polygons repaired, 1 dropped
+  public areas: 3813 (266 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 28837 courts/fields read -> 3293 venues ({'known': 355, 'park': 2385, 'school': 553}), 13895 courts dropped
+  baseline (old rules, same extract): 6999 venues
+  parks: 2385, losing courts vs the old builder: 25 (1.05%)
+# 10 random KEPT (3293 candidates)
+Claymont High School	40.413013,-81.36564	school	way/307236783
+Baseball field	41.30891,-81.75312	park	way/133980983
+New Albany Plain Local Schools	40.08583,-82.813042	school	way/388531618
+Linden McKinley High School	40.009945,-82.974339	school	way/600765307
+Baseball field	40.953768,-81.330129	park	way/1065737126
+Soccer field	40.990887,-81.887979	park	way/1154380769
+Levin Park	40.077106,-82.452307	park	way/469547425
+Centennial Turf Field	39.77959,-84.188103	known	way/1187878951
+Beach Volleyball courts	40.927027,-84.025173	known	way/351468862
+Volleyball courts	41.333964,-81.826602	park	way/499169981
+
+# 10 random DROPPED (13895 candidates)
+(unnamed)	39.158737,-84.351137	tennis	no public source places it in a park, public school or rec centre
+Dora Lee Payne Park	41.389148,-81.860896	soccer	no public source places it in a park, public school or rec centre
+(unnamed)	41.517329,-81.261714	baseball	inside a school site that is not a verified public high school
+(unnamed)	39.307655,-84.500532	tennis	tagged access=private and not in a public park or school
+(unnamed)	39.342753,-84.308858	soccer	no public source places it in a park, public school or rec centre
+(unnamed)	41.599894,-83.599307	soccer	inside a school site that is not a verified public high school
+(unnamed)	39.057241,-84.246785	basketball	tagged access=private and not in a public park or school
+(unnamed)	39.51796,-84.189051	tennis	tagged access=private and not in a public park or school
+(unnamed)	41.595675,-82.705476	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	39.691286,-83.926567	baseball	no public source places it in a park, public school or rec centre
+

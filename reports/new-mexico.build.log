@@ -1,0 +1,29 @@
+padus: 196 invalid polygons repaired, 5 dropped
+  public areas: 839 (23 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 4588 courts/fields read -> 669 venues ({'known': 103, 'park': 452, 'school': 114}), 2583 courts dropped
+  baseline (old rules, same extract): 1658 venues
+  parks: 452, losing courts vs the old builder: 6 (1.33%)
+# 10 random KEPT (669 candidates)
+Patricia Cassidy Park	35.181281,-106.50621	park	way/204068182
+Baseball field	32.315873,-106.763115	known	way/133128102
+Cahoon Park	33.397845,-104.536557	park	way/369441674
+Beach Volleyball courts	32.890668,-105.930281	known	way/998405481
+Piedra Vista High School	36.77942,-108.15771	school	relation/9382458
+Basketball courts	35.132038,-106.70487	park	way/1103993286
+Baseball field	32.122057,-106.704123	park	way/623150987
+Baseball field	34.1828,-103.329896	park	way/1164597270
+Baseball field	35.164657,-107.835337	park	way/313053033
+Atalaya Park	35.672576,-105.912158	park	way/726024883
+
+# 10 random DROPPED (2583 candidates)
+(unnamed)	35.625101,-105.917555	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	34.189985,-103.351092	basketball	no public source places it in a park, public school or rec centre
+(unnamed)	34.516345,-106.232558	baseball	no public source places it in a park, public school or rec centre
+Boy's Gymnasium	32.429037,-104.234507	basketball	inside a school site that is not a verified public high school
+Marburger Baseball Field	35.154241,-106.556548	baseball	inside a school site that is not a verified public high school
+(unnamed)	32.305914,-106.7492	basketball	no public source places it in a park, public school or rec centre
+(unnamed)	35.064675,-106.625308	soccer	no public source places it in a park, public school or rec centre
+(unnamed)	35.53282,-108.752088	american_football	inside a school site that is not a verified public high school
+(unnamed)	35.666305,-106.344802	golf	no public source places it in a park, public school or rec centre
+(unnamed)	33.454578,-104.5298	soccer	inside a school site that is not a verified public high school
+

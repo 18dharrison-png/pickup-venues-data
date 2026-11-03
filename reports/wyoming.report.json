@@ -1,0 +1,545 @@
+{
+  "baseline_venues": 522,
+  "by_verdict": {
+    "known": 15,
+    "park": 267,
+    "school": 54
+  },
+  "courts_before": 1371,
+  "dropped": 607,
+  "dropped_by_reason": {
+    "inside a school site that is not a verified public high school": 192,
+    "no public source places it in a park, public school or rec centre": 404,
+    "tagged access=customers and not in a public park or school": 3,
+    "tagged access=private and not in a public park or school": 8
+  },
+  "padus_polygons": 19739,
+  "padus_repaired": 101,
+  "padus_unrepaired": 4,
+  "park_courts": {
+    "examples": [
+      {
+        "id": "way/307522685",
+        "lost": 2,
+        "name": "Hot Springs State Park",
+        "new": 4,
+        "old": 6
+      },
+      {
+        "id": "way/1178637461",
+        "lost": 1,
+        "name": "Baseball field",
+        "new": 1,
+        "old": 2
+      },
+      {
+        "id": "way/1454200543",
+        "lost": 1,
+        "name": "Tennis courts",
+        "new": 1,
+        "old": 2
+      },
+      {
+        "id": "way/1468877660",
+        "lost": 1,
+        "name": "Tennis courts",
+        "new": 1,
+        "old": 2
+      },
+      {
+        "id": "way/1468882050",
+        "lost": 1,
+        "name": "Tennis courts",
+        "new": 3,
+        "old": 4
+      },
+      {
+        "id": "way/235901047",
+        "lost": 1,
+        "name": "Tennis courts",
+        "new": 1,
+        "old": 2
+      }
+    ],
+    "parks": 267,
+    "rate": 0.0225,
+    "regressed": 6
+  },
+  "parks_unmeasured": 0,
+  "parks_verified_by_agency": 6,
+  "public_areas": 361,
+  "school_campuses": 54,
+  "schools_9_12": 28644,
+  "state": "wyoming",
+  "unproven_school_areas": [
+    {
+      "dropped": 5,
+      "id": "relation/9932340",
+      "kept": 0,
+      "name": "Saint Stephen School"
+    },
+    {
+      "dropped": 11,
+      "id": "way/1012182770",
+      "kept": 0,
+      "name": "Laramie Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1079619398",
+      "kept": 0,
+      "name": "Hanna Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1102368304",
+      "kept": 0,
+      "name": "Bain Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/1104433865",
+      "kept": 0,
+      "name": "Johnson Junior High School"
+    },
+    {
+      "dropped": 8,
+      "id": "way/1117458861",
+      "kept": 0,
+      "name": "Slade Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1138535922",
+      "kept": 0,
+      "name": "Sheridan Junior High School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1138538817",
+      "kept": 0,
+      "name": "Meadowlark School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1150865658",
+      "kept": 0,
+      "name": "Burns Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1152588407",
+      "kept": 0,
+      "name": "Henderson Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1153397973",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/1159084272",
+      "kept": 0,
+      "name": "Clear Creek Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1159084274",
+      "kept": 0,
+      "name": "Cloud Peak Elementary School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/1178629376",
+      "kept": 0,
+      "name": "Torrington Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1210906755",
+      "kept": 0,
+      "name": "Little Powder School"
+    },
+    {
+      "dropped": 0,
+      "id": "way/1234958941",
+      "kept": 5,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/1236151216",
+      "kept": 0,
+      "name": "Miller Elementary School"
+    },
+    {
+      "dropped": 7,
+      "id": "way/1236151223",
+      "kept": 0,
+      "name": "McCormick Junior High School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/1236152503",
+      "kept": 0,
+      "name": "Carey Junior High School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1236405666",
+      "kept": 0,
+      "name": "Prairie View Community School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1251838961",
+      "kept": 0,
+      "name": "Albin School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/1269151954",
+      "kept": 0,
+      "name": "Tongue River Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1294624464",
+      "kept": 0,
+      "name": "Lincoln Elementary School"
+    },
+    {
+      "dropped": 15,
+      "id": "way/1322332491",
+      "kept": 3,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/1331423308",
+      "kept": 0,
+      "name": "Wyoming Indian Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1346500381",
+      "kept": 0,
+      "name": "Carpenter Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/1360663913",
+      "kept": 0,
+      "name": "Riverton Middle School"
+    },
+    {
+      "dropped": 13,
+      "id": "way/1360768457",
+      "kept": 0,
+      "name": "Rock Springs Junior Highschool"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1361014332",
+      "kept": 0,
+      "name": "Greybull Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1361021695",
+      "kept": 0,
+      "name": "Worland Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1361023294",
+      "kept": 0,
+      "name": "Wind River Elementary-Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1361464748",
+      "kept": 0,
+      "name": "West Side School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1363394260",
+      "kept": 0,
+      "name": "Taylor School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1376520804",
+      "kept": 0,
+      "name": "Wilson Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1431824397",
+      "kept": 0,
+      "name": "Coyote Ridge Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1446157565",
+      "kept": 0,
+      "name": "Jackson Hole Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1447611034",
+      "kept": 0,
+      "name": "Jackson Hole Classical Academy"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1451389572",
+      "kept": 0,
+      "name": "Eastridge Facility"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1483984153",
+      "kept": 0,
+      "name": "Poison Spider School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1554401666",
+      "kept": 0,
+      "name": "Walnut Elementary"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1555117261",
+      "kept": 0,
+      "name": "Overland Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/157054226",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/192290063",
+      "kept": 0,
+      "name": "Parkside School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/220672948",
+      "kept": 0,
+      "name": "Story School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/259864120",
+      "kept": 0,
+      "name": "Rozet Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/307524122",
+      "kept": 0,
+      "name": "Thermopolis Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/328637097",
+      "kept": 0,
+      "name": "Eastside Elementary School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/328637098",
+      "kept": 0,
+      "name": "Cody Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/328637099",
+      "kept": 0,
+      "name": "Livingston Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/335686960",
+      "kept": 0,
+      "name": "Lander MIddle School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/383664109",
+      "kept": 0,
+      "name": "Uinta Meadows Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/393406826",
+      "kept": 0,
+      "name": "Wheatland Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/406691607",
+      "kept": 0,
+      "name": "Douglas Intermediate School"
+    },
+    {
+      "dropped": 6,
+      "id": "way/406691608",
+      "kept": 0,
+      "name": "Douglas Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/406691621",
+      "kept": 0,
+      "name": "Douglas Upper Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/444348963",
+      "kept": 0,
+      "name": "Trail Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/444351801",
+      "kept": 0,
+      "name": "West Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/444576840",
+      "kept": 0,
+      "name": "Lovell Middle School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/500341764",
+      "kept": 0,
+      "name": "Sage Valley Junior High School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/500341774",
+      "kept": 0,
+      "name": "Paintbrush Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/500564962",
+      "kept": 0,
+      "name": "Buffalo Ridge Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/500564968",
+      "kept": 0,
+      "name": "Lakeview Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/500845298",
+      "kept": 0,
+      "name": "Pronghorn Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/501069820",
+      "kept": 0,
+      "name": "Stocktrail Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/501069824",
+      "kept": 0,
+      "name": "Prairie Wind Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/501072418",
+      "kept": 0,
+      "name": "Hillcrest Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/501084511",
+      "kept": 0,
+      "name": "Wagonwheel Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/510238907",
+      "kept": 0,
+      "name": "Twin Spruce Junior High School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/517970842",
+      "kept": 0,
+      "name": "Lusk Elementary and Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/541953387",
+      "kept": 0,
+      "name": "Star Valley Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/547520077",
+      "kept": 0,
+      "name": "Lebhart Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/560401942",
+      "kept": 0,
+      "name": "Mountain View K-8"
+    },
+    {
+      "dropped": 1,
+      "id": "way/701720055",
+      "kept": 0,
+      "name": "Saint Mary's Catholic School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/725235859",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/78458710",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/815079321",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/817704824",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/901676664",
+      "kept": 0,
+      "name": "Powell Middle School"
+    }
+  ],
+  "venues_after": 336
+}

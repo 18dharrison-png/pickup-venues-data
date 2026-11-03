@@ -1,0 +1,29 @@
+padus: 93 invalid polygons repaired, 0 dropped
+  public areas: 1614 (133 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 14778 courts/fields read -> 1478 venues ({'known': 199, 'park': 1046, 'school': 233}), 8261 courts dropped
+  baseline (old rules, same extract): 4037 venues
+  parks: 1046, losing courts vs the old builder: 7 (0.67%)
+# 10 random KEPT (1478 candidates)
+Canterbury Park	39.854142,-86.140314	park	way/287807421
+Irwin Park	39.359307,-85.969017	park	way/1271566762
+Lakeside Park	41.534132,-87.454582	park	way/430527384
+Schrock Athletic Complex	41.411263,-85.761942	known	way/769818645
+Olin Park	39.778012,-86.225823	park	way/1019941627
+Soccer field	40.058481,-86.160189	park	way/1067497658
+Industrial Park	39.648727,-85.140188	park	way/547261582
+Beach Volleyball courts	41.464817,-87.039417	known	way/1088323048
+Garfield Park	39.73316,-86.145568	park	way/352372936
+Volleyball courts	39.881932,-86.140004	park	way/623562098
+
+# 10 random DROPPED (8261 candidates)
+(unnamed)	39.479106,-86.0913	baseball	inside a school site that is not a verified public high school
+Mark Badger Park	39.977979,-86.078272	soccer	no public source places it in a park, public school or rec centre
+Sunnyside Park	41.441921,-86.137881	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	39.752128,-85.909345	tennis	inside a school site that is not a verified public high school
+(unnamed)	38.287218,-85.746816	pickleball	no public source places it in a park, public school or rec centre
+(unnamed)	40.739284,-86.398493	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	41.729825,-85.963774	baseball	no public source places it in a park, public school or rec centre
+Blacketor Park	41.075662,-86.197525	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	41.650834,-86.202476	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	40.253112,-85.677881	tennis	no public source places it in a park, public school or rec centre
+

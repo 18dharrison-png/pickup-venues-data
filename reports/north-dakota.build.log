@@ -1,0 +1,29 @@
+padus: 96 invalid polygons repaired, 0 dropped
+  public areas: 318 (45 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 2725 courts/fields read -> 395 venues ({'known': 112, 'park': 227, 'school': 56}), 1695 courts dropped
+  baseline (old rules, same extract): 1220 venues
+  parks: 227, losing courts vs the old builder: 2 (0.88%)
+# 10 random KEPT (395 candidates)
+Baseball field	46.819347,-100.896097	park	way/47884063
+American Football field	47.874001,-97.053366	park	way/1474505527
+Beach Volleyball courts	46.916596,-98.698644	known	way/507377509
+Cote Park	48.179564,-103.673556	park	way/874230552
+Dickinson High School	46.888788,-102.808003	school	way/1204851832
+Softball field	46.872322,-102.799049	park	way/126215868
+Elks Park	47.909978,-97.040706	park	way/678443041
+Fisher Park	46.902616,-102.772371	known	way/1295105664
+Beach Volleyball courts	46.548265,-96.936758	known	way/496252098
+White Shield School	47.66135,-101.845008	school	way/796682942
+
+# 10 random DROPPED (1695 candidates)
+(unnamed)	48.419693,-101.334506	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	48.845711,-99.695079	running	no public source places it in a park, public school or rec centre
+(unnamed)	46.652007,-97.24523	volleyball	no public source places it in a park, public school or rec centre
+Riverside Park	46.802225,-100.811259	volleyball	no public source places it in a park, public school or rec centre
+(unnamed)	46.863531,-96.805452	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	47.903304,-97.083513	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	46.960269,-96.857876	softball	no public source places it in a park, public school or rec centre
+(unnamed)	46.883263,-102.803745	american_football	no public source places it in a park, public school or rec centre
+(unnamed)	46.71619,-97.070603	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	46.834492,-96.83126	basketball	no public source places it in a park, public school or rec centre
+

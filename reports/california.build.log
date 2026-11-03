@@ -1,0 +1,29 @@
+padus: 1407 invalid polygons repaired, 3 dropped
+  public areas: 10795 (427 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 66332 courts/fields read -> 7063 venues ({'known': 701, 'park': 5308, 'school': 1054}), 38396 courts dropped
+  baseline (old rules, same extract): 17027 venues
+  parks: 5308, losing courts vs the old builder: 68 (1.28%)
+# 10 random KEPT (585 candidates)
+Taft Charter High School	34.168539,-118.573377	school	way/380095088
+Beach Volleyball courts	33.883415,-118.330301	known	way/186734199
+Siminski Park	33.947894,-118.362552	park	way/469794887
+George Izay Park	34.171796,-118.31994	park	way/112003881
+Rowley Memorial Park	33.911435,-118.316148	park	way/128706711
+Robert Fulton College Preperatory	34.206912,-118.459389	school	way/785824598
+Beach Volleyball courts	34.038524,-118.543019	park	way/1423555996
+La Romeria Park	33.853674,-118.361501	park	way/442857022
+Pickleball courts	34.095956,-118.204626	park	way/1143808201
+Oakmont View Park	34.200204,-118.243286	park	way/626450570
+
+# 10 random DROPPED (3546 candidates)
+(unnamed)	34.196991,-118.232548	golf	no public source places it in a park, public school or rec centre
+(unnamed)	34.058292,-118.296293	soccer	inside a school site that is not a verified public high school
+(unnamed)	34.084745,-118.45605	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	33.985811,-118.419267	basketball	inside a school site that is not a verified public high school
+(unnamed)	33.95719,-118.428096	running	inside a school site that is not a verified public high school
+(unnamed)	34.075722,-118.419963	tennis	tagged access=no and not in a public park or school
+(unnamed)	34.081162,-118.417295	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	34.084279,-118.442694	tennis	tagged access=private and not in a public park or school
+(unnamed)	34.123337,-118.399386	basketball	no public source places it in a park, public school or rec centre
+(unnamed)	33.864532,-118.364794	handball	inside a school site that is not a verified public high school
+

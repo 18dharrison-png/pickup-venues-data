@@ -1,0 +1,29 @@
+padus: 43 invalid polygons repaired, 4 dropped
+  public areas: 877 (259 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 7797 courts/fields read -> 796 venues ({'known': 88, 'park': 565, 'school': 143}), 4519 courts dropped
+  baseline (old rules, same extract): 1958 venues
+  parks: 565, losing courts vs the old builder: 7 (1.24%)
+# 10 random KEPT (796 candidates)
+New Canaan High School	41.127961,-73.490325	school	way/43398988
+Baseball field	41.944921,-72.794961	park	way/141415114
+Sunnyside Park	41.290894,-73.070409	park	way/43436825
+American Football field	41.539368,-72.647479	known	way/702591224
+Cove Park	41.721246,-72.656843	known	way/1009186807
+Beach Volleyball courts	41.47814,-73.441518	known	way/1084717111
+Litchfield Public Schools	41.740397,-73.205738	school	way/43441183
+Tennis courts	41.353716,-73.091297	park	way/1215670192
+Page Park	41.684648,-72.929125	park	way/43435866
+Housatonic Valley Regional High School	41.937506,-73.363414	school	way/469283016
+
+# 10 random DROPPED (4519 candidates)
+Prageman Park	41.498462,-72.82157	baseball	no public source places it in a park, public school or rec centre
+Veterans Memorial Park	41.577003,-73.493342	pickleball	no public source places it in a park, public school or rec centre
+(unnamed)	41.70195,-72.545228	soccer	inside a school site that is not a verified public high school
+(unnamed)	41.422896,-72.888098	soccer	no public source places it in a park, public school or rec centre
+Morse Park	41.26302,-72.935255	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	41.850118,-72.006675	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	41.460796,-72.812187	tennis	no public source places it in a park, public school or rec centre
+Quirk Park	41.729604,-72.856808	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	41.71958,-72.176602	softball	inside a school site that is not a verified public high school
+(unnamed)	41.006905,-73.628818	basketball	no public source places it in a park, public school or rec centre
+

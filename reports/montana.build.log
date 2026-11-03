@@ -1,0 +1,29 @@
+padus: 94 invalid polygons repaired, 0 dropped
+  public areas: 527 (22 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 2288 courts/fields read -> 360 venues ({'known': 41, 'park': 240, 'school': 79}), 1236 courts dropped
+  baseline (old rules, same extract): 852 venues
+  parks: 240, losing courts vs the old builder: 2 (0.83%)
+# 10 random KEPT (360 candidates)
+Bender Park	46.422141,-105.841717	park	way/334364562
+Bonner Park	46.855115,-113.993326	park	way/151771053
+Kiwanis Park	47.511171,-111.265923	park	way/405791637
+Fairgrounds	45.725681,-107.607735	park	way/930844326
+Miners Field	45.978631,-112.543971	park	way/1214565926
+Beach Volleyball courts	46.906425,-113.968062	known	way/1292271027
+Grouse Mountain Park	48.409736,-114.361702	park	way/616356618
+Saint Ignatius Schools	47.318158,-114.090217	school	way/1336653158
+Frazer School	48.058313,-106.047925	school	way/341245214
+Marilyn Park	46.816503,-114.061375	park	way/810615955
+
+# 10 random DROPPED (1236 candidates)
+(unnamed)	45.271741,-111.293993	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	48.274935,-114.325742	pickleball	no public source places it in a park, public school or rec centre
+(unnamed)	45.669829,-111.060107	basketball	no public source places it in a park, public school or rec centre
+(unnamed)	48.179425,-111.944722	soccer	no public source places it in a park, public school or rec centre
+Rader Park	46.545996,-110.905086	running	no public source places it in a park, public school or rec centre
+Sunset Park	47.813556,-110.68083	soccer	no public source places it in a park, public school or rec centre
+Stevensville Skatepark	46.512083,-114.098219	skateboard	no public source places it in a park, public school or rec centre
+(unnamed)	47.686386,-114.166196	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	45.7967,-108.519316	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	46.447477,-108.551269	american_football,soccer	no public source places it in a park, public school or rec centre
+

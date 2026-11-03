@@ -1,0 +1,29 @@
+padus: 41 invalid polygons repaired, 0 dropped
+  public areas: 1157 (61 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 7584 courts/fields read -> 1020 venues ({'known': 237, 'park': 624, 'school': 159}), 4138 courts dropped
+  baseline (old rules, same extract): 2415 venues
+  parks: 624, losing courts vs the old builder: 6 (0.96%)
+# 10 random KEPT (1020 candidates)
+Baseball field	37.232464,-95.700351	park	way/134472719
+10th Avenue Park	39.283513,-94.935899	park	way/83189463
+Tennis courts	39.898425,-95.789603	park	way/1145478452
+Beach Volleyball courts	38.891374,-94.714942	known	way/1444781913
+R Park	39.028235,-94.643818	park	way/469574900
+Field 15	38.982878,-94.847161	park	relation/19690651
+South Lakes Park	37.596959,-97.357082	park	relation/8249484
+Blackbob School Park	38.862809,-94.766712	known	way/591847036
+Friendship Park	37.66826,-97.286765	park	way/258851757
+Cleary Park	39.034395,-96.84607	park	way/1049690528
+
+# 10 random DROPPED (4138 candidates)
+(unnamed)	38.944845,-95.243918	tennis	inside a school site that is not a verified public high school
+(unnamed)	38.34908,-98.580156	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	37.958509,-98.965647	basketball	no public source places it in a park, public school or rec centre
+(unnamed)	38.346755,-94.754669	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	37.136129,-96.19383	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	38.925988,-94.880659	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	39.575782,-95.113221	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	37.567115,-97.346489	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	37.727342,-97.442533	golf	no public source places it in a park, public school or rec centre
+(unnamed)	39.010712,-96.285979	baseball	no public source places it in a park, public school or rec centre
+

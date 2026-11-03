@@ -1,0 +1,29 @@
+padus: 159 invalid polygons repaired, 0 dropped
+  public areas: 2178 (73 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 9612 courts/fields read -> 1524 venues ({'known': 426, 'park': 839, 'school': 259}), 4721 courts dropped
+  baseline (old rules, same extract): 2873 venues
+  parks: 839, losing courts vs the old builder: 2 (0.24%)
+# 10 random KEPT (1524 candidates)
+Baseball field	41.660089,-92.020092	park	way/413789017
+Sheldon City Park	43.184933,-95.850216	park	way/159936445
+West Monona School	42.02078,-96.105552	school	way/478698680
+Baseball field	41.021403,-93.312472	park	way/857316025
+City Park	41.674613,-91.538855	park	way/103081210
+Beach Volleyball courts	43.12498,-93.45286	known	way/1059954027
+Beach Volleyball courts	43.189735,-95.996844	known	way/73766826
+Lions Park	41.609779,-93.836975	park	way/116175842
+Fifth Ward Park	42.062701,-90.674458	park	way/471692572
+Field 7	41.397042,-92.876368	known	way/791854844
+
+# 10 random DROPPED (4721 candidates)
+(unnamed)	42.539214,-96.405421	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	42.46625,-92.423217	soccer	tagged access=private and not in a public park or school
+(unnamed)	41.25697,-95.897986	basketball	inside a school site that is not a verified public high school
+(unnamed)	41.900832,-93.541814	baseball	inside a school site that is not a verified public high school
+Primghar City Park	43.083731,-95.623045	baseball	no public source places it in a park, public school or rec centre
+Vintage Baseball Diamond	41.832697,-95.929031	baseball	no public source places it in a park, public school or rec centre
+North Tama High School Track	42.189421,-92.450754	running	no public source places it in a park, public school or rec centre
+(unnamed)	43.154782,-93.130651	soccer	no public source places it in a park, public school or rec centre
+(unnamed)	41.604104,-93.747197	tennis	inside a school site that is not a verified public high school
+(unnamed)	41.44713,-95.621683	basketball	no public source places it in a park, public school or rec centre
+

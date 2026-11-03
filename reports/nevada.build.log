@@ -1,0 +1,29 @@
+padus: 173 invalid polygons repaired, 4 dropped
+  public areas: 684 (22 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 4213 courts/fields read -> 620 venues ({'known': 59, 'park': 483, 'school': 78}), 2090 courts dropped
+  baseline (old rules, same extract): 1114 venues
+  parks: 483, losing courts vs the old builder: 4 (0.83%)
+# 10 random KEPT (620 candidates)
+Cornerstone Park	36.036952,-115.053171	park	way/328935200
+Beach Volleyball courts	36.094008,-115.077825	known	way/1426563710
+Churchill County High School	39.462165,-118.786282	school	way/477531218
+Skateboard field	39.479746,-118.787354	park	way/1158104178
+Old Silver Bowl	36.087413,-115.009066	park	way/1260888521
+Golf field	36.296932,-115.187756	park	way/691572758
+Centennial High School	36.279264,-115.318726	school	way/130681909
+Baseball field	40.621535,-116.966748	park	way/458814768
+Northwest Career & Technical Academy	36.272073,-115.273732	school	way/846754789
+Union Village Park	36.076394,-115.032689	known	way/1189909159
+
+# 10 random DROPPED (2090 candidates)
+(unnamed)	36.209855,-115.322379	pickleball	no public source places it in a park, public school or rec centre
+(unnamed)	39.507283,-115.962777	basketball	inside a school site that is not a verified public high school
+(unnamed)	36.006834,-115.076911	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	39.469534,-119.781532	basketball	tagged access=customers and not in a public park or school
+(unnamed)	39.246607,-119.943902	pickleball	no public source places it in a park, public school or rec centre
+(unnamed)	36.16972,-115.234402	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	36.080116,-114.974686	golf	no public source places it in a park, public school or rec centre
+(unnamed)	35.989416,-115.220192	basketball	inside a school site that is not a verified public high school
+(unnamed)	38.944797,-119.75009	basketball	no public source places it in a park, public school or rec centre
+(unnamed)	39.459336,-118.792073	tennis	no public source places it in a park, public school or rec centre
+

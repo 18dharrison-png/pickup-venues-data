@@ -1,0 +1,29 @@
+padus: 341 invalid polygons repaired, 1 dropped
+  public areas: 2075 (131 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 17538 courts/fields read -> 1683 venues ({'known': 287, 'park': 1125, 'school': 271}), 10569 courts dropped
+  baseline (old rules, same extract): 4280 venues
+  parks: 1125, losing courts vs the old builder: 11 (0.98%)
+# 10 random KEPT (1683 candidates)
+Glen Allen High School	37.665874,-77.53558	school	way/280597853
+Beach Volleyball courts	37.574355,-80.055119	park	way/1305485789
+Beach Volleyball courts	36.918752,-76.31041	known	way/374646995
+Patrick County High School	36.622016,-80.271497	school	way/663369283
+Wilton Woods School Site Park	38.789899,-77.096109	park	relation/2004664
+Lovettsville Community Park	39.266263,-77.635992	park	way/1012470869
+Heritage High School	37.361371,-79.205392	school	way/998222621
+American Football field	36.828041,-76.277298	park	way/48817980
+#3	38.804068,-77.484915	park	way/1088187573
+Ettrick Park	37.244325,-77.429917	park	way/315035688
+
+# 10 random DROPPED (10569 candidates)
+(unnamed)	36.598779,-79.412246	pickleball	inside a school site that is not a verified public high school
+(unnamed)	38.867462,-77.267814	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	36.92899,-80.024502	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	36.776738,-76.349185	baseball	inside a school site that is not a verified public high school
+(unnamed)	38.804657,-77.352846	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	38.768332,-77.502854	basketball	no public source places it in a park, public school or rec centre
+(unnamed)	37.102778,-76.385034	running	no public source places it in a park, public school or rec centre
+(unnamed)	37.302641,-77.434399	baseball,softball	inside a school site that is not a verified public high school
+(unnamed)	38.336915,-77.439059	basketball	no public source places it in a park, public school or rec centre
+Bolling Field House	37.579514,-77.51976	basketball	inside a school site that is not a verified public high school
+

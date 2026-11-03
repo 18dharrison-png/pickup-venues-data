@@ -1,0 +1,355 @@
+{
+  "baseline_venues": 217,
+  "by_verdict": {
+    "known": 15,
+    "park": 125,
+    "school": 19
+  },
+  "courts_before": 913,
+  "dropped": 361,
+  "dropped_by_reason": {
+    "inside a school site that is not a verified public high school": 110,
+    "no public source places it in a park, public school or rec centre": 195,
+    "tagged access=customers and not in a public park or school": 13,
+    "tagged access=no and not in a public park or school": 1,
+    "tagged access=private and not in a public park or school": 42
+  },
+  "padus_polygons": 182,
+  "padus_repaired": 12,
+  "padus_unrepaired": 0,
+  "park_courts": {
+    "examples": [
+      {
+        "id": "way/503287185",
+        "lost": 1,
+        "name": "Baseball field",
+        "new": 2,
+        "old": 3
+      }
+    ],
+    "parks": 125,
+    "rate": 0.008,
+    "regressed": 1
+  },
+  "parks_unmeasured": 0,
+  "parks_verified_by_agency": 1,
+  "public_areas": 453,
+  "school_campuses": 19,
+  "schools_9_12": 28644,
+  "state": "district-of-columbia",
+  "unproven_school_areas": [
+    {
+      "dropped": 2,
+      "id": "relation/15583702",
+      "kept": 0,
+      "name": "John Lewis Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "relation/21424816",
+      "kept": 0,
+      "name": "Saint Patrick's Episcopal Day School"
+    },
+    {
+      "dropped": 6,
+      "id": "way/105819495",
+      "kept": 0,
+      "name": "Georgetown Visitation Preparatory School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/105825206",
+      "kept": 0,
+      "name": "Hyde-Addison Elementary School"
+    },
+    {
+      "dropped": 6,
+      "id": "way/105882789",
+      "kept": 0,
+      "name": "Rose L. Hardy Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1131236744",
+      "kept": 0,
+      "name": "Lafayette Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1131289516",
+      "kept": 0,
+      "name": "Ingenuity Prep Public Charter School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1138955471",
+      "kept": 0,
+      "name": "Maret School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1148916425",
+      "kept": 0,
+      "name": "Dupont Park Adventist School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1149416124",
+      "kept": 0,
+      "name": "Key Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1149443647",
+      "kept": 0,
+      "name": "Alice Deal Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1149492296",
+      "kept": 0,
+      "name": "Stuart-Hobson Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1176304483",
+      "kept": 0,
+      "name": "Beauvoir Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/121962472",
+      "kept": 0,
+      "name": "Brookland Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/121962591",
+      "kept": 0,
+      "name": "Takoma Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1314719491",
+      "kept": 0,
+      "name": "Ben Murch Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1314719493",
+      "kept": 0,
+      "name": "Janney Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1319280239",
+      "kept": 0,
+      "name": "Sheridan School"
+    },
+    {
+      "dropped": 11,
+      "id": "way/1321941472",
+      "kept": 0,
+      "name": "Sidwell Friends Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/132601741",
+      "kept": 0,
+      "name": "Archbishop Carroll High School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/132777988",
+      "kept": 0,
+      "name": "Moten Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/132781452",
+      "kept": 0,
+      "name": "Excel Academy"
+    },
+    {
+      "dropped": 2,
+      "id": "way/132781681",
+      "kept": 0,
+      "name": "Lawrence E. Boone Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/1333850321",
+      "kept": 0,
+      "name": "Horace Mann Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/133498534",
+      "kept": 0,
+      "name": "Turner Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1339080848",
+      "kept": 0,
+      "name": "Langdon Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/133914973",
+      "kept": 0,
+      "name": "Houston Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/133945986",
+      "kept": 0,
+      "name": "Lorraine H. Whitlock Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/134604671",
+      "kept": 0,
+      "name": "CW Harris Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/135363999",
+      "kept": 0,
+      "name": "Martin Luther King Junior Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/135574762",
+      "kept": 0,
+      "name": "The Washington International School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1371648186",
+      "kept": 0,
+      "name": "Bancroft Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1384808517",
+      "kept": 0,
+      "name": "The Field School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1391495076",
+      "kept": 0,
+      "name": "Lowell School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1422768041",
+      "kept": 0,
+      "name": "H D Cooke Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1504689987",
+      "kept": 0,
+      "name": "Noyes Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1547365568",
+      "kept": 0,
+      "name": "Meyer Elementary School"
+    },
+    {
+      "dropped": 0,
+      "id": "way/1564799592",
+      "kept": 2,
+      "name": "Garrison Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/183795326",
+      "kept": 0,
+      "name": "Walker Jones Education Campus"
+    },
+    {
+      "dropped": 3,
+      "id": "way/219704596",
+      "kept": 0,
+      "name": "J O Wilson Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/296907601",
+      "kept": 0,
+      "name": "Barnard Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/342133631",
+      "kept": 0,
+      "name": "Georgetown Day School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/343628676",
+      "kept": 0,
+      "name": "Seaton Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/373690691",
+      "kept": 0,
+      "name": "Gonzaga College High School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/45850028",
+      "kept": 0,
+      "name": "Raymond Education Campus"
+    },
+    {
+      "dropped": 2,
+      "id": "way/4721372",
+      "kept": 0,
+      "name": "Shirley Chisholm Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/48082935",
+      "kept": 0,
+      "name": "Latin American Montessori Bilingual Public Charter School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/508025624",
+      "kept": 0,
+      "name": "Eliot-Hine Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/520458207",
+      "kept": 0,
+      "name": "Ludlow - Taylor Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/740088563",
+      "kept": 0,
+      "name": "Washington International School - Tregaron Campus"
+    },
+    {
+      "dropped": 2,
+      "id": "way/840257706",
+      "kept": 0,
+      "name": "John Eaton Elementary School"
+    },
+    {
+      "dropped": 10,
+      "id": "way/915595169",
+      "kept": 0,
+      "name": "Saint John's College High School"
+    }
+  ],
+  "venues_after": 159
+}

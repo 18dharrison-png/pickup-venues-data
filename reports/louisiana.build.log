@@ -1,0 +1,29 @@
+padus: 83 invalid polygons repaired, 0 dropped
+  public areas: 650 (27 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 5410 courts/fields read -> 721 venues ({'known': 95, 'park': 470, 'school': 156}), 2782 courts dropped
+  baseline (old rules, same extract): 1444 venues
+  parks: 470, losing courts vs the old builder: 4 (0.85%)
+# 10 random KEPT (721 candidates)
+Tennis courts	30.497249,-92.390924	park	way/1553185784
+Tennis courts	32.250903,-92.716656	park	way/1333415916
+Ellender Memorial High School	29.565955,-90.678594	school	way/385513270
+Beach Volleyball courts	30.026647,-90.063366	known	way/828362383
+Tennis courts	32.518572,-93.731133	park	way/1039729739
+West Saint John High School	30.018139,-90.553413	school	way/1107425826
+Beach Volleyball courts	32.618148,-93.284475	known	way/552694494
+Choudrant High School	32.529074,-92.51926	school	way/1200049376
+Debaillon Park	30.240707,-92.042094	park	way/317989683
+AB Palmer Park	32.431798,-93.747058	park	way/615717650
+
+# 10 random DROPPED (2782 candidates)
+(unnamed)	32.563671,-92.610049	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	31.852861,-92.780062	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	30.830791,-92.646007	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	31.297404,-92.533576	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	32.481275,-93.792258	tennis	inside a school site that is not a verified public high school
+(unnamed)	32.599279,-92.070673	tennis	inside a school site that is not a verified public high school
+(unnamed)	32.594457,-93.271809	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	31.756851,-93.09124	tennis	no public source places it in a park, public school or rec centre
+South Bossier Park	32.434687,-93.595222	baseball	no public source places it in a park, public school or rec centre
+Kemper Williams Park	29.673806,-91.295201	baseball	no public source places it in a park, public school or rec centre
+

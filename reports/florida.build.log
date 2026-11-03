@@ -1,0 +1,29 @@
+padus: 510 invalid polygons repaired, 0 dropped
+  public areas: 4644 (215 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 38727 courts/fields read -> 3389 venues ({'known': 561, 'park': 2420, 'school': 408}), 24172 courts dropped
+  baseline (old rules, same extract): 9799 venues
+  parks: 2420, losing courts vs the old builder: 42 (1.74%)
+# 10 random KEPT (3389 candidates)
+31st Street Sports Complex	27.722141,-82.675942	park	way/227958647
+Amos P. Godby High School	30.461311,-84.316458	school	way/126807583
+Baseball field	28.031549,-82.755374	park	way/309752449
+The Heights of Jupiter Park	26.900124,-80.135835	park	way/591629823
+Blanchard Park	28.580704,-81.234874	park	relation/2033041
+Soccer field	29.071893,-82.044436	park	way/1017764831
+Beach Volleyball courts	29.064767,-80.91493	known	way/985435189
+Atlantic High School	29.148483,-81.026337	school	way/480267378
+Pine Forest Park	28.955907,-81.415297	park	way/1073874118
+Bartow High School	27.883136,-81.841268	school	way/281323620
+
+# 10 random DROPPED (24172 candidates)
+(unnamed)	26.114137,-81.801383	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	28.510416,-81.149678	basketball	no public source places it in a park, public school or rec centre
+(unnamed)	29.946547,-81.493656	basketball	no public source places it in a park, public school or rec centre
+(unnamed)	28.77675,-81.253128	basketball	no public source places it in a park, public school or rec centre
+(unnamed)	28.544879,-81.220071	basketball	inside a school site that is not a verified public high school
+(unnamed)	26.678046,-80.159166	multi	tagged access=private and not in a public park or school
+(unnamed)	26.228055,-81.731335	pickleball	no public source places it in a park, public school or rec centre
+(unnamed)	30.364984,-85.440019	basketball	inside a school site that is not a verified public high school
+(unnamed)	26.862779,-80.088487	golf	no public source places it in a park, public school or rec centre
+(unnamed)	26.741575,-80.036988	tennis	no public source places it in a park, public school or rec centre
+

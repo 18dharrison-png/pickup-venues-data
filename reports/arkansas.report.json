@@ -1,0 +1,736 @@
+{
+  "baseline_venues": 1620,
+  "by_verdict": {
+    "known": 93,
+    "park": 427,
+    "school": 93
+  },
+  "courts_before": 5536,
+  "dropped": 3223,
+  "dropped_by_reason": {
+    "inside a school site that is not a verified public high school": 231,
+    "named private or commercial": 5,
+    "no public source places it in a park, public school or rec centre": 2906,
+    "tagged access=customers and not in a public park or school": 19,
+    "tagged access=private and not in a public park or school": 62
+  },
+  "padus_polygons": 916,
+  "padus_repaired": 56,
+  "padus_unrepaired": 0,
+  "park_courts": {
+    "examples": [
+      {
+        "id": "way/629506320",
+        "lost": 8,
+        "name": "Anstaff Soccer Complex and Harrison Tennis Complex",
+        "new": 7,
+        "old": 15
+      },
+      {
+        "id": "way/1313100846",
+        "lost": 1,
+        "name": "Baseball field",
+        "new": 5,
+        "old": 6
+      },
+      {
+        "id": "way/228529559",
+        "lost": 1,
+        "name": "Van Buren Municipal Park",
+        "new": 1,
+        "old": 2
+      },
+      {
+        "id": "way/450295494",
+        "lost": 1,
+        "name": "Basketball courts",
+        "new": 1,
+        "old": 2
+      }
+    ],
+    "parks": 427,
+    "rate": 0.0094,
+    "regressed": 4
+  },
+  "parks_unmeasured": 0,
+  "parks_verified_by_agency": 68,
+  "public_areas": 589,
+  "school_campuses": 93,
+  "schools_9_12": 28644,
+  "state": "arkansas",
+  "unproven_school_areas": [
+    {
+      "dropped": 1,
+      "id": "relation/20020747",
+      "kept": 0,
+      "name": "Thaden School"
+    },
+    {
+      "dropped": 1,
+      "id": "relation/21188690",
+      "kept": 0,
+      "name": "Dunbar Magnet Middle School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/1005673741",
+      "kept": 2,
+      "name": "Little Rock Christian Academy"
+    },
+    {
+      "dropped": 0,
+      "id": "way/1057563141",
+      "kept": 1,
+      "name": "North Side High School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1102720785",
+      "kept": 0,
+      "name": "Harding Academy"
+    },
+    {
+      "dropped": 3,
+      "id": "way/1106163420",
+      "kept": 0,
+      "name": "Westside Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/1107301601",
+      "kept": 0,
+      "name": "Central Arkansas Christian High School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/1117427174",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/1127361037",
+      "kept": 0,
+      "name": "Siloam Springs Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1135842075",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/1148377734",
+      "kept": 0,
+      "name": "First Lutheran School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1158572728",
+      "kept": 0,
+      "name": "Center Valley School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1160264618",
+      "kept": 0,
+      "name": "Palestine-Wheatley Elementary School"
+    },
+    {
+      "dropped": 0,
+      "id": "way/117439060",
+      "kept": 2,
+      "name": "Paris Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1186074282",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/1192977023",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 4,
+      "id": "way/1193013563",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/1196121549",
+      "kept": 0,
+      "name": "Washington Magnet Elementary School;Booker T Washington School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/1196442019",
+      "kept": 0,
+      "name": "McClellan High School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1276746592",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 3,
+      "id": "way/1295797553",
+      "kept": 0,
+      "name": "Ruth Doyle Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1295797554",
+      "kept": 0,
+      "name": "Woodrow Cummins Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/1302166964",
+      "kept": 0,
+      "name": "Carl Stuart Middle School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/1302166966",
+      "kept": 0,
+      "name": "Julia Lee Moore Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1311352096",
+      "kept": 0,
+      "name": "Greenbrier Westside Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1319964697",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/1327532517",
+      "kept": 0,
+      "name": "Camden Fairview Intermediate School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1336222936",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/1358276693",
+      "kept": 0,
+      "name": "Western Yell County Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1368482333",
+      "kept": 0,
+      "name": "Farmington Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1389333073",
+      "kept": 0,
+      "name": "Cass Job Corps"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1419127906",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/1420327195",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/1421263178",
+      "kept": 0,
+      "name": "Saint Paul Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/1442787560",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/1446436874",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/1461317696",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/1474212623",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/1475137063",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/1475290864",
+      "kept": 0,
+      "name": "Donaldson School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1514825140",
+      "kept": 0,
+      "name": "Theodore Jones Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1535247750",
+      "kept": 0,
+      "name": "Arkansas Middle School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/1546825005",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/1561872216",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/192774109",
+      "kept": 0,
+      "name": "Bale Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/318155113",
+      "kept": 0,
+      "name": "Crestwood Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/327288073",
+      "kept": 0,
+      "name": "Westside Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/360957182",
+      "kept": 0,
+      "name": "Clear Spring School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/378366757",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 3,
+      "id": "way/380405223",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/380413282",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 3,
+      "id": "way/38046713",
+      "kept": 0,
+      "name": "Episcopal Collegiate School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/394524416",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 4,
+      "id": "way/439362566",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/439362567",
+      "kept": 0,
+      "name": "Catholic High School for Boys"
+    },
+    {
+      "dropped": 1,
+      "id": "way/449611793",
+      "kept": 0,
+      "name": "MicroSociety Magnet School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/450356130",
+      "kept": 0,
+      "name": "Morrilton Intermediate School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/450578361",
+      "kept": 0,
+      "name": "Columbia Christian School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/487088639",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 5,
+      "id": "way/501501925",
+      "kept": 0,
+      "name": "F.S. Garrison Stadium & Cash Center"
+    },
+    {
+      "dropped": 4,
+      "id": "way/502223112",
+      "kept": 0,
+      "name": "Ramay Junior High School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/502228835",
+      "kept": 0,
+      "name": "Holt Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/502512498",
+      "kept": 0,
+      "name": "Asbell Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/507876053",
+      "kept": 0,
+      "name": "The New School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/531978104",
+      "kept": 0,
+      "name": "J.A. Fair K-8 Preparatory Academy"
+    },
+    {
+      "dropped": 2,
+      "id": "way/531978105",
+      "kept": 0,
+      "name": "Mabelvale Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/531978109",
+      "kept": 0,
+      "name": "Chicot Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/533267024",
+      "kept": 0,
+      "name": "Western Hills Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/546027209",
+      "kept": 0,
+      "name": "Riverside East Campus"
+    },
+    {
+      "dropped": 1,
+      "id": "way/547284197",
+      "kept": 0,
+      "name": "Tuggle School Grounds"
+    },
+    {
+      "dropped": 2,
+      "id": "way/549389542",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/616478453",
+      "kept": 0,
+      "name": "Meadowcliff Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/623159652",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/625603926",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/628820741",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/629607113",
+      "kept": 0,
+      "name": "Bay School District"
+    },
+    {
+      "dropped": 4,
+      "id": "way/629905324",
+      "kept": 0,
+      "name": "Alma Middle School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/640099561",
+      "kept": 0,
+      "name": "Williams Magnet Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/641331899",
+      "kept": 0,
+      "name": "Beard Elementary"
+    },
+    {
+      "dropped": 1,
+      "id": "way/642248996",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/669745495",
+      "kept": 0,
+      "name": "Franklin Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/670713626",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/672170236",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 4,
+      "id": "way/672180494",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/672205785",
+      "kept": 0,
+      "name": "Thomas Jefferson Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/672208465",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 3,
+      "id": "way/672945582",
+      "kept": 0,
+      "name": "The Baptist Preparatory School - Upper School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/672988257",
+      "kept": 0,
+      "name": "Carver Magnet Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/673118199",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/673391671",
+      "kept": 0,
+      "name": "Forest Park Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/673444584",
+      "kept": 0,
+      "name": "Brady Elementary School"
+    },
+    {
+      "dropped": 14,
+      "id": "way/673446104",
+      "kept": 0,
+      "name": "Henderson Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/673645193",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 3,
+      "id": "way/673705634",
+      "kept": 0,
+      "name": "Des Arc High School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/676020976",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/690543448",
+      "kept": 0,
+      "name": "Access Academy"
+    },
+    {
+      "dropped": 3,
+      "id": "way/698069461",
+      "kept": 0,
+      "name": "Booker Arts Magnet Elementary"
+    },
+    {
+      "dropped": 1,
+      "id": "way/700664929",
+      "kept": 0,
+      "name": "Northwest Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/703083331",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 4,
+      "id": "way/718998457",
+      "kept": 0,
+      "name": "Rockefeller Early Childhood Center"
+    },
+    {
+      "dropped": 2,
+      "id": "way/729205755",
+      "kept": 0,
+      "name": "Cornerstone Christian Academy"
+    },
+    {
+      "dropped": 1,
+      "id": "way/754342279",
+      "kept": 0,
+      "name": "Shiloh Christian School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/763005996",
+      "kept": 0,
+      "name": "Jones Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/781900701",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/803479634",
+      "kept": 0,
+      "name": "Mount Vernon - Enola Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/825084613",
+      "kept": 0,
+      "name": "Har-Ber High School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/909761696",
+      "kept": 0,
+      "name": "Ashdown Junior High School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/914249911",
+      "kept": 0,
+      "name": "RSD Gardner Campus"
+    },
+    {
+      "dropped": 3,
+      "id": "way/932637075",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 3,
+      "id": "way/946975434",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/947998626",
+      "kept": 0,
+      "name": "Booker T Washington High School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/963800002",
+      "kept": 0,
+      "name": ""
+    }
+  ],
+  "venues_after": 613
+}

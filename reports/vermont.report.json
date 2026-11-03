@@ -1,0 +1,590 @@
+{
+  "baseline_venues": 645,
+  "by_verdict": {
+    "known": 27,
+    "park": 105,
+    "school": 41
+  },
+  "courts_before": 2038,
+  "dropped": 1468,
+  "dropped_by_reason": {
+    "inside a school site that is not a verified public high school": 253,
+    "no public source places it in a park, public school or rec centre": 1167,
+    "tagged access=customers and not in a public park or school": 3,
+    "tagged access=private and not in a public park or school": 45
+  },
+  "padus_polygons": 2108,
+  "padus_repaired": 124,
+  "padus_unrepaired": 0,
+  "park_courts": {
+    "examples": [
+      {
+        "id": "way/379566615",
+        "lost": 2,
+        "name": "Pearl Street Park",
+        "new": 5,
+        "old": 7
+      },
+      {
+        "id": "way/1040648666",
+        "lost": 1,
+        "name": "Basketball courts",
+        "new": 1,
+        "old": 2
+      },
+      {
+        "id": "way/1060653228",
+        "lost": 1,
+        "name": "Pickleball courts",
+        "new": 12,
+        "old": 13
+      }
+    ],
+    "parks": 105,
+    "rate": 0.0286,
+    "regressed": 3
+  },
+  "parks_unmeasured": 0,
+  "parks_verified_by_agency": 15,
+  "public_areas": 157,
+  "school_campuses": 41,
+  "schools_9_12": 28644,
+  "state": "vermont",
+  "unproven_school_areas": [
+    {
+      "dropped": 4,
+      "id": "relation/15596630",
+      "kept": 0,
+      "name": "Kurn Hattin Homes for Children"
+    },
+    {
+      "dropped": 2,
+      "id": "relation/7987443",
+      "kept": 0,
+      "name": "Middlebury Union Middle School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/1020054095",
+      "kept": 0,
+      "name": "Putney Central School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1020068314",
+      "kept": 0,
+      "name": "Molly Stark Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1020070326",
+      "kept": 0,
+      "name": "Pownal Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1020342937",
+      "kept": 0,
+      "name": "Dover Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1020640751",
+      "kept": 0,
+      "name": "The Dorset School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1020643435",
+      "kept": 0,
+      "name": "Wells Village School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1036991235",
+      "kept": 0,
+      "name": "Cavendish Town Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1068369398",
+      "kept": 0,
+      "name": "Hiawatha School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1100858662",
+      "kept": 0,
+      "name": "Shoreham Elementary School"
+    },
+    {
+      "dropped": 7,
+      "id": "way/1100871360",
+      "kept": 0,
+      "name": "Vergennes Union Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1100890341",
+      "kept": 0,
+      "name": "Tunbridge Central School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1100894004",
+      "kept": 0,
+      "name": "The Newton School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/1101223536",
+      "kept": 0,
+      "name": "Sheldon Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1101273684",
+      "kept": 0,
+      "name": "The Wilder School - Regional Alternative Program"
+    },
+    {
+      "dropped": 3,
+      "id": "way/1101300821",
+      "kept": 0,
+      "name": "Newbury Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1105002124",
+      "kept": 0,
+      "name": "Fletcher Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1105005199",
+      "kept": 0,
+      "name": "Georgia Elementary & Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1107239047",
+      "kept": 0,
+      "name": "Christ the King School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1134197238",
+      "kept": 0,
+      "name": "Frederick H. Tuttle Middle School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/1153619618",
+      "kept": 0,
+      "name": "Rumney Memorial School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1154098247",
+      "kept": 0,
+      "name": "Lake Champlain Waldorf School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1154098249",
+      "kept": 0,
+      "name": "Laraway School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1154148070",
+      "kept": 0,
+      "name": "Vermont & New England School for Girls"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1154273354",
+      "kept": 0,
+      "name": "The Putney School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/1174664723",
+      "kept": 0,
+      "name": "The Lancaster School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/168813230",
+      "kept": 0,
+      "name": "Hilltop Montessori School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/219921869",
+      "kept": 0,
+      "name": "Brookside Primary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/257134749",
+      "kept": 0,
+      "name": "Mater Christi School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/307245193",
+      "kept": 0,
+      "name": "White River School"
+    },
+    {
+      "dropped": 7,
+      "id": "way/316541344",
+      "kept": 0,
+      "name": "St. Johnsbury Academy"
+    },
+    {
+      "dropped": 4,
+      "id": "way/319260871",
+      "kept": 0,
+      "name": "Northeast Primary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/319260874",
+      "kept": 0,
+      "name": "Rutland Intermediate School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/319269451",
+      "kept": 0,
+      "name": "Proctor Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/360067161",
+      "kept": 0,
+      "name": "Flood Brook School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/388483217",
+      "kept": 0,
+      "name": "Orchard Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/388484498",
+      "kept": 0,
+      "name": "Camels Hump Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/422820828",
+      "kept": 0,
+      "name": "Burr and Burton Academy"
+    },
+    {
+      "dropped": 14,
+      "id": "way/445267494",
+      "kept": 0,
+      "name": "Vermont Academy"
+    },
+    {
+      "dropped": 1,
+      "id": "way/462455702",
+      "kept": 0,
+      "name": "Charles P. Smith Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/473613015",
+      "kept": 0,
+      "name": "Dothan Brook School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/475739427",
+      "kept": 0,
+      "name": "Highgate Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/475859787",
+      "kept": 0,
+      "name": "Bakersfield Elementary & Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/497700823",
+      "kept": 0,
+      "name": "Currier Memorial School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/507324715",
+      "kept": 0,
+      "name": "Newport Town School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/507324774",
+      "kept": 0,
+      "name": "Troy School"
+    },
+    {
+      "dropped": 6,
+      "id": "way/508239997",
+      "kept": 0,
+      "name": "The St. Johnsbury School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/510206265",
+      "kept": 0,
+      "name": "Underhill Central School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/510206285",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 8,
+      "id": "way/510206305",
+      "kept": 0,
+      "name": "Jericho Elementary School"
+    },
+    {
+      "dropped": 10,
+      "id": "way/510270811",
+      "kept": 0,
+      "name": "Stowe Middle & High Schoo"
+    },
+    {
+      "dropped": 11,
+      "id": "way/510276583",
+      "kept": 0,
+      "name": "Lamoille South Unified Union Schools"
+    },
+    {
+      "dropped": 2,
+      "id": "way/510305088",
+      "kept": 0,
+      "name": "Hardwick Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/510306016",
+      "kept": 0,
+      "name": "Woodbury Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/510315649",
+      "kept": 0,
+      "name": "Union Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/562501069",
+      "kept": 0,
+      "name": "Burke Mountain Academy"
+    },
+    {
+      "dropped": 1,
+      "id": "way/563099499",
+      "kept": 0,
+      "name": "Charleston Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/565814160",
+      "kept": 0,
+      "name": "Shelburne Community School"
+    },
+    {
+      "dropped": 6,
+      "id": "way/565843127",
+      "kept": 0,
+      "name": "Warren Elementary School"
+    },
+    {
+      "dropped": 6,
+      "id": "way/565857808",
+      "kept": 0,
+      "name": "Williston Central School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/566107291",
+      "kept": 0,
+      "name": "Irasburg Village School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/569773654",
+      "kept": 0,
+      "name": "Green Mountain Valley School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/569926155",
+      "kept": 0,
+      "name": "Otter Creek Academy at Leicester"
+    },
+    {
+      "dropped": 1,
+      "id": "way/569991895",
+      "kept": 0,
+      "name": "Lothrop School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/569998776",
+      "kept": 0,
+      "name": "Barstow Memorial School"
+    },
+    {
+      "dropped": 9,
+      "id": "way/627774535",
+      "kept": 0,
+      "name": "U-32 Middle & High School"
+    },
+    {
+      "dropped": 13,
+      "id": "way/627806434",
+      "kept": 0,
+      "name": "Barre Town Middle & Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/666802896",
+      "kept": 0,
+      "name": "Lyman C. Hunt Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/762292748",
+      "kept": 0,
+      "name": "Hartland Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/806261510",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/869359518",
+      "kept": 3,
+      "name": "Marion W. Cross School"
+    },
+    {
+      "dropped": 6,
+      "id": "way/895640053",
+      "kept": 0,
+      "name": "Poultney Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/902104834",
+      "kept": 0,
+      "name": "Albert D Lawton Intermediate School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/902350630",
+      "kept": 0,
+      "name": "Alburgh Community Education Center"
+    },
+    {
+      "dropped": 3,
+      "id": "way/902363314",
+      "kept": 0,
+      "name": "Fisher Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/906731593",
+      "kept": 0,
+      "name": "Westminster Center School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/908251127",
+      "kept": 0,
+      "name": "Ottauquechee School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/926294452",
+      "kept": 0,
+      "name": "Lunenburg School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/929291187",
+      "kept": 0,
+      "name": "Sharon Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/940586930",
+      "kept": 0,
+      "name": "Barnard Academy"
+    },
+    {
+      "dropped": 1,
+      "id": "way/943334648",
+      "kept": 0,
+      "name": "Barre City Elementary & Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/947937170",
+      "kept": 0,
+      "name": "Vernon Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/956397517",
+      "kept": 0,
+      "name": "Samuel Morey Elementary School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/968588182",
+      "kept": 0,
+      "name": "Thetford Elementary School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/968894411",
+      "kept": 0,
+      "name": "Thetford Academy"
+    },
+    {
+      "dropped": 2,
+      "id": "way/984989593",
+      "kept": 0,
+      "name": "Maple Street School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/987539076",
+      "kept": 0,
+      "name": "Manchester Elementary Middle School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/993459478",
+      "kept": 0,
+      "name": "Rice Memorial High School"
+    }
+  ],
+  "venues_after": 173
+}

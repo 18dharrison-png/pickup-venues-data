@@ -1,0 +1,335 @@
+{
+  "baseline_venues": 625,
+  "by_verdict": {
+    "known": 30,
+    "park": 92,
+    "school": 33
+  },
+  "courts_before": 2208,
+  "dropped": 1541,
+  "dropped_by_reason": {
+    "inside a school site that is not a verified public high school": 212,
+    "no public source places it in a park, public school or rec centre": 1297,
+    "tagged access=customers and not in a public park or school": 1,
+    "tagged access=permit and not in a public park or school": 1,
+    "tagged access=private and not in a public park or school": 30
+  },
+  "padus_polygons": 536,
+  "padus_repaired": 62,
+  "padus_unrepaired": 1,
+  "park_courts": {
+    "examples": [],
+    "parks": 92,
+    "rate": 0.0,
+    "regressed": 0
+  },
+  "parks_unmeasured": 0,
+  "parks_verified_by_agency": 43,
+  "public_areas": 186,
+  "school_campuses": 33,
+  "schools_9_12": 28644,
+  "state": "delaware",
+  "unproven_school_areas": [
+    {
+      "dropped": 7,
+      "id": "relation/18110824",
+      "kept": 0,
+      "name": "CSW / CCSA Campus"
+    },
+    {
+      "dropped": 6,
+      "id": "way/1151075696",
+      "kept": 0,
+      "name": "Rehoboth Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1226506190",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/1328398766",
+      "kept": 0,
+      "name": "William Henry Middle School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/1328927930",
+      "kept": 0,
+      "name": "Nellie Hughes Stokes Elementary School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/1345184321",
+      "kept": 0,
+      "name": "Springer Middle School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/1471278337",
+      "kept": 0,
+      "name": "Red Lion Christian Academy"
+    },
+    {
+      "dropped": 2,
+      "id": "way/1539470135",
+      "kept": 0,
+      "name": "St. Anne's School"
+    },
+    {
+      "dropped": 9,
+      "id": "way/158624757",
+      "kept": 0,
+      "name": "Archmere Academy"
+    },
+    {
+      "dropped": 2,
+      "id": "way/305820825",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/411679256",
+      "kept": 0,
+      "name": "Holy Angels School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/499936636",
+      "kept": 0,
+      "name": "Everett Meredith Middle School"
+    },
+    {
+      "dropped": 12,
+      "id": "way/548658379",
+      "kept": 0,
+      "name": "John M Clayton Elementary School"
+    },
+    {
+      "dropped": 8,
+      "id": "way/548658389",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 4,
+      "id": "way/548831965",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 5,
+      "id": "way/548833660",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 2,
+      "id": "way/552897155",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 4,
+      "id": "way/553467970",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/553657117",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 6,
+      "id": "way/669603465",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/677424048",
+      "kept": 0,
+      "name": "Linden Hill Elementary School"
+    },
+    {
+      "dropped": 9,
+      "id": "way/678494995",
+      "kept": 0,
+      "name": "P. S. Dupont Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/679049516",
+      "kept": 0,
+      "name": "Wilmington Christian School"
+    },
+    {
+      "dropped": 5,
+      "id": "way/679049519",
+      "kept": 0,
+      "name": "H. B. DuPont Middle School"
+    },
+    {
+      "dropped": 15,
+      "id": "way/679591502",
+      "kept": 0,
+      "name": "Sanford School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/682246887",
+      "kept": 0,
+      "name": "Brandywine Springs School"
+    },
+    {
+      "dropped": 12,
+      "id": "way/687218907",
+      "kept": 0,
+      "name": "Wilmington Friends School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/687868486",
+      "kept": 0,
+      "name": "Marbrook Elementary"
+    },
+    {
+      "dropped": 11,
+      "id": "way/697042838",
+      "kept": 0,
+      "name": "Salesianum School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/697208673",
+      "kept": 0,
+      "name": "Harlan Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/698953868",
+      "kept": 0,
+      "name": "Woodbridge Early Childhood Education Center"
+    },
+    {
+      "dropped": 12,
+      "id": "way/704407956",
+      "kept": 0,
+      "name": "Caravel Academy"
+    },
+    {
+      "dropped": 1,
+      "id": "way/715470798",
+      "kept": 0,
+      "name": "Lake Forest North Elementary"
+    },
+    {
+      "dropped": 1,
+      "id": "way/715761106",
+      "kept": 0,
+      "name": "Fred Fifer III Middle School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/715808018",
+      "kept": 0,
+      "name": "Central Middle School"
+    },
+    {
+      "dropped": 12,
+      "id": "way/716796258",
+      "kept": 0,
+      "name": "Tower Hill School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/716813609",
+      "kept": 0,
+      "name": "Alexis I. Dupont Middle School"
+    },
+    {
+      "dropped": 3,
+      "id": "way/716822687",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/716828105",
+      "kept": 0,
+      "name": "Paul W. Carleton Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/728410256",
+      "kept": 0,
+      "name": "North Star Elementary School"
+    },
+    {
+      "dropped": 9,
+      "id": "way/728417077",
+      "kept": 0,
+      "name": "The Independence School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/746273575",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 4,
+      "id": "way/753591572",
+      "kept": 0,
+      "name": "East Side Charter School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/753593406",
+      "kept": 0,
+      "name": "St. Edmond\u2019s Academy"
+    },
+    {
+      "dropped": 2,
+      "id": "way/764543495",
+      "kept": 0,
+      "name": ""
+    },
+    {
+      "dropped": 1,
+      "id": "way/783097733",
+      "kept": 0,
+      "name": "Woodbridge Middle School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/981053969",
+      "kept": 0,
+      "name": "Gunning Bedford Middle School"
+    },
+    {
+      "dropped": 4,
+      "id": "way/981054467",
+      "kept": 0,
+      "name": "Southern Elementary School"
+    },
+    {
+      "dropped": 1,
+      "id": "way/981056064",
+      "kept": 0,
+      "name": "Cedar Lane Elementary School"
+    },
+    {
+      "dropped": 2,
+      "id": "way/981058231",
+      "kept": 0,
+      "name": "Alfred G. Waters Middle School"
+    }
+  ],
+  "venues_after": 155
+}

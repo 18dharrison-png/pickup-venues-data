@@ -1,0 +1,29 @@
+padus: 101 invalid polygons repaired, 4 dropped
+  public areas: 361 (6 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 1371 courts/fields read -> 336 venues ({'known': 15, 'park': 267, 'school': 54}), 607 courts dropped
+  baseline (old rules, same extract): 522 venues
+  parks: 267, losing courts vs the old builder: 6 (2.25%)
+# 10 random KEPT (336 candidates)
+Powell High School	44.762724,-108.742089	school	way/192293014
+Baseball field	42.859802,-106.307443	park	way/1287607503
+Bicentennial Park	44.300582,-105.508078	park	way/267344913
+Baseball field	44.747053,-108.764083	park	way/901558941
+Beach Volleyball courts	43.674641,-110.997922	park	way/1089799975
+Burlington High School	44.451618,-108.434135	school	way/1179877153
+Highland Park	42.845129,-106.298461	park	way/469281841
+Baseball field	41.524196,-109.469968	park	way/1234957169
+Cahill Park	41.158415,-104.772599	park	way/234567329
+Saddle Ridge Park	41.150408,-104.728655	park	way/547334208
+
+# 10 random DROPPED (607 candidates)
+(unnamed)	43.582649,-110.833563	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	43.455722,-110.80114	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	43.025767,-108.394534	american_football	no public source places it in a park, public school or rec centre
+(unnamed)	41.504922,-109.459523	basketball	no public source places it in a park, public school or rec centre
+(unnamed)	44.230156,-105.426283	basketball	no public source places it in a park, public school or rec centre
+Sheridan County Fairgrounds	44.804664,-106.979648	running	no public source places it in a park, public school or rec centre
+Meeteetse Municipal Park	44.151246,-108.859702	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	42.843524,-106.328656	running	no public source places it in a park, public school or rec centre
+(unnamed)	42.918232,-110.999596	basketball	no public source places it in a park, public school or rec centre
+South Fork Basketball Court	41.079393,-104.804258	basketball	no public source places it in a park, public school or rec centre
+

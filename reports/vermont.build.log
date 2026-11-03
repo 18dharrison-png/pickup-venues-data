@@ -1,0 +1,29 @@
+padus: 124 invalid polygons repaired, 0 dropped
+  public areas: 157 (15 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 2038 courts/fields read -> 173 venues ({'known': 27, 'park': 105, 'school': 41}), 1468 courts dropped
+  baseline (old rules, same extract): 645 venues
+  parks: 105, losing courts vs the old builder: 3 (2.86%)
+# 10 random KEPT (173 candidates)
+Beach Volleyball courts	43.227059,-72.816251	known	way/287646198
+Tennis courts	44.184565,-72.502318	park	way/1207060670
+The Commons Park	43.299139,-72.4782	park	way/442972821
+Colchester High School	44.538971,-73.213034	school	way/889078138
+Twin Valley Middle High School	42.786418,-72.840291	school	way/1020063656
+Pickleball courts	43.621134,-72.350421	known	way/1052704226
+Whites Memorial Park	43.59967,-72.966316	park	way/570088762
+Baseball field	44.541867,-73.217745	park	way/1102429026
+Pearl Street Park	44.501842,-73.129967	park	way/379566615
+Randolph-Town Recreation Center	43.926533,-72.671801	park	way/723578457
+
+# 10 random DROPPED (1468 candidates)
+(unnamed)	43.631541,-72.793864	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	42.889875,-73.190636	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	44.555727,-72.48113	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	44.33949,-72.751475	baseball	inside a school site that is not a verified public high school
+(unnamed)	44.003127,-73.171124	soccer	no public source places it in a park, public school or rec centre
+(unnamed)	44.520726,-73.181143	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	44.936506,-72.375752	basketball	no public source places it in a park, public school or rec centre
+(unnamed)	44.733111,-73.112663	baseball	inside a school site that is not a verified public high school
+(unnamed)	44.533964,-72.983642	baseball	tagged access=private and not in a public park or school
+(unnamed)	44.186775,-72.817142	tennis	no public source places it in a park, public school or rec centre
+

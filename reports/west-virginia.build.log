@@ -1,0 +1,29 @@
+padus: 105 invalid polygons repaired, 0 dropped
+  public areas: 480 (24 verified by operator/owner, 0 unmeasured)
+filtered.osm.pbf: 2847 courts/fields read -> 409 venues ({'known': 47, 'park': 295, 'school': 67}), 1522 courts dropped
+  baseline (old rules, same extract): 996 venues
+  parks: 295, losing courts vs the old builder: 1 (0.34%)
+# 10 random KEPT (409 candidates)
+Tennis courts	39.503087,-78.298949	park	way/1474837253
+Bancroft Baseball Park	38.511669,-81.842067	park	way/1120021041
+Bridge Park	40.073549,-80.736768	park	way/311212158
+Melvin M Heiskell Field	39.641568,-78.76912	park	way/675940128
+Pratt Field	38.220884,-80.548852	park	relation/19675739
+Mathias Community Center	38.877071,-78.86881	park	way/1027492554
+McClelland Park	38.435647,-82.405995	park	way/473690578
+Basketball courts	38.667694,-80.352638	park	way/1069086397
+Baseball field	39.37518,-80.344088	park	way/256902406
+Tennis courts	38.116379,-80.117295	park	way/553809832
+
+# 10 random DROPPED (1522 candidates)
+(unnamed)	40.160469,-80.602868	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	37.776639,-80.461012	running	no public source places it in a park, public school or rec centre
+Braxton County High School Field	38.684897,-80.656495	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	39.475262,-79.073856	baseball	inside a school site that is not a verified public high school
+(unnamed)	38.962617,-80.236728	baseball	no public source places it in a park, public school or rec centre
+Morgan County Tennis Courts	39.630605,-78.204344	tennis	inside a school site that is not a verified public high school
+(unnamed)	40.277087,-80.612416	basketball	inside a school site that is not a verified public high school
+Lions Club Sports Park	38.279642,-82.107681	american_football	no public source places it in a park, public school or rec centre
+(unnamed)	39.275475,-80.395692	baseball	no public source places it in a park, public school or rec centre
+(unnamed)	38.99225,-80.215553	baseball	no public source places it in a park, public school or rec centre
+

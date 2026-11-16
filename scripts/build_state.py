@@ -54,6 +54,19 @@ RUNNING_TRACK_SPORTS = {"", "running", "athletics", "jogging", "multi"}
 PARK_CELL = 0.01      # spatial index cell for parks, in degrees (~1 km)
 MERGE_SNAP = 0.0008   # unnamed courts closer than ~80 m become one venue
 
+# A park's pin is its polygon centroid, which for a big park lands in the middle
+# of the ground rather than on the courts: Lincoln Park sat 204 m from its
+# pitches, Peck Park 172 m, Debs 180 m, Rio de los Angeles 100 m. Above this size
+# the pin moves to the centroid of the park's own pitches (weighted by how many
+# there are at each), and the park's name stays, so the pin lands on the courts
+# while the place keeps the name a player recognises.
+LARGE_PARK_M2 = 200_000.0
+
+# Two venues with the same name, a shared sport and pins this close are one
+# place: Del Rey Lagoon carries four separate "Beach Volleyball courts" pins for
+# one stretch of sand.
+SAME_NAME_MERGE_M = 150.0
+
 
 def sports_of(tags):
     leisure = tags.get("leisure", "")
@@ -262,6 +275,91 @@ def read(path, keep_private=False):
     return col
 
 
+def metres(lat1, lon1, lat2, lon2):
+    """Approximate distance in metres between two points (equirectangular)."""
+    dlon = (lon1 - lon2) * math.cos(math.radians((lat1 + lat2) / 2))
+    return math.hypot(dlon, lat1 - lat2) * 111_320.0
+
+
+def ring_area_m2(rings):
+    """Planar area of the rings in square metres, with longitude scaled."""
+    if not rings:
+        return 0.0
+    lat = sum(p[1] for r in rings for p in r) / sum(len(r) for r in rings)
+    scale = math.cos(math.radians(lat))
+    total = 0.0
+    for ring in rings:
+        area = 0.0
+        for i in range(len(ring)):
+            x0, y0 = ring[i]
+            x1, y1 = ring[(i + 1) % len(ring)]
+            area += x0 * y1 - x1 * y0
+        total += abs(area) / 2.0
+    return total * 111_320.0 * 111_320.0 * scale
+
+
+def pins_centroid(members):
+    """Centroid of a park's pitches, weighted by pitch count.
+
+    Each pitch counts once no matter how many sports it carries: a park with one
+    soccer field and five tennis courts should pin on the group of courts, not
+    split the difference.
+    """
+    if not members:
+        return None
+    lon = sum(m["lon"] for m in members) / len(members)
+    lat = sum(m["lat"] for m in members) / len(members)
+    return (lon, lat)
+
+
+def merge_same_name(venues, limit_m=SAME_NAME_MERGE_M):
+    """Collapse duplicate pins for one place: same name, shared sport, close by.
+
+    The builder groups courts by park, but a beach or a rec centre split into
+    several small OSM ways arrives as several venues with the same name. They are
+    merged into the first one (lowest id, so the result is stable) with the sport
+    counts added, and a lit court anywhere keeps the pin lit.
+    """
+    merged = []
+    taken = [False] * len(venues)
+    for i, venue in enumerate(venues):
+        if taken[i]:
+            continue
+        name = " ".join(str(venue.get("n") or "").lower().split())
+        if not name:
+            # Unnamed clusters were already merged by cluster() at MERGE_SNAP, so
+            # two separate ones are separate places: never merge on an empty
+            # name, or every anonymous pair of tennis courts in a park becomes
+            # one venue with double the courts.
+            merged.append(venue)
+            continue
+        counts = dict(venue.get("s") or {})
+        lit = venue.get("lt")
+        for j in range(i + 1, len(venues)):
+            if taken[j]:
+                continue
+            other = venues[j]
+            if " ".join(str(other.get("n") or "").lower().split()) != name:
+                continue
+            if not (set(counts) & set(other.get("s") or {})):
+                continue
+            if metres(venue["la"], venue["lo"], other["la"], other["lo"]) > limit_m:
+                continue
+            for sport, count in (other.get("s") or {}).items():
+                counts[sport] = counts.get(sport, 0) + count
+            if lit is not True:
+                lit = other.get("lt", lit)
+            taken[j] = True
+        if taken[i]:
+            continue
+        venue = dict(venue)
+        venue["s"] = dict(sorted(counts.items(), key=lambda kv: (-kv[1], kv[0])))
+        if lit is not None:
+            venue["lt"] = lit
+        merged.append(venue)
+    return merged
+
+
 def park_for(pitch, index):
     cx = math.floor(pitch["lon"] / PARK_CELL)
     cy = math.floor(pitch["lat"] / PARK_CELL)
@@ -403,6 +501,12 @@ def group(col, keep_restricted=False):
     for pid, members in in_park.items():
         park = parks_by_id[pid]
         lon, lat = park["centroid"]
+        # A big park's centroid is in the middle of the ground, not on the
+        # courts; pin it on its pitches instead and keep the park's name.
+        if ring_area_m2(park["rings"]) >= LARGE_PARK_M2:
+            placed = pins_centroid(members)
+            if placed is not None:
+                lon, lat = placed
         name = park["name"] or next((m["name"] for m in members if m["name"]), None)
         address = park["address"] or next((m["address"] for m in members if m["address"]), None)
         v = venue(pid, name, lon, lat, members, address)
@@ -420,6 +524,7 @@ def group(col, keep_restricted=False):
         v = venue(first["id"], None, lon, lat, members, address)
         if v:
             venues.append(v)
+    venues = merge_same_name(venues)
     venues.sort(key=lambda v: v["id"])
     return venues
 

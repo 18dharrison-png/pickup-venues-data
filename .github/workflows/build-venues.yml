@@ -7,6 +7,11 @@ on:
         description: 'States to build: "california", "all", or a list like "texas, new-york"'
         required: true
         default: california
+      dry_run:
+        description: 'Build, check and upload the artifacts, but do not publish (no data push, no Pages deploy)'
+        type: choice
+        options: ['false', 'true']
+        default: 'false'
   schedule:
     # Monthly refresh of every state (3rd of the month, 09:17 UTC).
     - cron: "17 9 3 * *"
@@ -65,6 +70,11 @@ jobs:
           # shapely only: PAD-US comes from the ArcGIS service as GeoJSON, so no
           # GDAL/geopandas is needed, which keeps the job fast and free.
           pip install --quiet "osmium>=4,<5" "shapely>=2,<3"
+
+      - name: Run the unit tests
+        # Synthetic fixtures only: no extract, no PAD-US, no network. They cover
+        # the merge rules a build cannot show you one park at a time.
+        run: python -m unittest discover -s tests -v
 
       - name: Cache NCES school data
         uses: actions/cache@v4
@@ -166,6 +176,32 @@ jobs:
             --report "out/california.report.json" 2>&1 | tee "out/california.checks.txt"
           exit "${PIPESTATUS[0]}"
 
+      - name: Los Angeles before and after counts
+        # The audit compared the published cells against the city's lists, so a
+        # rebuild has to answer the same question. "Before" is the state file on
+        # the data branch, i.e. what players see today.
+        if: matrix.state == 'california'
+        run: |
+          set +e
+          BEFORE=""
+          if git ls-remote --exit-code --heads origin data >/dev/null 2>&1; then
+            git fetch --depth 1 origin data
+            git show FETCH_HEAD:states/california.ndjson.gz > out/before.ndjson.gz
+            BEFORE="--before out/before.ndjson.gz"
+          fi
+          python scripts/la_counts.py $BEFORE \
+            --after "out/california.ndjson.gz" \
+            --out "out/california.la-counts.json" 2>&1 | tee "out/california.la-counts.md"
+
+      - name: Probe OSM for the audited parks
+        # Overpass is not reachable from every network, so the diagnosis reads the
+        # extract this job already downloaded (filtered, so a few MB, not 1.3 GB).
+        if: matrix.state == 'california'
+        run: |
+          set +e
+          python scripts/osm_probe.py --pbf filtered.osm.pbf \
+            --out "out/california.osm-probe.json" 2>&1 | tee "out/california.osm-probe.txt"
+
       - name: Build report
         if: always()
         run: |
@@ -175,6 +211,8 @@ jobs:
             cat "out/${{ matrix.state }}.report.json" 2>/dev/null || echo "no report"
             echo '```'
             cat "out/${{ matrix.state }}.samples.txt" 2>/dev/null || true
+            echo
+            cat "out/${{ matrix.state }}.la-counts.md" 2>/dev/null || true
           } >> "$GITHUB_STEP_SUMMARY"
 
       - uses: actions/upload-artifact@v4
@@ -188,7 +226,9 @@ jobs:
   publish:
     needs: [plan, state]
     # Publish whatever states succeeded, even if a few failed.
-    if: ${{ always() && needs.plan.result == 'success' }}
+    # A dry run never publishes: it exists so the artifacts can be read before
+    # anybody force-pushes the data branch.
+    if: ${{ always() && needs.plan.result == 'success' && github.event.inputs.dry_run != 'true' }}
     runs-on: ubuntu-latest
     environment:
       name: github-pages

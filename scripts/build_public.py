@@ -30,6 +30,7 @@ import sys
 from collections import Counter, defaultdict
 
 import build_state
+import pickleball_overlay
 import public_filter
 
 
@@ -39,6 +40,8 @@ def parse_args(argv):
     parser.add_argument("dest", help="output .ndjson.gz")
     parser.add_argument("--padus-geojson", required=True,
                         help="public PAD-US polygons from fetch_padus.py")
+    parser.add_argument("--pickleball",
+                        help="documented city pickleball sites (data/pickleball/<state>.json)")
     parser.add_argument("--schools", help="NCES CCD school directory zip (grades)")
     parser.add_argument("--school-locations", help="NCES EDGE public school locations CSV")
     parser.add_argument("--baseline", action="store_true",
@@ -227,6 +230,17 @@ def main(argv=None):
 
     venues.sort(key=lambda venue: venue["id"])
 
+    # Pickleball after every OSM rule: the city's own list fills in the hybrid
+    # courts OSM tags as tennis, and a venue that already carries an explicit
+    # pickleball count from OSM is left exactly as it is.
+    pickleball_stats = {"osm": 0, "merged": 0, "added": 0, "skipped": 0}
+    pickleball_source = None
+    if args.pickleball:
+        entries, pickleball_source = pickleball_overlay.load(args.pickleball)
+        venues, pickleball_stats = pickleball_overlay.apply(venues, entries)
+        print("  " + pickleball_overlay.describe(pickleball_stats, pickleball_source))
+        venues.sort(key=lambda venue: venue["id"])
+
     os.makedirs(os.path.dirname(args.dest) or ".", exist_ok=True)
     with gzip.open(args.dest, "wt", encoding="utf-8") as handle:
         for venue in venues:
@@ -298,6 +312,13 @@ def main(argv=None):
                 "public_areas": len(public_areas),
                 "park_courts": park_courts,
                 "schools_9_12": len(schools),
+                "pickleball": {
+                    "source": pickleball_source,
+                    "merged": pickleball_stats.get("merged", 0),
+                    "added": pickleball_stats.get("added", 0),
+                    "left_to_osm": pickleball_stats.get("osm", 0),
+                    "added_names": pickleball_stats.get("added_names", []),
+                },
                 "dropped": len(dropped),
                 "dropped_by_reason": dict(by_reason.most_common()),
             }, handle, indent=2, sort_keys=True)

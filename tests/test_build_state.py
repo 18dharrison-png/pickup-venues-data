@@ -211,7 +211,10 @@ class SportsCentreTest(unittest.TestCase):
         self.assertEqual(venues[0]["n"], "North Venice Little League")
         self.assertEqual(venues[0]["s"], {"baseball": 2})
 
-    def test_a_court_of_another_sport_outside_the_fence_stays_its_own_pin(self):
+    def test_a_court_of_another_sport_in_the_same_cluster_joins_the_centre(self):
+        # The tennis court is in the same 80 m cluster as the diamond, and a
+        # cluster of unnamed courts is one venue. Which sport it is does not
+        # make it a second place.
         col = build_state.Collector(keep_private=True)
         col.add("way", 907145142,
                 {"leisure": "sports_centre", "name": "North Venice Little League",
@@ -224,7 +227,60 @@ class SportsCentreTest(unittest.TestCase):
 
         venues = build_state.group(col, keep_restricted=True)
 
-        self.assertEqual(len(venues), 2, "tennis courts next door are not the little league")
+        self.assertEqual(len(venues), 1)
+        self.assertEqual(venues[0]["n"], "North Venice Little League")
+        self.assertEqual(venues[0]["s"], {"baseball": 1, "tennis": 1})
+
+    def test_a_court_far_from_the_centre_is_its_own_pin(self):
+        # 500 m away and outside the fence: not this centre's court.
+        col = build_state.Collector(keep_private=True)
+        col.add("way", 907145142,
+                {"leisure": "sports_centre", "name": "North Venice Little League",
+                 "sport": "baseball"},
+                rings=square(34.0, -118.0, 0.001))
+        col.add("way", 1, {"leisure": "pitch", "sport": "baseball"},
+                rings=square(34.0002, -118.0, 0.0002))
+        col.add("way", 2, {"leisure": "pitch", "sport": "tennis"},
+                rings=square(34.0067, -118.0, 0.0002))
+
+        self.assertEqual(len(build_state.group(col, keep_restricted=True)), 2)
+
+    def test_a_cluster_is_never_split_by_a_centre(self):
+        # Nineteen soccer pitches within 80 m of each other, one of them inside
+        # the centre: the facility is one pin, not a centre pin plus a stray.
+        col = build_state.Collector(keep_private=True)
+        col.add("way", 192169647,
+                {"leisure": "sports_centre", "name": "Hjelte Sports Center",
+                 "sport": "soccer"},
+                rings=square(34.0, -118.0, 0.0015))
+        for i in range(19):
+            lat = 33.9996 + i * 0.00030
+            col.add("way", 9000 + i, {"leisure": "pitch", "sport": "soccer"},
+                    rings=square(lat, -118.0, 0.0002))
+
+        venues = build_state.group(col, keep_restricted=True)
+
+        self.assertEqual(len(venues), 1, "one complex, one pin")
+        self.assertEqual(venues[0]["s"], {"soccer": 19})
+
+    def test_a_centre_inside_a_park_adds_no_second_pin(self):
+        # Sepulveda Basin holds a sports complex. The park already counts those
+        # diamonds; the centre's own tag must not become another pin.
+        col = build_state.Collector(keep_private=True)
+        col.add("way", 1, {"leisure": "park", "name": "Sepulveda Basin Recreation Area"},
+                rings=square(34.0, -118.0, 0.01))
+        col.add("way", 135245342,
+                {"leisure": "sports_centre", "name": "Sepulveda Basin Sports Complex",
+                 "sport": "baseball; soccer"},
+                rings=square(34.002, -118.002, 0.001))
+        col.add("way", 10, {"leisure": "pitch", "sport": "baseball"},
+                rings=square(34.0015, -118.0015, 0.0002))
+
+        venues = build_state.group(col, keep_restricted=True)
+
+        self.assertEqual(len(venues), 1, "the park is the pin")
+        self.assertEqual(venues[0]["n"], "Sepulveda Basin Recreation Area")
+        self.assertEqual(venues[0]["s"], {"baseball": 1})
 
     def test_a_centre_with_no_drawn_courts_falls_back_to_its_own_tag(self):
         col = build_state.Collector(keep_private=True)
@@ -239,17 +295,19 @@ class SportsCentreTest(unittest.TestCase):
         self.assertEqual(venues[0]["n"], "Pan Pacific Recreation Center")
         self.assertEqual(venues[0]["s"], {"pickleball": 1})
 
-    def test_a_park_next_to_a_centre_keeps_its_own_courts(self):
+    def test_a_park_and_a_centre_beside_it_keep_their_own_courts(self):
+        # The centre is outside the park, so it is its own place with its own
+        # court; the park keeps the court drawn in the park.
         col = build_state.Collector(keep_private=True)
         col.add("way", 1, {"leisure": "park", "name": "Mar Vista Park"},
-                rings=square(34.0, -118.0, 0.006))
+                rings=square(34.0, -118.0, 0.002))
         col.add("way", 2, {"leisure": "sports_centre", "name": "Mar Vista Recreation Center",
                             "sport": "basketball"},
-                rings=square(34.0015, -118.0, 0.001))
+                rings=square(34.0, -117.996, 0.001))
         col.add("way", 10, {"leisure": "pitch", "sport": "tennis"},
-                rings=square(33.9985, -118.0, 0.0003))
+                rings=square(34.0, -118.0004, 0.0003))
         col.add("way", 11, {"leisure": "pitch", "sport": "basketball"},
-                rings=square(34.0015, -117.9998, 0.0002))
+                rings=square(34.0, -117.9964, 0.0002))
 
         venues = build_state.group(col, keep_restricted=True)
         by_name = {venue["n"]: venue["s"] for venue in venues}

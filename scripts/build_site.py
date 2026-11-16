@@ -42,6 +42,13 @@ def main():
     per_state = {}
     for path in files:
         state = os.path.basename(path).removesuffix(".ndjson.gz")
+        # The before/after counts step leaves the state published before this
+        # build in the same folder as before.ndjson.gz. It is a comparison
+        # baseline, not a state: it sorts first, and the de-duplication below
+        # keeps the first record seen, so letting it in would publish the
+        # previous build's venues and drop everything this build added.
+        if state == "before":
+            continue
         count = 0
         with gzip.open(path, "rt", encoding="utf-8") as f:
             for line in f:

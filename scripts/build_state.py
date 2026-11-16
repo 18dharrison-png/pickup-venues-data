@@ -319,6 +319,7 @@ def read(path, keep_private=False):
             if rings:
                 kind = "way" if obj.from_way() else "relation"
                 col.add(kind, obj.orig_id(), tags, rings=rings)
+    col.parks = merge_park_polygons(col.parks)
     return col
 
 
@@ -525,16 +526,19 @@ def group(col, keep_restricted=False):
 
     A sports centre is a place, not one court. Its own `sport` tag is a
     fallback for when OSM has not drawn the courts inside it; when it has, those
-    pitches are the count. Without this, one facility published twice — the
+    pitches are the count, and a centre nested in a park adds nothing (the park
+    already counts its courts). Without this, one facility published twice — the
     centre as one court, and a separate "Baseball field" pin holding the real
     diamonds (North Venice Little League, Eastview, Bishop Canyon, Bad News
     Bears, Glendale Sports Complex).
     """
     centres = {c["id"]: c for c in col.centres}
-    index = build_index(col.parks + list(centres.values()))
+    park_index = build_index(col.parks)
+    centre_index = build_index(list(centres.values()))
     restricted_index = build_index(col.restricted)
 
     in_park = defaultdict(list)
+    centre_members = defaultdict(list)
     loose_named = []
     unnamed = []
     centre_pitch = {}
@@ -543,54 +547,55 @@ def group(col, keep_restricted=False):
             # Decided below: its pitches are the count, or its tag is.
             centre_pitch[p["id"]] = p
             continue
-        park = park_for(p, index)
+        park = park_for(p, park_index)
         if (not keep_restricted and park is None
                 and p["access"] not in OPEN_ACCESS and park_for(p, restricted_index)):
             col.dropped_private += 1
             continue
         if park is not None:
             in_park[park["id"]].append(p)
-        elif p["name"]:
+            continue
+        owner = park_for(p, centre_index)
+        if owner is not None and p["name"]:
+            centre_members[owner["id"]].append(p)
+            continue
+        if p["name"]:
             loose_named.append(p)
         else:
             unnamed.append(p)
+
+    # Unnamed courts become one venue before ownership is decided, so a centre
+    # takes the whole group or none of it. Taking them one at a time split a
+    # nineteen-pitch soccer complex into a centre pin and one stray
+    # "Soccer field" beside it, which is the duplicate this is meant to remove.
+    loose_unnamed = []
+    for members in cluster(unnamed):
+        tally = Counter()
+        for member in members:
+            owner = park_for(member, centre_index)
+            if owner is not None:
+                tally[owner["id"]] += 1
+        if tally:
+            best = sorted(tally.items(), key=lambda kv: (-kv[1], kv[0]))[0][0]
+            centre_members[best].extend(members)
+        else:
+            loose_unnamed.append(members)
+
     for cid, pitch in centre_pitch.items():
-        if in_park.get(cid):
-            continue  # the courts drawn inside it are the count
+        if centre_members.get(cid):
+            in_park[cid] = centre_members[cid]
+            continue
+        parent = park_for({"lon": pitch["lon"], "lat": pitch["lat"]}, park_index)
+        if parent is not None and in_park.get(parent["id"]):
+            # Its courts already count under the park; a second pin at the
+            # centre would be the same facility twice.
+            continue
         if any(point_in_ring(pitch["lon"], pitch["lat"], ring) for ring in centres[cid]["rings"]):
             in_park[cid].append(pitch)  # fallback: the centre's own sport tag
         elif pitch["name"]:
             loose_named.append(pitch)
         else:
-            unnamed.append(pitch)
-
-    # A sports centre's complex usually has a court or two drawn just outside
-    # its fence line. An unnamed court within MERGE_SNAP of one the centre
-    # already holds, sharing its sport, is that centre's court: the same rule
-    # that makes neighbouring unnamed courts one venue. North Venice Little
-    # League keeps its three diamonds this way instead of publishing a second
-    # "Baseball field" pin beside it.
-    for cid, pitch in centre_pitch.items():
-        owned = [m for m in in_park.get(cid, ()) if m["id"] != cid]
-        if not owned:
-            continue
-        keep = []
-        for other in unnamed:
-            nearest = None
-            for member in owned:
-                if not (set(member["sports"]) & set(other["sports"])):
-                    continue
-                distance = metres(member["lat"], member["lon"], other["lat"], other["lon"])
-                if distance <= MERGE_SNAP * 111_320 and (nearest is None or distance < nearest):
-                    nearest = distance
-            if nearest is None:
-                keep.append(other)
-            else:
-                owned.append(other)
-                in_park[cid].append(other)
-        unnamed = keep
-
-    loose_unnamed = cluster(unnamed)
+            loose_unnamed.append([pitch])
 
     parks_by_id = {p["id"]: p for p in col.parks}
     parks_by_id.update(centres)

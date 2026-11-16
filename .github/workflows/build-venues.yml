@@ -147,6 +147,12 @@ jobs:
           if [ "${{ matrix.state }}" = "california" ]; then
             SAMPLE="--sample-bbox=-118.65,33.85,-118.15,34.25"
           fi
+          # Documented city-run facilities OSM cannot see. The file is optional:
+          # a state with no list builds exactly as it did before.
+          PICKLEBALL=""
+          if [ -f "data/pickleball/${{ matrix.state }}.json" ]; then
+            PICKLEBALL="--pickleball data/pickleball/${{ matrix.state }}.json"
+          fi
           set +e
           # tee so a crash is readable later: the Actions log needs a GitHub
           # sign-in, but out/ is published with the data.
@@ -158,7 +164,7 @@ jobs:
             --report "out/${{ matrix.state }}.report.json" \
             --dropped "out/${{ matrix.state }}.dropped.jsonl" \
             --sample "out/${{ matrix.state }}.samples.txt" \
-            $SAMPLE 2>&1 | tee "out/${{ matrix.state }}.build.log"
+            $SAMPLE $PICKLEBALL 2>&1 | tee "out/${{ matrix.state }}.build.log"
           exit "${PIPESTATUS[0]}"
 
       - name: Check the Los Angeles cases

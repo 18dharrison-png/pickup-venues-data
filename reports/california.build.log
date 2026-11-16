@@ -1,0 +1,30 @@
+padus: 1407 invalid polygons repaired, 3 dropped
+  public areas: 10796 (428 verified by operator/owner, 0 unmeasured)
+  pickleball overlay (LA Recreation & Parks pickleball list (laparks.org/pickleball), read 16 November 2026): 7 merged into a venue, 0 new site(s), 2 left to OSM
+filtered.osm.pbf: 66579 courts/fields read -> 6611 venues ({'known': 543, 'park': 5013, 'school': 1055}), 38589 courts dropped
+  baseline (old rules, same extract): 15883 venues
+  parks: 5013, losing courts vs the old builder: 91 (1.82%)
+# 10 random KEPT (549 candidates)
+Veterans Memorial Park	33.975912,-118.176302	park	way/420437752
+Wabash Recreation Center	34.051049,-118.197892	park	way/202918569
+Beach Volleyball courts	33.975342,-118.464081	park	way/482874679
+Clover Park	34.016041,-118.456247	park	way/113485888
+Holly Park	33.923098,-118.315975	park	way/136689355
+Soccer field	34.009789,-118.488438	park	way/986570811
+Baseball field	33.978013,-118.429985	park	way/150095064
+Rosewood Park	34.002622,-118.155274	park	way/461759932
+Basketball courts	34.154952,-118.323264	park	way/1210501571
+Tennis courts	33.89924,-118.389899	park	way/796228304
+
+# 10 random DROPPED (3549 candidates)
+(unnamed)	34.196991,-118.232548	golf	no public source places it in a park, public school or rec centre
+(unnamed)	34.058292,-118.296293	soccer	inside a school site that is not a verified public high school
+(unnamed)	34.084745,-118.45605	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	33.986009,-118.420313	basketball	inside a school site that is not a verified public high school
+(unnamed)	33.957175,-118.428058	american_football	inside a school site that is not a verified public high school
+(unnamed)	34.075722,-118.419963	tennis	tagged access=no and not in a public park or school
+(unnamed)	34.081162,-118.417295	tennis	no public source places it in a park, public school or rec centre
+(unnamed)	34.084279,-118.442694	tennis	tagged access=private and not in a public park or school
+(unnamed)	34.183558,-118.297369	basketball	no public source places it in a park, public school or rec centre
+(unnamed)	33.864236,-118.36411	basketball	inside a school site that is not a verified public high school
+

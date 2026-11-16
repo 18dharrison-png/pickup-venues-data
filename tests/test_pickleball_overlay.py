@@ -173,11 +173,16 @@ class ShippedDataTest(unittest.TestCase):
         slugs = [overlay.slug(entry["name"]) for entry in self.entries]
         self.assertEqual(len(slugs), len(set(slugs)), slugs)
 
-    def test_the_two_corrected_coordinates_stay_corrected(self):
-        # The list's street addresses geocode kilometres away from the courts.
+    def test_the_corrected_coordinates_stay_corrected(self):
+        # The list's street addresses geocode 1.5-4 km from the courts, which
+        # put a pin on the wrong hillside (Park Center) or in another district
+        # (Westchester, Peck).
         by_name = {entry["name"]: entry for entry in self.entries}
         self.assertAlmostEqual(by_name["Westchester Courts"]["lat"], 33.95823, places=5)
         self.assertAlmostEqual(by_name["Peck Park Community Center"]["lon"], -118.30417, places=5)
+        # Park Center: the four tennis courts at way/1491866543, not the address.
+        self.assertAlmostEqual(by_name["Park Center, Griffith Park"]["lat"], 34.133228, places=5)
+        self.assertAlmostEqual(by_name["Park Center, Griffith Park"]["lon"], -118.282872, places=5)
 
 
 if __name__ == "__main__":

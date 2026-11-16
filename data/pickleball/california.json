@@ -4,7 +4,7 @@
   "source": "LA Recreation & Parks pickleball list (laparks.org/pickleball), read 16 November 2026",
   "notes": [
     "hybrid = a tennis court with pickleball lines painted on it; dedicated = pickleball only.",
-    "Coordinates are the site's own location, except the two marked correction, where the list's address geocoded kilometres away and the coordinates come from the OSM park the city means.",
+    "Coordinates are the courts themselves, not the postal address: three sites are marked correction because their published address geocoded 1.5-4 km away, and for those the coordinates come from the OSM courts or park the city means.",
     "OSM wins: a venue that already carries an explicit OSM pickleball count is never changed by this file."
   ],
   "sites": [
@@ -63,7 +63,7 @@
       "courts": 4,
       "kind": "hybrid",
       "lit": true,
-      "note": "the list counts 2 dedicated + 2 hybrid here; the overlay carries the total"
+      "note": "the list counts 2 dedicated + 2 hybrid here; the overlay carries the total. Deliberately left at OSM's count: Chatsworth Park South already carries an explicit pickleball count from OSM (1), and the rule is that a mapped court beats a list. Its notebook entry stays as a reminder that the city says 4; change the rule, not this row, if the list should win."
     },
     {
       "name": "Algin Sutton Recreation Center",
@@ -84,10 +84,11 @@
     {
       "name": "Park Center, Griffith Park",
       "address": "4730 Crystal Springs Dr, Los Angeles",
-      "lat": 34.140604,
-      "lon": -118.2965112,
+      "lat": 34.133228,
+      "lon": -118.282872,
       "courts": 4,
-      "kind": "hybrid"
+      "kind": "hybrid",
+      "note": "correction: the published address geocodes to Griffith Park Boys Camp, 1.5 km west of the courts and far enough away that the site became a second pin. These coordinates are the four tennis courts themselves (way/1491866543), so the site merges into that venue instead of adding a pin on the wrong hillside."
     }
   ]
 }

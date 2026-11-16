@@ -104,6 +104,22 @@ class NearParkTest(unittest.TestCase):
         self.assertEqual(venues[0]["n"], "Live Oak Park")
         self.assertEqual(venues[0]["s"], {"tennis": 1})
 
+    def test_a_tennis_centre_beside_the_park_joins_it(self):
+        col = build_state.Collector(keep_private=True)
+        col.add("way", 1, {"leisure": "park", "name": "Orange Grove Park"},
+                rings=square(34.0, -118.0, 0.002))
+        # OSM often maps a park's tennis courts as a sports centre a few metres
+        # outside the park polygon with no pitches drawn inside it.
+        col.add("way", 2, {"leisure": "sports_centre", "sport": "tennis"},
+                rings=square(north(34.0, 191), -118.0, 0.0004))
+        col.pitches[-1]["attach_park"] = "way/1"
+
+        venues = build_state.group(col, keep_restricted=True)
+
+        self.assertEqual(len(venues), 1, "the centre's pin folds into the park")
+        self.assertEqual(venues[0]["id"], "way/1")
+        self.assertEqual(venues[0]["s"], {"tennis": 1})
+
     def test_a_private_club_beside_a_park_is_not_rescued(self):
         point = (-118.0, north(34.0, 191))
         club = area("way/9", "Sunset Tennis Club", point[1], point[0], 0.0004)

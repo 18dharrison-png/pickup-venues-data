@@ -600,6 +600,16 @@ def group(col, keep_restricted=False):
         if centre_members.get(cid):
             in_park[cid] = centre_members[cid]
             continue
+        attached = pitch.get("attach_park")
+        if attached is not None and attached in park_ids and attached != cid:
+            # A centre with no drawn courts, standing just outside a park, is
+            # that park's facility: OSM often maps a park's tennis courts as
+            # `leisure=sports_centre, sport=tennis` a few metres outside the
+            # park polygon rather than as pitches inside it. The public builder
+            # marks it for the park, and its own pin disappears — otherwise it
+            # published as "Tennis courts" beside "Orange Grove Park".
+            in_park[attached].append(pitch)
+            continue
         parent = park_for({"lon": pitch["lon"], "lat": pitch["lat"]}, park_index)
         if parent is not None and in_park.get(parent["id"]):
             # Its courts already count under the park; a second pin at the

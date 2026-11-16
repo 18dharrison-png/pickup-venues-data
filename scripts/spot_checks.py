@@ -92,6 +92,17 @@ CASES = {
          "report_min": "parks_verified_by_agency", "min": 1},
         {"label": "kept parks keep the courts the old builder gave them",
          "report": "park_courts", "max_rate": 0.02},
+        # One park drawn as two OSM polygons published as two pins, each
+        # counting only its own half (same name, same gnis:feature_id, 29 m
+        # apart). `count` is the guard: the park must be exactly one venue.
+        {"label": "Heartwell Park is one pin holding both halves' diamonds",
+         "name": "heartwell park", "count": 1, "min_counts": {"baseball": 10}},
+        # A sports centre counted its own sport tag *and* the diamonds drawn
+        # inside it, so the little league published as baseball 1 + softball 1
+        # on one pin and a separate "Baseball field" pin metres away.
+        {"label": "North Venice Little League is one pin, not a second court pin",
+         "name": "north venice little league", "count": 1, "radius": 100,
+         "no_generic_near": 80},
     ],
 }
 
@@ -158,6 +169,11 @@ def describe(item, key="n"):
     return f"{name} ({item.get('v', 'dropped')}) {item['la']},{item['lo']} {item['id']}"
 
 
+GENERIC_COURT_NAMES = ("tennis courts", "basketball courts", "baseball field",
+                       "pickleball courts", "soccer field", "volleyball courts",
+                       "beach volleyball courts", "softball field", "multi-use field")
+
+
 def check_named(case, venues):
     """A venue matched by name must exist with the expected verdict and courts.
 
@@ -165,6 +181,11 @@ def check_named(case, venues):
     least that many courts of it, which is how a park quietly losing most of its
     fields shows up. Counts are summed over every venue the name matches, since
     a big recreation area is often several OSM parks.
+
+    `count` is the opposite guard: the name must match exactly that many venues,
+    which is how one place published twice shows up. `no_generic_near` fails when
+    an un-named court pin ("Baseball field", "Tennis courts") stands within that
+    many metres of the venue — the second half of the double count.
     """
     wanted = case["name"].lower()
     found = [v for v in venues if wanted in (v.get("n") or "").lower()]
@@ -178,15 +199,34 @@ def check_named(case, venues):
     short = [(sport, want, counts.get(sport, 0))
              for sport, want in (case.get("min_counts") or {}).items()
              if counts.get(sport, 0) < want]
-    ok = bool(found) and not missing and not short
+    count_ok = True
+    if "count" in case:
+        count_ok = len(found) == case["count"]
+    strays = []
+    if case.get("no_generic_near") and found:
+        radius = case["no_generic_near"]
+        for other in venues:
+            if other in found:
+                continue
+            name = (other.get("n") or "").lower()
+            if not any(name.startswith(g) for g in GENERIC_COURT_NAMES):
+                continue
+            if any(metres((venue["la"], venue["lo"]), (other["la"], other["lo"])) <= radius
+                   for venue in found):
+                strays.append(describe(other))
+    ok = bool(found) and not missing and not short and count_ok and not strays
     detail = describe(found[0]) if found else "no venue with that name"
     if found:
         detail += " | " + ", ".join(f"{sport} {count}" for sport, count in sorted(counts.items()))
+    if "count" in case:
+        detail += f" | {len(found)} venue(s) with that name (want {case['count']})"
     if missing:
         detail += f" | missing sports: {', '.join(missing)}"
     if short:
         detail += " | short: " + ", ".join(
             f"{sport} {have} of {want}" for sport, want, have in short)
+    if strays:
+        detail += " | duplicate court pin nearby: " + "; ".join(strays)
     return ok, detail
 
 

@@ -1,0 +1,93 @@
+{
+  "format": 1,
+  "state": "california",
+  "source": "LA Recreation & Parks pickleball list (laparks.org/pickleball), read 16 November 2026",
+  "notes": [
+    "hybrid = a tennis court with pickleball lines painted on it; dedicated = pickleball only.",
+    "Coordinates are the site's own location, except the two marked correction, where the list's address geocoded kilometres away and the coordinates come from the OSM park the city means.",
+    "OSM wins: a venue that already carries an explicit OSM pickleball count is never changed by this file."
+  ],
+  "sites": [
+    {
+      "name": "Balboa Courts",
+      "address": "17015 Burbank Blvd, Encino",
+      "lat": 34.1723096,
+      "lon": -118.5035858,
+      "courts": 8,
+      "kind": "dedicated",
+      "lit": true
+    },
+    {
+      "name": "Van Nuys/Sherman Oaks Courts",
+      "address": "14201 Huston St, Sherman Oaks",
+      "lat": 34.159501,
+      "lon": -118.442297,
+      "courts": 4,
+      "kind": "hybrid",
+      "lit": true
+    },
+    {
+      "name": "Westchester Courts",
+      "address": "7000 W. Manchester Ave, Westchester",
+      "lat": 33.95823,
+      "lon": -118.41534,
+      "courts": 8,
+      "kind": "hybrid",
+      "lit": true,
+      "note": "correction: the address geocodes 4 km away in South Central; these are the Westchester Park tennis courts (way/22729526)"
+    },
+    {
+      "name": "Westwood Courts",
+      "address": "1350 S. Sepulveda Blvd, Westwood",
+      "lat": 34.0532353,
+      "lon": -118.448078,
+      "courts": 8,
+      "kind": "hybrid",
+      "lit": true
+    },
+    {
+      "name": "Peck Park Community Center",
+      "address": "560 N. Western Ave, San Pedro",
+      "lat": 33.75004,
+      "lon": -118.30417,
+      "courts": 8,
+      "kind": "dedicated",
+      "lit": true,
+      "note": "correction: the street address geocodes 3 km north; these are the Peck Park tennis courts (way/136641845)"
+    },
+    {
+      "name": "Chatsworth Recreation Center",
+      "address": "22360 Devonshire St, Chatsworth",
+      "lat": 34.2610421,
+      "lon": -118.6174117,
+      "courts": 4,
+      "kind": "hybrid",
+      "lit": true,
+      "note": "the list counts 2 dedicated + 2 hybrid here; the overlay carries the total"
+    },
+    {
+      "name": "Algin Sutton Recreation Center",
+      "address": "8800 S. Hoover St, South LA",
+      "lat": 33.957833,
+      "lon": -118.286859,
+      "courts": 1,
+      "kind": "dedicated"
+    },
+    {
+      "name": "Venice Beach Recreation Center",
+      "address": "1800 Ocean Front Walk, Venice",
+      "lat": 33.98567,
+      "lon": -118.472727,
+      "courts": 3,
+      "kind": "hybrid"
+    },
+    {
+      "name": "Park Center, Griffith Park",
+      "address": "4730 Crystal Springs Dr, Los Angeles",
+      "lat": 34.140604,
+      "lon": -118.2965112,
+      "courts": 4,
+      "kind": "hybrid"
+    }
+  ]
+}

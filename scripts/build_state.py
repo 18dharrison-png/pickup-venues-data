@@ -180,12 +180,59 @@ def polygon(kind, osm_id, tags, rings):
         # a club or a golf course. Not written to the published files.
         "amenity": tags.get("amenity"),
         "leisure": tags.get("leisure"),
+        # Stable identifiers, used to recognise one park drawn as several
+        # polygons (see merge_park_polygons).
+        "gnis": tags.get("gnis:feature_id"),
+        "ref": tags.get("ref"),
         # Who runs the place, when OSM says. The public builder uses these to
         # verify a park PAD-US has no polygon for.
         "operator": tags.get("operator"),
         "owner": tags.get("owner"),
         "ownership": tags.get("ownership"),
     }
+
+
+def merge_park_polygons(parks):
+    """One park drawn as several polygons is still one park.
+
+    Heartwell Park is two `leisure=park` ways carrying the same name and the
+    same `gnis:feature_id`, split where a path crosses it 29 m apart. They
+    published as two venues, so the park got two pins and each pin counted only
+    the diamonds inside its own half. The published file carries no tags, so
+    the join has to happen here, while the tags are still in hand.
+
+    Only objects that name the same feature are joined: a shared GNIS id (or a
+    shared `ref`) *and* the same name. Two different parks that happen to share
+    a name have different ids and stay apart.
+    """
+    keyed = {}
+    unkeyed = []
+    for park in parks:
+        key = None
+        for tag in ("gnis", "ref"):
+            value = park.get(tag)
+            if value:
+                name = " ".join(str(park.get("name") or "").lower().split())
+                key = (tag, str(value), name)
+                break
+        if key is None:
+            unkeyed.append(park)
+        else:
+            keyed.setdefault(key, []).append(park)
+    merged = list(unkeyed)
+    for members in keyed.values():
+        if len(members) == 1:
+            merged.append(members[0])
+            continue
+        rings = [ring for member in members for ring in member["rings"]]
+        xs = [p[0] for ring in rings for p in ring]
+        ys = [p[1] for ring in rings for p in ring]
+        first = dict(members[0])
+        first["rings"] = rings
+        first["bbox"] = (min(xs), min(ys), max(xs), max(ys))
+        first["centroid"] = ring_centroid(max(rings, key=len))
+        merged.append(first)
+    return merged
 
 
 class Collector:
@@ -475,14 +522,27 @@ def group(col, keep_restricted=False):
     keep_restricted=True keeps courts that sit inside a school/club area even
     when the court is tagged private. The public-only builder decides those
     cases itself (a public school campus is a legitimate place to play).
+
+    A sports centre is a place, not one court. Its own `sport` tag is a
+    fallback for when OSM has not drawn the courts inside it; when it has, those
+    pitches are the count. Without this, one facility published twice — the
+    centre as one court, and a separate "Baseball field" pin holding the real
+    diamonds (North Venice Little League, Eastview, Bishop Canyon, Bad News
+    Bears, Glendale Sports Complex).
     """
-    index = build_index(col.parks)
+    centres = {c["id"]: c for c in col.centres}
+    index = build_index(col.parks + list(centres.values()))
     restricted_index = build_index(col.restricted)
 
     in_park = defaultdict(list)
     loose_named = []
     unnamed = []
+    centre_pitch = {}
     for p in col.pitches:
+        if p["id"] in centres:
+            # Decided below: its pitches are the count, or its tag is.
+            centre_pitch[p["id"]] = p
+            continue
         park = park_for(p, index)
         if (not keep_restricted and park is None
                 and p["access"] not in OPEN_ACCESS and park_for(p, restricted_index)):
@@ -494,9 +554,46 @@ def group(col, keep_restricted=False):
             loose_named.append(p)
         else:
             unnamed.append(p)
+    for cid, pitch in centre_pitch.items():
+        if in_park.get(cid):
+            continue  # the courts drawn inside it are the count
+        if any(point_in_ring(pitch["lon"], pitch["lat"], ring) for ring in centres[cid]["rings"]):
+            in_park[cid].append(pitch)  # fallback: the centre's own sport tag
+        elif pitch["name"]:
+            loose_named.append(pitch)
+        else:
+            unnamed.append(pitch)
+
+    # A sports centre's complex usually has a court or two drawn just outside
+    # its fence line. An unnamed court within MERGE_SNAP of one the centre
+    # already holds, sharing its sport, is that centre's court: the same rule
+    # that makes neighbouring unnamed courts one venue. North Venice Little
+    # League keeps its three diamonds this way instead of publishing a second
+    # "Baseball field" pin beside it.
+    for cid, pitch in centre_pitch.items():
+        owned = [m for m in in_park.get(cid, ()) if m["id"] != cid]
+        if not owned:
+            continue
+        keep = []
+        for other in unnamed:
+            nearest = None
+            for member in owned:
+                if not (set(member["sports"]) & set(other["sports"])):
+                    continue
+                distance = metres(member["lat"], member["lon"], other["lat"], other["lon"])
+                if distance <= MERGE_SNAP * 111_320 and (nearest is None or distance < nearest):
+                    nearest = distance
+            if nearest is None:
+                keep.append(other)
+            else:
+                owned.append(other)
+                in_park[cid].append(other)
+        unnamed = keep
+
     loose_unnamed = cluster(unnamed)
 
     parks_by_id = {p["id"]: p for p in col.parks}
+    parks_by_id.update(centres)
     venues = []
     for pid, members in in_park.items():
         park = parks_by_id[pid]

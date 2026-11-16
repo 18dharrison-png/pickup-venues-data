@@ -95,8 +95,11 @@ jobs:
           fi
 
       - name: Download ${{ matrix.state }} from Geofabrik
+        # --retry-connrefused matters: Geofabrik intermittently refuses the
+        # connection from a runner's address, and plain --retry does not retry
+        # that (exit code 7) — it killed two runs here in ten minutes.
         run: |
-          curl -fsSL --retry 5 --retry-delay 30 -o in.osm.pbf \
+          curl -fsSL --retry 8 --retry-delay 15 --retry-connrefused -o in.osm.pbf \
             "https://download.geofabrik.de/north-america/us/${{ matrix.state }}-latest.osm.pbf"
           ls -lh in.osm.pbf
 

@@ -38,7 +38,9 @@ WATCHED = [
     ("Algin Sutton Recreation Center", 33.9578, -118.2869, 400),
     ("Venice Beach Recreation Center", 33.9857, -118.4727, 500),
     ("Chatsworth Park South", 34.2610, -118.6174, 700),
-    ("Park Center, Griffith Park", 34.1406, -118.2965, 800),
+    # The courts, not the 4730 Crystal Springs Dr address: that address sits at
+    # Griffith Park Boys Camp, 1.5 km from the four tennis courts.
+    ("Park Center, Griffith Park", 34.133228, -118.282872, 500),
 ]
 
 

@@ -153,6 +153,20 @@ NEAR_PUBLIC_M = 150
 # sport and stays.
 GOLF_SPORTS = {"golf"}
 
+# Public ground that is not a place to play. A golf course, a cemetery, a nature
+# preserve, a wildlife refuge or conservation land is open land, but a court
+# standing beside it does not belong to it: folding the court into that pin gives
+# a tennis centre a wildlife refuge's name. Santa Barbara's municipal tennis and
+# pickleball centre published as 27 courts under "Andrée Clark Bird Refuge", the
+# `leisure=park` polygon 100 m away, until this list existed. Such a court now
+# keeps a pin of its own (and is still dropped if nothing proves it public).
+NOT_A_PLAY_AREA_WORDS = (
+    "golf", "cemetery", "graveyard", "columbarium", "memorial gardens",
+    "nature preserve", "nature reserve", "preserve", "reserve", "refuge",
+    "sanctuary", "conservation", "open space", "openspace", "wildlife",
+    "ecological", "land trust", "greenbelt", "habitat",
+)
+
 # Words that identify a school. Generic ones can't prove two records are the
 # same place ("... High School" and "... Elementary" share only generic words),
 # and neither can a school *type* — "Thomas Russell Middle School" and "Milpitas
@@ -368,12 +382,16 @@ def inside(index, point):
     return found[0] if found else None
 
 
-def nearby(index, point, limit_m=NEAR_PUBLIC_M):
+def nearby(index, point, limit_m=NEAR_PUBLIC_M, accept=None):
     """The nearest indexed area within `limit_m` of `point`, or None.
 
     Distance is measured from the polygon, not its centroid, so a court beside a
     long thin park is near the park it is beside. A point inside an area counts
     as distance zero, so an inside hit always wins.
+
+    `accept`, when given, is asked about each candidate and can skip it: the
+    near-public rule uses it to pass over a golf course, cemetery or nature
+    preserve, which are public ground but not places to play.
 
     One STRtree query over the point's own neighbourhood, then a real distance
     test only for the candidates it returns: the same cheap pattern the coverage
@@ -395,6 +413,8 @@ def nearby(index, point, limit_m=NEAR_PUBLIC_M):
         candidates = range(len(items))
     for position in candidates:
         item = items[position]
+        if accept is not None and not accept(item):
+            continue
         try:
             if item["geom"].covers(probe):
                 return item
@@ -580,6 +600,24 @@ def public_coverage(geom, index):
     return sum(covered_points(tree, items, points)) / len(points)
 
 
+def is_play_area(item):
+    """True when a public area is a place to play, not a preserve or a cemetery.
+
+    The near-public rule folds a court standing outside a public park into that
+    park's pin, so the area has to be somewhere a game happens. A golf course,
+    cemetery, nature preserve, refuge, open-space or conservation parcel is
+    public ground and still refuses the fold: the court keeps a pin of its own,
+    named for itself, and the preserve keeps its own name.
+
+    An unnamed area passes. PAD-US has already verified it as public land, and
+    most city parks in the files carry no name at all.
+    """
+    lowered = normalise((item or {}).get("name"))
+    if not lowered:
+        return True
+    return not any(word in lowered for word in NOT_A_PLAY_AREA_WORDS)
+
+
 def is_private_name(name):
     """True when a name says club, HOA, apartments, hotel, a chain gym...
 
@@ -740,7 +778,10 @@ def classify(point, context):
     pin counting both. Two things stop that becoming a licence: the court must
     not stand in an excluded area (a club, private school, golf course, a
     commercial name) and it must not be tagged access=private/customers/members.
-    Golf is never rescued at all — a driving range is not a pickup court.
+    Golf is never rescued at all — a driving range is not a pickup court — and a
+    public area that is not a place to play (golf course, cemetery, nature
+    preserve, open space or conservation land) never takes the court: it keeps a
+    pin of its own rather than a refuge's name.
 
     After that, a field is a public place on its own proof: access=yes (or the
     other open values), or an operator/owner naming a city, county, park district
@@ -789,7 +830,7 @@ def classify(point, context):
     # and the point of this rule is that it is the park's court. PAD-US still
     # decides a court that is near no park at all.
     if context.get("allow_near", True) and inside(context.get("excluded"), point) is None:
-        target = nearby(context.get("public_areas"), point)
+        target = nearby(context.get("public_areas"), point, accept=is_play_area)
         if target is not None:
             return decision(
                 "park",

@@ -9,7 +9,8 @@ is kept when it stands within NEAR_PUBLIC_M of a verified public park or public
 high-school campus, is not tagged access=private/customers/members, and is not
 inside a club, private school, golf course or commercial facility. A court kept
 that way joins the park's pin (build_state.group reads the attach id), and golf
-is never rescued.
+is never rescued. A public area that is not a place to play — golf course,
+cemetery, nature preserve, open space, conservation land — never takes it.
 """
 import os
 import sys
@@ -143,6 +144,36 @@ class NearParkTest(unittest.TestCase):
 
         self.assertIsNone(decided["verdict"], "a driving range is not a pickup court")
         self.assertIn("golf", decided["reason"])
+
+    def test_a_court_beside_a_nature_refuge_is_not_folded_into_it(self):
+        refuge = area("way/30", "Andrée Clark Bird Refuge", 34.0, -118.0, 0.002)
+        decided = public_filter.classify(
+            (-118.0, north(34.0, 191)), {**context(parks=[refuge]), **facts(sports=("tennis",))})
+
+        self.assertIsNone(decided["attach"], "a refuge is public ground, not a place to play")
+        self.assertNotIn("Refuge", decided["reason"])
+
+    def test_golf_cemetery_preserve_and_open_space_refuse_the_fold(self):
+        for name in ("Elings Park Golf Course", "Sunset Cemetery",
+                     "San Elijo Lagoon Preserve", "Laguna Coast Open Space",
+                     "Yolo Bypass Wildlife Area", "Greenbelt Conservation Land"):
+            with self.subTest(name=name):
+                parcel = area("way/31", name, 34.0, -118.0, 0.002)
+                decided = public_filter.classify(
+                    (-118.0, north(34.0, 191)), {**context(parks=[parcel]), **facts()})
+
+                self.assertIsNone(decided["attach"], name)
+
+    def test_ordinary_parks_still_take_their_court(self):
+        # The exclusion list must not swallow a park that merely shares a word.
+        for name in ("Reservoir Park", "Memorial Park", "Refugio Park",
+                     "Live Oak Park"):
+            with self.subTest(name=name):
+                park = area("way/32", name, 34.0, -118.0, 0.002)
+                decided = public_filter.classify(
+                    (-118.0, north(34.0, 191)), {**context(parks=[park]), **facts()})
+
+                self.assertEqual(decided["attach"], "way/32", name)
 
     def test_a_standalone_court_with_a_public_operator_is_kept(self):
         decided = public_filter.classify(

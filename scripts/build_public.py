@@ -140,6 +140,17 @@ def main(argv=None):
             public_areas.append({**item, "verdict": "known"})
     public_area_index = public_filter.build_index(public_areas)
     park_index = public_filter.build_index(park_items)
+
+    # A court drawn just outside a park or campus is kept when it is within
+    # NEAR_PUBLIC_M of one (public_filter.classify). A club, private school or
+    # golf course next door must not borrow that proof, so the areas that are
+    # not public places are indexed too: OSM restricted areas (school, college,
+    # golf course, club) plus any park or centre whose name says club, HOA,
+    # apartments or a chain gym.
+    private_named = [item for item in park_items + items_of(collector.centres)
+                     if public_filter.is_private_name(item["name"])]
+    excluded_index = public_filter.build_index(items_of(collector.restricted) + private_named)
+    campus_index = public_filter.build_index(campuses)
     print(f"  public areas: {len(public_areas)} "
           f"({agency_parks} verified by operator/owner, {unmeasured_parks} unmeasured)")
 
@@ -155,25 +166,32 @@ def main(argv=None):
     settled = {
         "padus": padus,
         "campuses_by_id": campuses_by_id,
+        "campus_index": campus_index,
         "school_areas": school_area_index,
         "osm_parks": park_index,
         "public_areas": public_area_index,
+        "excluded": excluded_index,
     }
     before = len(collector.pitches)
     kept, dropped = [], []
     school_members = defaultdict(list)
     school_details = {}
+    nearby_kept = []
 
     for pitch in collector.pitches:
         point = (pitch["lon"], pitch["lat"])
         park = public_filter.inside(park_index, point)
-        verdict, reason, campus = public_filter.classify(point, {
+        facts = {
             **settled,
             "name": (park or {}).get("name") or pitch["name"],
             "sports": pitch["sports"],
             "access": pitch["access"],
             "leisure": pitch.get("leisure") or "",
-        })
+            "operator": pitch.get("operator") or "",
+            "owner": pitch.get("owner") or "",
+        }
+        decided = public_filter.classify(point, facts)
+        verdict, reason, campus = decided["verdict"], decided["reason"], decided["campus"]
 
         # Count against every unproven school site the court sits in, so a
         # campus nested inside a district parcel is still reported.
@@ -191,6 +209,17 @@ def main(argv=None):
             })
             continue
         pitch["v"] = verdict
+        if decided["attach"]:
+            # group() puts a pitch carrying this on the named park's pin, so a
+            # court just outside the fence counts under the park, not beside it.
+            pitch["attach_park"] = decided["attach"]
+        if decided["near"]:
+            nearby_kept.append({
+                "id": pitch["id"], "name": pitch["name"],
+                "lat": round(pitch["lat"], 6), "lon": round(pitch["lon"], 6),
+                "sports": sorted(pitch["sports"]), "verdict": verdict,
+                "reason": reason, "attached_to": decided["attach"],
+            })
         if verdict == "school":
             school_members[campus["id"]].append(pitch)
             school_details[campus["id"]] = campus
@@ -209,13 +238,14 @@ def main(argv=None):
         if park["id"] in labels:
             continue
         # A park is judged on its own ground; a school site inside it doesn't
-        # change what the park is.
-        verdict, _, _ = public_filter.classify(park["centroid"], {
+        # change what the park is. The near rule is off here: a park's own
+        # label must not come from the park next door.
+        decided = public_filter.classify(park["centroid"], {
             **settled, "school_areas": None, "name": park["name"], "sports": (),
-            "access": "", "leisure": "park",
+            "access": "", "leisure": "park", "allow_near": False,
         })
-        if verdict:
-            labels[park["id"]] = verdict
+        if decided["verdict"]:
+            labels[park["id"]] = decided["verdict"]
     for venue in venues:
         venue["v"] = labels.get(venue["id"], "known")
 
@@ -250,6 +280,8 @@ def main(argv=None):
     by_reason = Counter(item["reason"] for item in dropped)
     print(f"{args.source}: {before} courts/fields read -> {len(venues)} venues "
           f"({dict(sorted(by_verdict.items()))}), {len(dropped)} courts dropped")
+    print(f"  courts just outside a public park or school: {len(nearby_kept)} kept "
+          f"(within {public_filter.NEAR_PUBLIC_M} m)")
 
     baseline_venues = build_state.group(build_state.read(args.source)) if args.baseline else []
     baseline = len(baseline_venues) if args.baseline else None
@@ -312,6 +344,11 @@ def main(argv=None):
                 "public_areas": len(public_areas),
                 "park_courts": park_courts,
                 "schools_9_12": len(schools),
+                "nearby_public": {
+                    "limit_m": public_filter.NEAR_PUBLIC_M,
+                    "count": len(nearby_kept),
+                    "courts": nearby_kept,
+                },
                 "pickleball": {
                     "source": pickleball_source,
                     "merged": pickleball_stats.get("merged", 0),

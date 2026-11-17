@@ -282,6 +282,11 @@ class Collector:
             "address": address_of(tags),
             "access": access,
             "leisure": leisure,
+            # Who runs the field, when OSM says. The public builder keeps a
+            # standalone court whose operator is a city, county or school
+            # district, so these travel with the pitch.
+            "operator": tags.get("operator"),
+            "owner": tags.get("owner"),
         })
 
 
@@ -533,6 +538,8 @@ def group(col, keep_restricted=False):
     Bears, Glendale Sports Complex).
     """
     centres = {c["id"]: c for c in col.centres}
+    park_ids = ({park["id"] for park in col.parks}
+                | {centre["id"] for centre in col.centres})
     park_index = build_index(col.parks)
     centre_index = build_index(list(centres.values()))
     restricted_index = build_index(col.restricted)
@@ -554,6 +561,14 @@ def group(col, keep_restricted=False):
             continue
         if park is not None:
             in_park[park["id"]].append(p)
+            continue
+        attached = p.get("attach_park")
+        if attached is not None and attached in park_ids:
+            # A court drawn just outside the fence its park is drawn with (the
+            # public builder sets this after checking it is within
+            # NEAR_PUBLIC_M of a verified public park). It belongs to that
+            # park's pin, not a second pin of its own.
+            in_park[attached].append(p)
             continue
         owner = park_for(p, centre_index)
         if owner is not None and p["name"]:
@@ -584,6 +599,16 @@ def group(col, keep_restricted=False):
     for cid, pitch in centre_pitch.items():
         if centre_members.get(cid):
             in_park[cid] = centre_members[cid]
+            continue
+        attached = pitch.get("attach_park")
+        if attached is not None and attached in park_ids and attached != cid:
+            # A centre with no drawn courts, standing just outside a park, is
+            # that park's facility: OSM often maps a park's tennis courts as
+            # `leisure=sports_centre, sport=tennis` a few metres outside the
+            # park polygon rather than as pitches inside it. The public builder
+            # marks it for the park, and its own pin disappears — otherwise it
+            # published as "Tennis courts" beside "Orange Grove Park".
+            in_park[attached].append(pitch)
             continue
         parent = park_for({"lon": pitch["lon"], "lat": pitch["lat"]}, park_index)
         if parent is not None and in_park.get(parent["id"]):

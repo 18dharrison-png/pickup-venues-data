@@ -103,6 +103,17 @@ CASES = {
         {"label": "North Venice Little League is one pin, not a second court pin",
          "name": "north venice little league", "count": 1, "radius": 100,
          "no_generic_near": 80},
+        # A court drawn outside its park's polygon used to be a pin of its own
+        # beside the park's pin. It now joins the park, so the stray pin is gone
+        # and the park's counts grow instead.
+        {"label": "no stray \"Tennis courts\" pin beside Live Oak Park",
+         "name": "live oak park", "no_generic_near": 150},
+        {"label": "no stray \"Tennis courts\" pin beside Orange Grove Park",
+         "name": "orange grove park", "no_generic_near": 150},
+        # The rule has to fire somewhere in a state this size, or it is not wired
+        # in at all: the build report lists every court it attached.
+        {"label": "courts just outside a park or school are attached, not dropped",
+         "report_count": "nearby_public", "min": 1},
     ],
 }
 
@@ -269,6 +280,15 @@ def main(argv):
     failures = 0
     print(f"{args.state}: {len(venues)} kept venues, {len(dropped)} dropped courts")
     for case in CASES[args.state]:
+        if "report_count" in case:
+            block = (report or {}).get(case["report_count"]) or {}
+            value = block.get("count")
+            want = case.get("min", 1)
+            ok = isinstance(value, int) and value >= want
+            failures += 0 if ok else 1
+            print(f"{'PASS' if ok else 'FAIL'}  {case['label']}: "
+                  f"{case['report_count']}.count = {value} (need at least {want})")
+            continue
         if "report_min" in case:
             value = (report or {}).get(case["report_min"])
             want = case.get("min", 1)

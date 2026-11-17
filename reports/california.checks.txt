@@ -1,0 +1,27 @@
+california: 6611 kept venues, 38596 dropped courts
+PASS  way/1317683670 unverified 'Basketball courts' near Rancho Park: not kept (1 courts dropped here)
+PASS  Reed Park, Santa Monica: Reed Park (park) 34.022498,-118.49582 way/42425869
+PASS  Penmar Recreation Center: Penmar Recreation Center (park) 34.006159,-118.457272 way/113486300
+PASS  Venice Beach courts: Beach Volleyball courts (park) 34.038524,-118.543019 way/1423555996
+PASS  Pan Pacific Park: Pan Pacific Park (park) 34.073141,-118.354812 way/40236272
+PASS  Rancho Park site (OSM: Cheviot Hills Recreation Center): Cheviot Hills Recreation Center (park) 34.045673,-118.409217 way/24655760
+PASS  Venice High School (public, grades 9-12): Venice High School (school) 33.997028,-118.443458 way/256666157  [1 kept within 400 m]
+PASS  Palisades Charter High School (public, grades 9-12): Palisades Charter High School (school) 34.047249,-118.531476 way/22988371  [1 kept within 400 m]
+PASS  Fairfax High School (public, grades 9-12): Fairfax Senior High School (school) 34.082062,-118.359897 way/296061094  [1 kept within 400 m]
+PASS  Hamilton High School (public, grades 9-12): Alexander Hamilton High School (school) 34.034147,-118.391648 way/264358516  [1 kept within 400 m]
+PASS  Loyola High School (private: must stay out): Loyola High School of Los Angeles kept 0, dropped 3
+PASS  Wildwood School (private, Mar Vista: must stay out): Wildwood School kept 0, dropped 1
+PASS  Grand View Boulevard Elementary (must not be a school): Grand View Boulevard Elementary School kept 0, dropped 4
+PASS  Fairfax Senior High football/baseball fields are the school: Fairfax Senior High School (school) 34.082062,-118.359897 way/296061094 | american_football 1, baseball 2, basketball 3, running 1, tennis 6
+PASS  Palms Park keeps basketball and baseball: Palms Park (park) 34.033555,-118.41739 way/443668572 | baseball 1, basketball 1
+PASS  Sepulveda Basin keeps at least 30 baseball fields: Sepulveda Basin Recreation Area (park) 34.175372,-118.498631 relation/12015677 | baseball 35, basketball 1, golf 20, skateboard 1, soccer 2
+PASS  Arroyo Vista Park tennis/baseball courts stay out (privately owned SAMLARC park): not kept (7 courts dropped here)
+PASS  Westlake Village Park basketball/baseball courts stay out (no operator tag, 0% PAD-US): not kept (3 courts dropped here)
+PASS  parks are verified by an agency operator, not only by PAD-US: parks_verified_by_agency = 428 (need at least 1)
+PASS  kept parks keep the courts the old builder gave them: 91 of 5013 parks (1.82%, limit 2%) lost courts; e.g. Soccer field 1/19, Bob Kildee Community Park 6/14, Basketball courts 1/7
+PASS  Heartwell Park is one pin holding both halves' diamonds: Heartwell Park (park) 33.831185,-118.115831 way/27207050 | baseball 15, basketball 1, soccer 1, tennis 1 | 1 venue(s) with that name (want 1)
+PASS  North Venice Little League is one pin, not a second court pin: North Venice Little League (park) 34.014699,-118.439851 way/907145142 | baseball 3 | 1 venue(s) with that name (want 1)
+PASS  no elementary/middle school is labelled a school
+
+school venues in california: 1055
+all cases as expected

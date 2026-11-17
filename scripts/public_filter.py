@@ -147,6 +147,15 @@ CAMPUS_TOLERANCE_M = 30
 # high-school campus now joins that place.
 NEAR_PUBLIC_M = 150
 
+# A court nobody has tagged is where the private ones hide: the tennis courts
+# behind the condos are rarely tagged access=private, they are simply drawn on
+# the estate's ground. So an untagged court only joins a park's pin when it is
+# close to the fence — 50 m — while a court tagged access=yes/permissive/public
+# may be the full NEAR_PUBLIC_M out. Virginia Robinson Gardens' ten tennis
+# courts, Coldwater Canyon Park's nine and Admiralty Park's ten were untagged
+# and far enough out to be their own facilities' courts, not the park's.
+NEAR_PUBLIC_UNTAGGED_M = 50
+
 # Golf is not a pickup court: a driving range or a golf course is a business
 # with a tee sheet, not a place a stranger turns up to play. Excluded from the
 # near-public rule and from having a pin of its own. Disc golf is a different
@@ -165,7 +174,24 @@ NOT_A_PLAY_AREA_WORDS = (
     "nature preserve", "nature reserve", "preserve", "reserve", "refuge",
     "sanctuary", "conservation", "open space", "openspace", "wildlife",
     "ecological", "land trust", "greenbelt", "habitat",
+    # Gardens and estates: a botanical garden or a historic estate is open
+    # ground with a gate, not a park with courts. "gardens" is plural on
+    # purpose — Garden Grove Park and Garden Park are ordinary city parks.
+    "gardens", "botanical", "arboretum", "estate", "manor", "mansion",
+    "historic site", "historic house",
 )
+
+# Words a court may be named by and still be the park's own court rather than a
+# facility of its own: "Tennis courts", "Soccer field", "Multi-use court". A
+# name that is nothing but these words is generic, so it folds into the park.
+GENERIC_COURT_WORDS = {
+    "tennis", "basketball", "baseball", "softball", "soccer", "football",
+    "pickleball", "volleyball", "beach", "handball", "padel", "paddle",
+    "racquetball", "squash", "badminton", "netball", "lacrosse", "hockey",
+    "cricket", "bocce", "rugby", "skate", "skateboard", "courts", "court",
+    "fields", "field", "pitches", "pitch", "multi", "use", "multiuse",
+    "area", "areas", "play", "playground", "recreation", "the", "and", "of",
+}
 
 # Words that identify a school. Generic ones can't prove two records are the
 # same place ("... High School" and "... Elementary" share only generic words),
@@ -605,9 +631,9 @@ def is_play_area(item):
 
     The near-public rule folds a court standing outside a public park into that
     park's pin, so the area has to be somewhere a game happens. A golf course,
-    cemetery, nature preserve, refuge, open-space or conservation parcel is
-    public ground and still refuses the fold: the court keeps a pin of its own,
-    named for itself, and the preserve keeps its own name.
+    cemetery, nature preserve, refuge, garden, estate, open-space or conservation
+    parcel is public ground and still refuses the fold: the court keeps a pin of
+    its own, named for itself, and the preserve keeps its own name.
 
     An unnamed area passes. PAD-US has already verified it as public land, and
     most city parks in the files carry no name at all.
@@ -616,6 +642,21 @@ def is_play_area(item):
     if not lowered:
         return True
     return not any(word in lowered for word in NOT_A_PLAY_AREA_WORDS)
+
+
+def is_generic_court_name(name):
+    """A name that says what the court is, not which place it is.
+
+    "Tennis courts" and "Baseball field" belong to the park beside them; "Venice
+    Skate Park" and "Municipal Tennis and Pickleball Center" are facilities of
+    their own and keep their own pin. Only a name made entirely of court words
+    is generic, so "Venice Skate Park" is not ("park" is not a court word) while
+    "Tennis Courts" is.
+    """
+    words = [word for word in re.split(r"[^a-z0-9]+", normalise(name)) if word]
+    if not words:
+        return True
+    return all(word in GENERIC_COURT_WORDS for word in words)
 
 
 def is_private_name(name):
@@ -777,11 +818,18 @@ def classify(point, context):
     "Live Oak Park" and the "Tennis courts" 105 m outside its fence become one
     pin counting both. Two things stop that becoming a licence: the court must
     not stand in an excluded area (a club, private school, golf course, a
-    commercial name) and it must not be tagged access=private/customers/members.
+    commercial name, residential land, an apartment or hotel building, a garden
+    or an estate) and it must not be tagged access=private/customers/members.
     Golf is never rescued at all — a driving range is not a pickup court — and a
     public area that is not a place to play (golf course, cemetery, nature
-    preserve, open space or conservation land) never takes the court: it keeps a
-    pin of its own rather than a refuge's name.
+    preserve, garden, estate, open space or conservation land) never takes the
+    court: it keeps a pin of its own rather than a refuge's name.
+
+    Two further limits keep the private courts out. An untagged court has to be
+    within NEAR_PUBLIC_UNTAGGED_M of the park's edge, because the courts behind
+    the condos carry no access tag at all; a court tagged open may be the full
+    distance out. And a court with a name of its own is a facility, not the
+    park's court, so it keeps its own pin.
 
     After that, a field is a public place on its own proof: access=yes (or the
     other open values), or an operator/owner naming a city, county, park district
@@ -830,12 +878,20 @@ def classify(point, context):
     # and the point of this rule is that it is the park's court. PAD-US still
     # decides a court that is near no park at all.
     if context.get("allow_near", True) and inside(context.get("excluded"), point) is None:
-        target = nearby(context.get("public_areas"), point, accept=is_play_area)
-        if target is not None:
-            return decision(
-                "park",
-                f"just outside {target['name'] or 'a public park'} (within {NEAR_PUBLIC_M} m)",
-                attach=target["id"], near=True)
+        # An untagged court only counts as the park's when it is close to the
+        # fence; one tagged open may be the full distance out.
+        limit = NEAR_PUBLIC_M if access in OPEN_ACCESS else NEAR_PUBLIC_UNTAGGED_M
+        # A court with a name of its own is a facility rather than the park's
+        # court — Venice Skate Park is not the boardwalk's — so only an unnamed
+        # or generically named court folds into the park beside it.
+        if is_generic_court_name(name):
+            target = nearby(context.get("public_areas"), point, limit_m=limit,
+                            accept=is_play_area)
+            if target is not None:
+                return decision(
+                    "park",
+                    f"just outside {target['name'] or 'a public park'} (within {limit} m)",
+                    attach=target["id"], near=True)
         campus = nearby(context.get("campus_index"), point)
         if campus is not None:
             return decision(

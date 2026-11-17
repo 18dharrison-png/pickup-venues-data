@@ -149,9 +149,17 @@ def main(argv=None):
     # apartments or a chain gym.
     private_named = [item for item in park_items + items_of(collector.centres)
                      if public_filter.is_private_name(item["name"])]
-    excluded_index = public_filter.build_index(items_of(collector.restricted) + private_named)
+    # Private ground too: a residential subdivision, an apartment or hotel
+    # building, a hotel's grounds, a private garden or a historic estate. A court
+    # standing on any of it never joins the park beside it — the condo courts
+    # behind a park fence are the residents' courts, and they usually carry no
+    # access tag at all.
+    private_ground = items_of(collector.private_land)
+    excluded_index = public_filter.build_index(
+        items_of(collector.restricted) + private_named + private_ground)
     campus_index = public_filter.build_index(campuses)
-    print(f"  public areas: {len(public_areas)} "
+    print(f"  private ground: {len(private_ground)} areas, "
+          f"{len(public_areas)} public areas "
           f"({agency_parks} verified by operator/owner, {unmeasured_parks} unmeasured)")
 
     # School areas that are NOT proven public (private schools, elementary and
@@ -226,6 +234,20 @@ def main(argv=None):
         else:
             kept.append(pitch)
 
+    # One facility drawn as many pitches under one name is one place. Some of its
+    # pitches can fall inside a park polygon and some outside, which published
+    # the facility twice: six pickleball courts counted under the bird refuge and
+    # the rest under the centre's own name. A non-generic name shared by two or
+    # more pitches marks the whole set as a facility of its own, so group() keeps
+    # them together and out of the park.
+    facility_names = Counter(
+        public_filter.normalise(pitch["name"]) for pitch in kept
+        if pitch["name"] and not public_filter.is_generic_court_name(pitch["name"]))
+    for pitch in kept:
+        name = public_filter.normalise(pitch["name"])
+        if name and facility_names[name] > 1:
+            pitch["own_facility"] = True
+
     collector.pitches = kept
     venues = build_state.group(collector, keep_restricted=True)
 
@@ -281,7 +303,7 @@ def main(argv=None):
     print(f"{args.source}: {before} courts/fields read -> {len(venues)} venues "
           f"({dict(sorted(by_verdict.items()))}), {len(dropped)} courts dropped")
     print(f"  courts just outside a public park or school: {len(nearby_kept)} kept "
-          f"(within {public_filter.NEAR_PUBLIC_M} m)")
+          f"(within {public_filter.NEAR_PUBLIC_M} m, {public_filter.NEAR_PUBLIC_UNTAGGED_M} m untagged)")
 
     baseline_venues = build_state.group(build_state.read(args.source)) if args.baseline else []
     baseline = len(baseline_venues) if args.baseline else None
@@ -342,10 +364,12 @@ def main(argv=None):
                 "parks_unmeasured": unmeasured_parks,
                 "parks_verified_by_agency": agency_parks,
                 "public_areas": len(public_areas),
+                "private_ground_areas": len(private_ground),
                 "park_courts": park_courts,
                 "schools_9_12": len(schools),
                 "nearby_public": {
                     "limit_m": public_filter.NEAR_PUBLIC_M,
+                    "untagged_limit_m": public_filter.NEAR_PUBLIC_UNTAGGED_M,
                     "count": len(nearby_kept),
                     "courts": nearby_kept,
                 },

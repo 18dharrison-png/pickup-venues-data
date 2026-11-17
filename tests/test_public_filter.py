@@ -10,7 +10,9 @@ high-school campus, is not tagged access=private/customers/members, and is not
 inside a club, private school, golf course or commercial facility. A court kept
 that way joins the park's pin (build_state.group reads the attach id), and golf
 is never rescued. A public area that is not a place to play — golf course,
-cemetery, nature preserve, open space, conservation land — never takes it.
+cemetery, nature preserve, garden, estate, open space, conservation land — never
+takes it. An untagged court only joins within NEAR_PUBLIC_UNTAGGED_M, and a court
+with a name of its own keeps its own pin.
 """
 import os
 import sys
@@ -75,12 +77,94 @@ class NearParkTest(unittest.TestCase):
 
     def test_a_public_court_eighty_metres_outside_the_fence_joins_the_park(self):
         point = (-118.0, north(34.0, 191))  # 111 m to the fence, 80 m past it
-        decided = public_filter.classify(point, {**context(parks=[self.park()]), **facts()})
+        decided = public_filter.classify(
+            point, {**context(parks=[self.park()]), **facts(access="yes")})
 
         self.assertEqual(decided["verdict"], "park")
         self.assertEqual(decided["attach"], "way/1", "it joins that park's pin")
         self.assertTrue(decided["near"])
         self.assertIn("Live Oak Park", decided["reason"])
+
+    def test_an_untagged_court_has_to_be_close_to_the_fence(self):
+        # 80 m past the fence: too far for a court nobody has tagged. These are
+        # the condo and estate courts that were joining parks.
+        point = (-118.0, north(34.0, 191))
+        decided = public_filter.classify(
+            point, {**context(parks=[self.park()]), **facts(access="")})
+
+        self.assertIsNone(decided["attach"], "untagged and 80 m out: not the park's")
+        self.assertIsNone(decided["verdict"])
+
+    def test_a_court_tagged_open_may_be_the_full_distance_out(self):
+        point = (-118.0, north(34.0, 191))
+        decided = public_filter.classify(
+            point, {**context(parks=[self.park()]), **facts(access="yes")})
+
+        self.assertEqual(decided["attach"], "way/1")
+        self.assertIn(str(public_filter.NEAR_PUBLIC_M), decided["reason"])
+
+    def test_an_untagged_court_just_past_the_fence_still_joins(self):
+        # 30 m past the fence: close enough that it is plainly the park's court.
+        point = (-118.0, north(34.0, 111 + 30))
+        decided = public_filter.classify(
+            point, {**context(parks=[self.park()]), **facts(access="")})
+
+        self.assertEqual(decided["attach"], "way/1")
+
+    def test_a_court_on_residential_ground_is_not_attached(self):
+        point = (-118.0, north(34.0, 111 + 30))
+        houses = area("way/40", "", point[1], point[0], 0.002)
+        decided = public_filter.classify(
+            point, {**context(parks=[self.park()], excluded=[houses]), **facts(access="")})
+
+        self.assertIsNone(decided["attach"], "inside the subdivision: not the park's")
+
+    def test_a_garden_or_estate_never_takes_the_court(self):
+        for name in ("Virginia Robinson Gardens", "Greystone Estate",
+                     "Huntington Botanical Garden", "Rancho Los Alamitos Historic Site"):
+            with self.subTest(name=name):
+                garden = area("way/41", name, 34.0, -118.0, 0.002)
+                decided = public_filter.classify(
+                    (-118.0, north(34.0, 191)), {**context(parks=[garden]), **facts(access="yes")})
+
+                self.assertIsNone(decided["attach"], name)
+
+    def test_a_named_facility_is_not_folded_into_the_park(self):
+        # Venice Skate Park is its own place, 145 m from the boardwalk polygon.
+        decided = public_filter.classify(
+            (-118.0, north(34.0, 111 + 30)),
+            {**context(parks=[self.park()]), **facts(name="Venice Skate Park", access="yes")})
+
+        self.assertIsNone(decided["attach"], "a named facility keeps its own pin")
+
+    def test_a_generic_court_name_still_folds_in(self):
+        decided = public_filter.classify(
+            (-118.0, north(34.0, 111 + 30)),
+            {**context(parks=[self.park()]), **facts(name="Tennis courts")})
+
+        self.assertEqual(decided["attach"], "way/1")
+
+    def test_a_facility_shared_name_is_one_pin_outside_the_park(self):
+        # Santa Barbara: the tennis centre's pitches are named, half inside the
+        # refuge polygon and half outside. All of it is one facility, so the
+        # refuge must not count any of it.
+        col = build_state.Collector(keep_private=True)
+        col.add("way", 1, {"leisure": "park", "name": "Andrée Clark Bird Refuge"},
+                rings=square(34.0, -118.0, 0.002))
+        col.add("way", 2, {"leisure": "pitch", "sport": "pickleball",
+                           "name": "Municipal Tennis and Pickleball Center"},
+                rings=square(34.0, -118.0, 0.0002))
+        col.add("way", 3, {"leisure": "pitch", "sport": "pickleball",
+                           "name": "Municipal Tennis and Pickleball Center"},
+                rings=square(north(34.0, 60), -118.0, 0.0002))
+        for pitch in col.pitches:
+            pitch["own_facility"] = True
+
+        venues = build_state.group(col, keep_restricted=True)
+
+        self.assertEqual([venue["n"] for venue in venues],
+                         ["Municipal Tennis and Pickleball Center"])
+        self.assertEqual(venues[0]["s"], {"pickleball": 2})
 
     def test_a_court_further_than_the_limit_is_not_rescued(self):
         point = (-118.0, north(34.0, 111 + 400))  # 400 m past the fence
@@ -125,9 +209,13 @@ class NearParkTest(unittest.TestCase):
         point = (-118.0, north(34.0, 191))
         club = area("way/9", "Sunset Tennis Club", point[1], point[0], 0.0004)
         decided = public_filter.classify(
-            point, {**context(parks=[self.park()], excluded=[club]), **facts(sports=("tennis",))})
+            point, {**context(parks=[self.park()], excluded=[club]),
+                    **facts(sports=("tennis",), access="yes")})
 
-        self.assertIsNone(decided["verdict"], "a club next door stays a club")
+        # The club's ground is excluded, so the court does not join the park; it
+        # is only kept at all because the court itself is tagged open.
+        self.assertIsNone(decided["attach"], "a club next door stays a club")
+        self.assertNotIn("Live Oak Park", decided["reason"])
 
     def test_a_court_tagged_private_is_not_rescued(self):
         point = (-118.0, north(34.0, 191))
@@ -148,7 +236,8 @@ class NearParkTest(unittest.TestCase):
     def test_a_court_beside_a_nature_refuge_is_not_folded_into_it(self):
         refuge = area("way/30", "Andrée Clark Bird Refuge", 34.0, -118.0, 0.002)
         decided = public_filter.classify(
-            (-118.0, north(34.0, 191)), {**context(parks=[refuge]), **facts(sports=("tennis",))})
+            (-118.0, north(34.0, 191)),
+            {**context(parks=[refuge]), **facts(sports=("tennis",), access="yes")})
 
         self.assertIsNone(decided["attach"], "a refuge is public ground, not a place to play")
         self.assertNotIn("Refuge", decided["reason"])
@@ -160,7 +249,7 @@ class NearParkTest(unittest.TestCase):
             with self.subTest(name=name):
                 parcel = area("way/31", name, 34.0, -118.0, 0.002)
                 decided = public_filter.classify(
-                    (-118.0, north(34.0, 191)), {**context(parks=[parcel]), **facts()})
+                    (-118.0, north(34.0, 191)), {**context(parks=[parcel]), **facts(access="yes")})
 
                 self.assertIsNone(decided["attach"], name)
 
@@ -171,7 +260,7 @@ class NearParkTest(unittest.TestCase):
             with self.subTest(name=name):
                 park = area("way/32", name, 34.0, -118.0, 0.002)
                 decided = public_filter.classify(
-                    (-118.0, north(34.0, 191)), {**context(parks=[park]), **facts()})
+                    (-118.0, north(34.0, 191)), {**context(parks=[park]), **facts(access="yes")})
 
                 self.assertEqual(decided["attach"], "way/32", name)
 
@@ -192,7 +281,7 @@ class NearParkTest(unittest.TestCase):
     def test_a_named_club_court_is_refused_before_anything_else(self):
         decided = public_filter.classify(
             (-118.0, north(34.0, 191)),
-            {**context(parks=[self.park()]), **facts(name="Sunset Tennis Club")})
+            {**context(parks=[self.park()]), **facts(name="Sunset Tennis Club", access="yes")})
 
         self.assertIsNone(decided["verdict"])
 

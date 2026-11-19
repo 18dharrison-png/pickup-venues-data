@@ -155,6 +155,32 @@ def access_of(tags):
     return tags.get("access", "").strip().lower()
 
 
+# Ground that is somebody's property, not a park: a residential subdivision, an
+# apartment or hotel building, a hotel's grounds, a private garden or a historic
+# estate. The public builder refuses to attach a court standing on any of these
+# to the park beside it — the condo courts behind a park fence are the residents'
+# courts, and they are usually drawn with no access tag at all.
+PRIVATE_LANDUSE = {"residential", "cemetery"}
+PRIVATE_BUILDINGS = {"apartments", "residential", "hotel", "dormitory", "terrace"}
+PRIVATE_TOURISM = {"hotel", "motel", "resort", "guest_house", "apartment"}
+PRIVATE_HISTORIC = {"estate", "manor"}
+
+
+def is_private_land(tags):
+    """True for a polygon that is private ground rather than a public place."""
+    if tags.get("landuse") in PRIVATE_LANDUSE:
+        return True
+    if tags.get("building") in PRIVATE_BUILDINGS:
+        return True
+    if tags.get("tourism") in PRIVATE_TOURISM:
+        return True
+    if tags.get("historic") in PRIVATE_HISTORIC:
+        return True
+    if tags.get("leisure") == "garden":
+        return True  # a private or botanical garden is not a park with courts
+    return False
+
+
 def is_restricted_area(tags):
     if tags.get("amenity") in RESTRICTED_AMENITY:
         return True
@@ -185,7 +211,8 @@ def polygon(kind, osm_id, tags, rings):
         "gnis": tags.get("gnis:feature_id"),
         "ref": tags.get("ref"),
         # Who runs the place, when OSM says. The public builder uses these to
-        # verify a park PAD-US has no polygon for.
+        # verify a park PAD-US has no polygon for, and to keep a standalone
+        # court whose operator is a city, county or school district.
         "operator": tags.get("operator"),
         "owner": tags.get("owner"),
         "ownership": tags.get("ownership"),
@@ -241,12 +268,28 @@ class Collector:
         self.parks = []       # public parks: courts inside are grouped under them
         self.restricted = []  # schools, clubs, private parks: courts inside are dropped
         self.centres = []     # sports centres kept as areas, for the public builder
+        # Residential land, apartment/hotel buildings, hotels, gardens, historic
+        # estates: private ground a court may be drawn on but may not inherit a
+        # park's name from.
+        self.private_land = []
+        # landuse=recreation_ground: a city's own sports complex. A field on it is
+        # a public place even when it stands far inside a park polygon whose
+        # courts the near rule never reaches.
+        self.recreation = []
         self.pitches = []     # dict(id, name, lon, lat, sports, surface, lit, address, access)
         self.dropped_private = 0
 
     def add(self, kind, osm_id, tags, rings=None, point=None):
         leisure = tags.get("leisure")
         access = access_of(tags)
+        if rings and is_private_land(tags):
+            self.private_land.append(polygon(kind, osm_id, tags, rings))
+            return
+        if rings and tags.get("landuse") == "recreation_ground":
+            # A public sports complex: its fields are public places of their own,
+            # wherever the nearest park polygon happens to end.
+            self.recreation.append(polygon(kind, osm_id, tags, rings))
+            return
         if rings and (is_restricted_area(tags) or (leisure == "park" and access in CLOSED_ACCESS)):
             self.restricted.append(polygon(kind, osm_id, tags, rings))
             return
@@ -282,6 +325,11 @@ class Collector:
             "address": address_of(tags),
             "access": access,
             "leisure": leisure,
+            # Who runs the field, when OSM says. The public builder keeps a
+            # standalone court whose operator is a city, county or school
+            # district, so these travel with the pitch.
+            "operator": tags.get("operator"),
+            "owner": tags.get("owner"),
         })
 
 
@@ -297,7 +345,9 @@ def read(path, keep_private=False):
     fp = osmium.FileProcessor(path).with_locations().with_areas()
     for obj in fp:
         tags = {t.k: t.v for t in obj.tags}
-        if "leisure" not in tags and tags.get("amenity") not in RESTRICTED_AMENITY:
+        if ("leisure" not in tags and tags.get("amenity") not in RESTRICTED_AMENITY
+                and tags.get("landuse") != "recreation_ground"
+                and not is_private_land(tags)):
             continue
         if isinstance(obj, osmium.osm.Node):
             if obj.location.valid():
@@ -533,6 +583,8 @@ def group(col, keep_restricted=False):
     Bears, Glendale Sports Complex).
     """
     centres = {c["id"]: c for c in col.centres}
+    park_ids = ({park["id"] for park in col.parks}
+                | {centre["id"] for centre in col.centres})
     park_index = build_index(col.parks)
     centre_index = build_index(list(centres.values()))
     restricted_index = build_index(col.restricted)
@@ -547,6 +599,14 @@ def group(col, keep_restricted=False):
             # Decided below: its pitches are the count, or its tag is.
             centre_pitch[p["id"]] = p
             continue
+        if p.get("own_facility"):
+            # A facility drawn as many pitches under one name, where some fall
+            # inside a park polygon and some outside: all of it belongs to the
+            # facility's own pin, or the park counts half of it (Santa Barbara's
+            # municipal tennis and pickleball centre published six of its
+            # courts under the bird refuge and the rest under its own name).
+            (loose_named if p["name"] else unnamed).append(p)
+            continue
         park = park_for(p, park_index)
         if (not keep_restricted and park is None
                 and p["access"] not in OPEN_ACCESS and park_for(p, restricted_index)):
@@ -554,6 +614,14 @@ def group(col, keep_restricted=False):
             continue
         if park is not None:
             in_park[park["id"]].append(p)
+            continue
+        attached = p.get("attach_park")
+        if attached is not None and attached in park_ids:
+            # A court drawn just outside the fence its park is drawn with (the
+            # public builder sets this after checking it is within
+            # NEAR_PUBLIC_M of a verified public park). It belongs to that
+            # park's pin, not a second pin of its own.
+            in_park[attached].append(p)
             continue
         owner = park_for(p, centre_index)
         if owner is not None and p["name"]:
@@ -584,6 +652,16 @@ def group(col, keep_restricted=False):
     for cid, pitch in centre_pitch.items():
         if centre_members.get(cid):
             in_park[cid] = centre_members[cid]
+            continue
+        attached = pitch.get("attach_park")
+        if attached is not None and attached in park_ids and attached != cid:
+            # A centre with no drawn courts, standing just outside a park, is
+            # that park's facility: OSM often maps a park's tennis courts as
+            # `leisure=sports_centre, sport=tennis` a few metres outside the
+            # park polygon rather than as pitches inside it. The public builder
+            # marks it for the park, and its own pin disappears — otherwise it
+            # published as "Tennis courts" beside "Orange Grove Park".
+            in_park[attached].append(pitch)
             continue
         parent = park_for({"lon": pitch["lon"], "lat": pitch["lat"]}, park_index)
         if parent is not None and in_park.get(parent["id"]):

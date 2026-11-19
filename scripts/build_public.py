@@ -68,6 +68,41 @@ def items_of(areas):
     return out
 
 
+def public_shortcut(point, facts, settled):
+    """A court that is public ground on its own proof, ahead of the near rule.
+
+    `landuse=recreation_ground` is a city's sports complex, and a pitch whose
+    operator or owner is a city, county or parks department is public ground even
+    when it stands hundreds of metres inside a park whose polygon the near rule
+    never reaches (Sepulveda Basin's diamonds). Neither is subject to the 50 m
+    cap: the cap exists to keep the untagged condo and estate courts out, and a
+    court that names a public agency has proof of its own.
+
+    Golf is still not a pickup court and a court tagged closed is still refused,
+    so a city golf course and a private club cannot use this door; when this
+    returns None, classify() decides the court as before.
+    """
+    access = str(facts.get("access") or "").strip().lower()
+    sports = set(facts.get("sports") or ())
+    if access in public_filter.CLOSED_ACCESS:
+        return None
+    if sports and sports <= public_filter.GOLF_SPORTS:
+        return None
+    if public_filter.inside(settled.get("recreation"), point) is not None:
+        return public_filter.decision("known", "inside recreation ground", near=True)
+    operator = facts.get("operator") or facts.get("owner")
+    if operator and public_filter.is_public_operator(operator):
+        target = None
+        if public_filter.inside(settled.get("excluded"), point) is None:
+            target = public_filter.nearby(settled.get("public_areas"), point,
+                                          limit_m=public_filter.NEAR_PUBLIC_M,
+                                          accept=public_filter.is_play_area)
+        return public_filter.decision(
+            "known", f"run by {public_filter.normalise(operator)}",
+            attach=target["id"] if target else None, near=True)
+    return None
+
+
 def main(argv=None):
     args = parse_args(argv or sys.argv[1:])
     if public_filter.Point is None:
@@ -140,7 +175,31 @@ def main(argv=None):
             public_areas.append({**item, "verdict": "known"})
     public_area_index = public_filter.build_index(public_areas)
     park_index = public_filter.build_index(park_items)
-    print(f"  public areas: {len(public_areas)} "
+
+    # A court drawn just outside a park or campus is kept when it is within
+    # NEAR_PUBLIC_M of one (public_filter.classify). A club, private school or
+    # golf course next door must not borrow that proof, so the areas that are
+    # not public places are indexed too: OSM restricted areas (school, college,
+    # golf course, club) plus any park or centre whose name says club, HOA,
+    # apartments or a chain gym.
+    private_named = [item for item in park_items + items_of(collector.centres)
+                     if public_filter.is_private_name(item["name"])]
+    # Private ground too: a residential subdivision, an apartment or hotel
+    # building, a hotel's grounds, a private garden or a historic estate. A court
+    # standing on any of it never joins the park beside it — the condo courts
+    # behind a park fence are the residents' courts, and they usually carry no
+    # access tag at all.
+    private_ground = items_of(collector.private_land)
+    # landuse=recreation_ground: a city's sports complex. A field on that ground
+    # is a public place of its own, so it is kept even beyond the near rule's
+    # 50 m cap.
+    recreation = items_of(collector.recreation)
+    excluded_index = public_filter.build_index(
+        items_of(collector.restricted) + private_named + private_ground)
+    campus_index = public_filter.build_index(campuses)
+    print(f"  private ground: {len(private_ground)} areas, "
+          f"{len(recreation)} recreation grounds, "
+          f"{len(public_areas)} public areas "
           f"({agency_parks} verified by operator/owner, {unmeasured_parks} unmeasured)")
 
     # School areas that are NOT proven public (private schools, elementary and
@@ -155,25 +214,40 @@ def main(argv=None):
     settled = {
         "padus": padus,
         "campuses_by_id": campuses_by_id,
+        "campus_index": campus_index,
         "school_areas": school_area_index,
         "osm_parks": park_index,
         "public_areas": public_area_index,
+        "recreation": public_filter.build_index(recreation),
+        "excluded": excluded_index,
     }
     before = len(collector.pitches)
     kept, dropped = [], []
     school_members = defaultdict(list)
     school_details = {}
+    nearby_kept = []
 
     for pitch in collector.pitches:
         point = (pitch["lon"], pitch["lat"])
         park = public_filter.inside(park_index, point)
-        verdict, reason, campus = public_filter.classify(point, {
+        if park is not None:
+            # Remember which park's ground the court stands on. The regression
+            # check below counts courts per park, so a court that moved into a
+            # facility pin is still counted as that park's court.
+            pitch["park"] = park["id"]
+        facts = {
             **settled,
             "name": (park or {}).get("name") or pitch["name"],
             "sports": pitch["sports"],
             "access": pitch["access"],
             "leisure": pitch.get("leisure") or "",
-        })
+            "operator": pitch.get("operator") or "",
+            "owner": pitch.get("owner") or "",
+        }
+        # Public ground on its own proof first (recreation ground, a city or
+        # county operator); everything else goes through the full rule.
+        decided = public_shortcut(point, facts, settled) or public_filter.classify(point, facts)
+        verdict, reason, campus = decided["verdict"], decided["reason"], decided["campus"]
 
         # Count against every unproven school site the court sits in, so a
         # campus nested inside a district parcel is still reported.
@@ -191,11 +265,36 @@ def main(argv=None):
             })
             continue
         pitch["v"] = verdict
+        if decided["attach"]:
+            # group() puts a pitch carrying this on the named park's pin, so a
+            # court just outside the fence counts under the park, not beside it.
+            pitch["attach_park"] = decided["attach"]
+        if decided["near"]:
+            nearby_kept.append({
+                "id": pitch["id"], "name": pitch["name"],
+                "lat": round(pitch["lat"], 6), "lon": round(pitch["lon"], 6),
+                "sports": sorted(pitch["sports"]), "verdict": verdict,
+                "reason": reason, "attached_to": decided["attach"],
+            })
         if verdict == "school":
             school_members[campus["id"]].append(pitch)
             school_details[campus["id"]] = campus
         else:
             kept.append(pitch)
+
+    # One facility drawn as many pitches under one name is one place. Some of its
+    # pitches can fall inside a park polygon and some outside, which published
+    # the facility twice: six pickleball courts counted under the bird refuge and
+    # the rest under the centre's own name. A non-generic name shared by two or
+    # more pitches marks the whole set as a facility of its own, so group() keeps
+    # them together and out of the park.
+    facility_names = Counter(
+        public_filter.normalise(pitch["name"]) for pitch in kept
+        if pitch["name"] and not public_filter.is_generic_court_name(pitch["name"]))
+    for pitch in kept:
+        name = public_filter.normalise(pitch["name"])
+        if name and facility_names[name] > 1:
+            pitch["own_facility"] = True
 
     collector.pitches = kept
     venues = build_state.group(collector, keep_restricted=True)
@@ -209,13 +308,14 @@ def main(argv=None):
         if park["id"] in labels:
             continue
         # A park is judged on its own ground; a school site inside it doesn't
-        # change what the park is.
-        verdict, _, _ = public_filter.classify(park["centroid"], {
+        # change what the park is. The near rule is off here: a park's own
+        # label must not come from the park next door.
+        decided = public_filter.classify(park["centroid"], {
             **settled, "school_areas": None, "name": park["name"], "sports": (),
-            "access": "", "leisure": "park",
+            "access": "", "leisure": "park", "allow_near": False,
         })
-        if verdict:
-            labels[park["id"]] = verdict
+        if decided["verdict"]:
+            labels[park["id"]] = decided["verdict"]
     for venue in venues:
         venue["v"] = labels.get(venue["id"], "known")
 
@@ -250,6 +350,8 @@ def main(argv=None):
     by_reason = Counter(item["reason"] for item in dropped)
     print(f"{args.source}: {before} courts/fields read -> {len(venues)} venues "
           f"({dict(sorted(by_verdict.items()))}), {len(dropped)} courts dropped")
+    print(f"  courts just outside a public park or school: {len(nearby_kept)} kept "
+          f"(within {public_filter.NEAR_PUBLIC_M} m, {public_filter.NEAR_PUBLIC_UNTAGGED_M} m untagged)")
 
     baseline_venues = build_state.group(build_state.read(args.source)) if args.baseline else []
     baseline = len(baseline_venues) if args.baseline else None
@@ -261,13 +363,20 @@ def main(argv=None):
     # nobody could verify), so a park that comes out smaller is counted and
     # reported: the CI check fails when more than 2% of kept parks lose courts.
     old_courts = {venue["id"]: sum(venue["s"].values()) for venue in baseline_venues}
+    # Count courts per park, not per pin. A named facility that keeps its own pin
+    # takes its courts out of the park's pin without losing them, and this check
+    # is about courts the map lost, not about where their pin sits.
+    park_court_totals = Counter()
+    for pitch in kept:
+        if pitch.get("park"):
+            park_court_totals[pitch["park"]] += len(pitch["sports"])
     park_venues = [venue for venue in venues if venue["v"] == "park"]
     regressed = []
     for venue in park_venues:
         was = old_courts.get(venue["id"])
         if was is None:
             continue
-        now = sum(venue["s"].values())
+        now = park_court_totals.get(venue["id"], sum(venue["s"].values()))
         if now < was:
             regressed.append({"id": venue["id"], "name": venue["n"],
                               "old": was, "new": now, "lost": was - now})
@@ -310,8 +419,16 @@ def main(argv=None):
                 "parks_unmeasured": unmeasured_parks,
                 "parks_verified_by_agency": agency_parks,
                 "public_areas": len(public_areas),
+                "private_ground_areas": len(private_ground),
+                "recreation_ground_areas": len(recreation),
                 "park_courts": park_courts,
                 "schools_9_12": len(schools),
+                "nearby_public": {
+                    "limit_m": public_filter.NEAR_PUBLIC_M,
+                    "untagged_limit_m": public_filter.NEAR_PUBLIC_UNTAGGED_M,
+                    "count": len(nearby_kept),
+                    "courts": nearby_kept,
+                },
                 "pickleball": {
                     "source": pickleball_source,
                     "merged": pickleball_stats.get("merged", 0),

@@ -105,10 +105,18 @@ jobs:
 
       - name: Keep only parks, courts, fields and schools
         run: |
+          # The second group is the ground a court may be drawn on but may not
+          # borrow a park's name from: residential land, apartment and hotel
+          # buildings, hotels, gardens and historic estates. The filter keeps
+          # their polygons so the builder can refuse a court standing on them.
           osmium tags-filter in.osm.pbf \
-            nwr/leisure=pitch,sports_centre,track,fitness_station,park,golf_course \
+            nwr/leisure=pitch,sports_centre,track,fitness_station,park,golf_course,garden \
                nwr/amenity=school,college,university,kindergarten,prison,place_of_worship \
                   nwr/club \
+                     nwr/landuse=residential \
+                        nwr/building=apartments,residential,hotel,dormitory,terrace \
+                           nwr/tourism=hotel,motel,resort,guest_house,apartment \
+                              nwr/historic=estate,manor \
             -o filtered.osm.pbf
           rm in.osm.pbf
           ls -lh filtered.osm.pbf
@@ -260,7 +268,15 @@ jobs:
             git fetch --depth 1 origin data
             git archive FETCH_HEAD states | tar -x -C store
           fi
-          cp incoming/*.ndjson.gz store/states/ 2>/dev/null || true
+          # Real state files only. The before/after counts step leaves the
+          # previously published state in the artifact as before.ndjson.gz;
+          # copied here it would be stored as a state and outrank today's build
+          # in build_site (which keeps the first record for each venue id).
+          for file in incoming/*.ndjson.gz; do
+            [ -e "$file" ] || continue
+            case "$(basename "$file")" in before.ndjson.gz) continue;; esac
+            cp "$file" store/states/
+          done
           # The build report, every dropped court, the build log and the
           # spot-check verdicts travel with the data, so a failure can be read
           # without the (sign-in only) Actions log. Copy one pattern at a time:

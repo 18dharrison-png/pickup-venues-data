@@ -185,6 +185,27 @@ class NearParkTest(unittest.TestCase):
         self.assertEqual(decided["verdict"], "known")
         self.assertIn("recreation ground", decided["reason"])
 
+    def test_a_recreation_ground_field_joins_the_park_beside_it(self):
+        # Sepulveda's diamonds stand on the complex's recreation ground, a few
+        # metres outside the park polygon: they belong on the park's pin.
+        park = self.park()
+        ground = area("way/52", "", north(34.0, 191), -118.0, 0.004)
+        settled = {"recreation": public_filter.build_index([ground]),
+                   "public_areas": public_filter.build_index([{**park, "verdict": "park"}]),
+                   "excluded": None}
+        decided = build_public.public_shortcut(
+            (-118.0, north(34.0, 191)),
+            {"sports": ("baseball",), "access": "", "operator": ""}, settled)
+
+        self.assertEqual(decided["verdict"], "known")
+        self.assertEqual(decided["attach"], "way/1")
+
+    def test_a_bare_field_number_is_not_a_facility_name(self):
+        for name in ("3", "12", "Field 7", "field 12"):
+            self.assertTrue(build_public.is_field_number(name), name)
+        for name in ("Sepulveda Basin Sports Complex", "Field of Dreams Park", ""):
+            self.assertFalse(build_public.is_field_number(name), name)
+
     def test_a_city_run_field_beyond_the_fence_is_kept(self):
         # 400 m outside the park fence, untagged, but the city runs it.
         settled = {"recreation": None, "public_areas": None, "excluded": None}

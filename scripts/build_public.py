@@ -68,6 +68,22 @@ def items_of(areas):
     return out
 
 
+def is_field_number(name):
+    """True for a bare field number: "3", "12", "Field 7".
+
+    A city's diamonds are often named only by their number. That is not a
+    facility name — it is one more diamond of the park's — and a pin labelled
+    "12" helps nobody, so the name is dropped and the court is grouped like any
+    other unnamed diamond.
+    """
+    text = " ".join(str(name or "").lower().split())
+    if not text:
+        return False
+    if text.startswith("field "):
+        text = text[len("field "):].strip()
+    return text.isdigit()
+
+
 def public_shortcut(point, facts, settled):
     """A court that is public ground on its own proof, ahead of the near rule.
 
@@ -89,7 +105,16 @@ def public_shortcut(point, facts, settled):
     if sports and sports <= public_filter.GOLF_SPORTS:
         return None
     if public_filter.inside(settled.get("recreation"), point) is not None:
-        return public_filter.decision("known", "inside recreation ground", near=True)
+        target = None
+        if public_filter.inside(settled.get("excluded"), point) is None:
+            # The complex's own diamonds are usually drawn a few metres outside
+            # the park polygon they belong to: hand them to the park's pin so the
+            # park counts them instead of publishing a pin per field number.
+            target = public_filter.nearby(settled.get("public_areas"), point,
+                                          limit_m=public_filter.NEAR_PUBLIC_M,
+                                          accept=public_filter.is_play_area)
+        return public_filter.decision("known", "inside recreation ground",
+                                      attach=target["id"] if target else None, near=True)
     operator = facts.get("operator") or facts.get("owner")
     if operator and public_filter.is_public_operator(operator):
         target = None
@@ -235,6 +260,8 @@ def main(argv=None):
             # check below counts courts per park, so a court that moved into a
             # facility pin is still counted as that park's court.
             pitch["park"] = park["id"]
+        if is_field_number(pitch["name"]):
+            pitch["name"] = None
         facts = {
             **settled,
             "name": (park or {}).get("name") or pitch["name"],
